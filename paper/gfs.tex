@@ -1,5 +1,7 @@
 \documentclass{sig-alternate}
 
+\usepackage{array}
+\usepackage{amstext}
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
@@ -50,16 +52,34 @@ DHash
 SFS
 Ori
 
-\section{GFS Overview}
+\section{Design}
 
-GFS is a distributed file system where all nodes are the same. Together, the
-nodes store the GFS files in local storage, and send the files to each other.
+\subsection{GFS Nodes}
+
+GFS is a distributed file system where all nodes are the same. They are
+identified by a \texttt{NodeId}, the cryptographic hash of a public-key
+(note that \textit{checksum} will henceforth refer specifically to crypographic
+hashes of an object). Nodes also store their public + private keys. Clients are
+free to instatiate a new node on every launch, though that means losing any
+accrued benefits. It is recommended that nodes remain the same.
+
+\begin{verbatim}
+      type Node struct {
+        id NodeID
+        pubkey PublicKey
+        prikey PrivateKey
+      }
+\end{verbatim}
+
+
+Together, the
+nodes store the GFS files in local storage, and send files to each other.
 GFS implements its features by combining several subsystems with many
 desirable properties:
 
 \begin{enumerate}
-  \item A Coral-based \textbf{Distributed Sloppy Hash Table} (DSHT) to link and
-        coordinate peer-to-peer nodes.
+  \item A Coral-based \textbf{Distributed Sloppy Hash Table}\\
+        (DSHT) to link and coordinate peer-to-peer nodes.
   \item A Bittorrent-like peer-to-peer \textbf{Block Exchange} (BE) distribute
         Blocks efficiently, and to incentivize replication.
   \item A Git-inspired \textbf{Object Model} (OM) to represent the filesystem.
@@ -135,6 +155,108 @@ Coral extends Kademlia in three particularly important ways:
 
 The GFS DSHT supports four RPC calls:
 
+
+
+\subsection{Block Exchange - BitSwap Protocol}
+
+The exchange of data in GFS happens by exchanging blocks with peers using a
+BitTorrent inspired protocol: BitSwap. Like BitTorrent, BitSwap peers are
+looking to acquire a set of blocks, and have blocks to offer in exchange.
+Unlike BitTorrent, BitSwap is not limited to the blocks in one torrent.
+BitSwap operates as a persistent marketplace where node can acquire the
+blocks they need, regardless of what files the blocks are part of. The
+blocks could come from completely unrelated files in the filesystem.
+But nodes come together to barter in the marketplace.
+
+While the notion of a barter system implies a virtual currency could be
+created, this would require a global ledger (blockchain) to track ownership
+and transfer of the currency. This will be explored in a future paper.
+
+Instead, BitSwap nodes have to provide direct value to each other
+in the form of blocks. This works fine when the distribution of blocks across
+nodes is such that they have the complements, what each other wants. This will
+seldom be the case. Instead, it is more likely that nodes must \textit{work}
+for their blocks. In the case that a node has nothing that its peers want (or
+nothing at all), it seeks the pieces its peers might want, with lower
+priority. This incentivizes nodes to cache and disseminate rare pieces, even
+if they are not interested in them directly.
+
+\subsubsection{BitSwap Credit}
+
+The protocol must also incentivize nodes to seed when they do not need
+anything in particular, as they might have the blocks others want. Thus,
+BitFlow nodes send blocks to their peers, optimistically expecting the debt to
+be repaid. But, leeches (free-loading nodes that never share) must be avoided. A simple credit-like system solves the problem:
+
+\begin{enumerate}
+  \item Peers track their balance (in bytes verified) with other nodes.
+  \item Peers send blocks to each other probabilistically, according to
+        a function, that falls when owed and rises when owing.
+  \item The sigmoid (scaled by a comparison of the ownership) provides such a
+        function:
+
+  \[ P(send) = \dfrac{1}{1 + exp(-r)} \]
+  where the \textit{debt ratio} $ r $ is
+  \[ r = \dfrac{\texttt{bytes\_recv} - \texttt{bytes\_sent}}{\texttt{bytes\_sent}} \]
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{ >{$}c<{$} >{$}c<{$}}
+  P_{send}(\;\;\;r) =& likelihood \\
+  \hline
+  \hline
+  P_{send}(-5) =& 0.01 \\
+  P_{send}(-4) =& 0.02 \\
+  P_{send}(-3) =& 0.05 \\
+  P_{send}(-2) =& 0.12 \\
+  P_{send}(-1) =& 0.27 \\
+  P_{send}(\;\;\;0) =& 0.50 \\
+  P_{send}(\;\;\;1) =& 0.73 \\
+  P_{send}(\;\;\;2) =& 0.88 \\
+  P_{send}(\;\;\;3) =& 0.95 \\
+  P_{send}(\;\;\;4) =& 0.98 \\
+\end{tabular}
+\end{center}
+
+As you can see in Table 1, this function drops off quickly as the nodes' \
+\textit{debt ratio} surpasses twice the established credit.
+This \textit{debt ratio} is a measure of trust:
+lenient to debts between nodes that have previously exchanged lots of data
+successfully, and merciless to unknown, untrusted nodes. This
+(a) provides resistane to attackers who would create lots of new nodes,
+(b) protects previously successful trade relationships, even if one of the
+nodes is temporarily unable to provide value, and
+(c) eventually chokes relationships that have deteriorated until they
+improve.
+
+\subsubsection{BitSwap Ledger}
+
+BitSwap nodes keep ledgers accounting the transfers with other nodes.
+A ledger snapshot contains a pointer to the previous snapshot (its checksum),
+forming a hash-chain. This allows nodes to keep track of history, and to avoid
+tampering. At initializing, BitSwap nodes exchange their ledger information.
+If it does not match exactly, the ledger is reinitialized from scratch,
+loosing the accrued credit or debt.  It is possible for malicious nodes to
+purposefully ``loose'' the Ledger, hoping the erase debts. It is unlikely that
+nodes will have accrued enough debt to warrant also losing the accrued trust,
+however the partner node is free to count it as \textit{misconduct} (discussed
+later).
+
+\begin{verbatim}
+      var Ledgers = map[NodeId]Ledger
+      type Ledger struct {
+        parent     Checksum
+        owner      NodeId
+        partner    NodeId
+        bytes_sent int
+        bytes_recv int
+      }
+\end{verbatim}
+
+Nodes are free to keep the ledger history, though it is not necessary for
+correct operation. Only the current ledger entries are useful.
+
+\subsubsection{Protocol Specification}
 
 
 
@@ -234,8 +356,6 @@ of merkle trees:
 Users can publish branches (filesystems) with:
 publickey -> signed tree of branches
 
-
-\subsection{Chunk Exchange}
 
 \subsection{Object Distribution}
 
