@@ -1,0 +1,179 @@
+\documentclass{sig-alternate}
+
+\begin{document}
+
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+
+\title{Gallactic File System}
+\subtitle{}
+
+\numberofauthors{1}
+
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Juan Benet\\
+       \affaddr{athena.ai}\\
+       \affaddr{498 Walsh Rd}\\
+       \affaddr{Atherton, CA, USA}\\
+       \email{juan@benet.ai}
+}
+
+\maketitle
+\begin{abstract}
+The Gallactic File System is a peer-to-peer distributed file system capable of
+sharing the same files with millions of nodes. GFS combines a distributed
+hashtable, cryptographic techniques, merkle trees, content-addressable
+storage, bittorrent, and tag-based filesystems to build a single massive
+file system shared between peers. GFS has no single point of failure, and
+nodes do not need to trust each other.
+\end{abstract}
+
+\section{Introduction}
+
+\section{GFS Overview}
+
+GFS is a distributed file system where all nodes are the same. Together, the
+nodes store the GFS files in local storage, and send the files to each other.
+GFS implements its features by combining three well-known systems:
+
+\begin{enumerate}
+  \item A Git-like \textbf{Object Model} to represent the filesystem.
+  \item A Kademlia-based \textbf{Distributed Hash Table} to coordinate the retrieval of files.
+  \item A Bittorrent-like peer-to-peer data \textbf{Chunk Exchange}.
+\end{enumerate}
+
+
+\subsection{Object Model}
+
+Files are represented as a collection of inter-related objects, like in the
+version control system Git. Each object is addressed by the cryptographic hash of its contents (unless otherwise specified, \textit{checksum} will henceforth refer to this cryptographic file content hash). The file objects are:
+
+\begin{enumerate}
+  \item \texttt{chunk}: a variable-size block of data.
+  \item \texttt{list}: a collection of chunks or other lists.
+  \item \texttt{tree}: a collection of chunks, lists, or other trees.
+\end{enumerate}
+
+\subsubsection{Block Object}
+
+The \texttt{Block} object contains an addressable unit of data, and
+represents a file.
+GFS Blocks are like Git blobs or filesystem data blocks. They store the
+users' data. (The name \textit{block} is preferred over \textit{blob}, as the
+Git-inspired view of a \textit{blob} as a \textit{file} breaks down in GFS.
+GFS files can be represented by both \texttt{lists} and \texttt{blocks}.)
+Format:
+\begin{verbatim}
+block <size>
+<block data bytes>
+...
+\end{verbatim}
+
+
+\subsubsection{List Object}
+
+The \texttt{List} object represents a (large) file made up of several
+GFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
+an ordered sequence of \texttt{block} or \texttt{list} objects.
+In a sense, the GFS \texttt{List} functions like a filesystem file with
+indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologies including linked lists and balanced trees are possible. Directed graphs where the same node appears in multiple places allow in-file deduplication. Cycles are not possible (enforced by hash addessing).
+Format:
+\begin{verbatim}
+blob <num objects> <size>
+<list or block> <checksum> <size>
+<list or block> <checksum> <size>
+...
+\end{verbatim}
+
+
+\subsubsection{Tree Object}
+
+The \texttt{tree} object in GFS is similar to Git trees: it represents a
+directory, a list of checksums and names. The checksums reference \texttt{blob}
+or other \texttt{tree} objects. Note that traditional path naming
+is implemented entirely by the \texttt{tree} objects. \texttt{Blocks} and
+\texttt{lists} are only addressed by their \texttt{checksums}.
+% Unlike in Git, GFS trees include file-system metadata such as file
+%permissions.
+Format:
+\begin{verbatim}
+tree <num objects> <size>
+<tree or list or block> <checksum> <size> <name>
+<tree or list or block> <checksum> <size> <name>
+...
+\end{verbatim}
+
+\subsubsection{Commit Object}
+
+The \texttt{commit} object in GFS is similar to Git's. It represents a
+snapshot in the version history of a \texttt{tree}.
+
+\begin{verbatim}
+commit <size>
+parent <commit checksum>
+tree <tree checksum>
+author Full Name <email@address.com> <ISO UTC date>
+committer Full Name <email@address.com> <ISO UTC date>
+<commit message>
+\end{verbatim}
+
+\subsubsection{Version control}
+
+\subsubsection{Signed Objects}
+
+All objects can be signed. Add signature to bottom of object.
+(yes, this changes the hash, as it should)
+
+\subsubsection{Merkle Trees}
+
+The object model in GFS forms a \textit{Merkle Tree}, where every object
+contains hashes of its children. This provides GFS with the useful properties
+of merkle trees:
+
+\begin{enumerate}
+  \item Tamper resistance
+\end{enumerate}
+
+\subsubsection{Published Branches}
+
+Users can publish branches (filesystems) with:
+publickey -> signed tree of branches
+
+
+\subsection{Distributed Hash Table}
+\subsection{Chunk Exchange}
+
+\subsection{Object Distribution}
+
+\subsubsection{Spreading Objects}
+
+DHash spread along the DHT nodes?
+Mainline DHT peer registry?
+
+\subsubsection{Pinning Objects}
+
+
+\section{Conclusions}
+
+
+
+
+%\section{Acknowledgments}
+
+
+%\bibliographystyle{abbrv}
+%\bibliography{gfs}
+%\balancecolumns
+%\subsection{References}
+\end{document}
