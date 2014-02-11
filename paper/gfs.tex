@@ -1,10 +1,13 @@
 \documentclass{sig-alternate}
 
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
 \begin{document}
 
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+% \conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 
-\title{Gallactic File System}
+\title{Galactic File System}
 \subtitle{}
 
 \numberofauthors{1}
@@ -22,16 +25,13 @@
 %
 % 1st. author
 \alignauthor
-Juan Benet\\
-       \affaddr{athena.ai}\\
-       \affaddr{498 Walsh Rd}\\
-       \affaddr{Atherton, CA, USA}\\
-       \email{juan@benet.ai}
+  Juan Benet\\
+  \email{juan@benet.ai}
 }
 
 \maketitle
 \begin{abstract}
-The Gallactic File System is a peer-to-peer distributed file system capable of
+The Galactic File System is a peer-to-peer distributed file system capable of
 sharing the same files with millions of nodes. GFS combines a distributed
 hashtable, cryptographic techniques, merkle trees, content-addressable
 storage, bittorrent, and tag-based filesystems to build a single massive
@@ -41,17 +41,101 @@ nodes do not need to trust each other.
 
 \section{Introduction}
 
+Cite:
+CFS
+Kademlia
+Bittorrent
+Chord
+DHash
+SFS
+Ori
+
 \section{GFS Overview}
 
 GFS is a distributed file system where all nodes are the same. Together, the
 nodes store the GFS files in local storage, and send the files to each other.
-GFS implements its features by combining three well-known systems:
+GFS implements its features by combining several subsystems with many
+desirable properties:
 
 \begin{enumerate}
-  \item A Git-like \textbf{Object Model} to represent the filesystem.
-  \item A Kademlia-based \textbf{Distributed Hash Table} to coordinate the retrieval of files.
-  \item A Bittorrent-like peer-to-peer data \textbf{Chunk Exchange}.
+  \item A Coral-based \textbf{Distributed Sloppy Hash Table} (DSHT) to link and
+        coordinate peer-to-peer nodes.
+  \item A Bittorrent-like peer-to-peer \textbf{Block Exchange} (BE) distribute
+        Blocks efficiently, and to incentivize replication.
+  \item A Git-inspired \textbf{Object Model} (OM) to represent the filesystem.
+  \item An SFS-based self-certifying name system.
 \end{enumerate}
+
+
+These subsystems are not independent. They are well integrated and leverage
+their blended properties. However, it is useful to describe them separately,
+building the system from the bottom up. Note that all GFS nodes are identical,
+and run the same program.
+
+\subsection{Distributed Sloppy Hash Table}
+
+First, GFS nodes implement a DSHT based on Kademlia and Coral to coordinate
+and identify which nodes can serve a particular block of data.
+
+\subsubsection{Kademlia DHT}
+
+Kademlia is a DHT that provides:
+
+\begin{enumerate}
+
+  \item Efficient lookup through massive networks:
+        queries on average contact $ \ceil{log_2 (n)} $ nodes.
+        (e.g. $20$ hops for a network of $10000000$ nodes).
+
+  \item Low coordination overhead: it optimizes the number of
+        control messages it sends to other nodes.
+
+  \item Resistance to various attacks, by preferring nodes who have been
+        part of the DHT longer.
+
+  \item wide useage in peer-to-peer applications, including Gnutella and
+        Bittorrent, forming networks of over 100 million nodes.
+
+ \end{enumerate}
+
+While some peer-to-peer filesystems store data blocks directly in DHTs,
+this ``wastes storage and bandwidth, as data must be stored at nodes where it
+is not needed''. Instead, GFS stores a list of peers that can provide the data block.
+
+\subsubsection{Coral DSHT}
+
+Coral extends Kademlia in three particularly important ways:
+
+\begin{enumerate}
+
+  \item Kademlia stores values in nodes whose ids are ``nearest'' (using
+        XOR-distance) to the key. This does not take into account application
+        data locality, ignores ``far'' nodes who may already have the data, and
+        forces ``nearest'' nodes to store it, whether they need it or not.
+        This wastes significant storage and bandwith. Instead, Coral stores
+        addresses to peers who can provide the data blocks.
+
+  \item Coral relaxes the DHT API from \texttt{get\_value(key)} to
+        \texttt{get\_any\_values(key)} (the ``sloppy'' in DSHT).
+        This still works since Coral users only need a single (working) peer,
+        not the complete list. In return, Coral can distribute only subsets of
+        the values to the ``nearest'' nodes, avoiding hot-spots (overloading
+        \textit{all the nearest nodes} when a key becomes popular).
+
+  \item Additionally, Coral organizes a hierarchy of separate DSHTs called
+        \textit{clusters} depending on region and size. This enables nodes to
+        query peers in their region first, ``finding nearby data without
+        querying distant nodes'' and greatly reducing the latency of
+        lookups.
+
+\end{enumerate}
+
+
+\subsubsection{GFS DSHT}
+
+The GFS DSHT supports four RPC calls:
+
+
 
 
 \subsection{Object Model}
@@ -151,7 +235,6 @@ Users can publish branches (filesystems) with:
 publickey -> signed tree of branches
 
 
-\subsection{Distributed Hash Table}
 \subsection{Chunk Exchange}
 
 \subsection{Object Distribution}
