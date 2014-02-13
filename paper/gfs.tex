@@ -59,13 +59,18 @@ Ori
 GFS is a distributed file system where all nodes are the same. They are
 identified by a \texttt{NodeId}, the cryptographic hash of a public-key
 (note that \textit{checksum} will henceforth refer specifically to crypographic
-hashes of an object). Nodes also store their public + private keys. Clients are
-free to instatiate a new node on every launch, though that means losing any
+hashes of an object). Nodes also store their public and private keys. Clients
+are free to instatiate a new node on every launch, though that means losing any
 accrued benefits. It is recommended that nodes remain the same.
 
 \begin{verbatim}
+      type Checksum string
+      type PublicKey string
+      type PrivateKey string
+      type NodeId Checksum
+
       type Node struct {
-        id NodeID
+        nodeid NodeID
         pubkey PublicKey
         prikey PrivateKey
       }
@@ -113,8 +118,8 @@ Kademlia is a DHT that provides:
   \item Resistance to various attacks, by preferring nodes who have been
         part of the DHT longer.
 
-  \item wide useage in peer-to-peer applications, including Gnutella and
-        Bittorrent, forming networks of over 100 million nodes.
+  \item wide useage in peer-to-peer applications, including \\
+        Gnutella and Bittorrent, forming networks of over 100 million nodes.
 
  \end{enumerate}
 
@@ -191,50 +196,80 @@ be repaid. But, leeches (free-loading nodes that never share) must be avoided. A
 \begin{enumerate}
   \item Peers track their balance (in bytes verified) with other nodes.
   \item Peers send blocks to each other probabilistically, according to
-        a function, that falls when owed and rises when owing.
-  \item The sigmoid (scaled by a comparison of the ownership) provides such a
-        function:
-
-  \[ P(send) = \dfrac{1}{1 + exp(-r)} \]
-  where the \textit{debt ratio} $ r $ is
-  \[ r = \dfrac{\texttt{bytes\_recv} - \texttt{bytes\_sent}}{\texttt{bytes\_sent}} \]
+        a function that falls when owed and rises when owing.
 \end{enumerate}
 
-\begin{center}
-\begin{tabular}{ >{$}c<{$} >{$}c<{$}}
-  P_{send}(\;\;\;r) =& likelihood \\
-  \hline
-  \hline
-  P_{send}(-5) =& 0.01 \\
-  P_{send}(-4) =& 0.02 \\
-  P_{send}(-3) =& 0.05 \\
-  P_{send}(-2) =& 0.12 \\
-  P_{send}(-1) =& 0.27 \\
-  P_{send}(\;\;\;0) =& 0.50 \\
-  P_{send}(\;\;\;1) =& 0.73 \\
-  P_{send}(\;\;\;2) =& 0.88 \\
-  P_{send}(\;\;\;3) =& 0.95 \\
-  P_{send}(\;\;\;4) =& 0.98 \\
-\end{tabular}
-\end{center}
+Note that if a peer decides not to send, the peer subsequently ignores the
+sender for an \texttt{ignore\_cooldown} timeout. This prevents senders
+from trying to game the probability by just causing more dice-rolls.
+(Default BitSwap is 10 seconds).
+
+\subsubsection{BitSwap Strategy}
+
+The differing strategies that BitSwap peers might employ have wildly different
+effects on the performance of the exchange as a whole. In BitTorrent,
+while a standard strategy is specified (tit-for-tat), a variety of others have
+been implemented, ranging from BitTyrant (sharing the least-possible),
+to BitThief (exploiting a vulnerability and never share), to PropShare (
+sharing proportionally). A range of strategies (good and malicious) could
+similarly be implemented by BitSwap peers. The choice of function, then, should
+aim to:
+
+\begin{enumerate}
+  \item maximize the trade performance for the node, and the whole exchange
+  \item prevent freeloaders from exploiting and degrading the exchange
+  \item be effective with and resistant to other, unknown strategies
+\end{enumerate}
+
+The exploration of the space of such strategies is future work.
+One choice of function that works in practice is the sigmoid, scaled by a
+\textit{debt retio}:
+
+Let the \textit{debt ratio} $ r $ between a node and its peer be:
+  \[ r = \dfrac{\texttt{bytes\_recv} - \texttt{bytes\_sent}}{\texttt{bytes\_sent}} \]
+
+Let the probability of sending given $r$ be:
+  \[ P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(-r)} \]
 
 As you can see in Table 1, this function drops off quickly as the nodes' \
 \textit{debt ratio} surpasses twice the established credit.
-This \textit{debt ratio} is a measure of trust:
+The \textit{debt ratio} is a measure of trust:
 lenient to debts between nodes that have previously exchanged lots of data
 successfully, and merciless to unknown, untrusted nodes. This
-(a) provides resistane to attackers who would create lots of new nodes,
+(a) provides resistance to attackers who would create lots of new nodes
+(sybill attacks),
 (b) protects previously successful trade relationships, even if one of the
 nodes is temporarily unable to provide value, and
 (c) eventually chokes relationships that have deteriorated until they
 improve.
+
+\begin{center}
+\begin{tabular}{ >{$}c<{$} >{$}c<{$}}
+  P(\;send\;|\quad\:r) =& likelihood \\
+  \hline
+  \hline
+  P(\;send\;|-5)      =& 0.01 \\
+  P(\;send\;|-4)      =& 0.02 \\
+  P(\;send\;|-3)      =& 0.05 \\
+  P(\;send\;|-2)      =& 0.12 \\
+  P(\;send\;|-1)      =& 0.27 \\
+  P(\;send\;|\quad\:0) =& 0.50 \\
+  P(\;send\;|\quad\:1) =& 0.73 \\
+  P(\;send\;|\quad\:2) =& 0.88 \\
+  P(\;send\;|\quad\:3) =& 0.95 \\
+  P(\;send\;|\quad\:4) =& 0.98 \\
+\end{tabular}
+\end{center}
+
+% TODO look into computing share of the bandwidth, as described in propshare.
 
 \subsubsection{BitSwap Ledger}
 
 BitSwap nodes keep ledgers accounting the transfers with other nodes.
 A ledger snapshot contains a pointer to the previous snapshot (its checksum),
 forming a hash-chain. This allows nodes to keep track of history, and to avoid
-tampering. At initializing, BitSwap nodes exchange their ledger information.
+tampering. When activating a connection, BitSwap nodes exchange their ledger
+information.
 If it does not match exactly, the ledger is reinitialized from scratch,
 loosing the accrued credit or debt.  It is possible for malicious nodes to
 purposefully ``loose'' the Ledger, hoping the erase debts. It is unlikely that
@@ -243,22 +278,156 @@ however the partner node is free to count it as \textit{misconduct} (discussed
 later).
 
 \begin{verbatim}
-      var Ledgers = map[NodeId]Ledger
       type Ledger struct {
         parent     Checksum
         owner      NodeId
         partner    NodeId
         bytes_sent int
         bytes_recv int
+        timestamp  Timestamp
       }
 \end{verbatim}
 
 Nodes are free to keep the ledger history, though it is not necessary for
-correct operation. Only the current ledger entries are useful.
+correct operation. Only the current ledger entries are useful. Nodes are
+also free to garbage collect ledgers as necessary, starting with the less
+useful ledgers: the old (peers may not exist anymore) and small.
 
-\subsubsection{Protocol Specification}
+\subsubsection{BitSwap Specification}
+
+BitSwap nodes follow a simple protocol.
+
+\begin{verbatim}
+      # Additional state kept:
+      type BitSwap struct {
+        ledgers map[NodeId]Ledger
+        // Ledgers known to this node, inc inactive
+
+        active map[NodeId]Peer
+        // currently open connections to other nodes
+
+        need_list []Checksum
+        // checksums of blocks this node needs
+
+        have_list []Checksum
+        // checksums of blocks this node has
+      }
+
+      type Peer struct {
+        nodeid NodeId
+        ledger Ledger
+        // Ledger between the node and this peer
+
+        last_seen Timestamp
+        // timestamp of last received message
+
+        want_list []Checksum
+        // checksums of all blocks wanted by peer
+        // includes blocks wanted by peer's peers
+      }
+
+      # Protocol interface:
+      interface Peer {
+        open (nodeid :NodeId, ledger :Ledger);
+        send_want_list (want_list :WantList);
+        send_block (block :Block) -> (complete :Bool);
+        close (final :Bool);
+      }
+\end{verbatim}
 
 
+Sketch of the lifetime of a peer connection:
+\begin{enumerate}
+  \item Open: peers send \texttt{ledgers} until they agree.
+  \item Sending: peers exchange \texttt{want\_lists} and \texttt{blocks}.
+  \item Close: peers deactivate a connection.
+  \item Ignored: (special) a peer is ignored (for the duration of a timeout)
+        if a node's strategy avoids sending
+
+\end{enumerate}
+
+\paragraph{Peer.open(NodeId, Ledger)}
+
+When connecting, a node initializes a connection with a
+\texttt{Ledger}, either stored from a connection in the past or a new one
+zeroed out. Then, sends an Open message with the \texttt{Ledger} to the peer.
+
+Upon receiving an \texttt{Open} message, a peer chooses whether to activate
+the connection. If -- acording to the receiver's \texttt{Ledger} -- the sender
+is not a trusted agent (transmission below zero, or large outstanding debt) the
+receiver may opt to ignore the request. This should be done probabilistically
+with an \texttt{ignore\_cooldown} timeout, as to allow errors to be corrected
+and attackers to be thwarted. BitSwap
+
+If activating the connection, the receiver initializes a Peer object, with the
+local version of the \texttt{Ledger}, and setting the \texttt{last\_seen}
+timestamp). Then, it compares the received
+\texttt{Ledger} with its own. If they match exactly, the connections have
+opened. If they do not match, the peer creates a new zeroed out
+\texttt{Ledger}, and sends it.
+
+
+\paragraph{Peer.send\_want\_list(WantList)}
+
+While the connection is open, nodes advertise their
+\texttt{want\_list} to all connected peers. This is done (a) upon opening the
+connection, (b) after a randomized periodic timeout, (c) after a change in
+the \texttt{want\_list} and (d) after receiving a new block.
+
+Upon receiving a \texttt{want\_list}, a node stores it. Then, it checks whether
+it has any of the wanted blocks. If so, it sends them according to the
+\textit{BitSwap Strategy} above.
+
+\paragraph{Peer.send\_block(Block)}
+
+Sending a block is straightforward. The node simply transmits the block of
+data. Upon receiving all the data, the receiver computes the Checksum to
+verify it matches the expected one, and returns confirmation.
+
+Upon finalizing the correct transmission of a block, the receiver moves the
+block from \texttt{need\_list} to \texttt{have\_list}, and both the receiver
+and sender update their ledgers to reflect the additional bytes transmitted.
+
+If a transmission verfication fails, the receiver instead \textit{penalizes}
+the sender. Both receiver and sender should update their ledgers accordingly,
+though the sender is either malfunctioning or attacking the receiver. Note that
+BitSwap expects to operate on a reliable transmission channel, so data errors
+-- which could lead to incorrect penalization of an honest sender -- are
+expected to be caught before the data is given to BitSwap. GFS uses the uTP
+protocol.
+
+\paragraph{Peer.close(Bool)}
+
+The \texttt{final} parameter to \texttt{close} signals whether the intention
+to tear down the connection is the sender's or not. If false, the receiver
+may opt to re-open the connection immediatelty. This avoids premature
+closes.
+
+A peer connection should be closed under two conditions:
+\begin{itemize}
+  \item a \texttt{silence\_wait} timeout has expired without receiving any
+        messages from the peer (default BitSwap uses 30 seconds).
+        In this case, the node issues a \texttt{Peer.close(false)} message.
+  \item the node is exiting and BitSwap is being shut down.
+        In this case, the node issues a \texttt{Peer.close(true)} message.
+\end{itemize}
+
+After a \texttt{close} message, both receiver and sender tear down the
+connection, clearing any state stored. The \texttt{Ledger} may be stored for
+the future, if it is useful to do so.
+
+\paragraph{Notes}
+
+\begin{itemize}
+  \item Non-\texttt{open} messages on an inactive connection should be ignored.
+        In case of a \texttt{send\_block} message, the receiver may check
+        the block to see if it is needed and correct, and if so, use it.
+        Regardless, all such out-of-order messages trigger a
+        \texttt{close(false)} message from the receiver, to force re-
+        initialization of the connection.
+\end{itemize}
+
+% TODO: Rate Limiting / Node Silencing
 
 \subsection{Object Model}
 
