@@ -223,12 +223,12 @@ be repaid. But, leeches (free-loading nodes that never share) must be avoided. A
 
 \begin{enumerate}
   \item Peers track their balance (in bytes verified) with other nodes.
-  \item Peers send blocks to each other probabilistically, according to
-        a function that falls when owed and rises when owing.
+  \item Peers send blocks to debtor peers probabilistically, according to
+        a function that falls as debt increases.
 \end{enumerate}
 
 Note that if a peer decides not to send, the peer subsequently ignores the
-sender for an \texttt{ignore\_cooldown} timeout. This prevents senders
+other node for an \texttt{ignore\_cooldown} timeout. This prevents senders
 from trying to game the probability by just causing more dice-rolls.
 (Default BitSwap is 10 seconds).
 
@@ -247,6 +247,7 @@ aim to:
   \item maximize the trade performance for the node, and the whole exchange
   \item prevent freeloaders from exploiting and degrading the exchange
   \item be effective with and resistant to other, unknown strategies
+  \item be lenient to trusted peers
 \end{enumerate}
 
 The exploration of the space of such strategies is future work.
@@ -254,10 +255,10 @@ One choice of function that works in practice is the sigmoid, scaled by a
 \textit{debt retio}:
 
 Let the \textit{debt ratio} $ r $ between a node and its peer be:
-  \[ r = \dfrac{\texttt{bytes\_recv} - \texttt{bytes\_sent}}{\texttt{bytes\_sent}} \]
+  \[ r = \dfrac{\texttt{bytes\_sent}}{\texttt{bytes\_recv}} \]
 
-Let the probability of sending given $r$ be:
-  \[ P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(-r)} \]
+Given $r$, let the probability of sending to a debtor be:
+  \[ 1 - P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(6-3r)} \]
 
 As you can see in Table 1, this function drops off quickly as the nodes' \
 \textit{debt ratio} surpasses twice the established credit.
@@ -273,19 +274,21 @@ improve.
 
 \begin{center}
 \begin{tabular}{ >{$}c<{$} >{$}c<{$}}
-  P(\;send\;|\quad\:r) =& likelihood \\
+  P(\;send\;|\quad r) =& likelihood \\
   \hline
   \hline
-  P(\;send\;|-5)      =& 0.01 \\
-  P(\;send\;|-4)      =& 0.02 \\
-  P(\;send\;|-3)      =& 0.05 \\
-  P(\;send\;|-2)      =& 0.12 \\
-  P(\;send\;|-1)      =& 0.27 \\
-  P(\;send\;|\quad\:0) =& 0.50 \\
-  P(\;send\;|\quad\:1) =& 0.73 \\
-  P(\;send\;|\quad\:2) =& 0.88 \\
-  P(\;send\;|\quad\:3) =& 0.95 \\
-  P(\;send\;|\quad\:4) =& 0.98 \\
+  P(\;send\;|\;0.0) =& 1.00 \\
+  P(\;send\;|\;0.5) =& 1.00 \\
+  P(\;send\;|\;1.0) =& 0.98 \\
+  P(\;send\;|\;1.5) =& 0.92 \\
+  P(\;send\;|\;2.0) =& 0.73 \\
+  P(\;send\;|\;2.5) =& 0.38 \\
+  P(\;send\;|\;3.0) =& 0.12 \\
+  P(\;send\;|\;3.5) =& 0.03 \\
+  P(\;send\;|\;4.0) =& 0.01 \\
+  P(\;send\;|\;4.5) =& 0.00 \\
+
+
 \end{tabular}
 \end{center}
 
@@ -459,13 +462,21 @@ the future, if it is useful to do so.
 
 \subsection{Object Model}
 
-Files are represented as a collection of inter-related objects, like in the
-version control system Git. Each object is addressed by the cryptographic hash of its contents (unless otherwise specified, \textit{checksum} will henceforth refer to this cryptographic file content hash). The file objects are:
+The DHT and BitSwap allow GFS to form a massive peer-to-peer system for storing
+and distributing blocks quickly and robustly to users.
+GFS builds a filesystem out of this efficient block distribution system,
+constructing files and directories out of blocks.
+
+Files in GFS are represented as a collection of inter-related objects, like in
+the version control system Git. Each object is addressed by the cryptographic
+hash of its contents (\texttt{Checksum}). The file objects are:
 
 \begin{enumerate}
-  \item \texttt{chunk}: a variable-size block of data.
-  \item \texttt{list}: a collection of chunks or other lists.
-  \item \texttt{tree}: a collection of chunks, lists, or other trees.
+  \item \texttt{block}: a variable-size block of data.
+  \item \texttt{list}: a collection of blocks or other lists.
+  \item \texttt{tree}: a collection of blocks, lists, or other trees.
+  \item \texttt{commit}: a snapshot in the version history of a tree.
+  \item \texttt{ref}: a reference to any another object (symlink).
 \end{enumerate}
 
 \subsubsection{Block Object}
