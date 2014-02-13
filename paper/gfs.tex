@@ -43,14 +43,38 @@ nodes do not need to trust each other.
 
 \section{Introduction}
 
-Cite:
-CFS
-Kademlia
-Bittorrent
-Chord
-DHash
-SFS
-Ori
+[Motivate GFS. Introduce problems. Describe BitTorrent existing problems (
+multiple files. one swarm. sloppy dht implementation.) Describe version
+control efforts. Propose potential combinations of good ideas.]
+
+[Cite:
+CFS,
+Kademlia,
+Bittorrent,
+Chord,
+DHash,
+SFS,
+Ori,
+Coral]
+
+This paper introduces
+GFS, a novel peer-to-peer version-controlled filesystem;
+and BitSwap, the novel peer-to-peer block exchange protocol serving GFS.
+
+The rest of the paper is organized as follows.
+Section 2 describes the design of the filesystem.
+Section 3 evaluates various facets of the system under benchmark and common
+workloads.
+Section 4 presents and evaluates a world-wide deployment of GFS.
+Section 5 describes existing and potential applications of GFS.
+Section 6 discusses related and future work.
+
+Notation Notes:
+(a) data structures are specified in Go syntax,
+(b) rpc protocols are specified in capnp interface,
+(c) object formats are specified in text with <fields>.
+
+
 
 \section{Design}
 
@@ -85,10 +109,14 @@ desirable properties:
 \begin{enumerate}
   \item A Coral-based \textbf{Distributed Sloppy Hash Table}\\
         (DSHT) to link and coordinate peer-to-peer nodes.
+        Described in Section 2.2.
   \item A Bittorrent-like peer-to-peer \textbf{Block Exchange} (BE) distribute
         Blocks efficiently, and to incentivize replication.
+        Described in Section 2.3.
   \item A Git-inspired \textbf{Object Model} (OM) to represent the filesystem.
+        Described in Section 2.4.
   \item An SFS-based self-certifying name system.
+        Described in Section 2.5.
 \end{enumerate}
 
 
