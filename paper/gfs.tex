@@ -770,40 +770,64 @@ This is mitigated by:
 \end{figure}
 
 
-\subsubsection{Published Branches}
+\subsubsection{Publishing Objects}
+
+GFS is globally distributed. It is designed to allow the files of millions
+of users to coexist together. The \textbf{DHT} with content-hash addressing
+allows publishing objects in a fair, secure, and entirely distributed way.
+Anyone can publish an object by simply adding its key to the DHT, adding
+themselves as a peer, and giving other users the object's hash.
+
+Additionally, the GFS root directory supports special functionality to
+allow namespacing and naming objects in a fair, secure, and distributed
+manner.
+\begin{itemize}
+  \item[(a)] All objects are accessible by their hash. Thus, users can
+        always reference an object (and its children) using
+        \texttt{/<object\_hash>}.
+
+  \item[(b)] \texttt{/<node\_id>} provides a self-certifying filesystem
+        for user \texttt{node\_id}. If it exists, the object returned is a
+        special \texttt{tree} signed by \texttt{node\_id}'s private key. Thus,
+        a user can publish a \texttt{tree} or \texttt{commit} under their
+        name, and others can verify it by checking the signature matches.
+
+  \item[(c)] If \texttt{/<domain>} is a valid domain name, GFS
+        looks up key \texttt{gfs} in its \texttt{DNS TXT} record. GFS
+        interprets the value as either an object hash or another GFS path:
+        \begin{verbatim}
+  # this DNS TXT record
+  fs.benet.ai. TXT "gfs=/aabbccddeeffgg ..."
+
+  # behaves as symlink
+  ln -s /aabbccddeeffgg /fs.benet.ai
+        \end{verbatim}
+
+\end{itemize}
 
 
+\subsection{Local Objects}
 
-Users can publish branches (filesystems) with:
-publickey -> signed tree of branches
+GFS clients require some \textit{local storage}, an external system
+on which to store and retrieve local raw data for the objects GFS manages.
+The type of storage depends on the node's use case.
+In most cases, this is simply a portion of disk space (either managed by
+the native filesystem, or directly by the GFS client). In others, non-
+persistent caches for example, this storage is just a portion of RAM.
 
-\subsubsection{}
+Ultimately, all blocks available in GFS are in some node's
+\textit{local storage}. And when nodes open files with GFS, the objects are
+downloaded and stored locally, at least temporarily. This provides
+fast lookup for some configurable amount of time thereafter.
 
+\subsubsection{Object Pinning}
 
-The GFS filesystem itself
-
-
-\subsubsection{Directories}
-
-
-\subsubsection{Self Certified Naming}
-
-
-
-
-\subsection{Object Distribution}
-
-\subsubsection{Spreading Objects}
-
-DHash spread along the DHT nodes?
-Mainline DHT peer registry?
-
-\subsubsection{Pinning Objects}
-
-
-\section{Conclusions}
-
-
+Nodes who wish to ensure the survival of particular objects can do so by
+\texttt{pinning} the objects. This ensures the objects are kept in the node's
+\textit{local storage}. Pinning can be done recursively, to pin down all
+descendent objects as well. For example, recursively pinning a \texttt{tree}
+or \texttt{commit} ensures \textit{all} objects pointed to are stored locally
+too. This is particularly useful for nodes wishing to keep all their own files.
 
 
 %\section{Acknowledgments}
