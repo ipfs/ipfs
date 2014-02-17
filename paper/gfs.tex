@@ -1,5 +1,10 @@
 \documentclass{sig-alternate}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning}
+
 \usepackage{array}
 \usepackage{amstext}
 \usepackage{mathtools}
@@ -476,8 +481,19 @@ hash of its contents (\texttt{Checksum}). The file objects are:
   \item \texttt{list}: a collection of blocks or other lists.
   \item \texttt{tree}: a collection of blocks, lists, or other trees.
   \item \texttt{commit}: a snapshot in the version history of a tree.
-  \item \texttt{ref}: a reference to any another object (symlink).
 \end{enumerate}
+
+We hoped to use the Git object formats exactly, but had to depart to introduce
+certain features useful in a distributed filesystem, for example fast size
+lookups (aggregate byte sizes have been added to objects), large file
+deduplication and versioning (adding a \texttt{list} object), and more.
+However, our objects are perfectly compatible with Git and
+conversion between the two does not lose any information.
+
+Notes:
+\begin{itemize}
+  \item \texttt{varint} is a variable size int, as in protocol-buffers.
+\end{itemize}
 
 \subsubsection{Block Object}
 
@@ -497,16 +513,16 @@ block <size>
 
 \subsubsection{List Object}
 
-The \texttt{List} object represents a (large) file made up of several
-GFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
+The \texttt{List} object represents a large or de-duplicated file made up of
+several GFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
 an ordered sequence of \texttt{block} or \texttt{list} objects.
 In a sense, the GFS \texttt{List} functions like a filesystem file with
 indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologies including linked lists and balanced trees are possible. Directed graphs where the same node appears in multiple places allow in-file deduplication. Cycles are not possible (enforced by hash addessing).
 Format:
 \begin{verbatim}
-blob <num objects> <size>
-<list or block> <checksum> <size>
-<list or block> <checksum> <size>
+list <num objects> <size varint>
+<list or block> <checksum> <size varint>
+<list or block> <checksum> <size varint>
 ...
 \end{verbatim}
 
@@ -518,51 +534,253 @@ directory, a list of checksums and names. The checksums reference \texttt{blob}
 or other \texttt{tree} objects. Note that traditional path naming
 is implemented entirely by the \texttt{tree} objects. \texttt{Blocks} and
 \texttt{lists} are only addressed by their \texttt{checksums}.
-% Unlike in Git, GFS trees include file-system metadata such as file
-%permissions.
 Format:
 \begin{verbatim}
-tree <num objects> <size>
-<tree or list or block> <checksum> <size> <name>
-<tree or list or block> <checksum> <size> <name>
+tree <num objects> <size varint>
+<tree or list or block> <checksum> <size varint> <name>
+<tree or list or block> <checksum> <size varint> <name>
 ...
 \end{verbatim}
 
 \subsubsection{Commit Object}
 
 The \texttt{commit} object in GFS is similar to Git's. It represents a
-snapshot in the version history of a \texttt{tree}.
+snapshot in the version history of a \texttt{tree}. Note that user
+addresses are NodeIds (the hash of the public key).
 
 \begin{verbatim}
-commit <size>
+commit <size varint>
 parent <commit checksum>
 tree <tree checksum>
-author Full Name <email@address.com> <ISO UTC date>
-committer Full Name <email@address.com> <ISO UTC date>
+author <author public key> <ISO UTC date>
+committer <committer public key> <ISO UTC date>
 <commit message>
 \end{verbatim}
 
 \subsubsection{Version control}
 
-\subsubsection{Signed Objects}
+The \texttt{commit} object represents a particular snapshot in the version
+history of a tree. Comparing the \texttt{trees} and children objects of two
+different commits reveals the differences between two versions of the
+filesystem. As long as a single \texttt{commit} and all the children objects
+it references are accessible, all preceding versions are retrievable and the
+full history of the filesystem changes can be accessed. This is a consequence
+of the \texttt{Git} object model and the graph it forms.
 
-All objects can be signed. Add signature to bottom of object.
-(yes, this changes the hash, as it should)
+The full power of the \texttt{Git} version control tools is available to GFS
+users. The object model is compatible (though not the same). The standard
+\texttt{Git} tools can be used on the \texttt{GFS} object graph after a
+conversion. Additionally, a fork of the tools is under development that will
+allow users to use them directly without conversion.
+
+\subsubsection{Object-level Cryptoraphy}
+
+GFS is equipped to handle object-level cryptographic operations. Any additional
+bytes are appended to the bottom of the object. This changes the object's hash
+(defining a different object, as it should). GFS exposes an API that
+automatically verifies signatures or decrypts data.
+
+\begin{itemize}
+  \item \texttt{Signing}. Signature appended.
+  \item \texttt{Encryption}. Optional recipient's public key appended.
+\end{itemize}
 
 \subsubsection{Merkle Trees}
 
-The object model in GFS forms a \textit{Merkle Tree}, where every object
-contains hashes of its children. This provides GFS with the useful properties
-of merkle trees:
+The object model in GFS forms a \textit{Merkle Tree}, which provides GFS with
+useful properties:
 
 \begin{enumerate}
-  \item Tamper resistance
+  \item \textbf{Content Addressing:} all content is uniquely identified by its
+        \texttt{checksum}, \textbf{including child checksums}. This means a
+        particular \texttt{tree} object points to \textit{specific} children.
+        Committing changes to a \texttt{block} also commits changes to the
+        containing \texttt{tree}.
+  \item \textbf{Tamper resistance:} all content is verified with its Checksum.
+        If data is tampered with, before being delivered, the client
+        detects and discards it.
+  \item \textbf{Deduplication:} all objects who hold the exact same content
+        are the same, and only stored once. This is particularly useful with
+        parent objects, such as lists, trees, and commits.
 \end{enumerate}
+
+
+\subsection{The Filesystem}
+
+\subsubsection{Filesystem Paths}
+
+GFS exposes a slash-delimited path-based API. Paths work the same as in any
+traditional UNIX filesystem. Path subcomponents have different meanings per
+object:
+
+\begin{center}
+\begin{tabular}{ll}
+  \texttt{object} & subcomponent meaning \\
+  \hline
+  \hline
+  \texttt{block}  & N/A (no children) \\
+  \texttt{list}   & integer index \\
+  \texttt{tree}   & string name \\
+  \texttt{commit} & string name (in tree) \\
+\end{tabular}
+\end{center}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[->,>=stealth',auto,thick,
+  minimum height=2em,minimum width=5em]
+
+  \tikzstyle{block}=[rectangle,draw,fill=blue!20,rounded corners=.8ex];
+  \tikzstyle{list}=[rectangle,draw,fill=cyan!20,rounded corners=.8ex];
+  \tikzstyle{tree}=[rectangle,draw,fill=green!20,rounded corners=.8ex];
+  \tikzstyle{commit}=[rectangle,draw,fill=magenta!20,rounded corners=.8ex];
+  \tikzstyle{every path}=[draw]
+
+  \node[commit] (ccc111) {ccc111};
+  \node[tree]   (ttt111) [below=3em of ccc111] {ttt111};
+  \node[tree]   (ttt222) [below left=3em and 3em of ttt111] {ttt222};
+  \node[tree]   (ttt333) [below=3em of ttt111] {ttt333};
+  \node[list]   (lll111) [below=3em of ttt333] {lll111};
+  \node[block]  (bbb111) [below=3em of ttt222] {bbb111};
+  \node[block]  (bbb222) [below right=3em and 3em of ttt333] {bbb222};
+  \node[block]  (bbb333) [below left=3em and 3em of lll111] {bbb333};
+  \node[block]  (bbb444) [below=3em of lll111] {bbb444};
+  \node[block]  (bbb555) [below right=3em and 3em of lll111] {bbb555};
+
+  \path[every node/.style={font=\sffamily\small}]
+    (ccc111) edge[out=-90,in=90] (ttt111)
+    (ttt111) edge[out=-90,in=90] (ttt222)
+             edge[out=-90,in=90] (ttt333)
+    (ttt222) edge[out=-90,in=90] (bbb111)
+    (ttt333) edge[out=-90,in=90] (lll111)
+             edge[out=-90,in=90] (bbb222)
+    (lll111) edge[out=-90,in=90] (bbb333)
+             edge[out=-90,in=90] (bbb444)
+             edge[out=-90,in=90] (bbb555)
+  ;
+
+\end{tikzpicture}
+\caption{Sample Object Graph} \label{fig:sample-object-graph}
+
+\begin{verbatim}
+    # ccc111 contents
+    commit 275
+    tree ttt111
+    author <author public key> <ISO UTC date>
+    committer <committer public key> <ISO UTC date>
+
+    # ttt111 contents
+    tree 2 212
+    tree ttt222 46 ttt222-name
+    tree ttt333 166 ttt333-name
+
+    # ttt222 contents
+    tree 1 10
+    block bbb111 10 bbb111-name
+
+    # ttt333 contents
+    tree 2 104
+    list lll111 93 lll111-name
+    block bbb222 11 bbb222-name
+
+    # lll111 contents
+    list 3 39
+    block bbb333 12
+    block bbb444 13
+    block bbb555 14
+
+    # bbb111 contents      # block bbb222 contents
+    block 1                block 2
+    1                      22
+
+    # bbb333 contents      # block bbb444 contents
+    block 3                block 4
+    333                    4444
+
+    # bbb555 contents
+    block 5
+    55555
+\end{verbatim}
+\caption{Sample Objects} \label{fig:sample-objects}
+\end{figure}
+
+For example, given the sample object graph in Figure \ref{fig:sample-object-graph}:
+
+\begin{verbatim}
+    # to access tree ttt333:
+    ccc111/<ttt333 name>
+
+    # to access block bbb111:
+    ccc111/<ttt222 name>/<bbb111 name>
+
+    # to access list lll111:
+    ccc111/<ttt333 name>/<lll111 name>
+
+    # to access block bbb555:
+    ccc111/<ttt333 name>/<lll111 name>/2
+\end{verbatim}
+
+Note that:
+\begin{itemize}
+  \item[(a)] blocks have no children \\
+             \texttt{.../<block>/<child>} is impossible
+  \item[(b)] commits implicitly access their trees \\
+             \texttt{.../<commit>/name}
+             looks up \texttt{"name"} in \texttt{<commit>}'s \texttt{<tree>}
+  \item[(c)] \texttt{list} children are accessed by their index \\
+             \texttt{.../<list>/4} looks up the fifth block.
+\end{itemize}
+
+\paragraph{Path Lookup Performance}
+
+Path-based access traverses the object graph. Retrieving
+each object requires potentially looking up its key in the DHT,
+connecting to peers, and retrieving its blocks. This is considerable
+overhead, particularly when looking up paths with many components.
+This is mitigated by:
+\begin{itemize}
+  \item \textbf{tree caching}: since all objects are hash-addressed, they
+        can be cached indefinitely. Additionally, \texttt{trees} tend to be
+        small in size so GFS prioritizes caching them over \texttt{blocks}.
+  \item \textbf{flattened trees}: for any given \texttt{tree}, a special
+        \texttt{flattened tree} can be constructed to list all objects
+        reachable from the \texttt{tree}. Figure \ref{flattened-ttt111} shows
+        an example of a flattened tree. While GFS does not construct flattened
+        trees by default, it provides a function for users. For example,
+\end{itemize}
+
+\begin{figure}
+\begin{verbatim}
+  tree 5 <size>
+  tree ttt222 <size> <ttt222 name>
+  block bbb111 <size> <ttt222 name>/<bbb111 name>
+  tree ttt333 <size> <ttt333 name>
+  list lll111 <size> <ttt222 name>/<lll111 name>
+  block bbb222 <size> <ttt333 name>/<bbb222 name>
+\end{verbatim}
+\caption{Flattened Tree for \texttt{ttt111}} \label{fig:flattened-ttt111}
+\end{figure}
+
 
 \subsubsection{Published Branches}
 
+
+
 Users can publish branches (filesystems) with:
 publickey -> signed tree of branches
+
+\subsubsection{}
+
+
+The GFS filesystem itself
+
+
+\subsubsection{Directories}
+
+
+\subsubsection{Self Certified Naming}
+
+
 
 
 \subsection{Object Distribution}
