@@ -493,6 +493,7 @@ conversion between the two does not lose any information.
 Notes:
 \begin{itemize}
   \item \texttt{varint} is a variable size int, as in protocol-buffers.
+  \item objects are serialized using \texttt{capnp}.
 \end{itemize}
 
 \subsubsection{Block Object}
@@ -630,6 +631,7 @@ object:
 \begin{tikzpicture}[->,>=stealth',auto,thick,
   minimum height=2em,minimum width=5em]
 
+  \tikzstyle{ghost}=[rectangle,rounded corners=.8ex];
   \tikzstyle{block}=[rectangle,draw,fill=blue!20,rounded corners=.8ex];
   \tikzstyle{list}=[rectangle,draw,fill=cyan!20,rounded corners=.8ex];
   \tikzstyle{tree}=[rectangle,draw,fill=green!20,rounded corners=.8ex];
@@ -640,6 +642,7 @@ object:
   \node[tree]   (ttt111) [below=3em of ccc111] {ttt111};
   \node[tree]   (ttt222) [below left=3em and 3em of ttt111] {ttt222};
   \node[tree]   (ttt333) [below=3em of ttt111] {ttt333};
+  \node[ghost]  (ghost1) [below right=3em and 3em of ttt111] {};
   \node[list]   (lll111) [below=3em of ttt333] {lll111};
   \node[block]  (bbb111) [below=3em of ttt222] {bbb111};
   \node[block]  (bbb222) [below right=3em and 3em of ttt333] {bbb222};
@@ -651,6 +654,8 @@ object:
     (ccc111) edge[out=-90,in=90] (ttt111)
     (ttt111) edge[out=-90,in=90] (ttt222)
              edge[out=-90,in=90] (ttt333)
+             to  [out=-90,in=90]  (ghost1)
+             to  [out=-90,in=90] (bbb222)
     (ttt222) edge[out=-90,in=90] (bbb111)
     (ttt333) edge[out=-90,in=90] (lll111)
              edge[out=-90,in=90] (bbb222)
@@ -664,15 +669,16 @@ object:
 
 \begin{verbatim}
     # ccc111 contents
-    commit 275
+    commit 313
     tree ttt111
     author <author public key> <ISO UTC date>
     committer <committer public key> <ISO UTC date>
 
     # ttt111 contents
-    tree 2 212
+    tree 3 250
     tree ttt222 46 ttt222-name
     tree ttt333 166 ttt333-name
+    block bbb222 11 bbb222-name
 
     # ttt222 contents
     tree 1 10
@@ -681,7 +687,7 @@ object:
     # ttt333 contents
     tree 2 104
     list lll111 93 lll111-name
-    block bbb222 11 bbb222-name
+    block bbb222 11 bbb222-eman
 
     # lll111 contents
     list 3 39
@@ -704,20 +710,21 @@ object:
 \caption{Sample Objects} \label{fig:sample-objects}
 \end{figure}
 
-For example, given the sample object graph in Figure \ref{fig:sample-object-graph}:
+For example, given the sample objects in Figures \ref{fig:sample-object-graph} and \ref{fig:sample-objects}:
 
 \begin{verbatim}
     # to access tree ttt333:
-    ccc111/<ttt333 name>
+    ccc111/ttt333-name
 
-    # to access block bbb111:
-    ccc111/<ttt222 name>/<bbb111 name>
+    # to access block bbb222:
+    ccc111/bbb222-name
+    ccc111/ttt333-name/bbb222-eman
 
     # to access list lll111:
-    ccc111/<ttt333 name>/<lll111 name>
+    ccc111/ttt333-name/lll111-name
 
     # to access block bbb555:
-    ccc111/<ttt333 name>/<lll111 name>/2
+    ccc111/ttt333-name/lll111-name/2
 \end{verbatim}
 
 Note that:
@@ -751,12 +758,13 @@ This is mitigated by:
 
 \begin{figure}
 \begin{verbatim}
-  tree 5 <size>
-  tree ttt222 <size> <ttt222 name>
-  block bbb111 <size> <ttt222 name>/<bbb111 name>
-  tree ttt333 <size> <ttt333 name>
-  list lll111 <size> <ttt222 name>/<lll111 name>
-  block bbb222 <size> <ttt333 name>/<bbb222 name>
+  tree 5 250
+  tree ttt222 46 ttt222-name
+  block bbb111 10 ttt222-name/bbb111-name
+  tree ttt333 166 ttt333-name
+  list lll111 93 ttt222-name/lll111-name
+  block bbb222 11 ttt333-name/bbb222-eman
+  block bbb222 11 bbb222-name
 \end{verbatim}
 \caption{Flattened Tree for \texttt{ttt111}} \label{fig:flattened-ttt111}
 \end{figure}
