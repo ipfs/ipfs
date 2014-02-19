@@ -223,7 +223,7 @@ if they are not interested in them directly.
 
 The protocol must also incentivize nodes to seed when they do not need
 anything in particular, as they might have the blocks others want. Thus,
-BitFlow nodes send blocks to their peers, optimistically expecting the debt to
+BitSwap nodes send blocks to their peers, optimistically expecting the debt to
 be repaid. But, leeches (free-loading nodes that never share) must be avoided. A simple credit-like system solves the problem:
 
 \begin{enumerate}
@@ -243,8 +243,8 @@ The differing strategies that BitSwap peers might employ have wildly different
 effects on the performance of the exchange as a whole. In BitTorrent,
 while a standard strategy is specified (tit-for-tat), a variety of others have
 been implemented, ranging from BitTyrant (sharing the least-possible),
-to BitThief (exploiting a vulnerability and never share), to PropShare (
-sharing proportionally). A range of strategies (good and malicious) could
+to BitThief (exploiting a vulnerability and never share), to PropShare
+(sharing proportionally). A range of strategies (good and malicious) could
 similarly be implemented by BitSwap peers. The choice of function, then, should
 aim to:
 
@@ -263,7 +263,7 @@ Let the \textit{debt ratio} $ r $ between a node and its peer be:
   \[ r = \dfrac{\texttt{bytes\_sent}}{\texttt{bytes\_recv}} \]
 
 Given $r$, let the probability of sending to a debtor be:
-  \[ 1 - P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(6-3r)} \]
+  \[ P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(6-3r)} \]
 
 As you can see in Table 1, this function drops off quickly as the nodes' \
 \textit{debt ratio} surpasses twice the established credit.
@@ -393,7 +393,7 @@ the connection. If -- acording to the receiver's \texttt{Ledger} -- the sender
 is not a trusted agent (transmission below zero, or large outstanding debt) the
 receiver may opt to ignore the request. This should be done probabilistically
 with an \texttt{ignore\_cooldown} timeout, as to allow errors to be corrected
-and attackers to be thwarted. BitSwap
+and attackers to be thwarted.
 
 If activating the connection, the receiver initializes a Peer object, with the
 local version of the \texttt{Ledger}, and setting the \texttt{last\_seen}
@@ -459,8 +459,8 @@ the future, if it is useful to do so.
         In case of a \texttt{send\_block} message, the receiver may check
         the block to see if it is needed and correct, and if so, use it.
         Regardless, all such out-of-order messages trigger a
-        \texttt{close(false)} message from the receiver, to force re-
-        initialization of the connection.
+        \texttt{close(false)} message from the receiver, to force
+        re-initialization of the connection.
 \end{itemize}
 
 % TODO: Rate Limiting / Node Silencing
