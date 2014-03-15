@@ -2,10 +2,10 @@
 all: gfs.pdf
 
 gfs.pdf: gfs.tex
-	pdflatex gfs.tex
+	pdflatex --shell-escape gfs.tex
 
 clean:
-	rm *.bbl *.aux *.dvi *.blg *.log
+	rm *.bbl *.aux *.dvi *.blg *.log *.gnuplot *.table
 
 watch:
 	-make
