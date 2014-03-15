@@ -260,12 +260,35 @@ One choice of function that works in practice is the sigmoid, scaled by a
 \textit{debt retio}:
 
 Let the \textit{debt ratio} $ r $ between a node and its peer be:
-  \[ r = \dfrac{\texttt{bytes\_sent}}{\texttt{bytes\_recv}} \]
+  \[ r = \dfrac{\texttt{bytes\_sent}}{\texttt{bytes\_recv} + 1} \]
 
 Given $r$, let the probability of sending to a debtor be:
-  \[ P\Big( \; send \; | \; r \;\Big) = \dfrac{1}{1 + exp(6-3r)} \]
+  \[ P\Big( \; send \; | \; r \;\Big) = 1 - \dfrac{1}{1 + exp(6-3r)} \]
 
-As you can see in Table 1, this function drops off quickly as the nodes' \
+\begin{figure}
+\centering
+\begin{tikzpicture}[domain=0:4]
+
+    \draw[->] (-0,0) -- (4.2,0) node[right] {$r$};
+    \draw[->] (0,-0) -- (0,1.20) node[above] {$P(\;send\;|\;r\;)$};
+
+    %ticks
+    \foreach \x in {0,...,4}
+      \draw (\x,1pt) -- (\x,-3pt)
+        node[anchor=north] {\x};
+
+    \foreach \y in {1,...,1}
+      \draw (1pt,\y) -- (-3pt,\y)
+        node[anchor=east] {\y};
+
+    \draw[color=red] plot[] function{1 - 1/(1+exp(6-3*x))};
+
+\end{tikzpicture}
+\caption{Probability of Sending as $r$ increases}
+\label{fig:psending-graph}
+\end{figure}
+
+As you can see in Figure \ref{fig:psending-graph}, this function drops off quickly as the nodes' \
 \textit{debt ratio} surpasses twice the established credit.
 The \textit{debt ratio} is a measure of trust:
 lenient to debts between nodes that have previously exchanged lots of data
@@ -277,25 +300,26 @@ nodes is temporarily unable to provide value, and
 (c) eventually chokes relationships that have deteriorated until they
 improve.
 
-\begin{center}
-\begin{tabular}{ >{$}c<{$} >{$}c<{$}}
-  P(\;send\;|\quad r) =& likelihood \\
-  \hline
-  \hline
-  P(\;send\;|\;0.0) =& 1.00 \\
-  P(\;send\;|\;0.5) =& 1.00 \\
-  P(\;send\;|\;1.0) =& 0.98 \\
-  P(\;send\;|\;1.5) =& 0.92 \\
-  P(\;send\;|\;2.0) =& 0.73 \\
-  P(\;send\;|\;2.5) =& 0.38 \\
-  P(\;send\;|\;3.0) =& 0.12 \\
-  P(\;send\;|\;3.5) =& 0.03 \\
-  P(\;send\;|\;4.0) =& 0.01 \\
-  P(\;send\;|\;4.5) =& 0.00 \\
+
+% \begin{center}
+% \begin{tabular}{ >{$}c<{$} >{$}c<{$}}
+%   P(\;send\;|\quad r) \;\;\;\;\;&  \\
+%   \hline
+%   \hline
+%   P(\;send\;|\;0.0) =& 1.00 \\
+%   P(\;send\;|\;0.5) =& 1.00 \\
+%   P(\;send\;|\;1.0) =& 0.98 \\
+%   P(\;send\;|\;1.5) =& 0.92 \\
+%   P(\;send\;|\;2.0) =& 0.73 \\
+%   P(\;send\;|\;2.5) =& 0.38 \\
+%   P(\;send\;|\;3.0) =& 0.12 \\
+%   P(\;send\;|\;3.5) =& 0.03 \\
+%   P(\;send\;|\;4.0) =& 0.01 \\
+%   P(\;send\;|\;4.5) =& 0.00 \\
 
 
-\end{tabular}
-\end{center}
+% \end{tabular}
+% \end{center}
 
 % TODO look into computing share of the bandwidth, as described in propshare.
 
