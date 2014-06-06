@@ -6,7 +6,7 @@ IPFS is a distributed file system that seeks to connect all computing devices wi
 
 IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. It sounds crazy. It _is_ crazy.
 
-#### IPFS IS A WORK IN PROGRESS
+#### ~~ IPFS IS A WORK IN PROGRESS ~~
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
