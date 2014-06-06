@@ -62,7 +62,7 @@ IPFS has a name service:
 
 Please Read:
 
-- [IPFS - The Permanent Web](https://github.com/jbenet/ipfs/raw/master/paper/ipfs-the-permanet-web.pdf)
+- [IPFS - The Permanent Web](https://github.com/jbenet/ipfs/blob/master/papers/ipfs/ipfs-the-permanent-web.pdf?raw=true)
 - IPNS - Mutable Names for IPFS
 
 ## Implementations
