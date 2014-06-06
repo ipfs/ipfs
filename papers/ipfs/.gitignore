@@ -2,3 +2,7 @@ gfs.pdf
 gfs.aux
 gfs.log
 texput.log
+ipfs.aux
+ipfs.log
+ipfs.pgf-plot.gnuplot
+ipfs.pgf-plot.table
