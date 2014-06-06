@@ -12,9 +12,7 @@
 
 \begin{document}
 
-% \conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
-
-\title{Galactic File System}
+\title{IPFS - Towards The Permanent Web (DRAFT 2)}
 \subtitle{}
 
 \numberofauthors{1}
@@ -39,16 +37,16 @@
 \maketitle
 \begin{abstract}
 The Galactic File System is a peer-to-peer distributed file system capable of
-sharing the same files with millions of nodes. GFS combines a distributed
+sharing the same files with millions of nodes. IPFS combines a distributed
 hashtable, cryptographic techniques, merkle trees, content-addressable
 storage, bittorrent, and tag-based filesystems to build a single massive
-file system shared between peers. GFS has no single point of failure, and
+file system shared between peers. IPFS has no single point of failure, and
 nodes do not need to trust each other.
 \end{abstract}
 
 \section{Introduction}
 
-[Motivate GFS. Introduce problems. Describe BitTorrent existing problems (
+[Motivate IPFS. Introduce problems. Describe BitTorrent existing problems (
 multiple files. one swarm. sloppy dht implementation.) Describe version
 control efforts. Propose potential combinations of good ideas.]
 
@@ -63,15 +61,15 @@ Ori,
 Coral]
 
 This paper introduces
-GFS, a novel peer-to-peer version-controlled filesystem;
-and BitSwap, the novel peer-to-peer block exchange protocol serving GFS.
+IPFS, a novel peer-to-peer version-controlled filesystem;
+and BitSwap, the novel peer-to-peer block exchange protocol serving IPFS.
 
 The rest of the paper is organized as follows.
 Section 2 describes the design of the filesystem.
 Section 3 evaluates various facets of the system under benchmark and common
 workloads.
-Section 4 presents and evaluates a world-wide deployment of GFS.
-Section 5 describes existing and potential applications of GFS.
+Section 4 presents and evaluates a world-wide deployment of IPFS.
+Section 5 describes existing and potential applications of IPFS.
 Section 6 discusses related and future work.
 
 Notation Notes:
@@ -83,9 +81,9 @@ Notation Notes:
 
 \section{Design}
 
-\subsection{GFS Nodes}
+\subsection{IPFS Nodes}
 
-GFS is a distributed file system where all nodes are the same. They are
+IPFS is a distributed file system where all nodes are the same. They are
 identified by a \texttt{NodeId}, the cryptographic hash of a public-key
 (note that \textit{checksum} will henceforth refer specifically to crypographic
 hashes of an object). Nodes also store their public and private keys. Clients
@@ -107,8 +105,8 @@ accrued benefits. It is recommended that nodes remain the same.
 
 
 Together, the
-nodes store the GFS files in local storage, and send files to each other.
-GFS implements its features by combining several subsystems with many
+nodes store the IPFS files in local storage, and send files to each other.
+IPFS implements its features by combining several subsystems with many
 desirable properties:
 
 \begin{enumerate}
@@ -127,12 +125,12 @@ desirable properties:
 
 These subsystems are not independent. They are well integrated and leverage
 their blended properties. However, it is useful to describe them separately,
-building the system from the bottom up. Note that all GFS nodes are identical,
+building the system from the bottom up. Note that all IPFS nodes are identical,
 and run the same program.
 
 \subsection{Distributed Sloppy Hash Table}
 
-First, GFS nodes implement a DSHT based on Kademlia and Coral to coordinate
+First, IPFS nodes implement a DSHT based on Kademlia and Coral to coordinate
 and identify which nodes can serve a particular block of data.
 
 \subsubsection{Kademlia DHT}
@@ -158,7 +156,7 @@ Kademlia is a DHT that provides:
 
 While some peer-to-peer filesystems store data blocks directly in DHTs,
 this ``wastes storage and bandwidth, as data must be stored at nodes where it
-is not needed''. Instead, GFS stores a list of peers that can provide the data block.
+is not needed''. Instead, IPFS stores a list of peers that can provide the data block.
 
 \subsubsection{Coral DSHT}
 
@@ -189,15 +187,15 @@ Coral extends Kademlia in three particularly important ways:
 \end{enumerate}
 
 
-\subsubsection{GFS DSHT}
+\subsubsection{IPFS DSHT}
 
-The GFS DSHT supports four RPC calls:
+The IPFS DSHT supports four RPC calls:
 
 
 
 \subsection{Block Exchange - BitSwap Protocol}
 
-The exchange of data in GFS happens by exchanging blocks with peers using a
+The exchange of data in IPFS happens by exchanging blocks with peers using a
 BitTorrent inspired protocol: BitSwap. Like BitTorrent, BitSwap peers are
 looking to acquire a set of blocks, and have blocks to offer in exchange.
 Unlike BitTorrent, BitSwap is not limited to the blocks in one torrent.
@@ -453,7 +451,7 @@ the sender. Both receiver and sender should update their ledgers accordingly,
 though the sender is either malfunctioning or attacking the receiver. Note that
 BitSwap expects to operate on a reliable transmission channel, so data errors
 -- which could lead to incorrect penalization of an honest sender -- are
-expected to be caught before the data is given to BitSwap. GFS uses the uTP
+expected to be caught before the data is given to BitSwap. IPFS uses the uTP
 protocol.
 
 \paragraph{Peer.close(Bool)}
@@ -491,12 +489,12 @@ the future, if it is useful to do so.
 
 \subsection{Object Model}
 
-The DHT and BitSwap allow GFS to form a massive peer-to-peer system for storing
+The DHT and BitSwap allow IPFS to form a massive peer-to-peer system for storing
 and distributing blocks quickly and robustly to users.
-GFS builds a filesystem out of this efficient block distribution system,
+IPFS builds a filesystem out of this efficient block distribution system,
 constructing files and directories out of blocks.
 
-Files in GFS are represented as a collection of inter-related objects, like in
+Files in IPFS are represented as a collection of inter-related objects, like in
 the version control system Git. Each object is addressed by the cryptographic
 hash of its contents (\texttt{Checksum}). The file objects are:
 
@@ -524,10 +522,10 @@ Notes:
 
 The \texttt{Block} object contains an addressable unit of data, and
 represents a file.
-GFS Blocks are like Git blobs or filesystem data blocks. They store the
+IPFS Blocks are like Git blobs or filesystem data blocks. They store the
 users' data. (The name \textit{block} is preferred over \textit{blob}, as the
-Git-inspired view of a \textit{blob} as a \textit{file} breaks down in GFS.
-GFS files can be represented by both \texttt{lists} and \texttt{blocks}.)
+Git-inspired view of a \textit{blob} as a \textit{file} breaks down in IPFS.
+IPFS files can be represented by both \texttt{lists} and \texttt{blocks}.)
 Format:
 \begin{verbatim}
 block <size>
@@ -539,9 +537,9 @@ block <size>
 \subsubsection{List Object}
 
 The \texttt{List} object represents a large or de-duplicated file made up of
-several GFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
+several IPFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
 an ordered sequence of \texttt{block} or \texttt{list} objects.
-In a sense, the GFS \texttt{List} functions like a filesystem file with
+In a sense, the IPFS \texttt{List} functions like a filesystem file with
 indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologies including linked lists and balanced trees are possible. Directed graphs where the same node appears in multiple places allow in-file deduplication. Cycles are not possible (enforced by hash addessing).
 Format:
 \begin{verbatim}
@@ -554,7 +552,7 @@ list <num objects> <size varint>
 
 \subsubsection{Tree Object}
 
-The \texttt{tree} object in GFS is similar to Git trees: it represents a
+The \texttt{tree} object in IPFS is similar to Git trees: it represents a
 directory, a list of checksums and names. The checksums reference \texttt{blob}
 or other \texttt{tree} objects. Note that traditional path naming
 is implemented entirely by the \texttt{tree} objects. \texttt{Blocks} and
@@ -569,7 +567,7 @@ tree <num objects> <size varint>
 
 \subsubsection{Commit Object}
 
-The \texttt{commit} object in GFS is similar to Git's. It represents a
+The \texttt{commit} object in IPFS is similar to Git's. It represents a
 snapshot in the version history of a \texttt{tree}. Note that user
 addresses are NodeIds (the hash of the public key).
 
@@ -592,17 +590,17 @@ it references are accessible, all preceding versions are retrievable and the
 full history of the filesystem changes can be accessed. This is a consequence
 of the \texttt{Git} object model and the graph it forms.
 
-The full power of the \texttt{Git} version control tools is available to GFS
+The full power of the \texttt{Git} version control tools is available to IPFS
 users. The object model is compatible (though not the same). The standard
-\texttt{Git} tools can be used on the \texttt{GFS} object graph after a
+\texttt{Git} tools can be used on the \texttt{IPFS} object graph after a
 conversion. Additionally, a fork of the tools is under development that will
 allow users to use them directly without conversion.
 
 \subsubsection{Object-level Cryptoraphy}
 
-GFS is equipped to handle object-level cryptographic operations. Any additional
+IPFS is equipped to handle object-level cryptographic operations. Any additional
 bytes are appended to the bottom of the object. This changes the object's hash
-(defining a different object, as it should). GFS exposes an API that
+(defining a different object, as it should). IPFS exposes an API that
 automatically verifies signatures or decrypts data.
 
 \begin{itemize}
@@ -612,7 +610,7 @@ automatically verifies signatures or decrypts data.
 
 \subsubsection{Merkle Trees}
 
-The object model in GFS forms a \textit{Merkle Tree}, which provides GFS with
+The object model in IPFS forms a \textit{Merkle Tree}, which provides IPFS with
 useful properties:
 
 \begin{enumerate}
@@ -634,7 +632,7 @@ useful properties:
 
 \subsubsection{Filesystem Paths}
 
-GFS exposes a slash-delimited path-based API. Paths work the same as in any
+IPFS exposes a slash-delimited path-based API. Paths work the same as in any
 traditional UNIX filesystem. Path subcomponents have different meanings per
 object:
 
@@ -772,11 +770,11 @@ This is mitigated by:
 \begin{itemize}
   \item \textbf{tree caching}: since all objects are hash-addressed, they
         can be cached indefinitely. Additionally, \texttt{trees} tend to be
-        small in size so GFS prioritizes caching them over \texttt{blocks}.
+        small in size so IPFS prioritizes caching them over \texttt{blocks}.
   \item \textbf{flattened trees}: for any given \texttt{tree}, a special
         \texttt{flattened tree} can be constructed to list all objects
         reachable from the \texttt{tree}. Figure \ref{flattened-ttt111} shows
-        an example of a flattened tree. While GFS does not construct flattened
+        an example of a flattened tree. While IPFS does not construct flattened
         trees by default, it provides a function for users. For example,
 \end{itemize}
 
@@ -796,13 +794,13 @@ This is mitigated by:
 
 \subsubsection{Publishing Objects}
 
-GFS is globally distributed. It is designed to allow the files of millions
+IPFS is globally distributed. It is designed to allow the files of millions
 of users to coexist together. The \textbf{DHT} with content-hash addressing
 allows publishing objects in a fair, secure, and entirely distributed way.
 Anyone can publish an object by simply adding its key to the DHT, adding
 themselves as a peer, and giving other users the object's hash.
 
-Additionally, the GFS root directory supports special functionality to
+Additionally, the IPFS root directory supports special functionality to
 allow namespacing and naming objects in a fair, secure, and distributed
 manner.
 \begin{itemize}
@@ -816,9 +814,9 @@ manner.
         a user can publish a \texttt{tree} or \texttt{commit} under their
         name, and others can verify it by checking the signature matches.
 
-  \item[(c)] If \texttt{/<domain>} is a valid domain name, GFS
-        looks up key \texttt{gfs} in its \texttt{DNS TXT} record. GFS
-        interprets the value as either an object hash or another GFS path:
+  \item[(c)] If \texttt{/<domain>} is a valid domain name, IPFS
+        looks up key \texttt{gfs} in its \texttt{DNS TXT} record. IPFS
+        interprets the value as either an object hash or another IPFS path:
         \begin{verbatim}
   # this DNS TXT record
   fs.benet.ai. TXT "gfs=/aabbccddeeffgg ..."
@@ -832,15 +830,15 @@ manner.
 
 \subsection{Local Objects}
 
-GFS clients require some \textit{local storage}, an external system
-on which to store and retrieve local raw data for the objects GFS manages.
+IPFS clients require some \textit{local storage}, an external system
+on which to store and retrieve local raw data for the objects IPFS manages.
 The type of storage depends on the node's use case.
 In most cases, this is simply a portion of disk space (either managed by
-the native filesystem, or directly by the GFS client). In others, non-
+the native filesystem, or directly by the IPFS client). In others, non-
 persistent caches for example, this storage is just a portion of RAM.
 
-Ultimately, all blocks available in GFS are in some node's
-\textit{local storage}. And when nodes open files with GFS, the objects are
+Ultimately, all blocks available in IPFS are in some node's
+\textit{local storage}. And when nodes open files with IPFS, the objects are
 downloaded and stored locally, at least temporarily. This provides
 fast lookup for some configurable amount of time thereafter.
 
