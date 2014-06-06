@@ -1,8 +1,8 @@
 
-all: gfs.pdf
+all: ipfs.pdf
 
-gfs.pdf: gfs.tex
-	pdflatex --shell-escape gfs.tex
+ipfs.pdf: ipfs.tex sig-alternate.cls
+	pdflatex --shell-escape ipfs.tex
 
 clean:
 	rm *.bbl *.aux *.dvi *.blg *.log *.gnuplot *.table
