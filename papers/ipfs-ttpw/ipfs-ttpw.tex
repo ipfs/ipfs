@@ -1,0 +1,92 @@
+\documentclass{sig-alternate}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning}
+
+\usepackage{array}
+\usepackage{amstext}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\begin{document}
+
+\title{IPFS - Toward The Permanet Web (DRAFT 1)}
+\subtitle{}
+
+\numberofauthors{1}
+
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+  Juan Benet\\
+  \email{juan@benet.ai}
+}
+
+\maketitle
+\begin{abstract}
+The InterPlanetary File System (IPFS) is a peer-to-peer distributed file system
+capable of sharing the same files with millions of nodes. It features a completely decentralized architecture, secure and efficient peer-to-peer block distribution, and a path-based naming system supporting distinguishing mutable and immutable names. The Web today still uses HTTP as the main data transport. IPFS is capable of evolving the web to take advantage of versioning, p2p distribution, cryptographic operations, and decentralized publishing. Moreover, it presents an opportunity to construct a web whose links do not rot, whose files are deduplicated globally, and whose websites are no longer ``sites''. IPFS is a step toward The Permanent Web.
+\end{abstract}
+
+\section{Introduction}
+
+[Motivate IPFS Web. Introduce problems. Describe HTTP problems. Link rot. Inefficient communication. Duplicate data. Integrity concerns. Centralized hosting. ]
+
+\section{IPFS and IPNS}
+
+Short overview of IPFS, IPNS, and their properties.
+
+\section{Permanence}
+
+\subsection{Permanent Links}
+\subsection{Deduplication}
+\subsection{Distributed Serving}
+\subsection{Publishing, Not Hosting}
+\subsection{New Applications}
+
+\section{Toward Permanence}
+
+Discuss implementation and deployment of the IPFS Web
+
+\subsection{Gateways}
+
+https?:\/\/ipfs.io\/<ipfs-path>
+
+\subsection{Browsers}
+\subsubsection{Javascript}
+\subsubsection{Extensions}
+\subsubsection{Browser}
+
+\subsection{Incentives}
+\subsubsection{Applications}
+\subsubsection{Cheaper Bandwidth}
+\subsubsection{Safer Browsing}
+\subsubsection{Safer Publishing}
+
+
+\section{The Permanent Future}
+
+
+
+\section{Acknowledgements}
+
+% Special thanks to David Mazieres, whose ideas are giants themselves.
+
+
+%\bibliographystyle{abbrv}
+%\bibliography{gfs}
+%\balancecolumns
+%\subsection{References}
+\end{document}
