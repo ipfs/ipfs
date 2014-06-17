@@ -1,9 +1,12 @@
 
-all: ipfs-the-permanent-web.pdf
+SHORT=ipfs-cap2pfs
+LONG=ipfs-p2p-file-system
 
-ipfs-the-permanent-web.pdf: ipfs.tex sig-alternate.cls
-	pdflatex --shell-escape ipfs.tex
-	mv ipfs.pdf ipfs-the-permanent-web.pdf
+all: $(LONG).pdf
+
+$(LONG).pdf: $(SHORT).tex sig-alternate.cls
+	pdflatex --shell-escape $(SHORT).tex
+	mv $(SHORT).pdf $(LONG).pdf
 
 clean:
 	rm *.bbl *.aux *.dvi *.blg *.log *.gnuplot *.table

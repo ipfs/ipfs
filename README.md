@@ -62,8 +62,9 @@ IPFS has a name service:
 
 Please Read:
 
-- [IPFS - The Permanent Web](https://github.com/jbenet/ipfs/blob/master/papers/ipfs/ipfs-the-permanent-web.pdf?raw=true)
+- [IPFS - Peer-to-Peer File System](https://github.com/jbenet/ipfs/blob/master/papers/cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - IPNS - Mutable Names for IPFS
+- IPFS - Toward The Permanent Web
 
 ## Implementations
 
