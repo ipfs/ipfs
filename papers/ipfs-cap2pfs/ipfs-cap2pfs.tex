@@ -666,6 +666,32 @@ IPFS is equipped to handle object-level cryptographic operations. An encrypted o
 
 Cryptographic operations change the object's hash (defining a different object, as it should). IPFS automatically verifies signatures, and can decrypt data with user-specified keychains. Links of encrypted objects are protected as well, making traversal impossible without a decryption key. It is possible to have a parent object encrypted under one key, and a child under another or not at all. This allows securing links to shared objects.
 
+\subsection{Local Objects}
+
+IPFS clients require some \textit{local storage}, an external system
+on which to store and retrieve local raw data for the objects IPFS manages.
+The type of storage depends on the node's use case.
+In most cases, this is simply a portion of disk space (either managed by
+the native filesystem, by a key-value store such as leveldb \cite{leveldb}, or
+directly by the IPFS client). In others, non-persistent caches for example,
+this storage is just a portion of RAM.
+
+Ultimately, all blocks available in IPFS are in some node's
+\textit{local storage}. When users request objects, they are
+found, downloaded, and stored locally, at least temporarily. This provides
+fast lookup for some configurable amount of time thereafter.
+
+\subsubsection{Object Pinning}
+
+Nodes who wish to ensure the survival of particular objects can do so by
+\texttt{pinning} the objects. This ensures the objects are kept in the node's
+\textit{local storage}. Pinning can be done recursively, to pin down all
+linked descendent objects as well. All objects pointed to are then stored
+locally. This is particularly useful for nodes wishing to keep all their own
+files, or backup references to others. This also makes IPFS a Web where links
+are \textit{permanent}, and Objects can ensure the survival of others they
+point to.
+
 
 \subsection{Files}
 
@@ -932,29 +958,6 @@ manner.
 
 \end{itemize}
 
-
-\subsection{Local Objects}
-
-IPFS clients require some \textit{local storage}, an external system
-on which to store and retrieve local raw data for the objects IPFS manages.
-The type of storage depends on the node's use case.
-In most cases, this is simply a portion of disk space (either managed by
-the native filesystem, or directly by the IPFS client). In others, non-
-persistent caches for example, this storage is just a portion of RAM.
-
-Ultimately, all blocks available in IPFS are in some node's
-\textit{local storage}. And when nodes open files with IPFS, the objects are
-downloaded and stored locally, at least temporarily. This provides
-fast lookup for some configurable amount of time thereafter.
-
-\subsubsection{Object Pinning}
-
-Nodes who wish to ensure the survival of particular objects can do so by
-\texttt{pinning} the objects. This ensures the objects are kept in the node's
-\textit{local storage}. Pinning can be done recursively, to pin down all
-descendent objects as well. For example, recursively pinning a \texttt{tree}
-or \texttt{commit} ensures \textit{all} objects pointed to are stored locally
-too. This is particularly useful for nodes wishing to keep all their own files.
 
 
 \section{Acknowledgments}
