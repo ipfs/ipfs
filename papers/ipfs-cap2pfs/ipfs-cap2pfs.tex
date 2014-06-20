@@ -582,10 +582,10 @@ The IPFS Merkle DAG is an extremely flexible way to store data. The only require
 
   \item List all object references in an object. For example:
 \begin{verbatim}
-> ipfs ls /XLaoVHd834v62UsW56jew8Mp6FgZBXnZEeL
-XLMLiUaCc7jh3eGFsNR8AhvRSSFySSvTaNb 47 bam
-XLMCA8WXBNRBwFhzRnHgHFLwGmQzkAQELH7 6 bar
-XLM1ZETht3wv8vUPXMkx3JZGP5T9txAz782 6 baz
+> ipfs ls /XLZ1625Jjn7SubMDgEyeaynFuR84ginqvzb
+XLYkgq61DYaQ8NhkcqyU7rLcnSa7dSHQ16x 189458 less
+XLHBNmRQ5sJJrdMPuu48pzeyTtRo39tNDR5 19441 script
+XLF4hwVHsVuZ78FZK6fozf8Jj9WEURMbCX4 5286 template
 
 <object multihash> <object size> <link name>
 \end{verbatim}
@@ -615,7 +615,31 @@ A raw data field and a common link structure are the necessary components for co
 (f) cryptocurrency blockchains.
 These can all be modeled on top of the IPFS Merkle DAG, which allows any of these systems to use IPFS as a transport protocol for more complex applications.
 
-\subsubsection{Object-level Cryptoraphy}
+\subsubsection{Paths}
+
+IPFS objects can be traversed with a string path API. Paths work as they do in traditional UNIX filesystems and the Web. The Merkle DAG links make traversing it easy. Note that full paths in IPFS are of the form:
+
+\begin{verbatim}
+  # format
+  /ipfs/<hash-of-object>/<name-path-to-object>
+
+  # example
+  /ipfs/XLYkgq61DYaQ8NhkcqyU7rLcnSa7dSHQ16x/foo.txt
+\end{verbatim}
+
+The \texttt{/ipfs} prefix allows mounting into existing systems at a standard mount point without conflict (mount point names are of course configurable). The second path component (first within IPFS) is the hash of an object. This is always the case, as there is no global root. A root object would have the impossible task of handling consistency of millions of objects in a distributed (and possibly disconnected) environment. Instead, we simulate the root with content addressing. All objects are always accessible via their hash. Note this means that given three objects in path \texttt{<foo>/bar/baz}, the last object is accessible by all:
+
+\begin{verbatim}
+    /ipfs/<hash-of-foo>/bar/baz
+    /ipfs/<hash-of-bar>/baz
+    /ipfs/<hash-of-baz>
+\end{verbatim}
+
+\subsubsection{Publishing Objects}
+
+IPFS is globally distributed. It is designed to allow the files of millions of users to coexist together. The \textbf{DHT} with content-hash addressing allows publishing objects in a fair, secure, and entirely distributed way. Anyone can publish an object by simply adding its key to the DHT, adding themselves as a peer, and giving other users the object's path. Note that Objects are essentially immutable, just like in Git. New versions hash differently, and thus are new objects. Tracking versions is the job of additional versioning objects.
+
+\subsubsection{Object-level Cryptography}
 
 IPFS is equipped to handle object-level cryptographic operations. An encrypted or signed object is wrapped in a special frame that allows encryption or verification of the raw bytes.
 
@@ -640,18 +664,12 @@ IPFS is equipped to handle object-level cryptographic operations. An encrypted o
     }
 \end{verbatim}
 
-Note this changes the object's hash (defining a different object, as it should). Also, IPFS automatically verifies signatures and can decrypt data with user-specified keychains.
+Cryptographic operations change the object's hash (defining a different object, as it should). IPFS automatically verifies signatures, and can decrypt data with user-specified keychains. Links of encrypted objects are protected as well, making traversal impossible without a decryption key. It is possible to have a parent object encrypted under one key, and a child under another or not at all. This allows securing links to shared objects.
 
 
 \subsection{Files}
 
-IPFS defines a set of objects to build a versioned filesystem on top of the
-MerkleDAG, constructing files and directories out of Objects.
-
-
-Files in IPFS are represented as a collection of inter-related objects, like in
-the version control system Git. Each object is addressed by the cryptographic
-hash of its contents (\texttt{Checksum}). The file objects are:
+IPFS also defines a set of objects for modeling a versioned filesystem on top of the Merkle DAG. This object model is similar to Git's:
 
 \begin{enumerate}
   \item \texttt{block}: a variable-size block of data.
@@ -660,117 +678,46 @@ hash of its contents (\texttt{Checksum}). The file objects are:
   \item \texttt{commit}: a snapshot in the version history of a tree.
 \end{enumerate}
 
-We hoped to use the Git object formats exactly, but had to depart to introduce
-certain features useful in a distributed filesystem, for example fast size
-lookups (aggregate byte sizes have been added to objects), large file
-deduplication and versioning (adding a \texttt{list} object), and more.
-However, our objects are perfectly compatible with Git and
-conversion between the two does not lose any information.
+I hoped to use the Git object formats exactly, but had to depart to introduce certain features useful in a distributed filesystem, namely (a) fast size lookups (aggregate byte sizes have been added to objects), (b) large file deduplication (adding a \texttt{list} object), and (c) embedding of \texttt{commits} into \texttt{trees}. However, IPFS File objects are close enough to Git that conversion between is possible. Also, a set of Git objects can be introduced to convert between the two without losing any information (unix file permissions, etc).
 
-Notes:
-\begin{itemize}
-  \item \texttt{varint} is a variable size int, as in protocol-buffers.
-  \item objects are serialized using \texttt{capnp}.
-\end{itemize}
+Notation: File object formats below use JSON. Note that this structure is actually binary encoded using protobufs. Though, ipfs includes import/export to JSON.
 
-\subsubsection{Block Object}
+\subsubsection{File Object: \texttt{blob}}
 
-The \texttt{Block} object contains an addressable unit of data, and
-represents a file.
-IPFS Blocks are like Git blobs or filesystem data blocks. They store the
-users' data. (The name \textit{block} is preferred over \textit{blob}, as the
-Git-inspired view of a \textit{blob} as a \textit{file} breaks down in IPFS.
-IPFS files can be represented by both \texttt{lists} and \texttt{blocks}.)
-Format:
-\begin{verbatim}
-block <size>
-<block data bytes>
-...
-\end{verbatim}
-
-
-\subsubsection{List Object}
-
-The \texttt{List} object represents a large or de-duplicated file made up of
-several IPFS \texttt{Blocks} concatenated together. \texttt{Lists} contain
-an ordered sequence of \texttt{block} or \texttt{list} objects.
-In a sense, the IPFS \texttt{List} functions like a filesystem file with
-indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologies including linked lists and balanced trees are possible. Directed graphs where the same node appears in multiple places allow in-file deduplication. Cycles are not possible (enforced by hash addessing).
-Format:
-\begin{verbatim}
-list <num objects> <size varint>
-<list or block> <checksum> <size varint>
-<list or block> <checksum> <size varint>
-...
-\end{verbatim}
-
-
-\subsubsection{Tree Object}
-
-The \texttt{tree} object in IPFS is similar to Git trees: it represents a
-directory, a list of checksums and names. The checksums reference \texttt{blob}
-or other \texttt{tree} objects. Note that traditional path naming
-is implemented entirely by the \texttt{tree} objects. \texttt{Blocks} and
-\texttt{lists} are only addressed by their \texttt{checksums}.
-Format:
-\begin{verbatim}
-tree <num objects> <size varint>
-<tree or list or block> <checksum> <size varint> <name>
-<tree or list or block> <checksum> <size varint> <name>
-...
-\end{verbatim}
-
-\subsubsection{Commit Object}
-
-The \texttt{commit} object in IPFS is similar to Git's. It represents a
-snapshot in the version history of a \texttt{tree}. Note that user
-addresses are NodeIds (the hash of the public key).
+The \texttt{blob} object contains an addressable unit of data, and
+represents a file. IPFS Blocks are like Git blobs or filesystem data blocks. They store the users' data. Note that IPFS files can be represented by both \texttt{lists} and \texttt{blobs}. Blobs have no links.
 
 \begin{verbatim}
-commit <size varint>
-parent <commit checksum>
-tree <tree checksum>
-author <author public key> <ISO UTC date>
-committer <committer public key> <ISO UTC date>
-<commit message>
+{
+  "data": "some data here",
+  // blobs have no links
+}
 \end{verbatim}
 
-\subsubsection{Version control}
+\subsubsection{File Object: \texttt{list}}
 
-The \texttt{commit} object represents a particular snapshot in the version
-history of a tree. Comparing the \texttt{trees} and children objects of two
-different commits reveals the differences between two versions of the
-filesystem. As long as a single \texttt{commit} and all the children objects
-it references are accessible, all preceding versions are retrievable and the
-full history of the filesystem changes can be accessed. This is a consequence
-of the \texttt{Git} object model and the graph it forms.
+The \texttt{list} object represents a large or de-duplicated file made up of
+several IPFS \texttt{blobs} concatenated together. \texttt{lists} contain
+an ordered sequence of \texttt{blob} or \texttt{list} objects.
+In a sense, the IPFS \texttt{list} functions like a filesystem file with
+indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologies including linked lists and balanced trees are possible. Directed graphs where the same node appears in multiple places allow in-file deduplication. Of course, cycles are not possible, as enforced by hash addessing.
 
-The full power of the \texttt{Git} version control tools is available to IPFS
-users. The object model is compatible (though not the same). The standard
-\texttt{Git} tools can be used on the \texttt{IPFS} object graph after a
-conversion. Additionally, a fork of the tools is under development that will
-allow users to use them directly without conversion.
+\begin{verbatim}
+{
+  "data": ["blob", "list", "blob"],
+    // lists have an array of object types as data
+  "links": [
+    { "hash": "XLYkgq61DYaQ8NhkcqyU7rLcnSa7dSHQ16x",
+      "size": 189458 },
+    { "hash": "XLHBNmRQ5sJJrdMPuu48pzeyTtRo39tNDR5",
+      "size": 19441 },
+    { "hash": "XLWVQDqxo9Km9zLyquoC9gAP8CL1gWnHZ7z",
+      "size": 5286 }
+    // lists have no names in links
+  ]
+}
+\end{verbatim}
 
-
-\subsection{The Filesystem}
-
-\subsubsection{Filesystem Paths}
-
-IPFS exposes a slash-delimited path-based API. Paths work the same as in any
-traditional UNIX filesystem. Path subcomponents have different meanings per
-object:
-
-\begin{center}
-\begin{tabular}{ll}
-  \texttt{object} & subcomponent meaning \\
-  \hline
-  \hline
-  \texttt{block}  & N/A (no children) \\
-  \texttt{list}   & integer index \\
-  \texttt{tree}   & string name \\
-  \texttt{commit} & string name (in tree) \\
-\end{tabular}
-\end{center}
 
 \begin{figure}
 \centering
@@ -814,75 +761,107 @@ object:
 \caption{Sample Object Graph} \label{fig:sample-object-graph}
 
 \begin{verbatim}
-    # ccc111 contents
-    commit 313
-    tree ttt111
-    author <author public key> <ISO UTC date>
-    committer <committer public key> <ISO UTC date>
+    > ipfs file-cat <ccc111-hash> --json
+    {
+      "data": {
+        "type": "tree",
+        "date": "2014-09-20 12:44:06Z",
+        "message": "This is a commit message."
+      },
+      "links": [
+        { "hash": "<ccc000-hash>",
+          "name": "parent", "size": 25309 },
+        { "hash": "<ttt111-hash>",
+          "name": "object", "size": 5198 },
+        { "hash": "<aaa111-hash>",
+          "name": "author", "size": 109 }
+      ]
+    }
 
-    # ttt111 contents
-    tree 3 250
-    tree ttt222 46 ttt222-name
-    tree ttt333 166 ttt333-name
-    block bbb222 11 bbb222-name
+    > ipfs file-cat <ttt111-hash> --json
+    {
+      "data": ["tree", "tree", "blob"],
+      "links": [
+        { "hash": "<ttt222-hash>",
+          "name": "ttt222-name", "size": 1234 },
+        { "hash": "<ttt333-hash>",
+          "name": "ttt333-name", "size": 3456 },
+        { "hash": "<bbb222-hash>",
+          "name": "bbb222-name", "size": 22 }
+      ]
+    }
 
-    # ttt222 contents
-    tree 1 10
-    block bbb111 10 bbb111-name
-
-    # ttt333 contents
-    tree 2 104
-    list lll111 93 lll111-name
-    block bbb222 11 bbb222-eman
-
-    # lll111 contents
-    list 3 39
-    block bbb333 12
-    block bbb444 13
-    block bbb555 14
-
-    # bbb111 contents      # block bbb222 contents
-    block 1                block 2
-    1                      22
-
-    # bbb333 contents      # block bbb444 contents
-    block 3                block 4
-    333                    4444
-
-    # bbb555 contents
-    block 5
-    55555
+    > ipfs file-cat <bbb222-hash> --json
+    {
+      "data": "blob222 data",
+      "links": []
+    }
 \end{verbatim}
 \caption{Sample Objects} \label{fig:sample-objects}
 \end{figure}
 
-For example, given the sample objects in Figures \ref{fig:sample-object-graph} and \ref{fig:sample-objects}:
+
+\subsubsection{File Object: \texttt{tree}}
+
+The \texttt{tree} object in IPFS is similar to Git trees: it represents a
+directory, a map of names to hashes. The hashes reference \texttt{blobs}, \texttt{lists}, other \texttt{trees}, or \texttt{commits}. Note that traditional path naming is already implemented by the Merkle DAG. Though, collapsing \texttt{commits} and \texttt{lists}, and representing only \texttt{trees} as directories is achieved by a special mounting application which exposes the objects through a different file system interface.
 
 \begin{verbatim}
-    # to access tree ttt333:
-    ccc111/ttt333-name
-
-    # to access block bbb222:
-    ccc111/bbb222-name
-    ccc111/ttt333-name/bbb222-eman
-
-    # to access list lll111:
-    ccc111/ttt333-name/lll111-name
-
-    # to access block bbb555:
-    ccc111/ttt333-name/lll111-name/2
+{
+  "data": ["blob", "list", "blob"],
+    // trees have an array of object types as data
+  "links": [
+    { "hash": "XLYkgq61DYaQ8NhkcqyU7rLcnSa7dSHQ16x",
+      "name": "less", "size": 189458 },
+    { "hash": "XLHBNmRQ5sJJrdMPuu48pzeyTtRo39tNDR5",
+      "name": "script", "size": 19441 },
+    { "hash": "XLWVQDqxo9Km9zLyquoC9gAP8CL1gWnHZ7z",
+      "name": "template", "size": 5286 }
+    // trees do have names
+  ]
+}
 \end{verbatim}
 
-Note that:
-\begin{itemize}
-  \item[(a)] blocks have no children \\
-             \texttt{.../<block>/<child>} is impossible
-  \item[(b)] commits implicitly access their trees \\
-             \texttt{.../<commit>/name}
-             looks up \texttt{"name"} in \texttt{<commit>}'s \texttt{<tree>}
-  \item[(c)] \texttt{list} children are accessed by their index \\
-             \texttt{.../<list>/4} looks up the fifth block.
-\end{itemize}
+
+\subsubsection{File Object: \texttt{commit}}
+
+The \texttt{commit} object in IPFS represents a snapshot in the version history of any object. It is similar to Git's, but can reference any type of object. It also links to author objects.
+
+\begin{verbatim}
+{
+  "data": {
+    "type": "tree",
+    "date": "2014-09-20 12:44:06Z",
+    "message": "This is a commit message."
+  },
+  "links": [
+    { "hash": "XLa1qMBKiSEEDhojb9FFZ4tEvLf7FEQdhdU",
+      "name": "parent", "size": 25309 },
+    { "hash": "XLGw74KAy9junbh28x7ccWov9inu1Vo7pnX",
+      "name": "object", "size": 5198 },
+    { "hash": "XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm",
+      "name": "author", "size": 109 }
+  ]
+}
+\end{verbatim}
+
+\subsubsection{Version control}
+
+The \texttt{commit} object represents a particular snapshot in the version
+history of an object. Comparing the object (and children) of two
+different commits reveals the differences between two versions of the
+filesystem. As long as a single \texttt{commit} and all the children objects
+it references are accessible, all preceding versions are retrievable and the
+full history of the filesystem changes can be accessed. This is a consequence
+of the Merkle DAG object model.
+
+The full power of the \texttt{Git} version control tools is available to IPFS users. The object model is compatible, though not the same. It is possible to (a) build a version of the \texttt{Git} tools modified to use the \texttt{IPFS} object graph, (b) build a mounted FUSE filesystem that mounts an IPFS \texttt{tree} as a Git repo, translating Git filesystem read/writes to the IPFS formats.
+
+
+\subsubsection{Filesystem Paths}
+
+As we saw in the Merkle DAG section, IPFS objects can be traversed with a string path API. The IPFS File Objects are designed to make mounting IPFS onto a UNIX filesystem simpler. They restrict \texttt{trees} to have no data, in order to represent them as directories, and \texttt{commits} can either be represented as directories too, or hidden from the filesystem entirely.
+
 
 \paragraph{Path Lookup Performance}
 
@@ -894,35 +873,37 @@ This is mitigated by:
 \begin{itemize}
   \item \textbf{tree caching}: since all objects are hash-addressed, they
         can be cached indefinitely. Additionally, \texttt{trees} tend to be
-        small in size so IPFS prioritizes caching them over \texttt{blocks}.
+        small in size so IPFS prioritizes caching them over \texttt{blobs}.
   \item \textbf{flattened trees}: for any given \texttt{tree}, a special
         \texttt{flattened tree} can be constructed to list all objects
-        reachable from the \texttt{tree}. Figure \ref{flattened-ttt111} shows
-        an example of a flattened tree. While IPFS does not construct flattened
-        trees by default, it provides a function for users. For example,
+        reachable from the \texttt{tree}. Names in the \texttt{flattened tree}
+        would really be paths parting from the original tree, with slashes.
 \end{itemize}
 
-\begin{figure}
+For example, \texttt{flattened tree} for \texttt{ttt111} above:
+
 \begin{verbatim}
-  tree 5 250
-  tree ttt222 46 ttt222-name
-  block bbb111 10 ttt222-name/bbb111-name
-  tree ttt333 166 ttt333-name
-  list lll111 93 ttt222-name/lll111-name
-  block bbb222 11 ttt333-name/bbb222-eman
-  block bbb222 11 bbb222-name
+{
+"data":
+  ["tree", "blob", tree", "list", "blob" "blob"],
+"links": [
+  { "hash": "<ttt222-hash>", "size": 1234
+    "name": "ttt222-name" },
+  { "hash": "<bbb111-hash>", "size": 123,
+    "name": "ttt222-name/bbb111-name" },
+  { "hash": "<ttt333-hash>", "size": 3456,
+    "name": "ttt333-name" },
+  { "hash": "<lll111-hash>", "size": 587,
+    "name": "ttt333-name/lll111-name"},
+  { "hash": "<bbb222-hash>", "size": 22,
+    "name": "ttt333-name/lll111-name/bbb222-name" },
+  { "hash": "<bbb222-hash>", "size": 22
+    "name": "bbb222-name" }
+] }
 \end{verbatim}
-\caption{Flattened Tree for \texttt{ttt111}} \label{fig:flattened-ttt111}
-\end{figure}
 
 
-\subsubsection{Publishing Objects}
-
-IPFS is globally distributed. It is designed to allow the files of millions
-of users to coexist together. The \textbf{DHT} with content-hash addressing
-allows publishing objects in a fair, secure, and entirely distributed way.
-Anyone can publish an object by simply adding its key to the DHT, adding
-themselves as a peer, and giving other users the object's hash.
+\subsection{Naming}
 
 Additionally, the IPFS root directory supports special functionality to
 allow namespacing and naming objects in a fair, secure, and distributed
