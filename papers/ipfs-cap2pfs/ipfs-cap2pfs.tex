@@ -18,17 +18,6 @@
 \numberofauthors{1}
 
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
 \alignauthor
   Juan Benet\\
   \email{juan@benet.ai}
@@ -74,74 +63,26 @@ and BitSwap, the novel peer-to-peer block exchange protocol serving IPFS.
 
 Notation Notes:
 (a) data structures are specified in Go syntax,
-(b) rpc protocols are specified in capnp interface,
-(c) object formats are specified in text with <fields>.
+(b) rpc protocols are specified in capnp interfaces,
+(c) wire protocols are specified in capnp schemas.
 
+\section{Background}
 
+This section reviews important properties of successful peer-to-peer systems, which IPFS combines.
 
-\section{Design}
+\subsection{Distributed Hash Tables}
 
-\subsection{IPFS Nodes}
-
-IPFS is a distributed file system where all nodes are the same. They are
-identified by a \texttt{NodeId}, the cryptographic hash of a public-key
-(note that \textit{checksum} will henceforth refer specifically to crypographic
-hashes of an object). Nodes also store their public and private keys. Clients
-are free to instatiate a new node on every launch, though that means losing any
-accrued benefits. It is recommended that nodes remain the same.
-
-\begin{verbatim}
-      type Checksum string
-      type PublicKey string
-      type PrivateKey string
-      type NodeId Checksum
-
-      type Node struct {
-        nodeid NodeID
-        pubkey PublicKey
-        prikey PrivateKey
-      }
-\end{verbatim}
-
-
-Together, the
-nodes store the IPFS files in local storage, and send files to each other.
-IPFS implements its features by combining several subsystems with many
-desirable properties:
-
-\begin{enumerate}
-  \item A Coral-based \textbf{Distributed Sloppy Hash Table}\\
-        (DSHT) to link and coordinate peer-to-peer nodes.
-        Described in Section 2.2.
-  \item A Bittorrent-like peer-to-peer \textbf{Block Exchange} (BE) distribute
-        Blocks efficiently, and to incentivize replication.
-        Described in Section 2.3.
-  \item A Git-inspired \textbf{Object Model} (OM) to represent the filesystem.
-        Described in Section 2.4.
-  \item An SFS-based self-certifying name system.
-        Described in Section 2.5.
-\end{enumerate}
-
-
-These subsystems are not independent. They are well integrated and leverage
-their blended properties. However, it is useful to describe them separately,
-building the system from the bottom up. Note that all IPFS nodes are identical,
-and run the same program.
-
-\subsection{Distributed Sloppy Hash Table}
-
-First, IPFS nodes implement a DSHT based on Kademlia and Coral to coordinate
-and identify which nodes can serve a particular block of data.
+Distributed Hash Tables (DHTs) are widely used to coordinate and maintain metadata about peer-to-peer systems. For example, the BitTorrent MainlineDHT tracks sets of peers part of a torrent swarm.
 
 \subsubsection{Kademlia DHT}
 
-Kademlia is a DHT that provides:
+Kademlia \cite{Kademlia} is a popular DHT that provides:
 
 \begin{enumerate}
 
   \item Efficient lookup through massive networks:
         queries on average contact $ \ceil{log_2 (n)} $ nodes.
-        (e.g. $20$ hops for a network of $10000000$ nodes).
+        (e.g. $20$ hops for a network of $10,000,000$ nodes).
 
   \item Low coordination overhead: it optimizes the number of
         control messages it sends to other nodes.
@@ -154,13 +95,12 @@ Kademlia is a DHT that provides:
 
  \end{enumerate}
 
-While some peer-to-peer filesystems store data blocks directly in DHTs,
-this ``wastes storage and bandwidth, as data must be stored at nodes where it
-is not needed''. Instead, IPFS stores a list of peers that can provide the data block.
 
 \subsubsection{Coral DSHT}
 
-Coral extends Kademlia in three particularly important ways:
+While some peer-to-peer filesystems store data blocks directly in DHTs,
+this ``wastes storage and bandwidth, as data must be stored at nodes where it
+is not needed'' \cite{Coral}. Coral extends Kademlia in three particularly important ways:
 
 \begin{enumerate}
 
@@ -186,8 +126,108 @@ Coral extends Kademlia in three particularly important ways:
 
 \end{enumerate}
 
+\subsubsection{S/Kademlia DHT}
+
+S/Kademlia extends Kademlia to protect against malicious attacks:
+
+\begin{enumerate}
+
+  \item S/Kademlia provides schemes to secure \texttt{NodeId} generation,
+        and prevent Sybill attacks. It requires nodes to create a PKI key pair, derive their identity from it, and sign their messages to each other. One scheme includes a proof-of-work crypto puzzle to make generating Sybills expensive.
+
+  \item S/Kademlia nodes lookup values over disjoint paths, in order to
+        ensure honest nodes can connect to each other in the presence of a large fraction of adversaries in the network. S/Kademlia achieves a success rate of 0.85 even with an adversarial fraction as large as half of the nodes.
+
+\end{enumerate}
+
+\subsection{Block Exchanges - BitTorrent}
+
+BitTorrent \cite{BitTorrent} is a widely successful peer-to-peer filesharing system, which succeeds in coordinating networks of untrusting peers (swarms) to cooperate in distributing pieces of files to each other. Key BitTorrent features that inform IPFS design:
+
+\begin{enumerate}
+  \item BitTorrent's data exchange protocol uses a quasi tit-for-tat strategy
+        which rewards nodes that contribute to each other, and punishes nodes who would only leech others' resources.
+
+  \item BitTorrent peers track the availability of file pieces, prioritizing
+        sending rarest-first. This takes load off seeds, making non-seed peers capable of trading with each other.
+
+  \item BitTorrent's standard tit-for-tat is vulnerable to some exploitative
+        bandwidth sharing strategies. PropShare \cite{propshare} is a different peer bandwidth allocation strategy that better resists exploitative strategies, and improves the performance of swarms.
+
+\end{enumerate}
+
+\subsection{Version Control Systems - Git}
+
+Version Control Systems provide facilities to model files changing over time and distribute different versions efficiently. The popular version control system Git provides a powerful Merkle DAG \footnote{Merkle Directed Acyclic Graph -- similar but more general construction than a Merkle Tree. Deduplicated, does not need to be balanced, and non-leaf nodes contain data.} object model that captures changes to a filesystem tree in a distributed-friendly way.
+
+\begin{enumerate}
+  \item Immutable objects represent Files (\texttt{blob}), Directories (\texttt{tree}), and Changes (\texttt{commit}).
+  \item Objects are content-addressed, by the cryptographic hash of their contents.
+  \item Links to other objects are embedded, forming a Merkle DAG. This
+  provides many useful integrity and workflow properties.
+  \item Most versioning metadata (branches, tags, etc) are simply pointer references, and thus inexpensive to create and update.
+  \item Version changes only update references or add objects.
+  \item Distributing version changes to other users is simply transferring objects and updating remote references.
+\end{enumerate}
+
+
+\section{Design}
+
+IPFS is a distributed file system which synthesizes successful ideas from previous peer-to-peer sytems, including DHTs, BitTorrent, Git, and SFS. The contribution of IPFS is simplifying, evolving, and connecting proven techniques into a single cohesive system, greater than the sum of its parts. IPFS presents a new platform for writing and deploying applications, a new system for distributing and versioning large data, and could evolve the web itself.
+
+\subsection{IPFS Nodes}
+
+IPFS is peer-to-peer; no nodes are privileged. Nodes are identified by a \texttt{NodeId}, the cryptographic hash of a public-key (note that \textit{checksum} will henceforth refer specifically to cryptographic hashes of an object), created as in \cite{skademlia}. Nodes store their public and private keys. Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
+
+\begin{verbatim}
+      type Checksum string
+      type PublicKey string
+      type PrivateKey string
+      type NodeId Checksum
+
+      type Node struct {
+        nodeid NodeID
+        pubkey PublicKey
+        prikey PrivateKey
+      }
+\end{verbatim}
+
+IPFS nodes store IPFS objects (which represent files and other data structures) in local storage. Nodes transfer objects to each other. The IPFS Protocol is divided into a stack of sub-protocols responsible for different functionality:
+
+\begin{enumerate}
+  \item \textbf{Network} - manages connections to other peers, using various underlying network protocols. Configurable. Described in Section 2.2.
+
+  \item \textbf{Routing} - maintains information to locate specific peers and objects. Responds to both local and remote queries. Defaults to a DHT, but is swappable. Described in Section 2.3.
+
+  \item \textbf{Exchange} - a block exchange protocol (BitSwap) that governs efficient block distribution. Modelled as a market, weakly intentivizes replication. Trade Strategies swappable. Described in Section 2.4.
+
+  \item \textbf{Objects} - a Merkle DAG of content-addressed immutable objects with links. Used to represent arbitrary datastructures, e.g. file hierarchies and communication systems. Described in Section 2.5.
+
+  \item \textbf{Files} - a versioned file-system inspired by Git. Described in Section 2.6.
+
+  \item \textbf{Naming} - A self-certifying mutable name system. Described in Section 2.7.
+\end{enumerate}
+
+
+These subsystems are not independent. They are well integrated and leverage
+their blended properties. However, it is useful to describe them separately,
+building the protocol stack from the bottom up.
+
+\subsection{Connectivity}
+
+IPFS Nodes communicate regualrly with hundreds of other nodes in the network across the wide internet. It can use any reliable transport protocol, and it is best suited for LEDBAT \ref{LEDBAT} (uTP) \ref{uTP}. IPFS also uses the ICE NAT traversal techniques \ref{ICE} to increase connectivity between peers.
+
+\subsection{Routing}
+
+IPFS nodes maintain a DSHT based on S/Kademlia and Coral, to coordinate
+and identify which nodes can serve a particular block of data.
+
 
 \subsubsection{IPFS DSHT}
+
+Instead, IPFS stores a list of peers that can provide the data block.
+
+
 
 The IPFS DSHT supports four RPC calls:
 
