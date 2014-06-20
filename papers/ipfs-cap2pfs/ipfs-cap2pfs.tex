@@ -184,7 +184,7 @@ IPFS is peer-to-peer; no nodes are privileged. IPFS nodes store IPFS objects in 
 
   \item \textbf{Routing} - maintains information to locate specific peers and objects. Responds to both local and remote queries. Defaults to a DHT, but is swappable. Described in Section 3.3.
 
-  \item \textbf{Exchange} - a block exchange protocol (BitSwap) that governs efficient block distribution. Modelled as a market, weakly intentivizes replication. Trade Strategies swappable. Described in Section 3.4.
+  \item \textbf{Exchange} - a novel block exchange protocol (BitSwap) that governs efficient block distribution. Modelled as a market, weakly intentivizes replication. Trade Strategies swappable. Described in Section 3.4.
 
   \item \textbf{Objects} - a Merkle DAG of content-addressed immutable objects with links. Used to represent arbitrary datastructures, e.g. file hierarchies and communication systems. Described in Section 3.5.
 
@@ -204,10 +204,13 @@ building the protocol stack from the bottom up.
 Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data} of a public-key, created as in \cite{skademlia}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
 
 \begin{verbatim}
-      type Checksum string
-      type PublicKey string
-      type PrivateKey string
-      type NodeId Checksum
+      type NodeId Multihash
+      type Multihash []byte
+      // self-describing cryptographic hash digest
+
+      type PublicKey []byte
+      type PrivateKey []byte
+      // self-describing keys
 
       type Node struct {
         nodeid NodeID
@@ -217,6 +220,15 @@ Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{throu
 \end{verbatim}
 
 Upon first connecting, peers exchange public keys, and check: \texttt{hash(other.PublicKey) equals other.NodeId}. If not, the connection is terminated.
+
+\paragraph{Note on Cryptographic Functions} Rather than locking the system to a particular set of function choices, IPFS favors self-describing values. Hash digest values are ``multihashes'', a format including a short header identifying the hash function used, and the digest length in bytes. Example:
+
+\begin{verbatim}
+    <function code><digest length><digest bytes>
+
+\end{verbatim}
+
+This allows the system (a) chose the best function for the use case (e.g. stronger security vs faster performance), and (b) evolve as function choices change. Self-describing values allow using different parameter choices compatibly.
 
 \subsection{Network}
 
@@ -238,10 +250,10 @@ The interface of this DSHT is:
     routing.findPeer(NodeId)
     // gets a particular peer's network address
 
-    routing.findValuePeers(Checksum, int)
+    routing.findValuePeers(Multihash, int)
     // gets a number of peers serving a value.
 
-    routing.provideValue(Checksum)
+    routing.provideValue(Multihash)
     // announces that this node can serve a value.
 \end{verbatim}
 
@@ -401,10 +413,10 @@ BitSwap nodes follow a simple protocol.
       active map[NodeId]Peer
       // currently open connections to other nodes
 
-      need_list []Checksum
+      need_list []Multihash
       // checksums of blocks this node needs
 
-      have_list []Checksum
+      have_list []Multihash
       // checksums of blocks this node has
     }
 
@@ -416,7 +428,7 @@ BitSwap nodes follow a simple protocol.
       last_seen Timestamp
       // timestamp of last received message
 
-      want_list []Checksum
+      want_list []Multihash
       // checksums of all blocks wanted by peer
       // includes blocks wanted by peer's peers
     }
@@ -476,8 +488,8 @@ it has any of the wanted blocks. If so, it sends them according to the
 \paragraph{Peer.send\_block(Block)}
 
 Sending a block is straightforward. The node simply transmits the block of
-data. Upon receiving all the data, the receiver computes the Checksum to
-verify it matches the expected one, and returns confirmation.
+data. Upon receiving all the data, the receiver computes the Multihash
+checksum to verify it matches the expected one, and returns confirmation.
 
 Upon finalizing the correct transmission of a block, the receiver moves the
 block from \texttt{need\_list} to \texttt{have\_list}, and both the receiver
@@ -502,10 +514,9 @@ A peer connection should be closed under two conditions:
 \begin{itemize}
   \item a \texttt{silence\_wait} timeout has expired without receiving any
         messages from the peer (default BitSwap uses 30 seconds).
-        In this case, the node issues a \\
-        \texttt{Peer.close(false)} message.
+        The node issues \texttt{Peer.close(false)}.
   \item the node is exiting and BitSwap is being shut down.
-        In this case, the node issues a \texttt{Peer.close(true)} message.
+        In this case, the node issues \texttt{Peer.close(true)}.
 \end{itemize}
 
 After a \texttt{close} message, both receiver and sender tear down the
@@ -525,12 +536,118 @@ the future, if it is useful to do so.
 
 % TODO: Rate Limiting / Node Silencing
 
-\subsection{Object Model}
+\subsection{Object Merkle DAG}
 
-The DHT and BitSwap allow IPFS to form a massive peer-to-peer system for storing
-and distributing blocks quickly and robustly to users.
-IPFS builds a filesystem out of this efficient block distribution system,
-constructing files and directories out of blocks.
+The DHT and BitSwap allow IPFS to form a massive peer-to-peer system for storing and distributing blocks quickly and robustly to users. On top of these, IPFS builds a Merkle DAG, a directed acyclic graph where links between objects are cryptographic hashes of the targets embedded in the sources. This is a generalization of which the Git data structure is a special case, and upon which it can be built. Merkle DAGs provide IPFS many useful properties, including:
+
+\begin{enumerate}
+  \item \textbf{Content Addressing:} all content is uniquely identified by its
+        \texttt{multihash} checksum, \textbf{including links}.
+  \item \textbf{Tamper resistance:} all content is verified with its checksum.
+        If data is tampered with or corrupted, IPFS detects it.
+  \item \textbf{Deduplication:} all objects who hold the exact same content
+        are equal, and only stored once. This is particularly useful with
+        index objects, such as git \texttt{trees} and \texttt{commits}, or common portions of data.
+\end{enumerate}
+
+The IPFS Object format is:
+
+\begin{verbatim}
+
+    type IPFSLink struct {
+      Name string
+      // name or alias of this link
+
+      Hash Multihash
+      // cryptographic hash of target
+
+      Size int
+      // total size of target
+    }
+
+    type IPFSObject struct {
+      links []IPFSLink
+      // array of links
+
+      data []byte
+      // opaque content data
+    }
+
+\end{verbatim}
+
+
+The IPFS Merkle DAG is an extremely flexible way to store data. The only requirements are that object references be (a) content addressed, and (b) encoded in the format above. IPFS grants applications complete control over the data field; applications can use any custom data format they chose, which IPFS may not understand. The separate in-object link table allows IPFS to:
+
+\begin{itemize}
+
+  \item List all object references in an object. For example:
+\begin{verbatim}
+> ipfs ls /XLaoVHd834v62UsW56jew8Mp6FgZBXnZEeL
+XLMLiUaCc7jh3eGFsNR8AhvRSSFySSvTaNb 47 bam
+XLMCA8WXBNRBwFhzRnHgHFLwGmQzkAQELH7 6 bar
+XLM1ZETht3wv8vUPXMkx3JZGP5T9txAz782 6 baz
+
+<object multihash> <object size> <link name>
+\end{verbatim}
+
+  \item Resolve string path lookups, such as \texttt{foo/bar/baz}. Given an object, IPFS resolves the first path component to a hash in the object's link table, fetching that second object, and repeats with the next component. Thus, string paths can walk the Merkle DAG no matter what the data formats are.
+
+  \item Resolve all objects referenced recursively:
+\begin{verbatim}
+> ipfs refs --recursive \
+  /XLZ1625Jjn7SubMDgEyeaynFuR84ginqvzb
+XLLxhdgJcXzLbtsLRL1twCHA2NrURp4H38s
+XLYkgq61DYaQ8NhkcqyU7rLcnSa7dSHQ16x
+XLHBNmRQ5sJJrdMPuu48pzeyTtRo39tNDR5
+XLWVQDqxo9Km9zLyquoC9gAP8CL1gWnHZ7z
+...
+\end{verbatim}
+
+\end{itemize}
+
+
+A raw data field and a common link structure are the necessary components for constructing arbitrary data structures on top of IPFS. While it is easy to see how the Git object model fits on top of this DAG, consider these other potential data structures:
+(a) key-value stores
+(b) traditional relational databases
+(c) Linked Data triple stores
+(d) linked document publishing systems
+(e) linked communications platforms
+(f) cryptocurrency blockchains.
+These can all be modeled on top of the IPFS Merkle DAG, which allows any of these systems to use IPFS as a transport protocol for more complex applications.
+
+\subsubsection{Object-level Cryptoraphy}
+
+IPFS is equipped to handle object-level cryptographic operations. An encrypted or signed object is wrapped in a special frame that allows encryption or verification of the raw bytes.
+
+\begin{verbatim}
+    type EncryptedObject struct {
+      Object []bytes
+      // raw object data encrypted
+
+      Tag []bytes
+      // optional tag for encryption groups
+    }
+
+    type SignedObject struct {
+      Object []bytes
+      // raw object data signed
+
+      Signature []bytes
+      // hmac signature
+
+      PublicKey []multihash
+      // multihash identifying key
+    }
+\end{verbatim}
+
+Note this changes the object's hash (defining a different object, as it should). Also, IPFS automatically verifies signatures and can decrypt data with user-specified keychains.
+
+
+\subsection{Files}
+
+IPFS defines a set of objects to build a versioned filesystem on top of the
+MerkleDAG, constructing files and directories out of Objects.
+
 
 Files in IPFS are represented as a collection of inter-related objects, like in
 the version control system Git. Each object is addressed by the cryptographic
@@ -633,37 +750,6 @@ users. The object model is compatible (though not the same). The standard
 \texttt{Git} tools can be used on the \texttt{IPFS} object graph after a
 conversion. Additionally, a fork of the tools is under development that will
 allow users to use them directly without conversion.
-
-\subsubsection{Object-level Cryptoraphy}
-
-IPFS is equipped to handle object-level cryptographic operations. Any additional
-bytes are appended to the bottom of the object. This changes the object's hash
-(defining a different object, as it should). IPFS exposes an API that
-automatically verifies signatures or decrypts data.
-
-\begin{itemize}
-  \item \texttt{Signing}. Signature appended.
-  \item \texttt{Encryption}. Optional recipient's public key appended.
-\end{itemize}
-
-\subsubsection{Merkle Trees}
-
-The object model in IPFS forms a \textit{Merkle Tree}, which provides IPFS with
-useful properties:
-
-\begin{enumerate}
-  \item \textbf{Content Addressing:} all content is uniquely identified by its
-        \texttt{checksum}, \textbf{including child checksums}. This means a
-        particular \texttt{tree} object points to \textit{specific} children.
-        Committing changes to a \texttt{block} also commits changes to the
-        containing \texttt{tree}.
-  \item \textbf{Tamper resistance:} all content is verified with its Checksum.
-        If data is tampered with, before being delivered, the client
-        detects and discards it.
-  \item \textbf{Deduplication:} all objects who hold the exact same content
-        are the same, and only stored once. This is particularly useful with
-        parent objects, such as lists, trees, and commits.
-\end{enumerate}
 
 
 \subsection{The Filesystem}
@@ -890,8 +976,9 @@ or \texttt{commit} ensures \textit{all} objects pointed to are stored locally
 too. This is particularly useful for nodes wishing to keep all their own files.
 
 
-%\section{Acknowledgments}
+\section{Acknowledgments}
 
+IPFS is the synthesis of many great ideas and systems. It would be impossible to dare such ambitious goals without standing on the shoulders of such giants. Personal thanks to David Dalrymple, Joe Zimmerman, and Ali Yahya for long discussions on many of these ideas, in particular: exposing the general Merkle DAG (David, Joe), rolling hash blocking (David), and s/kademlia sybill protection (David, Ali). And special thanks to David Mazieres, for his ever brilliant ideas.
 
 %\bibliographystyle{abbrv}
 %\bibliography{gfs}
