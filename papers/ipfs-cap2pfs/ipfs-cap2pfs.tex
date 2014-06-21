@@ -25,41 +25,20 @@
 
 \maketitle
 \begin{abstract}
-The InterPlanetary File System is a peer-to-peer distributed file system
-capable of sharing the same files with millions of nodes. IPFS combines a
-distributed hashtable, cryptographic techniques, merkle trees, content-
-addressable storage, bittorrent, and tag-based filesystems to build a single
-massive file system shared between peers. IPFS has no single point of failure,
-and nodes do not need to trust each other.
+The InterPlanetary File System is a peer-to-peer distributed and versioned file system. It is capable of sharing the same set of files with millions of nodes. It provides a content-addressed Merkle DAG data model that applications to build data structures directly, and it can be mounted to explore as any other filesystem.  IPFS combines a distributed hashtable, cryptographic techniques, merkle trees, content-addressable storage, bittorrent, tag-based filesystems, and SFS to build a single massive file system shared between peers. IPFS has no single point of failure, and nodes do not need to trust each other.
 \end{abstract}
 
 \section{Introduction}
 
-[Motivate IPFS. Introduce problems. Describe BitTorrent existing problems (
-multiple files. one swarm. sloppy dht implementation.) Describe version
-control efforts. Propose potential combinations of good ideas.]
+There have been many attempts at constructing a global distributed file system. Some systems have seen significant success, and others failed completely. Among the academic attempts, \cite{AFS} has succeeded widely and is still in use today. \cite{Oceanstore}, \cite{CFS}, and others have not been so lucky. Outside of academia, the most successful have been peer-to-peer file-sharing systems primarily geared towards large media (audio and video). Most notably, Napster, KaZaA, and BitTorrent \cite{BitTorrent}, the winner of all, deployed massive systems with millions of simultaneous users employing various research-honed techniques. Even today, BitTorrent maintains a massive DHT deployment -- with millions of nodes connecting and disconnecting every day.
 
-[Cite:
-CFS,
-Kademlia,
-Bittorrent,
-Chord,
-DHash,
-SFS,
-Ori,
-Coral]
+These systems have succeeded in serving file archives efficiently. But what they have not achieved is tight integration with the application domain. While some have deployed successful application specific forks (e.g. Blizzard Updates \cite{Blizzard}), no general file-system has emerged that offers global, low-latency, and decentralized distribution. Perhaps this is because a ``good enough'' system exists for most use cases: HTTP.  By far, HTTP is the most successful ``distributed system of files'' ever deployed. Coupled with the Browser, HTTP has produced enormous technical and social impact. Yet, it remains oblivious of dozens of brilliant file distribution techniques invented in the last fifteen years. Evolving the Web infrastructure is near-impossible, given the number of backwards compatibility constraints and the number of strong, well invested parties in the current model. Or maybe, what is lacking is the right design, which simultaneously enhances the current web and introduces functionality not present before.
 
-This paper introduces
-IPFS, a novel peer-to-peer version-controlled filesystem;
-and BitSwap, the novel peer-to-peer block exchange protocol serving IPFS.
+Regardless, most organizations have gotten away with HTTP for now: moving small files around is relatively cheap even for small organizations with lots of traffic. But, we are entering a new era of data distribution: instead of sharing static media or data processing in large in-house clusters, new challenges are emerging: (a) distributing and hosting large (petabyte) datasets, (b) computing on large data across organizations, (c) high-volume high-definition on-demand or real-time media streams, (d) versioning of massive datasets, and more. All of these can be boiled down to ``lots of data, accessible everywhere.'' Pressed by critical features and bandwidth concerns, we will turn to different data distribution protocols.
 
-%The rest of the paper is organized as follows.
-%Section 2 describes the design of the filesystem.
-%Section 3 evaluates various facets of the system under benchmark and common
-%workloads.
-%Section 4 presents and evaluates a world-wide deployment of IPFS.
-%Section 5 describes existing and potential applications of IPFS.
-%Section 6 discusses related and future work.
+There is one system that has had remarkable success and influence when it comes to data workflow design. Git, the distributed source code version control system, has discovered many right ways to handle data operations. The toolchain around Git offers versatile versioning functionality that large file distribution systems severely lack. New solutions are emerging, such as Dat \cite{Dat}, to provide these features and workflows. And, there is another lesson to learn from Git: its content addressed, Merkle DAG data model enables powerful file distribution -- and data structure distribution -- strategies.
+
+This paper introduces IPFS, a novel peer-to-peer version-controlled filesystem seeking to reconcile these issues. IPFS learns from many past successful systems. The core driver of its design is this: careful interface-focused integration of these compatible pieces yields a system greater than the sum of its parts. The central principle is modeling \textit{all data} as part of the same Merkle DAG.
 
 Notation Notes:
 (a) data structures are specified in Go syntax,
@@ -920,6 +899,15 @@ The full power of the \texttt{Git} version control tools is available to IPFS us
 
 As we saw in the Merkle DAG section, IPFS objects can be traversed with a string path API. The IPFS File Objects are designed to make mounting IPFS onto a UNIX filesystem simpler. They restrict \texttt{trees} to have no data, in order to represent them as directories, and \texttt{commits} can either be represented as directories too, or hidden from the filesystem entirely.
 
+\subsubsection{Splitting Files into Lists and Blob}
+
+One of the main challenges with versioning and distributing large files is finding the right way to split them into independent blocks. Rather than assume it can make the right decision for every type of file, IPFS offers the following alternatives:
+
+\begin{enumerate}
+  \item[(a)] Use Rabin Fingerprints \cite{RabinFingerprints} as in LBFS \cite{LBFS} to pick suitable block boundaries.
+  \item[(b)] Use the rsync \cite{rsync} rolling-checksum algorithm, to detect blocks that have changed between versions.
+  \item[(c)] Allow users to specify block-splitting functions highly tuned for specific files.
+\end{enumerate}
 
 \paragraph{Path Lookup Performance}
 
