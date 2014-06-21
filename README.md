@@ -62,7 +62,7 @@ IPFS has a name service:
 
 Please Read:
 
-- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/jbenet/ipfs/blob/master/papers/cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
+- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/jbenet/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - IPFS - Toward The Permanent Web
 
 ## Implementations
