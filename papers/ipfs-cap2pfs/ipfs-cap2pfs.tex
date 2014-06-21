@@ -170,6 +170,21 @@ Version Control Systems provide facilities to model files changing over time and
   \item Distributing version changes to other users is simply transferring objects and updating remote references.
 \end{enumerate}
 
+\subsection{Self-Certified Filesystems - SFS}
+
+SFS \cite{SFS} proposed a compelling solution to both (a) implementing distributed trust chains, in a (b) egalitarian shared global namespace. SFS introduces a technique for building \textit{Self-Certified Filesystem}: address remote filesystems via the following scheme
+
+\begin{verbatim}
+      /sfs/<Location>:<HostID>
+\end{verbatim}
+
+Where \texttt{Location} is the filesystem's server network address, and:
+
+\begin{verbatim}
+      HostID = hash(public_key || Location)
+\end{verbatim}
+
+Thus the \textit{name} of an SFS file system certifies its server. The user can verify the public key offered by the server, negotiate a shared secret, and secure all traffic. Additionaly all SFS instances share a global namespace where name allocation is cryptographic, not gated by any centralized body.
 
 \section{Design}
 
@@ -201,7 +216,7 @@ building the protocol stack from the bottom up.
 
 \subsection{Identities}
 
-Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data} of a public-key, created as in \cite{skademlia}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
+Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data} of a public-key, created with S/Kademlia's static crypto puzzle \cite{skademlia}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
 
 \begin{verbatim}
       type NodeId Multihash
@@ -213,11 +228,24 @@ Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{throu
       // self-describing keys
 
       type Node struct {
-        nodeid NodeID
-        pubkey PublicKey
-        prikey PrivateKey
+        NodeId NodeID
+        PubKey PublicKey
+        PriKey PrivateKey
       }
 \end{verbatim}
+
+S/Kademlia based IPFS identity generation:
+
+\begin{verbatim}
+      difficulty = <integer parameter>
+      n = Node{}
+      do {
+        n.PubKey, n.PrivKey = PKI.genKeyPair()
+        n.NodeId = hash(hash(n.PubKey))
+        p = count_preceding_zero_bits(n.NodeId)
+      } while (p < difficulty)
+\end{verbatim}
+
 
 Upon first connecting, peers exchange public keys, and check: \texttt{hash(other.PublicKey) equals other.NodeId}. If not, the connection is terminated.
 
@@ -247,14 +275,17 @@ IPFS nodes require a routing system that can find (a) other peers' network addre
 The interface of this DSHT is:
 
 \begin{verbatim}
-    routing.findPeer(NodeId)
+    routing.findPeer(node NodeId)
     // gets a particular peer's network address
 
-    routing.findValuePeers(Multihash, int)
-    // gets a number of peers serving a value.
+    routing.findValuePeers(key Multihash, min int)
+    // gets a number of peers serving a value
 
-    routing.provideValue(Multihash)
-    // announces that this node can serve a value.
+    routing.setValue(key []bytes, value []bytes)
+    // stores a small metadata value in the DHT
+
+    routing.provideValue(key Multihash)
+    // announces that this node can serve a value
 \end{verbatim}
 
 Note: different use cases will call for substantially different routing systems (e.g. DHT in wide network, static HT in local network). Thus the IPFS routing system can be swapped for one to fit the users' needs. As long as the interface above is met, the rest of the system will continue to function.
@@ -930,35 +961,140 @@ For example, \texttt{flattened tree} for \texttt{ttt111} above:
 \end{verbatim}
 
 
-\subsection{Naming}
+\subsection{IPNS: Naming and Mutable State}
 
-Additionally, the IPFS root directory supports special functionality to
-allow namespacing and naming objects in a fair, secure, and distributed
-manner.
+So far, the IPFS stack describes a peer-to-peer block exchange constructing a content-addressed DAG of objects. It serves to publish and retrieve immutable objects. It can even track the version history of these objects. However, there is a critical component missing: Mutable Naming. Without it, all communication of new content must happen off-band, via sending links to each other. What is required is some way to retrive mutable state at \textit{the same path}.
+
+It is worth stating why -- if mutable data is necessary in the end -- we worked hard to build up an \textit{immutable} Merkle DAG. Consider the properties of IPFS that fall out of the Merkle DAG: Objects can be (a) retrieved via their hash, (b) integrity checked, (c) linked to others, and (d) cached indefinitely. In a sense:
+
+\begin{center}
+  Objects are \textbf{permanent}.
+\end{center}
+
+These are the critical properties of a high-performance distributed system, where data is expensive to move across network links. Object content addressing constructs a web with (a) significant bandwidth optimizations, (b) untrusted content serving, (c) permanent links, and (d) the ability to make full permanent backups of any object and its references.
+
+The Merkle DAG and Naming, immutable content-addressed objects and mutable pointers, instantiate a dichotomy present in many successful distributed systems. Most notably, the Git Version Control System with its immutable objects and mutable refs. So does Plan9 \cite{Plan9}, the distributed successor to UNIX, with its mutable Fossil \cite{Fossil} and immutable Venti \cite{Venti} filesystems. LBFS \cite{LBFS} also uses mutable indices and immutable chunks.
+
+\subsubsection{Self-Certified Names}
+
+Using the self-certification naming scheme from SFS \cite{SFS} gives us a way to construct (a) self-certified (verifiable) names, (b) in another cryptographically assigned global namespace, that are (c) mutable. The IPFS scheme is as follows.
+
+\begin{enumerate}
+  \item  Recall that in IPFS:
+
+\begin{verbatim}
+NodeId = hash(node.PubKey)
+\end{verbatim}
+
+  \item We assign every user a mutable namespace at:
+
+\begin{verbatim}
+/ipns/<NodeId>
+\end{verbatim}
+
+  \item A user can publish (described below) an Object to this path \textbf{Signed} by her private key, say at:
+
+\begin{verbatim}
+/ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm/
+\end{verbatim}
+
+  \item When other users retrieve the object, they can check the signature matches the public key and NodeId, verifying that this indeed was an Object published by the user, achieving the mutable state retrival.
+
+\end{enumerate}
+
+Note the following details:
+
 \begin{itemize}
-  \item[(a)] All objects are accessible by their hash. Thus, users can
-        always reference an object (and its children) using
-        \texttt{/<object\_hash>}.
+  \item The \texttt{ipns} (InterPlanetary Name Space) separate prefix is to cause a recognizable distinction in human path readers between \textit{mutable} and \textit{immutable} paths.
 
-  \item[(b)] \texttt{/<node\_id>} provides a self-certifying filesystem
-        for user \texttt{node\_id}. If it exists, the object returned is a
-        special \texttt{tree} signed by \texttt{node\_id}'s private key. Thus,
-        a user can publish a \texttt{tree} or \texttt{commit} under their
-        name, and others can verify it by checking the signature matches.
+  \item because this is \textit{not} a content-addressed object, publishing it relies on the only mutable state distribution system in IPFS, the Routing system. The process is (1) publish the object as a regular immutable IPFS object, (2) publish its hash on the Routing system as a metadata value:
 
-  \item[(c)] If \texttt{/<domain>} is a valid domain name, IPFS
-        looks up key \texttt{gfs} in its \texttt{DNS TXT} record. IPFS
-        interprets the value as either an object hash or another IPFS path:
-        \begin{verbatim}
-  # this DNS TXT record
-  fs.benet.ai. TXT "gfs=/aabbccddeeffgg ..."
+\begin{verbatim}
+routing.setValue(NodeId, <ns-object-hash>)
+\end{verbatim}
 
-  # behaves as symlink
-  ln -s /aabbccddeeffgg /fs.benet.ai
-        \end{verbatim}
+  \item any links in the Object published act as sub-names in the namespace:
+\end{itemize}
+
+\begin{verbatim}
+/ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm/
+/ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm/docs
+/ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm/docs/ipfs
+\end{verbatim}
+
+\begin{itemize}
+  \item it is advised to publish a \texttt{commit} object, or some other object with a version history so that clients may be able to find old names. This is left as a user option, as it is not always desired.
 
 \end{itemize}
 
+Note that when users publish this Object, it cannot be published in the same way
+
+\subsubsection{Human Friendly Names}
+
+While IPNS is indeed a way of assigning and reassigning names, it is not very user friendly, as it exposes long hash values as names, which are notoriously hard to remember. These work for URLs, but not for many kinds of offline transmission. Thus, IPFS increases the user-friendliness of IPNS with the following techniques.
+
+\paragraph{Peer links}
+
+As encouraged by SFS, users can link other users' Objects directly into their own Objects (namespace, home, etc). This has the benefit of also creating a web of trust (and supports the old Certificate Authority model):
+
+\begin{verbatim}
+# Alice links to bob Bob
+ipfs link /<alice-pk-hash>/friends/bob /<bob-pk-hash>
+
+# Eve links to Alice
+ipfs link /<eve-pk-hash/friends/alice /<alice-pk-hash>
+
+# Eve also has access to Bob
+/<eve-pk-hash/friends/alice/friends/bob
+
+# access Verisign certified domains
+/<verisign-pk-hash>/foo.com
+\end{verbatim}
+
+
+\paragraph{DNS TXT IPNS Records}
+
+If \texttt{/ipns/<domain>} is a valid domain name, IPFS
+looks up key \texttt{ipns} in its \texttt{DNS TXT} records. IPFS
+interprets the value as either an object hash or another IPNS path:
+
+\begin{verbatim}
+    # this DNS TXT record
+    ipfs.benet.ai. TXT "ipfs=XLF2ipQ4jD3U ..."
+
+    # behaves as symlink
+    ln -s /ipns/XLF2ipQ4jD3U /ipns/fs.benet.ai
+\end{verbatim}
+
+
+\paragraph{Proquint Pronounceable Identifiers}
+
+There have always been schemes to encode binary into pronounceable words. IPNS supports Proquint \cite{Proquint}. Thus:
+
+\begin{verbatim}
+    # this proquint phrase
+    /ipns/dahih-dolij-sozuk-vosah-luvar-fuluh
+
+    # will resolve to corresponding
+    /ipns/KhAwNprxYVxKqpDZ
+\end{verbatim}
+
+\paragraph{Name Shortening Services}
+
+Services are bound to spring up that will provide name shortening as a service, offering up their namespaces to users. This is similar to what we see today with DNS and Web URLs:
+
+\begin{verbatim}
+    # User can get a link from
+    /ipns/shorten.er/foobar
+
+    # To her own namespace
+    /ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm
+\end{verbatim}
+
+
+\section{The Future}
+
+(a) Content Addressed DAG of objects, (b) with links traversed like filesystems or the web, (c) with versioning and cryptographic operations built in, (d) whose data blocks are retrieved by trade in a peer-to-peer block exchange, (e) whose peer connections are found through a DHT, (f) that can run on any reliable datagram transport.
 
 
 \section{Acknowledgments}
