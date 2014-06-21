@@ -1091,10 +1091,40 @@ Services are bound to spring up that will provide name shortening as a service, 
     /ipns/XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm
 \end{verbatim}
 
+\subsection{Using IPFS}
+
+IPFS is designed to be used in a number of different ways. Here are just some of the usecases I will be pursuing:
+
+\begin{enumerate}
+  \item As a mounted global filesystem, under \texttt{/ipfs} and \texttt{/ipns}.
+  \item As a mounted personal sync folder that automatically versions, publishes, and backs up any writes.
+  \item As an encrypted file or data sharing system.
+  \item As a versioned package manager for \textit{all} software.
+  \item As the root filesystem of a Virtual Machine
+  \item As the boot filesystem of a VM (under a hypervisor).
+  \item As a database: applications can write directly to the Merkle DAG data model and get all the versioning, caching, and distribution IPFS provides.
+  \item As a linked (and encrypted) communications platform.
+  \item As a integrity checked CDN for large files (without SSL)
+  \item As an encrypted CDN
+  \item On webpages, as a web CDN.
+  \item As a new Permanent Web where links do not die.
+\end{enumerate}
+
+The IPFS implementations target:
+
+\begin{enumerate}
+  \item[(a)] an IPFS library to import in your own applications.
+  \item[(b)] commandline tools to manipulate objects directly.
+  \item[(c)] mounted file system, using FUSE \cite{FUSE}.
+\end{enumerate}
+
 
 \section{The Future}
 
-(a) Content Addressed DAG of objects, (b) with links traversed like filesystems or the web, (c) with versioning and cryptographic operations built in, (d) whose data blocks are retrieved by trade in a peer-to-peer block exchange, (e) whose peer connections are found through a DHT, (f) that can run on any reliable datagram transport.
+The ideas behind IPFS are the product of decades of successful distributed systems research in academia and open source. It synthesizes many of the best ideas from the most successful systems to date. Aside from BitSwap, which is a novel protocol, the main contribution of IPFS is this coupling of systems and synthesis of designs.
+
+
+IPFS is an ambitious, bold vision of new decentralized Internet infrastructure, upon which many different kinds of applications can be built. At the bare minimum, it can be used as a global mounted versioned filesystem and namespace, or as the next generation file sharing system. At its best, it could push the web to new horizons, where Publishing does not require hosting, where users can trust the content they receive without trusting the peers they receive it from, and where old but important files do not go missing. IPFS looks forward to bringing us toward the Permanent Web.
 
 
 \section{Acknowledgments}
