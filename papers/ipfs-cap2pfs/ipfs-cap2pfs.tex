@@ -249,22 +249,29 @@ IPFS nodes communicate regualarly with hundreds of other nodes in the network, a
 
 \subsection{Routing}
 
-IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{Coral} and Mainline \cite{Mainline}, so references are stored in the DHT instead of entire blocks. References are the \texttt{NodeIds} of peers who can serve the block.
+IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{Coral} and Mainline \cite{Mainline}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For values larger, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
 
-The interface of this DSHT is:
+The interface of this DSHT is the following:
 
 \begin{verbatim}
-    routing.findPeer(node NodeId)
+
+  type IPFSRouting interface {
+
+    FindPeer(node NodeId)
     // gets a particular peer's network address
 
-    routing.findValuePeers(key Multihash, min int)
-    // gets a number of peers serving a value
+    SetValue(key []bytes, value []bytes)
+    // stores a small metadata value in DHT
 
-    routing.setValue(key []bytes, value []bytes)
-    // stores a small metadata value in the DHT
+    GetValue(key []bytes)
+    // retrieves small metadata value from DHT
 
-    routing.provideValue(key Multihash)
-    // announces that this node can serve a value
+    ProvideValue(key Multihash)
+    // announces this node can serve a large value
+
+    FindValuePeers(key Multihash, min int)
+    // gets a number of peers serving a large value
+  }
 \end{verbatim}
 
 Note: different use cases will call for substantially different routing systems (e.g. DHT in wide network, static HT in local network). Thus the IPFS routing system can be swapped for one to fit the users' needs. As long as the interface above is met, the rest of the system will continue to function.
