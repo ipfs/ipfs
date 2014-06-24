@@ -17,3 +17,6 @@ watch:
 	# for portability, use watchmedo -- pip install watchmedo
 	@watchmedo shell-command --patterns="*.tex;" --recursive \
 		--command='make' .
+
+publish:
+	scp $(LONG).pdf benet.ai:/var/static/t/$(LONG).pdf
