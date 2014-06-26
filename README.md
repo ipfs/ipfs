@@ -69,8 +69,8 @@ Please Read:
 
 There are no stable implementations yet. There are two being developed concurrently:
 
-- [go-ipfs](http://github.com/jbenet/go-ipfs) in Go
-- [node-ipfs](http://github.com/jbenet/node-ipfs) in NodeJS
+- [node-ipfs](http://github.com/jbenet/node-ipfs) in NodeJS (Main v1 Effort)
+- [go-ipfs](http://github.com/jbenet/go-ipfs) in Go (just a skeleton)
 
 If you would like to start one, please post an issue in this repository so I can help you. There is at present no "perfect spec" and many protocol details are still to be decided upon.
 
