@@ -30,13 +30,13 @@ The InterPlanetary File System (IPFS) is a peer-to-peer distributed file system 
 
 \section{Introduction}
 
-There have been many attempts at constructing a global distributed file system. Some systems have seen significant success, and others failed completely. Among the academic attempts, \cite{AFS} has succeeded widely and is still in use today. \cite{Oceanstore}, \cite{CFS}, and others have not attained the same success. Outside of academia, the most successful systems have been peer-to-peer file-sharing applications primarily geared toward large media (audio and video). Most notably, Napster, KaZaA, and BitTorrent \cite{BitTorrent} deployed large file distribution systems supporting millions of simultaneous users. Even today, BitTorrent maintains a massive deployment where tens of millions of nodes churning daily. These applications saw greater numbers of users and files distributed than their academic file system counterparts. However, the applications were not designed as infrastructure to be built upon. While there have been successful repurposing and forks (e.g. Blizzard Updates using BitTorrent \cite{Blizzard}), no general file-system has emerged that offers global, low-latency, and decentralized distribution.
+There have been many attempts at constructing a global distributed file system. Some systems have seen significant success, and others failed completely. Among the academic attempts, AFS~\cite{AFS} has succeeded widely and is still in use today. Others~\cite{Oceanstore, CFS} have not attained the same success. Outside of academia, the most successful systems have been peer-to-peer file-sharing applications primarily geared toward large media (audio and video). Most notably, Napster, KaZaA, and BitTorrent~\cite{BitTorrentUsers} deployed large file distribution systems supporting over 100 million simultaneous users. Even today, BitTorrent maintains a massive deployment where tens of millions of nodes churn daily~\cite{wang13}. These applications saw greater numbers of users and files distributed than their academic file system counterparts. However, the applications were not designed as infrastructure to be built upon. While there have been successful repurposings\footnote{For example, Linux distributions use BitTorrent to transmit disk images, and  Blizzard, Inc. uses it to distribute video game content.}, no general file-system has emerged that offers global, low-latency, and decentralized distribution.
 
 Perhaps this is because a ``good enough'' system for most use cases already exists: HTTP.  By far, HTTP is the most successful ``distributed system of files'' ever deployed. Coupled with the browser, HTTP has had enormous technical and social impact. It has become the de facto way to transmit files across the internet. Yet, it fails to take advantage of dozens of brilliant file distribution techniques invented in the last fifteen years. From one prespective, evolving Web infrastructure is near-impossible, given the number of backwards compatibility constraints and the number of strong parties invested in the current model. But from another perspective, new protocols have emerged and gained wide use since the emergence of HTTP. What is lacking is upgrading design: enhancing the current HTTP web, and introducing new functionality without degrading user experience.
 
 Industry has gotten away with using HTTP this long because moving small files around is relatively cheap, even for small organizations with lots of traffic. But we are entering a new era of data distribution with new challenges: (a) hosting and distributing petabyte datasets, (b) computing on large data across organizations, (c) high-volume high-definition on-demand or real-time media streams, (d) versioning and linking of massive datasets, (e) preventing accidental disappearance of important files, and more. Many of these can be boiled down to ``lots of data, accessible everywhere.'' Pressed by critical features and bandwidth concerns, we have already given up HTTP for different data distribution protocols. The next step is making them part of the Web itself.
 
-Orthogonal to efficient data distribution, version control systems have managed to develop important data collaboration workflows. Git, the distributed source code version control system, developed many useful ways to model and implement distributed data operations. The Git toolchain offers versatile versioning functionality that large file distribution systems severely lack. New solutions inspired by Git are emerging, such as Camlistore \cite{Camlistore}, a personal file storage system, and Dat \cite{Dat} a data collaboration toolchain and dataset package manager. Git has already influenced distributed filesystem design \cite{Ori}, as its content addressed Merkle DAG data model enables powerful file distribution strategies. What remains to be explored is how this data structure can influence the design of high-throughput oriented file systems, and how it might upgrade the Web itself.
+Orthogonal to efficient data distribution, version control systems have managed to develop important data collaboration workflows. Git, the distributed source code version control system, developed many useful ways to model and implement distributed data operations. The Git toolchain offers versatile versioning functionality that large file distribution systems severely lack. New solutions inspired by Git are emerging, such as Camlistore~\cite{Camlistore}, a personal file storage system, and Dat~\cite{Dat} a data collaboration toolchain and dataset package manager. Git has already influenced distributed filesystem design~\cite{mashtizadeh13}, as its content addressed Merkle DAG data model enables powerful file distribution strategies. What remains to be explored is how this data structure can influence the design of high-throughput oriented file systems, and how it might upgrade the Web itself.
 
 This paper introduces IPFS, a novel peer-to-peer version-controlled filesystem seeking to reconcile these issues. IPFS synthesizes learnings from many past successful systems. Careful interface-focused integration yields a system greater than the sum of its parts. The central IPFS principle is modeling \textit{all data} as part of the same Merkle DAG.
 
@@ -50,7 +50,7 @@ Distributed Hash Tables (DHTs) are widely used to coordinate and maintain metada
 
 \subsubsection{Kademlia DHT}
 
-Kademlia \cite{Kademlia} is a popular DHT that provides:
+Kademlia~\cite{maymounkov02} is a popular DHT that provides:
 
 \begin{enumerate}
 
@@ -64,7 +64,7 @@ Kademlia \cite{Kademlia} is a popular DHT that provides:
   \item Resistance to various attacks by preferring long-lived nodes.
 
   \item Wide usage in peer-to-peer applications, including \\
-        Gnutella and BitTorrent, forming networks of over 20 million nodes \cite{MLDHTmeasurement}.
+        Gnutella and BitTorrent, forming networks of over 20 million nodes~\cite{wang13}.
 
  \end{enumerate}
 
@@ -73,7 +73,7 @@ Kademlia \cite{Kademlia} is a popular DHT that provides:
 
 While some peer-to-peer filesystems store data blocks directly in DHTs,
 this ``wastes storage and bandwidth, as data must be stored at nodes where it
-is not needed'' \cite{Coral}. The Coral DSHT extends Kademlia in three
+is not needed''~\cite{freedman04}. The Coral DSHT extends Kademlia in three
 particularly important ways:
 
 \begin{enumerate}
@@ -95,14 +95,14 @@ particularly important ways:
   \item Additionally, Coral organizes a hierarchy of separate DSHTs called
         \textit{clusters} depending on region and size. This enables nodes to
         query peers in their region first, ``finding nearby data without
-        querying distant nodes'' \cite{Coral} and greatly reducing the latency
+        querying distant nodes''~\cite{freedman04} and greatly reducing the latency
         of lookups.
 
 \end{enumerate}
 
 \subsubsection{S/Kademlia DHT}
 
-S/Kademlia \cite{skademlia} extends Kademlia to protect against malicious attacks in two particularly important ways:
+S/Kademlia~\cite{baumgart07} extends Kademlia to protect against malicious attacks in two particularly important ways:
 
 \begin{enumerate}
 
@@ -116,7 +116,7 @@ S/Kademlia \cite{skademlia} extends Kademlia to protect against malicious attack
 
 \subsection{Block Exchanges - BitTorrent}
 
-BitTorrent \cite{BitTorrent} is a widely successful peer-to-peer filesharing system, which succeeds in coordinating networks of untrusting peers (swarms) to cooperate in distributing pieces of files to each other. Key features from BitTorrent and its ecosystem that inform IPFS design include:
+BitTorrent~\cite{cohen03} is a widely successful peer-to-peer filesharing system, which succeeds in coordinating networks of untrusting peers (swarms) to cooperate in distributing pieces of files to each other. Key features from BitTorrent and its ecosystem that inform IPFS design include:
 
 \begin{enumerate}
   \item BitTorrent's data exchange protocol uses a quasi tit-for-tat strategy
@@ -126,7 +126,7 @@ BitTorrent \cite{BitTorrent} is a widely successful peer-to-peer filesharing sys
         sending rarest pieces first. This takes load off seeds, making non-seed peers capable of trading with each other.
 
   \item BitTorrent's standard tit-for-tat is vulnerable to some exploitative
-        bandwidth sharing strategies. PropShare \cite{propshare} is a different peer bandwidth allocation strategy that better resists exploitative strategies, and improves the performance of swarms.
+        bandwidth sharing strategies. PropShare~\cite{levin08} is a different peer bandwidth allocation strategy that better resists exploitative strategies, and improves the performance of swarms.
 
 \end{enumerate}
 
@@ -146,7 +146,7 @@ Version Control Systems provide facilities to model files changing over time and
 
 \subsection{Self-Certified Filesystems - SFS}
 
-SFS \cite{SFS} proposed compelling implementations of both (a) distributed trust chains, and (b) egalitarian shared global namespaces. SFS introduced a technique for building \textit{Self-Certified Filesystems}: addressing remote filesystems using the following scheme
+SFS~\cite{mazieres98, mazieres00} proposed compelling implementations of both (a) distributed trust chains, and (b) egalitarian shared global namespaces. SFS introduced a technique for building \textit{Self-Certified Filesystems}: addressing remote filesystems using the following scheme
 
 \begin{verbatim}
       /sfs/<Location>:<HostID>
@@ -191,7 +191,7 @@ Notation: data structures and functions below are specified in Go syntax.
 
 \subsection{Identities}
 
-Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{Throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data.} of a public-key, created with S/Kademlia's static crypto puzzle \cite{skademlia}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
+Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{Throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data.} of a public-key, created with S/Kademlia's static crypto puzzle~\cite{baumgart07}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
 
 \begin{verbatim}
       type NodeId Multihash
@@ -237,8 +237,8 @@ This allows the system to (a) choose the best function for the use case (e.g. st
 IPFS nodes communicate regualarly with hundreds of other nodes in the network, potentially across the wide internet. The IPFS network stack features:
 
 \begin{itemize}
-  \item \textbf{Transport:} IPFS can use any transport protocol, and is best suited for WebRTC DataChannels \cite{WebRTC} (for browser connectivity) or uTP \cite{uTP} (LEDBAT) \cite{LEDBAT}.
-  \item \textbf{Reliability:} IPFS can provide reliability if underlying networks do not provide it, using uTP (LEDBAT) \cite{LEDBAT} or SCTP.
+  \item \textbf{Transport:} IPFS can use any transport protocol, and is best suited for WebRTC DataChannels~\cite{WebRTC} (for browser connectivity) or uTP(LEDBAT~\cite{LEDBAT}).
+  \item \textbf{Reliability:} IPFS can provide reliability if underlying networks do not provide it, using uTP (LEDBAT~\cite{LEDBAT}) or SCTP~\cite{SCTP}.
   \item \textbf{Connectivity:} IPFS also uses the ICE NAT traversal techniques \cite{ICE}.
   \item \textbf{Integrity:} optionally checks integrity of messages using a hash checksum.
   \item \textbf{Authenticity:} optionally checks authenticity of messages using HMAC with sender's public key.
@@ -258,7 +258,7 @@ IPFS can use any network; it does not rely on or assume access to IP. This allow
 
 \subsection{Routing}
 
-IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{Coral} and Mainline \cite{Mainline}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For values larger, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
+IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{freedman04} and Mainline~\cite{wang13}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For values larger, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
 
 The interface of this DSHT is the following:
 
@@ -330,7 +330,7 @@ senders from trying to game the probability by just causing more dice-rolls.
 
 \subsubsection{BitSwap Strategy}
 
-The differing strategies that BitSwap peers might employ have wildly different effects on the performance of the exchange as a whole. In BitTorrent, while a standard strategy is specified (tit-for-tat), a variety of others have been implemented, ranging from BitTyrant \cite{BitTyrant} (sharing the least-possible), to BitThief \cite{BitThief} (exploiting a vulnerability and never share), to PropShare \cite{PropShare} (sharing proportionally). A range of strategies (good and malicious) could similarly be implemented by BitSwap peers. The choice of function, then, should aim to:
+The differing strategies that BitSwap peers might employ have wildly different effects on the performance of the exchange as a whole. In BitTorrent, while a standard strategy is specified (tit-for-tat), a variety of others have been implemented, ranging from BitTyrant~\cite{levin08} (sharing the least-possible), to BitThief~\cite{levin08} (exploiting a vulnerability and never share), to PropShare~\cite{levin08} (sharing proportionally). A range of strategies (good and malicious) could similarly be implemented by BitSwap peers. The choice of function, then, should aim to:
 
 \begin{enumerate}
   \item maximize the trade performance for the node, and the whole exchange
@@ -666,7 +666,7 @@ IPFS clients require some \textit{local storage}, an external system
 on which to store and retrieve local raw data for the objects IPFS manages.
 The type of storage depends on the node's use case.
 In most cases, this is simply a portion of disk space (either managed by
-the native filesystem, by a key-value store such as leveldb \cite{leveldb}, or
+the native filesystem, by a key-value store such as leveldb~\cite{dean11}, or
 directly by the IPFS client). In others, for example non-persistent caches,
 this storage is just a portion of RAM.
 
@@ -980,7 +980,7 @@ The Merkle DAG, immutable content-addressed objects, and Naming, mutable pointer
 
 \subsubsection{Self-Certified Names}
 
-Using the naming scheme from SFS \cite{SFS} gives us a way to construct self-certified names, in a cryptographically assigned global namespace, that are mutable. The IPFS scheme is as follows.
+Using the naming scheme from SFS~\cite{mazieres98, mazieres00} gives us a way to construct self-certified names, in a cryptographically assigned global namespace, that are mutable. The IPFS scheme is as follows.
 
 \begin{enumerate}
   \item  Recall that in IPFS:
@@ -1136,8 +1136,8 @@ IPFS is the synthesis of many great ideas and systems. It would be impossible to
 
 \section{References TODO}
 
-%\bibliographystyle{abbrv}
-%\bibliography{gfs}
+\bibliographystyle{abbrv}
+\bibliography{ipfs-cap2pfs}
 %\balancecolumns
 %\subsection{References}
 \end{document}
