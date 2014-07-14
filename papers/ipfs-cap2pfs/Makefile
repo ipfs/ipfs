@@ -21,5 +21,5 @@ watch:
 	@watchmedo shell-command --patterns="*.tex;" --recursive \
 		--command='make' .
 
-publish:
+publish: $(LONG).pdf
 	scp $(LONG).pdf benet.ai:/var/static/t/$(LONG).pdf
