@@ -109,6 +109,10 @@ But IPFS has been designed by the internet at large. The ideas behind IPFS have 
 
 And, there are [many people](contributors.md) whose papers, conversations, or work have directly contributed to its design and implementation.
 
+#### What is the relation to [Filecoin](http://filecoin.io)?
+
+Filecoin is the sister protocol of IPFS. While neither protocol depends on each other, they are perfectly complementary. IPFS handles high performance distribution of objects; Filecoin handles incentivizing the world to backup/seed objects.
+
 #### Why the name IPFS?
 
 The original name was GFS, whose acronym stood for the Global File System and which seemed more accurate than GitFS. But that exact name wass already [taken](http://en.wikipedia.org/wiki/GFS2). So I switched Global for Galactic, in an homage to Licklider's [Intergalactic Computer Network](http://en.wikipedia.org/wiki/Intergalactic_Computer_Network), and because peer-to-peer systems look like galaxies to me. But GFS caused confusion with yet another [GFS](http://en.wikipedia.org/wiki/Google_File_System), even though that one is not even open source.
