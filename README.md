@@ -10,6 +10,23 @@ IPFS could become a new major subsystem of the internet. If built right, it coul
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
+
+## Design
+
+Please Read:
+
+- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/jbenet/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
+- IPFS - Toward The Permanent Web
+
+## Implementations
+
+There are no stable implementations yet. There are two being developed concurrently:
+
+- [node-ipfs](http://github.com/jbenet/node-ipfs) in NodeJS (v1 Effort)
+- [go-ipfs](http://github.com/jbenet/go-ipfs) in Go (v1 Effort)
+
+If you would like to start one, please post an issue in this repository so I can help you. There is at present no "perfect spec" and many protocol details are still to be decided upon.
+
 ## Summary
 
 IPFS is a protocol:
@@ -57,22 +74,6 @@ IPFS has a name service:
 - compatible with other NSes
 - can map DNS, .onion, .bit, etc to IPNS
 
-
-## Design
-
-Please Read:
-
-- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/jbenet/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
-- IPFS - Toward The Permanent Web
-
-## Implementations
-
-There are no stable implementations yet. There are two being developed concurrently:
-
-- [node-ipfs](http://github.com/jbenet/node-ipfs) in NodeJS (v1 Effort)
-- [go-ipfs](http://github.com/jbenet/go-ipfs) in Go (v1 Effort)
-
-If you would like to start one, please post an issue in this repository so I can help you. There is at present no "perfect spec" and many protocol details are still to be decided upon.
 
 ## FAQ
 
