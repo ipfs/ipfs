@@ -105,7 +105,7 @@ There is probably a specific discussion about that in the issues. If not, start 
 
 IPFS is the brainchild of [Juan Benet](http://juan.benet.ai).
 
-But IPFS has been designed by the internet at large. The ideas behind IPFS have been around for many years, in the form of excellent open source systems and research. If it gets far at all, IPFS will be standing on the wigs of giants.
+But IPFS has been designed by the internet at large. The ideas behind IPFS have been around for many years, in the form of excellent open source systems and research. If it gets far at all, IPFS will be standing on the shoulders of giants.
 
 And, there are [many people](contributors.md) whose papers, conversations, or work have directly contributed to its design and implementation.
 
