@@ -216,8 +216,8 @@ S/Kademlia based IPFS identity generation:
       n = Node{}
       do {
         n.PubKey, n.PrivKey = PKI.genKeyPair()
-        n.NodeId = hash(hash(n.PubKey))
-        p = count_preceding_zero_bits(n.NodeId)
+        n.NodeId = hash(n.PubKey)
+        p = count_preceding_zero_bits(hash(n.NodeId))
       } while (p < difficulty)
 \end{verbatim}
 
