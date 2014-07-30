@@ -1,6 +1,4 @@
-# IPFS - the InterPlanetary File System
-
-The Permanent Web
+# IPFS - The Permanent Web
 
 IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
 
@@ -9,6 +7,10 @@ IPFS could become a new major subsystem of the internet. If built right, it coul
 #### ~~ IPFS IS A WORK IN PROGRESS ~~
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
+
+Watch the first IPFS talk:
+
+[![IPFS Talk](img/ipfs-talk.png)](https://www.youtube.com/watch?v=Fa4pckodM9g)
 
 
 ## Design
