@@ -241,7 +241,7 @@ IPFS nodes communicate regularly with hundreds of other nodes in the network, po
   \item \textbf{Reliability:} IPFS can provide reliability if underlying networks do not provide it, using uTP (LEDBAT~\cite{LEDBAT}) or SCTP~\cite{SCTP}.
   \item \textbf{Connectivity:} IPFS also uses the ICE NAT traversal techniques \cite{ICE}.
   \item \textbf{Integrity:} optionally checks integrity of messages using a hash checksum.
-  \item \textbf{Authenticity:} optionally checks authenticity of messages using HMAC with sender's public key.
+  \item \textbf{Authenticity:} optionally checks authenticity of messages by digitally signing them with the sender's private key.
 \end{itemize}
 
 \subsubsection{Note on Peer Addressing}
