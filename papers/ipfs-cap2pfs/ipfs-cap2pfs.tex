@@ -258,7 +258,7 @@ IPFS can use any network; it does not rely on or assume access to IP. This allow
 
 \subsection{Routing}
 
-IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{freedman04} and Mainline~\cite{wang13}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For values larger, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
+IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{freedman04} and Mainline~\cite{wang13}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For larger values, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
 
 The interface of this DSHT is the following:
 
