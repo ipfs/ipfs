@@ -191,7 +191,7 @@ Notation: data structures and functions below are specified in Go syntax.
 
 \subsection{Identities}
 
-Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{Throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hash checksums of data.} of a public-key, created with S/Kademlia's static crypto puzzle~\cite{baumgart07}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
+Nodes are identified by a \texttt{NodeId}, the cryptographic hash\footnote{Throughout this document, \textit{hash} and \textit{checksum} refer specifically to cryptographic hashes of data.} of a public-key, created with S/Kademlia's static crypto puzzle~\cite{baumgart07}. Nodes store their public and private keys (encrypted with a passphrase). Users are free to instatiate a ``new'' node identity on every launch, though that loses accrued network benefits. Nodes are incentivized to remain the same.
 
 \begin{verbatim}
       type NodeId Multihash
@@ -234,14 +234,14 @@ This allows the system to (a) choose the best function for the use case (e.g. st
 
 \subsection{Network}
 
-IPFS nodes communicate regualarly with hundreds of other nodes in the network, potentially across the wide internet. The IPFS network stack features:
+IPFS nodes communicate regularly with hundreds of other nodes in the network, potentially across the wide internet. The IPFS network stack features:
 
 \begin{itemize}
   \item \textbf{Transport:} IPFS can use any transport protocol, and is best suited for WebRTC DataChannels~\cite{WebRTC} (for browser connectivity) or uTP(LEDBAT~\cite{LEDBAT}).
   \item \textbf{Reliability:} IPFS can provide reliability if underlying networks do not provide it, using uTP (LEDBAT~\cite{LEDBAT}) or SCTP~\cite{SCTP}.
   \item \textbf{Connectivity:} IPFS also uses the ICE NAT traversal techniques \cite{ICE}.
   \item \textbf{Integrity:} optionally checks integrity of messages using a hash checksum.
-  \item \textbf{Authenticity:} optionally checks authenticity of messages using HMAC with sender's public key.
+  \item \textbf{Authenticity:} optionally checks authenticity of messages by digitally signing them with the sender's private key.
 \end{itemize}
 
 \subsubsection{Note on Peer Addressing}
@@ -258,7 +258,7 @@ IPFS can use any network; it does not rely on or assume access to IP. This allow
 
 \subsection{Routing}
 
-IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{freedman04} and Mainline~\cite{wang13}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For values larger, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
+IPFS nodes require a routing system that can find (a) other peers' network addresses and (b) peers who can serve particular objects. IPFS achieves this using a DSHT based on S/Kademlia and Coral, using the properties discussed in 2.1. The size of objects and use patterns of IPFS are similar to Coral \cite{freedman04} and Mainline~\cite{wang13}, so the IPFS DHT makes a distinction for values stored based on their size. Small values (equal to or less than \texttt{1KB}) are stored directly on the DHT. For larger values, the DHT stores references, which are the \texttt{NodeIds} of peers who can serve the block.
 
 The interface of this DSHT is the following:
 
