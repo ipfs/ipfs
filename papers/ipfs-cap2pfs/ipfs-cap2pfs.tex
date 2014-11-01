@@ -740,6 +740,7 @@ represents a file. IPFS Blocks are like Git blobs or filesystem data blocks. The
 
 \begin{verbatim}
 {
+  "type": "blob",
   "data": "some data here",
   // blobs have no links
 }
@@ -755,6 +756,7 @@ indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologi
 
 \begin{verbatim}
 {
+  "type": "list",
   "data": ["blob", "list", "blob"],
     // lists have an array of object types as data
   "links": [
@@ -814,6 +816,7 @@ indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologi
 \begin{verbatim}
     > ipfs file-cat <ccc111-hash> --json
     {
+      "type": "commit",
       "data": {
         "type": "tree",
         "date": "2014-09-20 12:44:06Z",
@@ -831,6 +834,7 @@ indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologi
 
     > ipfs file-cat <ttt111-hash> --json
     {
+      "type": "tree",
       "data": ["tree", "tree", "blob"],
       "links": [
         { "hash": "<ttt222-hash>",
@@ -844,6 +848,7 @@ indirect blocks. Since \texttt{lists} can contain other \texttt{lists}, topologi
 
     > ipfs file-cat <bbb222-hash> --json
     {
+      "type": "blob",
       "data": "blob222 data",
       "links": []
     }
@@ -880,6 +885,7 @@ The \texttt{commit} object in IPFS represents a snapshot in the version history 
 
 \begin{verbatim}
 {
+  "type": "commit",
   "data": {
     "type": "tree",
     "date": "2014-09-20 12:44:06Z",
@@ -945,6 +951,7 @@ For example, \texttt{flattened tree} for \texttt{ttt111} above:
 
 \begin{verbatim}
 {
+"type": "tree",
 "data":
   ["tree", "blob", "tree", "list", "blob" "blob"],
 "links": [
