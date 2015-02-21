@@ -10,7 +10,7 @@ Please note that IPFS is a work in progress. It is an ambitious plan to make the
 
 IPFS Talks:
 
-[![Alpha Demo]](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
+[![Alpha Demo](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 
 [![IPFS Talk](img/ipfs-talk.png)](https://www.youtube.com/watch?v=Fa4pckodM9g)
 
