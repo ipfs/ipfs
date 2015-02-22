@@ -729,7 +729,7 @@ IPFS also defines a set of objects for modeling a versioned filesystem on top of
   \item \texttt{commit}: a snapshot in the version history of a tree.
 \end{enumerate}
 
-I hoped to use the Git object formats exactly, but had to depart to introduce certain features useful in a distributed filesystem, namely (a) fast size lookups (aggregate byte sizes have been added to objects), (b) large file deduplication (adding a \texttt{list} object), and (c) embedding of \texttt{commits} into \texttt{trees}. However, IPFS File objects are close enough to Git that conversion between the two is possible. Also, a set of Git objects can be introduced to convert without losing any information (unix file permissions, etc).
+I hoped to use the Git object formats exactly, but had to depart to introduce certain features useful in a distributed filesystem, namely (a) fast size lookups (aggregate byte sizes have been added to objects) and (b) large file deduplication (adding a \texttt{list} object). However, IPFS File objects are close enough to Git that conversion between the two is possible. Also, a set of Git objects can be introduced to convert without losing any information (unix file permissions, etc).
 
 Notation: File object formats below use JSON. Note that this structure is actually binary encoded using protobufs, though ipfs includes import/export to JSON.
 
