@@ -94,7 +94,7 @@ This is the sort of thing that would have come out of ARPA/DARPA/IETF/BellLabs i
 Yes! 100% raw, unadulterated, Free Open Source Software.
 
 
-#### How do i help!?
+#### How do I help!?
 
 Please read [CONTRIBUTE.md](CONTRIBUTE.md). Help with the design. Write or contribute to an implementation or application.
 
