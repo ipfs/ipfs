@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ipfs/ipfs.png?label=ready&title=Ready)](https://waffle.io/ipfs/ipfs)
 # IPFS - The Permanent Web
 
 IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
