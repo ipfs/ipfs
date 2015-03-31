@@ -20,12 +20,12 @@ IPFS Talks:
 
 Please Read:
 
-- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/jbenet/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
+- [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - IPFS - Toward The Permanent Web
 
 ## Implementations
 
-- [github.com/jbenet/go-ipfs](https://github.com/jbenet/go-ipfs) in Go. Status: Alpha (reference)
+- [github.com/ipfs/go-ipfs](https://github.com/ipfs/go-ipfs) in Go. Status: Alpha (reference)
 
 - [node-ipfs](http://github.com/jbenet/node-ipfs) in js (on hold)
 
@@ -125,7 +125,7 @@ By popular demand (there were votes and a pronouncement of "GFS is dead. Long li
 
 - IP evokes the goal better: internet infrastructure
 - InterPlanetary still pays a weaker homage to Licklider
-- [If all](http://github.com/jbenet/ipfs/issues) [goes well](http://spacex.com), it may some day actually be InterPlanetary.
+- [If all](http://github.com/ipfs/ipfs/issues) [goes well](http://spacex.com), it may some day actually be InterPlanetary.
 - Name clashes less.
 
 Though it gets harder every day, I can still be convinced to change the name.
