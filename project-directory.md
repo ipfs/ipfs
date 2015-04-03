@@ -40,7 +40,7 @@ Listed here are all the repositories for use by the ipfs community on Github.
     Specifications on the ipfs protocol.
 
 
-## Human Resources
+## Management
 * [community](https://github.com/ipfs/community)  
     Information related to the community.
     
