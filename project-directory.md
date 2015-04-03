@@ -1,6 +1,6 @@
 IPFS Project Directory
 ======================
-These are all the repos found in the ipfs Github org. If you still can't find what you're looking for try [searching Github]( https://github.com/search?utf8=%E2%9C%93&q=user%3Aipfs).
+These are all the repos found in the ipfs Github organization. If you still can't find what you're looking for, try [searching Github]( https://github.com/search?utf8=%E2%9C%93&q=user%3Aipfs).
 
 ## Documents
 * [papers](https://github.com/ipfs/papers)  
@@ -12,7 +12,7 @@ These are all the repos found in the ipfs Github org. If you still can't find wh
 
 ## Implementations
 * [go-ipfs](https://github.com/ipfs/go-ipfs)  
-    IPFS implementation in golang. This is currently the only implementation in active development.
+    An ipfs implementation in golang. This is currently the only implementation in active development.
 
 
 ## Applications
@@ -39,10 +39,10 @@ These are all the repos found in the ipfs Github org. If you still can't find wh
     Documentation and scripts related to infrastructure for developers and users.
 
 * [logo](https://github.com/ipfs/logo)  
-    IPFS logo.
+    The logo for ipfs.
   
 * [mgmt](https://github.com/ipfs/mgmt)  
     Information related to project management.
 
 * [website](https://github.com/ipfs/website)  
-    Source for the ipfs website at http://ipfs.io.
+    The source to the ipfs community website at http://ipfs.io.
