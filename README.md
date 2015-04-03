@@ -9,7 +9,12 @@ IPFS could become a new major subsystem of the internet. If built right, it coul
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
-IPFS Talks:
+
+## [Project directory](project-directory.md)
+Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peak at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
+
+
+## IPFS Talks
 
 [![Alpha Demo](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 
