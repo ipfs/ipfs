@@ -11,7 +11,7 @@ Please note that IPFS is a work in progress. It is an ambitious plan to make the
 
 
 ## [Project directory](project-directory.md)
-Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peak at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
+Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
 
 
 ## IPFS Talks
