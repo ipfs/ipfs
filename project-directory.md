@@ -41,8 +41,8 @@ These are all the repos found in the ipfs Github organization. If you still can'
 * [logo](https://github.com/ipfs/logo)  
     The logo for ipfs.
   
-* [mgmt](https://github.com/ipfs/mgmt)  
-    Information related to project management.
+* [pm](https://github.com/ipfs/pm)  
+    General project management.
 
 * [website](https://github.com/ipfs/website)  
     The source to the ipfs community website at http://ipfs.io.
