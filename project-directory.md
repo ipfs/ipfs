@@ -33,11 +33,11 @@ These are all the repos found in the ipfs Github organization. If you still can'
 
 ## Community Resources
 * [community](https://github.com/ipfs/community)  
-    Information related to the community.
+    General discussion and documentation on community practices.
 
 * [infrastructure](https://github.com/ipfs/infrastructure)  
-    Documentation and scripts related to infrastructure for developers and users.
-
+    Tools and systems for the community.
+    
 * [logo](https://github.com/ipfs/logo)  
     The logo for ipfs.
   
