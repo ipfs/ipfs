@@ -9,6 +9,14 @@ These are all the repos found in the ipfs Github organization. If you still can'
 * [specs](https://github.com/ipfs/specs)  
     Specifications on the ipfs protocol.
 
+## Discussions
+
+* [faq](https://github.com/ipfs/faq)  
+    Frequently Asked Questions, and answers.
+
+* [notes](https://github.com/ipfs/notes)  
+    Various relevant notes and discussions (that do not fit elsewhere).
+
 
 ## Implementations
 * [go-ipfs](https://github.com/ipfs/go-ipfs)  
