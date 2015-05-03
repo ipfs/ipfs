@@ -22,6 +22,9 @@ These are all the repos found in the ipfs Github organization. If you still can'
 * [go-ipfs](https://github.com/ipfs/go-ipfs)  
     An ipfs implementation in golang. This is currently the only implementation in active development.
 
+* [node-ipfs](https://github.com/ipfs/node-ipfs)  
+    An ipfs implementation in Node.js.
+
 
 ## Applications
 * [astralboot](https://github.com/ipfs/astralboot)  
