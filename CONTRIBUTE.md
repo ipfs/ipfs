@@ -17,4 +17,4 @@ Please tweet, email, tell everyone about this. IPFS will succeed only if many pe
 
 ### Help in other ways
 
-[Email me directly](mailto:juan@benet.ai?subject=Contributing to IPFS) if you'd like to help in other ways.
+[Email me directly](mailto:juan@ipfs.io?subject=Contributing to IPFS) if you'd like to help in other ways.
