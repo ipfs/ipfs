@@ -5,7 +5,7 @@ There are many ways to contribute to IPFS development. This document will flesh 
 
 ### Help with the design
 
-If you find an error or have a suggestion for the overall design of IPFS, please submit an Issue.
+If you find an error or have a suggestion for the overall design of IPFS, please submit an [Issue](https://github.com/ipfs/ipfs/issues/new).
 
 ### Help with the implementations
 
@@ -17,4 +17,4 @@ Please tweet, email, tell everyone about this. IPFS will succeed only if many pe
 
 ### Help in other ways
 
-Email me directly if you'd like to help in other ways.
+[Email me directly](mailto:juan@benet.ai?subject=Contributing to IPFS) if you'd like to help in other ways.
