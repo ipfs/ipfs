@@ -1,5 +1,7 @@
 # IPFS - The Permanent Web
 
+[![Join the chat at https://gitter.im/jbenet/ipfs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jbenet/ipfs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
 
 IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. It sounds crazy. It _is_ crazy.
