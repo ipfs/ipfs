@@ -192,9 +192,6 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store)  
     A place to buy blobs.
 
-* [gateway-dmca](https://github.com/ipfs/gateway-dmca)  
-    Unknown.
-
 * [gateway-dmca-denylist](https://github.com/ipfs/gateway-dmca-denylist)  
     API for IPFS keys to which access should be denied.
 
