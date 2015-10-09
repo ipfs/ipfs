@@ -41,6 +41,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [archives](https://github.com/ipfs/archives)  
     Repo to coordinate archival efforts with IPFS.
 
+* [apps](https://github.com/ipfs/apps)
+    Coordinating writing apps on top of ipfs, and their concerns. 
+
 ### Specification Discussions
 
 * [blockchain-data](https://github.com/ipfs/blockchain-data)  
