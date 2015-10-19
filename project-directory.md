@@ -134,6 +134,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [blog](https://github.com/ipfs/blog)  
     IPFS Blog.
 
+* [awesome-ipfs](https://github.com/ipfs/awesome-ipfs)  
+    Useful resources for using IPFS and building things on top of it.
+
 * [meetup-lisbon](https://github.com/ipfs/meetup-lisbon)  
     The IPFS meetup in Lisbon.
 
