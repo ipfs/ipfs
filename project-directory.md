@@ -182,7 +182,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [install-go-ipfs](https://github.com/ipfs/install-go-ipfs)  
     Install go-ipfs shell script.
 
-* [ipfs-node-defaults](https://github.com/ipfs/ipfs-node-defaults)  
+* [ipfs-js-defaults](https://github.com/ipfs/ipfs-js-defaults)  
     Sane defaults for IPFS node configurations.
 
 * [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl)  
