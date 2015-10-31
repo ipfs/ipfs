@@ -41,7 +41,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [archives](https://github.com/ipfs/archives)  
     Repo to coordinate archival efforts with IPFS.
 
-* [apps](https://github.com/ipfs/apps)
+* [apps](https://github.com/ipfs/apps)  
     Coordinating writing apps on top of ipfs, and their concerns. 
 
 ### Specification Discussions
@@ -64,18 +64,18 @@ These are all the repos found in the IPFS Github organization. If you still can'
 
 ### In Development
 
-* [node-ipfs](https://github.com/ipfs/node-ipfs)  
+* [js-ipfs](https://github.com/ipfs/js-ipfs)  
     An IPFS implementation in Node.js.
 
 * [py-ipfs](https://github.com/ipfs/py-ipfs)  
-    python implementation of IPFS.
+    Python implementation of IPFS.
 
 * [go-ipld](https://github.com/ipfs/go-ipld)  
     This is the Go implementation of the IPLD spec.
 
 ### APIs
 
-* [node-ipfs-api](https://github.com/ipfs/node-ipfs-api)  
+* [js-ipfs-api](https://github.com/ipfs/js-ipfs-api)  
     A node client library for the IPFS API.
 
 * [go-ipfs-api](https://github.com/ipfs/go-ipfs-api)  
@@ -99,7 +99,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
     The IPFS webui accessible from the api gateway typically at port 5001.
 
 * [starlog](https://github.com/ipfs/starlog)  
-    logging the development of an interplanetary filesystem. This will evenutlaly be a way of making blog posts with IPFS.
+    Logging the development of an interplanetary filesystem. This will evenutlaly be a way of making blog posts with IPFS.
 
 * [electron-app](https://github.com/ipfs/electron-app)  
     Electron Shell based IPFS app.
@@ -148,11 +148,11 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [dnslink-deploy](https://github.com/ipfs/dnslink-deploy)  
     Automatically set DNS records on Digital Ocean.
 
-* [node-ipfsd-ctl](https://github.com/ipfs/node-ipfsd-ctl)  
-    control an IPFS daemon (WIP).
+* [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl)  
+    Control an IPFS daemon (WIP).
 
 * [npm-go-ipfs](https://github.com/ipfs/npm-go-ipfs)  
-    install go-ipfs from npm.
+    Install go-ipfs from npm.
 
 * [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations)  
     These are migrations for the filesystem repository of IPFS clients.
@@ -167,13 +167,13 @@ These are all the repos found in the IPFS Github organization. If you still can'
     This repo will stress test IPFS filesystem capabilities.
 
 * [go-blocks](https://github.com/ipfs/go-blocks)  
-    go-blocks - IPFS blocks.
+    Go-blocks - IPFS blocks.
 
 * [go-iprs](https://github.com/ipfs/go-iprs)  
-    go-ipfs records.
+    Go-ipfs records.
 
 * [dir-index-html](https://github.com/ipfs/dir-index-html)  
-    directory listing html.
+    Directory listing html.
 
 * [ipfs-node-defaults](https://github.com/ipfs/ipfs-node-defaults)  
     Sane defaults for IPFS node configurations.
@@ -185,7 +185,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
     Go commands. WIP.
 
 * [install-go-ipfs](https://github.com/ipfs/install-go-ipfs)  
-    install go-ipfs shell script.
+    Install go-ipfs shell script.
 
 * [go-log](https://github.com/ipfs/go-log)  
     A logging library used by go-ipfs.
