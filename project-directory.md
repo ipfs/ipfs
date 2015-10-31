@@ -190,6 +190,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [go-log](https://github.com/ipfs/go-log)  
     A logging library used by go-ipfs.
 
+* [js-ipfs-path](https://github.com/ipfs/js-ipfs-path)  
+    Javascript helper functions for IPFS path handling
+
 ## Random modules
 
 * [ipfs-hubot](https://github.com/ipfs/ipfs-hubot)  
