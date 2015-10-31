@@ -82,7 +82,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
     A Java implementation of the HTTP IPFS API.
 
 * [js-ipfs-api](https://github.com/ipfs/js-ipfs-api)  
-    A JavaScript client library for the IPFS API.
+    A client library for the IPFS HTTP API, implemented in JavaScript.
 
 * [python-ipfs-api](https://github.com/ipfs/python-ipfs-api)  
     A python client library for the IPFS API.
@@ -128,6 +128,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 
 * [infrastructure](https://github.com/ipfs/infrastructure)  
     Tools and systems for the community.
+
+* [ipfs-readme-standard](https://github.com/ipfs/ipfs-readme-standard)  
+    Standardize all IPFS Readme.md's and other markdown files
 
 * [logo](https://github.com/ipfs/logo)  
     The logo for IPFS.
@@ -176,14 +179,23 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [go-iprs](https://github.com/ipfs/go-iprs)  
     Go-ipfs records.
 
+* [go-libp2p](https://github.com/ipfs/go-libp2p)  
+    libp2p is a networking stack and library modularized out of The IPFS Project, and bundled separately for other tools to use.
+
 * [go-log](https://github.com/ipfs/go-log)  
     A logging library used by go-ipfs.
 
 * [install-go-ipfs](https://github.com/ipfs/install-go-ipfs)  
     Install go-ipfs shell script.
 
+* [ipfs-geoip](https://github.com/ipfs/ipfs-geoip)  
+    Geoip over ipfs
+
 * [ipfs-js-defaults](https://github.com/ipfs/ipfs-js-defaults)  
     Sane defaults for IPFS node configurations.
+
+* [ipfs-update](https://github.com/ipfs/ipfs-update)  
+    An updater tool for ipfs
 
 * [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl)  
     Control an IPFS daemon (WIP).
@@ -196,9 +208,6 @@ These are all the repos found in the IPFS Github organization. If you still can'
 
 ## Random modules
 
-* [gateway-dmca-denylist](https://github.com/ipfs/gateway-dmca-denylist)  
-    API for IPFS keys to which access should be denied.
-
 * [ipfs.js](https://github.com/ipfs/ipfs.js)  
     A squatted repo, for future client side IPFS js.
 
@@ -208,13 +217,15 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [ipfs-hubot](https://github.com/ipfs/ipfs-hubot)  
     hubot for IPFS (WIP!!).
 
-* [refs](https://github.com/ipfs/refs)
-    Tool for building and publishing the DAG at https://ipfs.io/refs.
+* [ipfs-npm](https://github.com/ipfs/ipfs-npm)  
+    npm on IPFS
 
-* [refs-denylists-dmca](https://github.com/ipfs/refs-denylists-dmca)
-    Source for the `refs` tool. DMCA notices served for the ipfs.io gateway.
+* [refs](https://github.com/ipfs/refs)  
+    DMCA notices, and tools for publishing them https://ipfs.io/refs/lists/denylists/dmca
+
+* [refs-denylists-dmca](https://github.com/ipfs/refs-denylists-dmca)  
+    DMCA takedown notices
 
 * [refs-solarnet-storage](https://github.com/ipfs/refs-solarnet-storage)
     Source for the `refs` tool. Content archived on the storage hosts.
-
 
