@@ -82,7 +82,7 @@ These are all the repos found in the IPFS Github organization. If you still can'
     A Java implementation of the HTTP IPFS API.
 
 * [js-ipfs-api](https://github.com/ipfs/js-ipfs-api)  
-    A node client library for the IPFS API.
+    A JavaScript client library for the IPFS API.
 
 * [python-ipfs-api](https://github.com/ipfs/python-ipfs-api)  
     A python client library for the IPFS API.
@@ -95,14 +95,14 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [astralboot](https://github.com/ipfs/astralboot)  
     A low level boot server that deploys directly out of IPFS.
 
-* [electron-app](https://github.com/ipfs/electron-app)  
-    Electron Shell based IPFS app.
-
 * [ipfs-web-app](https://github.com/ipfs/ipfs-web-app)  
     IPFS web app interface.
 
 * [starlog](https://github.com/ipfs/starlog)  
     Logging the development of an interplanetary filesystem. This will evenutlaly be a way of making blog posts with IPFS.
+
+* [station](https://github.com/ipfs/station)  
+    Electron Shell based IPFS app.
 
 * [webui](https://github.com/ipfs/webui)  
     The IPFS webui accessible from the api gateway typically at port 5001.
