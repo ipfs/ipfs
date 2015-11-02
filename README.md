@@ -12,6 +12,14 @@ Please note that IPFS is a work in progress. It is an ambitious plan to make the
 
 [![Ready](https://badge.waffle.io/ipfs/ipfs.png?label=ready&title=Backlog)](https://waffle.io/ipfs/ipfs)
 
+## Security Issues
+
+The IPFS protocol and its implementations are still in heavy development. This means that there may be problems in our protocols, or there may be mistakes in our implementations. And -- though IPFS is not production-ready yet -- many people are already running nodes in their machines. So we take security vulnerabilities very seriously. If you discover a security issue, please bring it to our attention right away!
+
+If you find a vulnerability that may affect live deployments -- for example, by exposing a remote execution exploit -- please send your report privately to security@ipfs.io. Please DO NOT file a public issue.
+
+If the issue is a protocol weakness that cannot be immediately exploited or something not yet deployed, just discuss it openly.
+
 ## [Project directory](project-directory.md)
 Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
 
