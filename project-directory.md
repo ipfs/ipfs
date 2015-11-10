@@ -198,8 +198,14 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store)  
     A place to buy blobs.
 
-* [gateway-dmca-denylist](https://github.com/ipfs/gateway-dmca-denylist)  
-    API for IPFS keys to which access should be denied.
+* [refs](https://github.com/ipfs/refs)
+    Tool for building and publishing the DAG at https://ipfs.io/refs.
+
+* [refs-denylists-dmca](https://github.com/ipfs/refs-denylists-dmca)
+    Source for the `refs` tool. DMCA notices served for the ipfs.io gateway.
+
+* [refs-solarnet-storage](https://github.com/ipfs/refs-solarnet-storage)
+    Source for the `refs` tool. Content archived on the storage hosts.
 
 * [ipfs.js](https://github.com/ipfs/ipfs.js)  
     A squatted repo, for future client side IPFS js.
