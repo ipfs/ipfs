@@ -145,6 +145,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 
 ## Tools
 
+* [ci-status](https:?/github.com/ipfs/ci-status)  
+    ci status for the ipfs project
+
 * [dnslink-deploy](https://github.com/ipfs/dnslink-deploy)  
     Automatically set DNS records on Digital Ocean.
 
