@@ -14,6 +14,7 @@ Note: The repository descriptions (ought to) originate from the GitHub repositor
     - [Active](#active)
     - [In Development](#in-development)
     - [APIs](#apis)
+    - [Specs](#specs)
 - [Applications](#applications)
 - [Demos and Examples](#demos-and-examples)
 - [Community Resources](#community-resources)
@@ -66,9 +67,6 @@ Note: The repository descriptions (ought to) originate from the GitHub repositor
 
 ### In Development
 
-* [go-ipld](https://github.com/ipfs/go-ipld)  
-    This is the Go implementation of the IPLD spec.
-
 * [js-ipfs](https://github.com/ipfs/js-ipfs)  
     An IPFS implementation in Node.js.
 
@@ -94,6 +92,14 @@ Note: The repository descriptions (ought to) originate from the GitHub repositor
 
 * [swift-ipfs-api](https://github.com/ipfs/swift-ipfs-api)  
     A Swift client library for the IPFS API.
+
+### Specs
+
+* [go-ipld](https://github.com/ipfs/go-ipld)  
+    This is the Go implementation of the IPLD spec.
+
+* [js-ipfs-repo](https://github.com/ipfs/js-ipfs-repo)  
+    Implementation of the IPFS repo spec (https://github.com/ipfs/specs/tree/master/repo) in JavaScript
 
 ## Applications
 
