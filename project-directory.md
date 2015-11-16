@@ -181,6 +181,9 @@ Note: The repository descriptions (ought to) originate from the GitHub repositor
 * [go-commands](https://github.com/ipfs/go-commands)  
     Go commands. WIP.
 
+* [go-ipfs-util](https://github.com/ipfs/go-ipfs-util)  
+    Common utilities used by go-ipfs and other related go packages
+
 * [go-iprs](https://github.com/ipfs/go-iprs)  
     Go-ipfs records.
 
