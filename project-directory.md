@@ -175,6 +175,9 @@ Note: The repository descriptions (ought to) originate from the GitHub repositor
 * [dnslink-deploy](https://github.com/ipfs/dnslink-deploy)  
     Automatically set DNS records on Digital Ocean.
 
+* [file-browser](https://github.com/ipfs/file-browser)
+    generic-ipfs-file-browser-ui-thing
+
 * [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations)  
     These are migrations for the filesystem repository of IPFS clients.
 
