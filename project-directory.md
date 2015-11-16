@@ -90,6 +90,9 @@ These are all the repos found in the IPFS Github organization. If you still can'
 * [scala-ipfs-api](https://github.com/ipfs/scala-ipfs-api)  
     A wrapper of the IPFS Client HTTP-API  for Scala.
 
+* [swift-ipfs-api](https://github.com/ipfs/swift-ipfs-api)  
+    A Swift client library for the IPFS API.
+
 ## Applications
 
 * [astralboot](https://github.com/ipfs/astralboot)  
