@@ -2,6 +2,8 @@ IPFS Project Directory
 ======================
 These are all the repos found in the IPFS Github organization. If you still can't find what you're looking for, try [searching Github]( https://github.com/search?utf8=%E2%9C%93&q=user%3Aipfs).
 
+Note: The repository descriptions (ought to) originate from the GitHub repository descriptions. Please make sure that those descriptions and these are synced.
+
 ## Table of Contents
 
 - [Top level updates](#top-level-updates)
