@@ -230,5 +230,5 @@ These are all the repos found in the IPFS Github organization. If you still can'
     DMCA takedown notices
 
 * [refs-solarnet-storage](https://github.com/ipfs/refs-solarnet-storage)
-    Source for the `refs` tool. Content archived on the storage hosts.
+    Inventory of content archived on Solarnet storage hosts https://github.com/ipfs/archives
 
