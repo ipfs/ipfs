@@ -30,6 +30,7 @@ The IPFS community has a lot of repositories:
 - [ipfs/faq](https://github.com/ipfs/faq) is for questions you might have about IPFS.
 - [ipfs/support](https://github.com/ipfs/support) is for issues with getting IPFS up and running.
 - [ipfs/community](https://github.com/ipfs/community) is for meta-questions on how we manage our community in general.
+- [project directory](https://github.com/ipfs/ipfs/blob/master/project-directory.md) is for all of our repositories.
 
 We also have these communication channels outside of GitHub:
 
@@ -37,7 +38,7 @@ We also have these communication channels outside of GitHub:
 - Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users) if you like email.
 - Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
 
-Searching for something else? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](project-directory.md) which maps out all of the repositories for the IPFS project.
+Searching for something else? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](https://github.com/ipfs/ipfs/blob/master/project-directory.md) which maps out all of the repositories for the IPFS project.
 
 ## IPFS Talks
 
@@ -111,7 +112,7 @@ IPFS has a name service:
 
 ## FAQ
 
-Feel free to submit more questions as issues or via my email.
+Feel free to browse and submit more questions at the [ipfs/faq](https://github.com/ipfs/faq/issues) discussion repo.
 
 #### What is the goal of IPFS?
 
