@@ -1,3 +1,6 @@
+**Lost?** Searching for something? Need to submit an issue? Want to contribute? Take a peek at [the Project Directory](project-directory.md) which maps out all the repositories for the ipfs project on Github.
+
+
 # IPFS - The Permanent Web
 
 [![ipfs](http://img.shields.io/irc/%23ipfs.png)](https://webchat.freenode.net/?channels=ipfs)
@@ -19,10 +22,6 @@ The IPFS protocol and its implementations are still in heavy development. This m
 If you find a vulnerability that may affect live deployments -- for example, by exposing a remote execution exploit -- please send your report privately to security@ipfs.io. Please DO NOT file a public issue.
 
 If the issue is a protocol weakness that cannot be immediately exploited or something not yet deployed, just discuss it openly.
-
-## [Project directory](project-directory.md)
-Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
-
 
 ## IPFS Talks
 
