@@ -2,17 +2,29 @@
 
 [![ipfs](http://img.shields.io/irc/%23ipfs.png)](https://webchat.freenode.net/?channels=ipfs)
 
-IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects.
+Welcome to **IPFS**, the **I**nter**P**lanetary **F**ile **S**ystem! Get started by watching [IPFS: The Distributed, Permenent Web](https://www.youtube.com/watch?v=HUVmypx9HGI).
 
-IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. It sounds crazy. It _is_ crazy.
+## Table of Contents (links)
 
-#### IPFS IS A WORK IN PROGRESS
+- [Overview](#overview) ([Security Warnings](#security-warnings))
+- [How IPFS Works](#how-ipfs-works)
+  - [Talks](#talks)
+  - [Demos](#demos-and-examples)
+  - [Papers](#papers)
+- [Get Started](https://ipfs.io/docs/getting-started) ([Installation](https://ipfs.io/docs/install), [Setup](https://ipfs.io/docs/getting-started#init-the-repo) & [Going Online](https://ipfs.io/docs/getting-started/#going-online))
+- [Specifications](https://github.com/ipfs/specs#ipfs-specs)
+- [Protocol Implementations](#protocol-implementations)
+- [API Client Libraries](#api-client-libraries)
+- [Community](https://github.com/ipfs/community)
+  - [Projects which use IPFS](#community-projects)
+  - [How to Contribute](https://github.com/ipfs/community/blob/master/contributing.md)
+  - [Development Environment](https://github.com/ipfs/infrastructure)
+  - [Roadmap](https://github.com/ipfs/pm) [![Ready](https://badge.waffle.io/ipfs/ipfs.png?label=ready&title=Backlog)](https://waffle.io/ipfs/ipfs)
+- [FAQs: Frequently Asked Questions](#faq)
+
+## Security Warnings
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
-
-[![Ready](https://badge.waffle.io/ipfs/ipfs.png?label=ready&title=Backlog)](https://waffle.io/ipfs/ipfs)
-
-## Security Issues
 
 The IPFS protocol and its implementations are still in heavy development. This means that there may be problems in our protocols, or there may be mistakes in our implementations. And -- though IPFS is not production-ready yet -- many people are already running nodes in their machines. So we take security vulnerabilities very seriously. If you discover a security issue, please bring it to our attention right away!
 
@@ -20,33 +32,32 @@ If you find a vulnerability that may affect live deployments -- for example, by 
 
 If the issue is a protocol weakness that cannot be immediately exploited or something not yet deployed, just discuss it openly.
 
-## [Project directory](project-directory.md)
-Lost? Searching for something? Need to submit an issue? Want to contribute? Take a peek at [project-directory.md](project-directory.md) which maps out all the repositories for the ipfs project on Github.
+## Overview
 
+IPFS ([InterPlanetary File System](#why-the-name-ipfs)) is an Open Source distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. You can read more about its origins in the paper [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true).
 
-## IPFS Talks
+IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. It sounds crazy. It _is_ crazy.
 
-[![Alpha Demo](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
+## Talks
 
-[![IPFS Talk](img/ipfs-talk.png)](https://www.youtube.com/watch?v=Fa4pckodM9g)
+- [Intro to IPFS](https://www.youtube.com/watch?v=HUVmypx9HGI)
+- [IPFS Alpha Demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
+- [Decentralizing The Web With The Inter-Planetary File System (IPFS)](https://www.youtube.com/watch?v=erB7i6Uc4DM)
+- [The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g).
 
+## Demos & Examples
 
-## Design
+* [container-demos](https://github.com/ipfs/container-demos)
+    Demos on how to boot docker images and VMs.
 
-Please Read:
+* [examples](https://github.com/ipfs/examples)
+    Examples on how to use go-ipfs.
+    
+## Papers
 
 - [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
-- IPFS - Toward The Permanent Web
 
-## Implementations
-
-- [github.com/ipfs/go-ipfs](https://github.com/ipfs/go-ipfs) in Go. Status: Alpha (reference)
-
-- [node-ipfs](http://github.com/jbenet/node-ipfs) in js (on hold)
-
-If you would like to start one, please post an issue in this repository so I can help you. There is at present no "perfect spec" and many protocol details are still to be decided upon.
-
-## Summary
+## How IPFS Works
 
 IPFS is a protocol:
 - defines a content-addressed file system
@@ -92,6 +103,58 @@ IPFS has a name service:
 - serves to build trust chains
 - compatible with other NSes
 - can map DNS, .onion, .bit, etc to IPNS
+
+# Protocol Implementations
+
+For a list of IPFS API Client Libraries, please refer to *[Client Libraries](#client-libraries)*
+
+| Language | Project | Completeness |
+|----------|---------|--------------|
+| Go (reference) | https://github.com/ipfs/go-ipfs | |
+| Javascript | https://github.com/ipfs/js-ipfs | |
+| Python | https://github.com/ipfs/py-ipfs | |
+| Haskell | https://github.com/cleichner/haskell-ipfs | |
+| .net | https://github.com/wasabii/dotnet-ipfs | |
+| C++ | https://github.com/subtly/cpp-ipfs | |
+| Rust | https://github.com/rschulman/rust-ipfs | |
+
+Would you like to start your own language implementation of IPFS? Check out the [IPFS Implementation Guide](https://github.com/ipfs/specs/blob/overviews/overviews/implement-ipfs.md). There is at present no "perfect spec" and many protocol details are still to be decided upon.
+
+## API Client Libraries
+
+For a list of IPFS protocol implementations, please refer to *[Language Implementations](#language-implementations).
+
+| Language | Client Library | Completeness |
+|----------|----------------|--------------|
+| Go | https://github.com/ipfs/go-ipfs-api | |
+| Java | https://github.com/ipfs/java-ipfs-api | |
+| Javascript | https://github.com/ipfs/js-ipfs-api | |
+| Python | https://github.com/ipfs/python-ipfs-api | |
+| Scala | https://github.com/ipfs/scala-ipfs-api | |
+| Haskell | https://github.com/davidar/hs-ipfs-api | |
+| Swift | https://github.com/ipfs/swift-ipfs-api | |
+| CommonLisp | https://github.com/WeMeetAgain/cl-ipfs-api | |
+| Rust | https://github.com/rschulman/rust-ipfs-api | |
+| Ruby | https://github.com/Fryie/ipfs-ruby | |
+| Swift | https://github.com/NeoTeo/ipfs-osx-service | |
+| PHP | https://github.com/cloutier/php-ipfs-api | |
+| C/C++ | contact: [@PayasR](https://github.com/PayasR) | 0% |
+| Julia | contact: [@rened](https://github.com/rened) | 0% |
+| Lua | contact: [@seclorum](https://github.com/seclorum) | 0% |
+| Erlang | ! | 0% |
+| Objective C | ! | 0% |
+
+Want to contribute one of the above client libraries? [Tell us](https://github.com/ipfs/ipfs/issues/83) so we can help!
+
+# Community Projects
+
+| Project | Description |
+|---------|-------------|
+| [astralboot](https://github.com/ipfs/astralboot) | A low level boot server that deploys directly out of IPFS.|
+| [ipfs-web-app](https://github.com/ipfs/ipfs-web-app) | IPFS web app interface. |
+| [starlog](https://github.com/ipfs/starlog) | Logging the development of an interplanetary filesystem. This will evenutlaly be a way of making blog posts with IPFS. |
+| [station](https://github.com/ipfs/station) | Electron Shell based IPFS app. |
+| [webui](https://github.com/ipfs/webui) | The IPFS webui accessible from the api gateway typically at port 500.1 |
 
 
 ## FAQ
