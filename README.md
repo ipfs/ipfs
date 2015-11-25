@@ -163,7 +163,7 @@ The IPFS Project is big -- there are many efforts subprojects and related effort
 
 | Language | Project | Completeness |
 |----------|---------|--------------|
-| Go (reference) | https://github.com/ipfs/go-ipfs | reference |
+| Go | https://github.com/ipfs/go-ipfs | **reference** |
 | Javascript | https://github.com/ipfs/js-ipfs | incomplete |
 | Python | https://github.com/ipfs/py-ipfs | starting |
 
@@ -304,6 +304,8 @@ Other
 * [ipfs-hubot](https://github.com/ipfs/ipfs-hubot) hubot for IPFS uses.
 
 #### Implementation Submodules
+
+Many more exist, but we will endeavor to find them and add them here.
 
 * [api](https://github.com/ipfs/api) The APIs IPFS implementations must conform to, with planned test suites to check conformity.
 * [go-ipld](https://github.com/ipfs/go-ipld) implementation of [the IPLD spec](https://github.com/ipfs/specs/tree/master/merkledag/ipld.md) in Go
