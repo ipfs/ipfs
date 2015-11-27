@@ -158,6 +158,7 @@ You can also find our community on:
 
 The IPFS Project is big -- there are many efforts subprojects and related efforts. We will document the core efforts here, though look around. The space is exploding and lots of new projects are springing up all the time.
 
+For a community-curated lists of awesome projects using IPFS, check out [awesome-ipfs](https://github.com/ipfs/awesome-ipfs)!
 
 #### Protocol Implementations
 
