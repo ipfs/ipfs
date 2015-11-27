@@ -200,13 +200,12 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 #### Project Oranization
 
 * [ipfs](https://github.com/ipfs/ipfs) master repo, intro, and news
-* [faq](https://github.com/ipfs/faq) Frequently Asked Questions, and answers.Look at the issues
 * [community](https://github.com/ipfs/community) Community Discussions and documentation on community practices
 * [pm](https://github.com/ipfs/pm) Community Sprints and Project Management
 
 #### Get Help!
 
-* [faq](https://github.com/ipfs/faq) Frequently Asked Questions, and answers.Look at the issues
+* [FAQ](https://github.com/ipfs/faq) Frequently Asked Questions, and answers. All questions are posed as GitHub issues.
 * [support](https://github.com/ipfs/support) Support and Help with running IPFS. Post an Issue and we will help there or route you.
 
 #### Documents
