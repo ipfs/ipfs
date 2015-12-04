@@ -275,6 +275,7 @@ Ref Lists
 * [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) useful resources for using IPFS and building things on top of it
 * [ipfs-readme-standard](https://github.com/ipfs/ipfs-readme-standard)Standardize all IPFS Readme.md's and other markdown files
 * [logo](https://github.com/ipfs/logo) the logo for IPFS.
+* [translation project](https://www.transifex.com/ipfs/ipfs) crowdsourced translation of IPFS WebUI and the ipfs.io website
 
 #### IPFS Meetups
 
