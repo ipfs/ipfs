@@ -261,7 +261,7 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 * [blog](https://github.com/ipfs/blog) the IPFS Blog
 * [website](https://github.com/ipfs/website) The source to the IPFS community website at http://ipfs.io.
 * [distributions](https://github.com/ipfs/distributions) Scripts to build the /install html page.
-* [ci-status](https://github.com/ipfs/ci-status) ci status for the ipfs project
+* [project-repos](https://github.com/ipfs/project-repos) ci status for the ipfs project
 
 Ref Lists
 
