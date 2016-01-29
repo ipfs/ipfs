@@ -196,7 +196,7 @@ Please help by contributing to one of the above client libraries. If you would l
 
 ### Project Directory
 
-This aims to be a directory of all the various repos in the [IPFS Github Organization](github.com/ipfs), and other closely related things.
+This aims to be a directory of all the various repos in the [IPFS Github Organization](https://github.com/ipfs), and other closely related things.
 
 #### Project Oranization
 
