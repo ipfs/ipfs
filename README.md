@@ -1,6 +1,6 @@
 # IPFS - The Permanent Web
 
-[![ipfs](http://img.shields.io/irc/%23ipfs.png)](https://webchat.freenode.net/?channels=ipfs)
+[![ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs)
 
 Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started?
 
