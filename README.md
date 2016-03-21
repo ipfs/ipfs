@@ -199,6 +199,8 @@ Please help by contributing to one of the above client libraries. If you would l
 
 This aims to be a directory of all the various repos in the [IPFS Github Organization](https://github.com/ipfs), and other closely related things.
 
+We have a status board that checks all IPFS repositories for CI, Readmes, test coverage, and so on, here: http://project-repos.ipfs.io/
+
 #### Project Oranization
 
 * [ipfs](https://github.com/ipfs/ipfs) - Master repo, intro, and news.
