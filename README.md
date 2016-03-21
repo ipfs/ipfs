@@ -144,7 +144,7 @@ The IPFS Project is now very large, with hundreds of contributors in our communi
 
 - [FAQs: Frequently Asked Questions](https://github.com/ipfs/faq)
 - [Support and Getting Help!](https://github.com/ipfs/faq)
-- [Sprints + Project Management](https://github.com/ipfs/pm)
+- [Sprints and Project Management](https://github.com/ipfs/pm)
 - [Contributing Guidelines](https://github.com/ipfs/community/blob/master/contributing.md)
 
 You can also find our community on:
@@ -156,7 +156,7 @@ You can also find our community on:
 
 ## Project Links
 
-The IPFS Project is big -- there are many efforts subprojects and related efforts. We will document the core efforts here, though look around. The space is exploding and lots of new projects are springing up all the time.
+The IPFS Project is big -- there are many subprojects and related efforts. We will document the core ones here, though you should look around. The space is exploding and lots of new projects are springing up all the time.
 
 For a community-curated lists of awesome projects using IPFS, check out [awesome-ipfs](https://github.com/ipfs/awesome-ipfs)!
 
@@ -265,7 +265,7 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 * [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics
 * [weekly](https://github.com/ipfs/weekly) - Prepare and store IFPS Weekly roundups
 
-Ref Lists
+#### Ref Lists
 
 * [refs](https://github.com/ipfs/refs) - Tools for publishing lists of IPFS ref heads.
 * [refs-denylists-dmca](https://github.com/ipfs/refs-denylists-dmca) - DMCA takedown notices for the IPFS Public Gateway.
