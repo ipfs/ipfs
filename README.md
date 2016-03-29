@@ -226,6 +226,7 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 * [archive-format](https://github.com/ipfs/archive-format) - A DAG Archive format.
 * [bitswap-ml](https://github.com/ipfs/bitswap-ml) - Bitswap and Machine Learning.
 * [blockchain-data](https://github.com/ipfs/blockchain-data) - Using IPFS for storing data for Blockchain apps.
+* [POST](https://github.com/ipfs/POST) - A datastructure for human communication.
 
 #### Protocol Implementations
 
@@ -235,10 +236,12 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 
 #### API Client Implementations
 
+* [http-api-spec](https://github.com/ipfs/http-api-spec) - Apiary IPFS HTTP API description http://docs.ipfs.apiary.io
 * [java-ipfs-api](https://github.com/ipfs/java-ipfs-api) - Implementation in Java.
 * [js-ipfs-api](https://github.com/ipfs/js-ipfs-api) - Implementation in Javascript.
 * [go-ipfs-api](https://github.com/ipfs/go-ipfs-api) - Implementation in Go.
 * [python-ipfs-api](https://github.com/ipfs/python-ipfs-api) - Implementation in Python.
+* [py-ipfs-api](https://github.com/ipfs/py-ipfs-api) - A python client library for the IPFS API
 * [scala-ipfs-api](https://github.com/ipfs/scala-ipfs-api) - Implementation in Scala.
 * [swift-ipfs-api](https://github.com/ipfs/swift-ipfs-api) - Implementation in Swift.
 
@@ -251,6 +254,7 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 
 * [astralboot](https://github.com/ipfs/astralboot) - Low level boot server that deploys directly out of IPFS (TFTP, PXE Boot).
 * [ipfs-web-app](https://github.com/ipfs/ipfs-web-app) - IPFS web app interfaces.
+* [ipget](https://github.com/ipfs/ipget) - wget for IPFS: retrieve files over IPFS and save them locally.
 * [starlog](https://github.com/ipfs/starlog) - Blog posts in IPFS.
 * [container-demos](https://github.com/ipfs/container-demos) - Demos on how to boot docker images and VMs from IPFS.
 * [ipfs-geoip](https://github.com/ipfs/ipfs-geoip) - Geoip over ipfs.
@@ -258,11 +262,13 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 
 #### Community Infrastructure
 
-* [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
 * [blog](https://github.com/ipfs/blog) - The IPFS Blog
-* [website](https://github.com/ipfs/website) - The source to the IPFS community website at http://ipfs.io.
+* [community](https://github.com/ipfs/community) - Community Discussions and documentation on community practices.
 * [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
+* [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
+* [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations
 * [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics
+* [website](https://github.com/ipfs/website) - The source to the IPFS community website at http://ipfs.io.
 * [weekly](https://github.com/ipfs/weekly) - Prepare and store IFPS Weekly roundups
 
 Ref Lists
@@ -276,6 +282,7 @@ Ref Lists
 * [examples](https://github.com/ipfs/examples) - Examples on how to use go-ipfs.
 * [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) - Useful resources for using IPFS and building things on top of it.
 * [ipfs-readme-standard](https://github.com/ipfs/ipfs-readme-standard) - Standardize all IPFS Readme.md's and other markdown files.
+* [ipld-examples](https://github.com/ipfs/ipld-examples) - Datastructure examples to use with IPLD, the new data format for IPFS.
 * [logo](https://github.com/ipfs/logo) - The logo for IPFS.
 * [translation project](https://www.transifex.com/ipfs/ipfs) - Crowdsourced translation of IPFS WebUI and the ipfs.io website.
 
@@ -297,6 +304,7 @@ Installing
 
 Other
 
+* [connections-globe](https://github.com/ipfs/connections-globe) - An interactive globe to view all your IPFS peers.
 * [dataviz](https://github.com/ipfs/dataviz) - IPFS data visualizations.
 * [dir-index-html](https://github.com/ipfs/dir-index-html) - Directory listing html.
 * [dnslink-deploy](https://github.com/ipfs/dnslink-deploy) - Automatically set DNS records on Digital Ocean.
@@ -306,19 +314,30 @@ Other
 * [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl) - Control IPFS daemons from JavaScript.
 * [ipfs-hubot](https://github.com/ipfs/ipfs-hubot) - Hubot for IPFS uses.
 
+#### Forks
+
+* [go-datastore (fork)](https://github.com/ipfs/go-datastore) - key-value datastore interfaces
+* [golang-build (fork)](https://github.com/ipfs/golang-build) - Continuous build and release infrastructure
+* [pinbot-irc (fork)](https://github.com/ipfs/pinbot-irc) - a bot for the ipfs irc channel that pins things (among other menial tasks)
+
 #### Implementation Submodules
 
 Many more exist, but we will endeavor to find them and add them here.
 
-* [api](https://github.com/ipfs/api) - The APIs IPFS implementations must conform to, with planned test suites to check conformity.
-* [go-ipld](https://github.com/ipfs/go-ipld) - Implementation of [the IPLD spec](https://github.com/ipfs/specs/tree/master/merkledag/ipld.md) in Go.
-* [js-ipfs-repo](https://github.com/ipfs/js-ipfs-repo) - Implementation of [the IPFS repo spec](https://github.com/ipfs/specs/tree/master/repo) in Javascript.
 * [go-blocks](https://github.com/ipfs/go-blocks)
 * [go-commands](https://github.com/ipfs/go-commands)
 * [go-ipfs-util](https://github.com/ipfs/go-ipfs-util) - Common utilities used by go-ipfs and other related go packages.
+* [go-ipld](https://github.com/ipfs/go-ipld) - Implementation of [the IPLD spec](https://github.com/ipfs/specs/tree/master/merkledag/ipld.md) in Go.
 * [go-iprs](https://github.com/ipfs/go-iprs) - Go-ipfs records.
 * [go-libp2p](https://github.com/ipfs/go-libp2p) - libp2p is a networking stack and library modularized out of The IPFS Project, and bundled separately for other tools to use.
 * [go-log](https://github.com/ipfs/go-log) - A logging library used by go-ipfs.
-* [js-ipfs-path](https://github.com/ipfs/js-ipfs-path) - Javascript helper functions for IPFS path handling.
-* [ipfs.js](https://github.com/ipfs/ipfs.js) - IPFS on the Browser.
 * [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store) - A place to buy blobs.
+* [ipfs.js](https://github.com/ipfs/ipfs.js) - IPFS on the Browser.
+* [js-ipfs-bitswap](https://github.com/ipfs/js-ipfs-bitswap) - JavaScript implementation of the Bitswap 'data exchange' protocol used by IPFS
+* [js-ipfs-blocks](https://github.com/ipfs/js-ipfs-blocks) - JavaScript Implementation of Block and BlockService
+* [js-ipfs-data-importing](https://github.com/ipfs/js-ipfs-data-importing) - JavaScript implementation of the layout and chunking mechanisms used by IPFS
+* [js-ipfs-path](https://github.com/ipfs/js-ipfs-path) - Javascript helper functions for IPFS path handling.
+* [js-ipfs-repo](https://github.com/ipfs/js-ipfs-repo) - Implementation of [the IPFS repo spec](https://github.com/ipfs/specs/tree/master/repo) in Javascript.
+* [js-ipfs-unixfs](https://github.com/ipfs/js-ipfs-unixfs) - JavaScript implementation of IPFS' unixfs (a Unix FileSystem representation on top of a MerkleDAG)
+* [js-libp2p-ipfs-browser](https://github.com/ipfs/js-libp2p-ipfs-browser) - libp2p build (module) used in js-ipfs when running it on the browser
+* [js-libp2p-ipfs](https://github.com/ipfs/js-libp2p-ipfs) - libp2p build (module) used in js-ipfs
