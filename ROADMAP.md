@@ -127,20 +127,22 @@ These are some libraries that must exist to make developers' lives easy. It is c
 - [ ] Content Security
   - [x] content security: IPLD hash links (authenticated content)
   - [ ] content security: Keychain signed objects
+  - [ ] content security: native content encryption
   - [ ] content security: native crypto capabilities
   - [ ] content security: audit
 - [ ] Anonymity
   - [ ] transport anonymity: tor support
   - [ ] transport anonymity: i2p support
   - [ ] ship anonymity focused distribution (tor, i2p, no leaking info)
+  - [ ] peer and content routing anonymity
   - [ ] anonymity: audit
-  - [ ] routing anonymity: vuvuzela distribution
 - [ ] Anticensorship
   - [x] Anticensorship: decentralized, peering content distribution
   - [x] Anticensorship: access based re-distribution
-  - [x] Anticensorship: PKI distribution
-  - [x] Anticensorship: resilience to powerful sybil attacks on routing
-  - [x] Anticensorship: HTTP TLS transport emulation
+  - [ ] Anticensorship: incentivized distribution
+  - [ ] Anticensorship: PKI distribution
+  - [ ] Anticensorship: resilience to powerful sybil attacks on routing
+  - [ ] Anticensorship: HTTP TLS transport emulation
 - [ ] Auditing
   - [ ] Audit: full protocol fuzzer tests
   - [ ] Audit: test with state of the art exploit test suites
