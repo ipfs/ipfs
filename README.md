@@ -268,10 +268,10 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 * [community](https://github.com/ipfs/community) - Community Discussions and documentation on community practices.
 * [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
 * [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
+* [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IFPS Newsletter roundups
 * [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations
 * [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics
 * [website](https://github.com/ipfs/website) - The source to the IPFS community website at http://ipfs.io.
-* [weekly](https://github.com/ipfs/weekly) - Prepare and store IFPS Weekly roundups
 
 #### Ref Lists
 
