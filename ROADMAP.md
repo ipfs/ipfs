@@ -1,4 +1,3 @@
-
 # IPFS Roadmap
 
 These are various challenges and milestones in the IPFS Project. They are not ordered in any way at the moment, merely grouped.
