@@ -289,6 +289,7 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 #### IPFS Meetups
 
 * [ipfs/lisbon](https://www.meetup.com/ipfs-lisbon-meetup/) - The IPFS meetup in Lisbon.
+* [ipfs/london](https://www.meetup.com/IPFS-London-Meetup/) - The IPFS meetup in London.
 * More repos coming here. Check [the community discussions](https://github.com/ipfs/community/issues) for other meetups. (There's many now!)
 
 We encourage and support IPFS Meetups, please let us know if you would like to start one. Feel free to organize yourself through [the Community discussions](https://github.com/ipfs/community/issues) and [to advertise events in the main repository](https://github.com/ipfs/ipfs/issues).
