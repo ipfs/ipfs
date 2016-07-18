@@ -53,7 +53,7 @@ IPFS is a filesystem:
 IPFS is a web:
 - can be used to view documents like the web
 - files accessible via HTTP at `http://ipfs.io/<path>`
-- browsers or extensions can learn to use `ipfs://` directly
+- browsers or extensions can learn to use the `ipfs:/` or `fs:/` URI schemes directly
 - hash-addressed content guarantees authenticity
 
 IPFS is modular:
