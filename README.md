@@ -248,7 +248,7 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 
 #### IPFS Node Apps
 
-* [station](https://github.com/ipfs/station) - An IPFS Dektop app.
+* [station](https://github.com/ipfs/station) - An IPFS Desktop app.
 * [webui](https://github.com/ipfs/webui) - The IPFS WebUI app.
 
 #### Apps on IPFS
