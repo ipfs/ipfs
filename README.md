@@ -328,8 +328,8 @@ Other
 
 Many more exist, but we will endeavor to find them and add them here.
 
-* [go-blocks](https://github.com/ipfs/go-blocks)
-* [go-commands](https://github.com/ipfs/go-commands)
+* [go-blocks](https://github.com/ipfs/go-blocks) - Deprecated, continued within go-ipfs
+* [go-commands](https://github.com/ipfs/go-commands) - Deprecated, continued within go-ipfs
 * [go-ipfs-util](https://github.com/ipfs/go-ipfs-util) - Common utilities used by go-ipfs and other related go packages.
 * [go-ipld](https://github.com/ipfs/go-ipld) - Implementation of [the IPLD spec](https://github.com/ipfs/specs/tree/master/merkledag/ipld.md) in Go.
 * [go-iprs](https://github.com/ipfs/go-iprs) - Go-ipfs records.
