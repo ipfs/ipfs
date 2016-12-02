@@ -107,7 +107,7 @@ This is a short selection of introductory talks. In time we will collect more he
 
 ## More About IPFS
 
-The IPFS project seeks to evolve the infrastructure of the Internet and the Web, with many things we've learned from successful systems, like [Git](http://git-scm.com/), [BitTorrent](http://bittorrent.org/), [Kademlia](http://en.wikipedia.org/wiki/Kademlia), [Bitcoin](http://bitcoin.org), and many, many more. This is the sort of thing that would have come out of ARPA/DARPA/IETF/BellLabs in another age. IPFS is a Free Open Source project, with hundreds of contributors.
+The IPFS project seeks to evolve the infrastructure of the Internet and the Web, with many things we've learned from successful systems, like [Git](https://git-scm.com/), [BitTorrent](http://bittorrent.org/), [Kademlia](https://en.wikipedia.org/wiki/Kademlia), [Bitcoin](https://bitcoin.org/), and many, many more. This is the sort of thing that would have come out of ARPA/DARPA/IETF/BellLabs in another age. IPFS is a Free Open Source project, with hundreds of contributors.
 
 ### Current State of IPFS
 
@@ -122,7 +122,7 @@ Today, there is one main IPFS Protocol implementation (in [Go](https://github.co
 In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an "Alpha Distribution". Since then, go-ipfs has been making regular releases on the road towards Beta. Both [js-ipfs](https://github.com/ipfs/js-ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs) are in progress.
 
 - [Install IPFS Alpha Distribution](http://ipfs.io/docs/install)
-- [Setup IPFS and Getting Started](http://ipfs.io/docs/getting-started)
+- [Setup IPFS and Getting Started](http://ipfs.io/docs/getting-started/)
 - [Going Online](http://ipfs.io/docs/getting-started/#going-online)
 - [More Examples](https://ipfs.io/docs/examples/)
 
@@ -178,7 +178,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | Go | https://github.com/ipfs/go-ipfs-api | |
 | Java | https://github.com/ipfs/java-ipfs-api | |
 | Javascript | https://github.com/ipfs/js-ipfs-api | |
-| Python | https://github.com/ipfs/python-ipfs-api | |
+| Python | https://github.com/ipfs/py-ipfs-api | |
 | Scala | https://github.com/ipfs/scala-ipfs-api | |
 | Haskell | https://github.com/davidar/hs-ipfs-api | |
 | Swift | https://github.com/ipfs/swift-ipfs-api | |
@@ -284,10 +284,10 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 
 * [examples](https://github.com/ipfs/examples) - Examples on how to use go-ipfs.
 * [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) - Useful resources for using IPFS and building things on top of it.
-* [ipfs-readme-standard](https://github.com/ipfs/ipfs-readme-standard) - Standardize all IPFS Readme.md's and other markdown files.
+* [ipfs-readme-standard](https://github.com/RichardLitt/standard-readme) - Standardize all IPFS Readme.md's and other markdown files.
 * [ipld-examples](https://github.com/ipfs/ipld-examples) - Datastructure examples to use with IPLD, the new data format for IPFS.
 * [logo](https://github.com/ipfs/logo) - The logo for IPFS.
-* [translation project](https://www.transifex.com/ipfs/ipfs) - Crowdsourced translation of IPFS WebUI and the ipfs.io website.
+* [translation project](https://www.transifex.com/ipfs/ipfs/) - Crowdsourced translation of IPFS WebUI and the ipfs.io website.
 
 #### IPFS Meetups
 
@@ -333,13 +333,13 @@ Many more exist, but we will endeavor to find them and add them here.
 * [go-ipfs-util](https://github.com/ipfs/go-ipfs-util) - Common utilities used by go-ipfs and other related go packages.
 * [go-ipld](https://github.com/ipfs/go-ipld) - Implementation of [the IPLD spec](https://github.com/ipfs/specs/tree/master/merkledag/ipld.md) in Go.
 * [go-iprs](https://github.com/ipfs/go-iprs) - Go-ipfs records.
-* [go-libp2p](https://github.com/ipfs/go-libp2p) - libp2p is a networking stack and library modularized out of The IPFS Project, and bundled separately for other tools to use.
+* [go-libp2p](https://github.com/libp2p/go-libp2p) - libp2p is a networking stack and library modularized out of The IPFS Project, and bundled separately for other tools to use.
 * [go-log](https://github.com/ipfs/go-log) - A logging library used by go-ipfs.
 * [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store) - A place to buy blobs.
 * [ipfs.js](https://github.com/ipfs/ipfs.js) - IPFS on the Browser.
 * [js-ipfs-bitswap](https://github.com/ipfs/js-ipfs-bitswap) - JavaScript implementation of the Bitswap 'data exchange' protocol used by IPFS
-* [js-ipfs-blocks](https://github.com/ipfs/js-ipfs-blocks) - JavaScript Implementation of Block and BlockService
-* [js-ipfs-data-importing](https://github.com/ipfs/js-ipfs-data-importing) - JavaScript implementation of the layout and chunking mechanisms used by IPFS
+* [js-ipfs-blocks](https://github.com/ipfs/js-ipfs-block-service) - JavaScript Implementation of Block and BlockService
+* [js-ipfs-data-importing](https://github.com/ipfs/js-ipfs-unixfs-engine) - JavaScript implementation of the layout and chunking mechanisms used by IPFS
 * [js-ipfs-path](https://github.com/ipfs/js-ipfs-path) - Javascript helper functions for IPFS path handling.
 * [js-ipfs-repo](https://github.com/ipfs/js-ipfs-repo) - Implementation of [the IPFS repo spec](https://github.com/ipfs/specs/tree/master/repo) in Javascript.
 * [js-ipfs-unixfs](https://github.com/ipfs/js-ipfs-unixfs) - JavaScript implementation of IPFS' unixfs (a Unix FileSystem representation on top of a MerkleDAG)
