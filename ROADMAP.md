@@ -707,7 +707,7 @@ The js-ipfs effort is the javascript implementation of IPFS. It is meant to run 
 
 ### IPFS directly on the Browsers
 
-As a protocol for the web, the ultiamte goal of IPFS is to run directly in the browsers. We are achieving this through a four-step plan:
+As a protocol for the web, the ultimate goal of IPFS is to run directly in the browsers. We are achieving this through a four-step plan:
 
 - (1) Implement IPFS in any language, and use a js-ipfs-api library to delegate commands to an IPFS API (e.g. go-ipfs running on localhost). This already works today, and many applications already exist leveraging IPFS in the browser this way.
 - (2) Implement IPFS in javascript, and use js-ipfs directly in the browser tab. This is in progress today.
