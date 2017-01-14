@@ -41,6 +41,7 @@ Stale Endeavors are the ones that have fallen between the cracks. They need to b
 |Specs 🔥| | | |
 |[Awesome API Documentation](https://github.com/ipfs/js-ipfs/issues/615#issuecomment-272160177) (js) 🔥| | | |
 |Documentation (general) 🔥| | | |
+|decentralized web primer| @flyingzumwalt | | |
 |WebUI 💥| | | |
 |Station 🎣| | | |
 |http-api spec| | | |
