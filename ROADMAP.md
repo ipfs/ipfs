@@ -16,12 +16,12 @@ js-ipfs | @diasdavid | Active |
 go-ipfs | @Kubuxu, @whyrusleeping | Active |
 multiformats | @diasdavid | Active |
 ipfs-cluster | @hsanjuan | Active |
-ipfs infrastructure & distributions | @lgierth, @VictorBjelkholm | Active |
-gx | @Kubuxu, @whyrusleeping | Active |
+Infrastructure | @VictorBjelkholm | Active |
+CI/CD | @VictorBjelkholm | Active |
+gx | @whyrusleeping | Active |
 IPLD | @nicola | Active |
 orbit | @haadcode | Active |
 libp2p | @diasdavid | Active |
-libp2p infrastructure & distributions | @lgierth, @VictorBjelkholm | Active |
 
 ## Endeavors on the Back Burner
 
@@ -47,26 +47,25 @@ Stale Endeavors are the ones that have fallen between the cracks. They need to b
 |http-api spec| | | |
 |multiformats| | | |
 |test lab| | | |
-|packet-switching| | | |
+|packet-switching| @lgierth | | |
 |npm-on-ipfs 🎣| | | |
-|gateway 💥| | | |
+|gateway 💥| @lgierth | | |
 |xtp| | | |
-|dist.ipfs.io 💥| | | |
+|dist.ipfs.io 💥| | | to-be merged with CI/CD |
 |core-api| | | |
 |project-repos| | | |
 |blog 💥| | | |
 |ethereum on libp2p| | | |
 |paperhub?| | | |
 |newsletter 💥| | | |
-|multikey| | | |
-|ipfs-update 💥| | | |
-|starlog| | | |
+|multikey| | | to-be merged with multiformats |
+|ipfs-update 💥| | | to-be merged with CI/CD |
+|starlog| | | dead |
 |ipsend 🎣| | | |
 |ipget| | | |
 |maps on IPFS| | | |
-|examples (on website) 💥| | | |
+|examples (on website) 💥| | | to-be merged with documentation |
 |ipfs on mobile 🎣| | | |
-|gx| | | |
 | archives repo | | | |
 
 # Milestones
