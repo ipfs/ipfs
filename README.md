@@ -188,6 +188,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | Swift | https://github.com/NeoTeo/ipfs-osx-service | |
 | PHP | https://github.com/cloutier/php-ipfs-api | |
 | C# | https://github.com/TrekDev/net-ipfs-api | |
+| | https://github.com/richardschneider/net-ipfs-api | |
 | C/C++ | contact: [@PayasR](https://github.com/PayasR) | 0% |
 | Julia | contact: [@rened](https://github.com/rened) | 0% |
 | Lua | contact: [@seclorum](https://github.com/seclorum) | 0% |
@@ -248,6 +249,7 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 * [py-ipfs-api](https://github.com/ipfs/py-ipfs-api) - A python client library for the IPFS API
 * [scala-ipfs-api](https://github.com/ipfs/scala-ipfs-api) - Implementation in Scala.
 * [swift-ipfs-api](https://github.com/ipfs/swift-ipfs-api) - Implementation in Swift.
+* [net-ipfs-api](https://github.com/richardschneider/net-ipfs-api) - Implementation in C#.
 
 #### IPFS Node Apps
 
