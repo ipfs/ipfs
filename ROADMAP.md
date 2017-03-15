@@ -11,7 +11,7 @@ Our work around building and maintaining IPFS is broken up into numerous "endeav
 "Active" endeavors are the endeavors for which we have allocated developer time this quarter.
 
 | Endeavor | Captain | Status |
-|---|---|---|---|
+|---|---|---|
 js-ipfs | @diasdavid | Active |
 go-ipfs | @Kubuxu, @whyrusleeping | Active |
 multiformats | @diasdavid | Active |
@@ -28,7 +28,8 @@ libp2p | @diasdavid | Active |
 Endeavors on the "Back Burner" are getting less attention this quarter.
 
 | Endeavor | Captain | Status |
-|---|---|---|---|
+|---|---|---|
+| | |
 
 ## Stale Endeavors
 
