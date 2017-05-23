@@ -143,8 +143,7 @@ If the issue is a protocol weakness that cannot be immediately exploited or some
 
 The IPFS Project is now very large, with hundreds of contributors in our community. You are invited to join it! Here are some links to our communication channels:
 
-- [FAQs: Frequently Asked Questions](https://github.com/ipfs/faq)
-- [Support and Getting Help!](https://github.com/ipfs/support)
+- [IPFS Community Forums for Discussion and Support](https://discuss.ipfs.io)
 - [Sprints and Project Management](https://github.com/ipfs/pm)
 - [Contributing Guidelines](https://github.com/ipfs/community/blob/master/contributing.md)
 
@@ -206,13 +205,14 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 #### Project Oranization
 
 * [ipfs](https://github.com/ipfs/ipfs) - Master repo, intro, and news.
-* [community](https://github.com/ipfs/community) - Community Discussions and documentation on community practices.
+* [discourse](https://discuss.ipfs.io) - Community discussions and support forum.
 * [pm](https://github.com/ipfs/pm) - Community Sprints and Project Management.
 
 #### Get Help!
 
-* [FAQ](https://github.com/ipfs/faq) - Frequently Asked Questions, and answers. All questions are posed as GitHub issues.
-* [support](https://github.com/ipfs/support) - Support and Help with running IPFS. Post an Issue and we will help there or route you.
+The best place to seek help is on [the IPFS community forum](https://discuss.ipfs.io) or on IRC (freenode) in the #ipfs channel.
+
+There are two deprecated repositories containing [FAQ](https://github.com/ipfs/faq) and [support](https://github.com/ipfs/support). Use those as reference, but post any new questions or requests for help on https://discuss.ipfs.io.
 
 #### Documents
 
@@ -269,7 +269,7 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 #### Community Infrastructure
 
 * [blog](https://github.com/ipfs/blog) - The IPFS Blog
-* [community](https://github.com/ipfs/community) - Community Discussions and documentation on community practices.
+* [community forum](https://discuss.ipfs.io)
 * [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
 * [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
 * [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups
