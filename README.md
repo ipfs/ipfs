@@ -216,6 +216,7 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 #### Documents
 
+* [reading-list](https://github.com/ipfs/reading-list) - Papers to read to understand IPFS.
 * [papers](https://github.com/ipfs/papers) - Academic papers on IPFS.
 * [specs](https://github.com/ipfs/specs) - Specifications on the IPFS protocol.
 * [notes](https://github.com/ipfs/notes) - Various relevant notes and discussions (that do not fit elsewhere).
