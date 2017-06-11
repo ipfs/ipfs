@@ -188,7 +188,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | PHP | https://github.com/cloutier/php-ipfs-api | |
 | C# | https://github.com/TrekDev/net-ipfs-api | |
 | | https://github.com/richardschneider/net-ipfs-api | |
-| C/C++ | contact: [@PayasR](https://github.com/PayasR) | 0% |
+| C++ | https://github.com/vasild/cpp-ipfs-api | |
 | Julia | contact: [@rened](https://github.com/rened) | 0% |
 | Lua | contact: [@seclorum](https://github.com/seclorum) | 0% |
 | Erlang | ! | 0% |
