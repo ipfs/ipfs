@@ -191,7 +191,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | C++ | https://github.com/vasild/cpp-ipfs-api | |
 | Julia | contact: [@rened](https://github.com/rened) | 0% |
 | Lua | contact: [@seclorum](https://github.com/seclorum) | 0% |
-| Erlang | ! | 0% |
+| Erlang | https://github.com/hendry19901990/erlang-ipfs-api |  |
 | Objective C | ! | 0% |
 
 Please help by contributing to one of the above client libraries. If you would like to create another, please see the [IPFS API Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://github.com/ipfs/ipfs/issues/83) so we can help!
