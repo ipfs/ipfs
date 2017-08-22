@@ -12,6 +12,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/bitswap/stat`**               | :green_apple: | :green_apple: |
 | **`GET /api/v0/bitswap/unwant`**             | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
@@ -29,6 +31,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/block/get`**                  | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 | **`POST /api/v0/block/put`**                 | :green_apple: | :green_apple: |
@@ -47,6 +51,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/bootstrap/add`]                | :green_apple: | :green_apple: |
 | [`GET /api/v0/bootstrap/list`]               | :green_apple: | :green_apple: |
 | [`GET /api/v0/bootstrap/rm`]                 | :green_apple: | :green_apple: |
@@ -62,6 +68,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`POST /api/v0/config`]                      | :green_apple: | :chestnut:    |
 | [`POST /api/v0/config/replace`]              | :green_apple: | :chestnut:    |
 | [`GET /api/v0/config/show`]                  | :green_apple: | :chestnut:    |
@@ -91,12 +99,17 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/diag/cmds`]                    | :green_apple: | :chestnut:    |
 | [`GET /api/v0/diag/cmds/clear`]              | :green_apple: | :chestnut:    |
 | [`GET /api/v0/diag/cmds/set-time`]           | :green_apple: | :chestnut:    |
 | [`GET /api/v0/net`]                          | :green_apple: | :chestnut:    |
 | [`GET /api/v0/sys`]                          | :green_apple: | :chestnut:    |
 
+
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/stats/bitswap`**              | :green_apple: | :tomato:      |
 | **`POST /api/v0/stats/bw`**                  | :green_apple: | :tomato:      |
 |     `peer=`                                  | :green_apple: | :tomato:      |
@@ -116,6 +129,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/dht/findpeer`]                 | :green_apple: | :chestnut:    |
 | [`POST /api/v0/dht/findprovs`]               | :green_apple: | :chestnut:    |
 | [`GET /api/v0/dht/get`]                      | :green_apple: | :chestnut:    |
@@ -135,6 +150,8 @@
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/cat`]                          | :green_apple: | :chestnut:    |
 | [`GET /api/v0/file/ls`]                      | :green_apple: | :chestnut:    |
 | [`GET /api/v0/files/cp`]                     | :green_apple: | :chestnut:    |
@@ -150,6 +167,7 @@
 | [`GET /api/v0/ls`]                           | :green_apple: | :chestnut:    |
 
 
+| Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`POST /api/v0/add`**                       | :green_apple: | :lemon:       |
 |     `arg=`                                   | :green_apple: | :chestnut:    |
@@ -179,10 +197,14 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/commands`]                     | :green_apple: | :chestnut:    |
 | [`POST /api/v0/id`]                          | :green_apple: | :chestnut:    |
 
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/ping`**                       | :green_apple: | :chestnut:    |
 |     `arg=`                                   | :green_apple: | :chestnut:    |
 |     `count=,n=`                              | :green_apple: | :chestnut:    |
@@ -208,6 +230,8 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/dns`]                          | :green_apple: | :chestnut:    |
 | [`POST /api/v0/name/publish`]                | :green_apple: | :chestnut:    |
 | [`GET /api/v0/name/resolve`]                 | :green_apple: | :chestnut:    |
@@ -224,6 +248,8 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/object/data`**                | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 | **`GET /api/v0/object/diff`**                | :green_apple: | :tomato:      |
@@ -273,6 +299,8 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/pin/add`**                    | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
@@ -332,6 +360,8 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | [`GET /api/v0/repo/fsck`]                    | :green_apple: | :chestnut:    |
 | [`GET /api/v0/repo/gc`]                      | :green_apple: | :chestnut:    |
 | [`GET /api/v0/repo/stat`]                    | :green_apple: | :chestnut:    |
@@ -352,6 +382,8 @@ Refs:
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/swarm/addrs`**                | :green_apple: | :green_apple: |
 | **`GET /api/v0/swarm/addrs/local`**          | :green_apple: | :green_apple: |
 |     `id=`                                    | :green_apple: | :tomato:      |
