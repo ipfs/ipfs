@@ -120,37 +120,45 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs config edit`**                       | :green_apple: | :chestnut:    |
+| **`ipfs config`**                            | :green_apple: | :chestnut:    |
+|     `key`                                    | :green_apple: | :green_apple: |
+|     `value`                                  | :green_apple: | :green_apple: |
+|     `bool=`                                  | :green_apple: | :green_apple: |
+|     `json=`                                  | :green_apple: | :green_apple: |
+| **`ipfs config replace`**                    | :green_apple: | :green_apple: |
+|     `file`                                   | :green_apple: | :green_apple: |
+| **`ipfs config show`**                       | :green_apple: | :green_apple: |
+| **`ipfs log level`**                         | :green_apple: | :chestnut:    |
+|     `subsystem`                              | :green_apple: | :chestnut:    |
+|     `level`                                  | :green_apple: | :chestnut:    |
+| **`ipfs log ls`**                            | :green_apple: | :chestnut:    |
+| **`ipfs log tail`**                          | :green_apple: | :chestnut:    |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
+| **`GET /api/v0/config/edit`**                | :green_apple: | :chestnut:    |
 | **`POST /api/v0/config`**                    | :green_apple: | :chestnut:    |
+|     `arg1=`                                  | :green_apple: | :green_apple: |
+|     `arg2=`                                  | :green_apple: | :green_apple: |
+|     `bool=`                                  | :green_apple: | :green_apple: |
+|     `json=`                                  | :green_apple: | :green_apple: |
+| **`POST /api/v0/config/replace`**            | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/config/show`**                | :green_apple: | :green_apple: |
+| **`POST /api/v0/log/level`**                 | :green_apple: | :chestnut:    |
 |     `arg1=`                                  | :green_apple: | :chestnut:    |
 |     `arg2=`                                  | :green_apple: | :chestnut:    |
-|     `bool=`                                  | :green_apple: | :chestnut:    |
-|     `json=`                                  | :green_apple: | :chestnut:    |
-| **`POST /api/v0/config/replace`**            | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/config/show`**                | :green_apple: | :chestnut:    |
-| **`POST /api/v0/log/level`**                 | :green_apple: | :chestnut:    |
-|     `arg1=bitswap`                           | :green_apple: | :chestnut:    |
-|     `arg1=blockstore`                        | :green_apple: | :chestnut:    |
-|     `arg1=dht`                               | :green_apple: | :chestnut:    |
-|     `arg1=merkledag`                         | :green_apple: | :chestnut:    |
-|     `arg1=all`                               | :green_apple: | :chestnut:    |
-|     `arg2=debug`                             | :green_apple: | :chestnut:    |
-|     `arg2=info`                              | :green_apple: | :chestnut:    |
-|     `arg2=notice`                            | :green_apple: | :chestnut:    |
-|     `arg2=warning`                           | :green_apple: | :chestnut:    |
-|     `arg2=error`                             | :green_apple: | :chestnut:    |
-|     `arg2=critical`                          | :green_apple: | :chestnut:    |
 | **`GET /api/v0/log/ls`**                     | :green_apple: | :chestnut:    |
 | **`GET /api/v0/log/tail`**                   | :green_apple: | :chestnut:    |
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
 #### Core
 
+See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
