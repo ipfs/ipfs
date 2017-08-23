@@ -280,11 +280,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/commands`**                   | :green_apple: | :chestnut:    |
 | **`POST /api/v0/id`**                        | :green_apple: | :chestnut:    |
 |     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/tour`**                       | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/tour/list`**                  | :green_apple: | :chestnut:    |
-| **`GET /api/v0/tour/next`**                  | :green_apple: | :chestnut:    |
-| **`GET /api/v0/tour/restart`**               | :green_apple: | :chestnut:    |
 
 #### Core
 
