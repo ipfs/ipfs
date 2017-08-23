@@ -578,16 +578,23 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs repo fsck`**                         | :green_apple: | :chestnut:    |
+| **`ipfs repo gc`**                           | :green_apple: | :tomato:      |
+| **`ipfs repo stat`**                         | :green_apple: | :tomato:      |
+| **`ipfs repo verify`**                       | :green_apple: | :chestnut:    |
+| **`ipfs repo version`**                      | :green_apple: | :green_apple: |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/repo/fsck`**                  | :green_apple: | :chestnut:    |
-| **`GET /api/v0/repo/gc`**                    | :green_apple: | :chestnut:    |
-| **`GET /api/v0/repo/stat`**                  | :green_apple: | :chestnut:    |
+| **`GET /api/v0/repo/gc`**                    | :green_apple: | :tomato:      |
+| **`GET /api/v0/repo/stat`**                  | :green_apple: | :tomato:      |
 | **`GET /api/v0/repo/verify`**                | :green_apple: | :chestnut:    |
-| **`GET /api/v0/repo/version`**               | :green_apple: | :chestnut:    |
-
+| **`GET /api/v0/repo/version`**               | :green_apple: | :green_apple: |
 
 #### Core
 
