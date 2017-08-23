@@ -479,7 +479,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg1=`                                  | :green_apple: | :green_apple: |
 |     `arg2=`                                  | :green_apple: | :green_apple: |
 |     `arg3=`                                  | :green_apple: | :green_apple: |
-|     `create=,p=`                             | :green_apple: | :green_apple: |
+|     `create=`                                | :green_apple: | :green_apple: |
 | **`POST /api/v0/object/patch/rm-link`**      | :green_apple: | :green_apple: |
 |     `arg1=`                                  | :green_apple: | :green_apple: |
 |     `arg2=`                                  | :green_apple: | :green_apple: |
@@ -488,8 +488,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg2=`                                  | :green_apple: | :green_apple: |
 | **`GET /api/v0/object/put`**                 | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
-|     `inputenc=json`                          | :green_apple: | :green_apple: |
-|     `inputenc=protobuf`                      | :green_apple: | :green_apple: |
+|     `inputenc`                               | :green_apple: | :green_apple: |
 | **`GET /api/v0/object/stat`**                | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 
@@ -500,6 +499,8 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 --------------------------------------------------------------------------------
 
 ## p2p (libp2p exposed API)
+
+> **This is blocked until there is a formalized `interface-libp2p`**. Currently, js-ipfs exposes libp2p directly while go-ipfs exposes a subset of commands that use libp2p.
 
 #### CLI
 
