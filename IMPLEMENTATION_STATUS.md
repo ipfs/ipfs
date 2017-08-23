@@ -418,6 +418,42 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs object data`**                       | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+| **`ipfs object diff`**                       | :green_apple: | :tomato:      |
+|     `key1`                                   | :green_apple: | :tomato:      |
+|     `key2`                                   | :green_apple: | :tomato:      |
+| **`ipfs object/get`**                        | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+|     `encoding`                               | :green_apple: | :green_apple: |
+| **`GET /api/v0/object/links`**               | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+| **`GET /api/v0/object/new`**                 | :green_apple: | :green_apple: |
+|     `template`                               | :green_apple: | :green_apple: |
+| **`GET /api/v0/object/patch/append-data`**   | :green_apple: | :green_apple: |
+|     `root`                                   | :green_apple: | :green_apple: |
+|     `data`                                   | :green_apple: | :green_apple: |
+| **`POST /api/v0/object/patch/add-link`**     | :green_apple: | :green_apple: |
+|     `root`                                   | :green_apple: | :green_apple: |
+|     `name`                                   | :green_apple: | :green_apple: |
+|     `ref`                                    | :green_apple: | :lemon:       |
+|     `create`                                 | :green_apple: | :tomato:      |
+| **`POST /api/v0/object/patch/rm-link`**      | :green_apple: | :green_apple: |
+|     `root`                                   | :green_apple: | :green_apple: |
+|     `link`                                   | :green_apple: | :green_apple: |
+| **`POST /api/v0/object/patch/set-data`**     | :green_apple: | :green_apple: |
+|     `root`                                   | :green_apple: | :green_apple: |
+|     `data`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/object/put`**                 | :green_apple: | :green_apple: |
+|     `data`                                   | :green_apple: | :green_apple: |
+|     `inputenc`                               | :green_apple: | :green_apple: |
+|     `datafieldenc`                           | :green_apple: | :tomato:      |
+|     `pin`                                    | :green_apple: | :tomato:      |
+| **`GET /api/v0/object/stat`**                | :green_apple: | :green_apple: |
+|     `root`                                   | :green_apple: | :green_apple: |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
@@ -456,9 +492,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `inputenc=protobuf`                      | :green_apple: | :green_apple: |
 | **`GET /api/v0/object/stat`**                | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
-
-Refs:
--  http://docs.ipfs.apiary.io/#reference/object
 
 #### Core
 
