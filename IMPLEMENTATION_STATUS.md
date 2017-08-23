@@ -178,9 +178,24 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
-## Diagnostics `ipfs diag`
+## Stats and Diagnostics
 
 #### CLI
+
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs stats bitswap`**                     | :green_apple: | :tomato:      |
+| **`ipfs stats bw`**                          | :green_apple: | :tomato:      |
+|     `peer`                                   | :green_apple: | :tomato:      |
+|     `proto`                                  | :green_apple: | :tomato:      |
+|     `poll`                                   | :green_apple: | :tomato:      |
+|     `interval `                              | :green_apple: | :tomato:      |
+| **`ipfs stats repo`**                        | :green_apple: | :tomato:      |
+| **`ipfs diag cmds`**                         | :green_apple: | :chestnut:    |
+| **`ipfs diag cmds clear`**                   | :green_apple: | :chestnut:    |
+| **`ipfs diag cmds set-time`**                | :green_apple: | :chestnut:    |
+|     `time`                                   | :green_apple: | :chestnut:    |
+| **`ipfs diag sys`**                          | :green_apple: | :chestnut:    |
 
 #### HTTP
 
@@ -198,12 +213,8 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/diag/cmds/set-time`**         | :green_apple: | :chestnut:    |
 |     `arg=`                                   | :green_apple: | :chestnut:    |
 | **`GET /api/v0/net`**                        | :green_apple: | :chestnut:    |
-|     `vis=text`                               | :green_apple: | :chestnut:    |
-|     `vis=d3`                                 | :green_apple: | :chestnut:    |
-|     `vis=dot`                                | :green_apple: | :chestnut:    |
+|     `vis`                                    | :green_apple: | :chestnut:    |
 | **`GET /api/v0/sys`**                        | :green_apple: | :chestnut:    |
-
-
 
 #### Core
 
