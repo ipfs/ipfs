@@ -516,6 +516,37 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs pin add`**                           | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs pin ls`**                            | :green_apple: | :tomato:      |
+|     `type=`                                  | :green_apple: | :tomato:      |
+|     `count=`                                 | :green_apple: | :tomato:      |
+|     `quiet=`                                 | :green_apple: | :tomato:      |
+| **`ipfs pin rm`**                            | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs pin update`**                        | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `unpin=`                                 | :green_apple: | :tomato:      |
+| **`ipfs pin verify`**                        | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`ipfs refs`**                              | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `format=`                                | :green_apple: | :tomato:      |
+|     `edges=`                                 | :green_apple: | :tomato:      |
+|     `unique=`                                | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs refs local`**                        | :green_apple: | :tomato:      |
+| **`ipfs refs`**                              | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `format=`                                | :green_apple: | :tomato:      |
+|     `edges=`                                 | :green_apple: | :tomato:      |
+|     `unique=`                                | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
@@ -524,37 +555,30 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
 | **`POST /api/v0/pin/ls`**                    | :green_apple: | :tomato:      |
-|     `type=all`                               | :green_apple: | :tomato:      |
-|     `type=direct`                            | :green_apple: | :tomato:      |
-|     `type=indirect`                          | :green_apple: | :tomato:      |
-|     `type=recursive`                         | :green_apple: | :tomato:      |
+|     `type=`                                  | :green_apple: | :tomato:      |
 |     `count=`                                 | :green_apple: | :tomato:      |
 |     `quiet=`                                 | :green_apple: | :tomato:      |
 | **`GET /api/v0/pin/rm`**                     | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
+| **`GET /api/v0/pin/update`**                 | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `unpin=`                                 | :green_apple: | :tomato:      |
+| **`GET /api/v0/pin/verify`**                 | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
 | **`GET /api/v0/refs`**                       | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
-|     `format=<src>`                           | :green_apple: | :tomato:      |
-|     `format=<dst>`                           | :green_apple: | :tomato:      |
-|     `format=<linkname>`                      | :green_apple: | :tomato:      |
-|     `edges=,e=`                              | :green_apple: | :tomato:      |
-|     `unique=,u=`                             | :green_apple: | :tomato:      |
-|     `recursive=,r=`                          | :green_apple: | :tomato:      |
+|     `format=`                                | :green_apple: | :tomato:      |
+|     `edges=`                                 | :green_apple: | :tomato:      |
+|     `unique=`                                | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
 | **`GET /api/v0//refs/local`**                | :green_apple: | :tomato:      |
 | **`GET /api/v0/refs`**                       | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
-|     `format=<src>`                           | :green_apple: | :tomato:      |
-|     `format=<dst>`                           | :green_apple: | :tomato:      |
-|     `format=<linkname>`                      | :green_apple: | :tomato:      |
-|     `edges=,e=`                              | :green_apple: | :tomato:      |
-|     `unique=,u=`                             | :green_apple: | :tomato:      |
-|     `recursive=,r=`                          | :green_apple: | :tomato:      |
-| **`GET /api/v0//refs/local`**                | :green_apple: | :tomato:      |
-
-Refs:
-- http://docs.ipfs.apiary.io/#reference/refs
-- http://docs.ipfs.apiary.io/#reference/pin
+|     `format=`                                | :green_apple: | :tomato:      |
+|     `edges=`                                 | :green_apple: | :tomato:      |
+|     `unique=`                                | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
 
 #### Core
 
