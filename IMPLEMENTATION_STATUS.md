@@ -86,6 +86,16 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs bootstrap add`**                     | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `default=`                               | :green_apple: | :green_apple: |
+| **`ipfs bootstrap list`**                    | :green_apple: | :green_apple: |
+| **`ipfs bootstrap rm`**                      | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `all=`                                   | :green_apple: | :green_apple: |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
@@ -93,10 +103,12 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/bootstrap/add`**              | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 |     `default=`                               | :green_apple: | :green_apple: |
+| **`GET /api/v0/bootstrap/add/default`**      | :green_apple: | :tomato:      |
 | **`GET /api/v0/bootstrap/list`**             | :green_apple: | :green_apple: |
 | **`GET /api/v0/bootstrap/rm`**               | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 |     `all=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/bootstrap/rm/all`**           | :green_apple: | :tomato:      |
 
 #### Core
 
