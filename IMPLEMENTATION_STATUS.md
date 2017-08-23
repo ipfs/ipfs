@@ -224,23 +224,25 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## DHT
 
+> **Note:** This is blocked by core implementation of DHT itself. Follow https://github.com/ipfs/js-ipfs/pull/856
+
 #### CLI
 
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/dht/findpeer`**               | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`POST /api/v0/dht/findprovs`**             | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/dht/get`**                    | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/dht/put`**                    | :green_apple: | :chestnut:    |
-|     `arg1=`                                  | :green_apple: | :chestnut:    |
-|     `arg2=`                                  | :green_apple: | :chestnut:    |
-| **`GET /api/v0/dht/query`**                  | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
+| **`GET /api/v0/dht/findpeer`**               | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`POST /api/v0/dht/findprovs`**             | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/dht/get`**                    | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/dht/put`**                    | :green_apple: | :tomato:      |
+|     `arg1=`                                  | :green_apple: | :tomato:      |
+|     `arg2=`                                  | :green_apple: | :tomato:      |
+| **`GET /api/v0/dht/query`**                  | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
 
 
 #### Core
@@ -253,90 +255,172 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs add`**                               | :green_apple: | :lemon:       |
+|     `file`                                   | :green_apple: | :green_apple: |
+|     `recursive`                              | :green_apple: | :green_apple: |
+|     `quiet`                                  | :green_apple: | :tomato:      |
+|     `quieter`                                | :green_apple: | :tomato:      |
+|     `silent`                                 | :green_apple: | :tomato:      |
+|     `progress`                               | :green_apple: | :tomato:      |
+|     `trickle`                                | :green_apple: | :green_apple: |
+|     `only-hash`                              | :green_apple: | :tomato:      |
+|     `wrap-with-directory`                    | :green_apple: | :green_apple: |
+|     `hidden`                                 | :green_apple: | :tomato:      |
+|     `chunker`                                | :green_apple: | :tomato:      |
+|     `pin`                                    | :green_apple: | :tomato:      |
+|     `raw-leaves`                             | :green_apple: | :tomato:      |
+|     `nocopy`                                 | :green_apple: | :tomato:      |
+|     `fscache`                                | :green_apple: | :tomato:      |
+|     `cid-version`                            | :green_apple: | :tomato:      |
+|     `hash`                                   | :green_apple: | :tomato:      |
+| **`ipfs cat`**                               | :green_apple: | :green_apple: |
+|     `arg`                                    | :green_apple: | :green_apple: |
+| **`ipfs ls`**                                | :green_apple: | :lemon:       |
+|     `arg`                                    | :green_apple: | :lemon:       |
+|     `headers`                                | :green_apple: | :lemon:       |
+|     `resolve-type`                           | :green_apple: | :lemon:       |
+| **`ipfs file ls`**                           | :green_apple: | :chestnut:    |
+|     `path`                                   | :green_apple: | :chestnut:    |
+| **`ipfs files cp`**                          | :green_apple: | :tomato:      |
+|     `src`                                    | :green_apple: | :tomato:      |
+|     `dst`                                    | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files flush`**                       | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+| **`ipfs files ls`**                          | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `level`                                  | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files mkdir`**                       | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `parents`                                | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files mv`**                          | :green_apple: | :tomato:      |
+|     `src`                                    | :green_apple: | :tomato:      |
+|     `dst`                                    | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files read`**                        | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `offset`                                 | :green_apple: | :tomato:      |
+|     `count`                                  | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files rm`**                          | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `recursive`                              | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files stat`**                        | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs files write`**                       | :green_apple: | :tomato:      |
+|     `path`                                   | :green_apple: | :tomato:      |
+|     `data`                                   | :green_apple: | :tomato:      |
+|     `offset`                                 | :green_apple: | :tomato:      |
+|     `create`                                 | :green_apple: | :tomato:      |
+|     `truncate`                               | :green_apple: | :tomato:      |
+|     `count`                                  | :green_apple: | :tomato:      |
+|     `flush`                                  | :green_apple: | :tomato:      |
+| **`ipfs get`**                               | :green_apple: | :green_apple: |
+|     `path`                                   | :green_apple: | :green_apple: |
+|     `archive`                                | :green_apple: | :tomato:      |
+|     `compress`                               | :green_apple: | :tomato:      |
+|     `compression-level`                      | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`POST /api/v0/add`**                       | :green_apple: | :lemon:       |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `H=`                                     | :green_apple: | :chestnut:    |
-|     `n=`                                     | :green_apple: | :chestnut:    |
-|     `p=`                                     | :green_apple: | :chestnut:    |
-|     `pin=`                                   | :green_apple: | :chestnut:    |
-|     `r=`                                     | :green_apple: | :chestnut:    |
-|     `s=`                                     | :green_apple: | :chestnut:    |
-|     `t=`                                     | :green_apple: | :chestnut:    |
-|     `w=`                                     | :green_apple: | :chestnut:    |
-| **`GET /api/v0/cat`**                        | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/ls`**                         | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `resolve=`                               | :green_apple: | :chestnut:    |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `recursive=`                             | :green_apple: | :green_apple: |
+|     `quiet=`                                 | :green_apple: | :tomato:      |
+|     `quieter=`                               | :green_apple: | :tomato:      |
+|     `silent=`                                | :green_apple: | :tomato:      |
+|     `progress=`                              | :green_apple: | :tomato:      |
+|     `trickle=`                               | :green_apple: | :green_apple: |
+|     `only-hash=`                             | :green_apple: | :tomato:      |
+|     `wrap-with-directory`                    | :green_apple: | :green_apple: |
+|     `hidden`                                 | :green_apple: | :tomato:      |
+|     `chunker`                                | :green_apple: | :tomato:      |
+|     `pin`                                    | :green_apple: | :tomato:      |
+|     `raw-leaves`                             | :green_apple: | :tomato:      |
+|     `nocopy`                                 | :green_apple: | :tomato:      |
+|     `fscache`                                | :green_apple: | :tomato:      |
+|     `cid-version`                            | :green_apple: | :tomato:      |
+|     `hash`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/cat`**                        | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/ls`**                         | :green_apple: | :lemon:       |
+|     `arg=`                                   | :green_apple: | :lemon:       |
+|     `headers=`                               | :green_apple: | :lemon:       |
+|     `resolve-type=`                          | :green_apple: | :lemon:       |
 | **`GET /api/v0/file/ls`**                    | :green_apple: | :chestnut:    |
 |     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/cp`**                   | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `arg2=`                                  | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/flush`**                | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/ls`**                   | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `l=`                                     | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/mkdir`**                | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `parents=,p=`                            | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/mv`**                   | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `arg2=`                                  | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/read`**                 | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `offset=,o=`                             | :green_apple: | :chestnut:    |
-|     `count=,n=`                              | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`POST /api/v0/files/rm`**                  | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `recursive=,r=`                          | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`GET /api/v0/files/stat`**                 | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`POST /api/v0/files/write`**               | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `arg2=`                                  | :green_apple: | :chestnut:    |
-|     `offset=,o=`                             | :green_apple: | :chestnut:    |
-|     `create=,e=`                             | :green_apple: | :chestnut:    |
-|     `truncate=,t=`                           | :green_apple: | :chestnut:    |
-|     `count=,n=`                              | :green_apple: | :chestnut:    |
-|     `flush=,f=`                              | :green_apple: | :chestnut:    |
-| **`POST /api/v0/get`**                       | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `archive=`                               | :green_apple: | :chestnut:    |
-|     `compress=`                              | :green_apple: | :chestnut:    |
-|     `compression-level=-1`                   | :green_apple: | :chestnut:    |
-|     `compression-level=0`                    | :green_apple: | :chestnut:    |
-|     `compression-level=1`                    | :green_apple: | :chestnut:    |
-|     `compression-level=2`                    | :green_apple: | :chestnut:    |
-|     `compression-level=3`                    | :green_apple: | :chestnut:    |
-|     `compression-level=4`                    | :green_apple: | :chestnut:    |
-|     `compression-level=5`                    | :green_apple: | :chestnut:    |
-|     `compression-level=6`                    | :green_apple: | :chestnut:    |
-|     `compression-level=7`                    | :green_apple: | :chestnut:    |
-|     `compression-level=8`                    | :green_apple: | :chestnut:    |
-|     `compression-level=9`                    | :green_apple: | :chestnut:    |
+| **`GET /api/v0/files/cp`**                   | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `arg2=`                                  | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/flush`**                | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/ls`**                   | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `l=`                                     | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/mkdir`**                | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `parents=,p=`                            | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/mv`**                   | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `arg2=`                                  | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/read`**                 | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `offset=,o=`                             | :green_apple: | :tomato:      |
+|     `count=,n=`                              | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`POST /api/v0/files/rm`**                  | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=,r=`                          | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`GET /api/v0/files/stat`**                 | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`POST /api/v0/files/write`**               | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `arg2=`                                  | :green_apple: | :tomato:      |
+|     `offset=,o=`                             | :green_apple: | :tomato:      |
+|     `create=,e=`                             | :green_apple: | :tomato:      |
+|     `truncate=,t=`                           | :green_apple: | :tomato:      |
+|     `count=,n=`                              | :green_apple: | :tomato:      |
+|     `flush=,f=`                              | :green_apple: | :tomato:      |
+| **`POST /api/v0/get`**                       | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `archive=`                               | :green_apple: | :tomato:      |
+|     `compress=`                              | :green_apple: | :tomato:      |
+|     `compression-level=-1`                   | :green_apple: | :tomato:      |
+|     `compression-level=0`                    | :green_apple: | :tomato:      |
+|     `compression-level=1`                    | :green_apple: | :tomato:      |
+|     `compression-level=2`                    | :green_apple: | :tomato:      |
+|     `compression-level=3`                    | :green_apple: | :tomato:      |
+|     `compression-level=4`                    | :green_apple: | :tomato:      |
+|     `compression-level=5`                    | :green_apple: | :tomato:      |
+|     `compression-level=6`                    | :green_apple: | :tomato:      |
+|     `compression-level=7`                    | :green_apple: | :tomato:      |
+|     `compression-level=8`                    | :green_apple: | :tomato:      |
+|     `compression-level=9`                    | :green_apple: | :tomato:      |
 
 #### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
 
 --------------------------------------------------------------------------------
 
 ## File Store (IPFS Pack)
 
+> **Note:** Implementation in js-ipfs is not planned for now.
+
 #### CLI
 
 #### HTTP
@@ -344,12 +428,13 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 #### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
 
 --------------------------------------------------------------------------------
 
 ## Key Management
 
+> **Note:** Implementation in js-ipfs is not planned for now.
+
 #### CLI
 
 #### HTTP
@@ -357,7 +442,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 #### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
 
 --------------------------------------------------------------------------------
 
@@ -365,18 +449,41 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs ping`**                              | :green_apple: | :lemon:       |
+|     `peer ID`                                | :green_apple: | :tomato:      |
+|     `count`                                  | :green_apple: | :tomato:      |
+| **`ipfs update`**                            | :chestnut:    | :chestnut:    |
+| **`ipfs version`**                           | :green_apple: | :green_apple: |
+| **`ipfs commands`**                          | :green_apple: | :green_apple: |
+| **`ipfs id`**                                | :green_apple: | :green_apple: |
+|     `peerid`                                 | :green_apple: | :tomato:      |
+|     `aver`                                   | :green_apple: | :tomato:      |
+|     `pver`                                   | :green_apple: | :tomato:      |
+|     `pubkey`                                 | :green_apple: | :tomato:      |
+|     `addrs`                                  | :green_apple: | :tomato:      |
+| **`ipfs mount`**                             | :green_apple: | :chesnut:     |
+|     `ipfs-path=`                             | :green_apple: | :chesnut:     |
+|     `ipns-path=`                             | :green_apple: | :chesnut:     |
+| **`ipfs mount`**                             | :green_apple: | :chesnut:     |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/ping`**                       | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `count=,n=`                              | :green_apple: | :chestnut:    |
+| **`GET /api/v0/ping`**                       | :green_apple: | :lemon:       |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `count=`                                 | :green_apple: | :tomato:      |
 | **`GET /api/v0/update`**                     | :chestnut:    | :chestnut:    |
-| **`GET /api/v0/version`**                    | :green_apple: | :chestnut:    |
-| **`GET /api/v0/commands`**                   | :green_apple: | :chestnut:    |
-| **`POST /api/v0/id`**                        | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
+| **`GET /api/v0/version`**                    | :green_apple: | :green_apple: |
+| **`GET /api/v0/commands`**                   | :green_apple: | :green_apple: |
+| **`POST /api/v0/id`**                        | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chesnut:     |
+|     `ipfs-path=`                             | :green_apple: | :chesnut:     |
+|     `ipns-path=`                             | :green_apple: | :chesnut:     |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chesnut:     |
 
 #### Core
 
@@ -386,27 +493,29 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Naming
 
+> **Note:** Implementation in js-ipfs is blocked until DHT is finished.
+
 #### CLI
 
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`POST /api/v0/name/publish`**              | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `resolve=`                               | :green_apple: | :chestnut:    |
-|     `lifetime=`                              | :green_apple: | :chestnut:    |
-|     `ttl=`                                   | :green_apple: | :chestnut:    |
-| **`GET /api/v0/name/resolve`**               | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `recursive=`                             | :green_apple: | :chestnut:    |
-|     `nocache=`                               | :green_apple: | :chestnut:    |
-| **`GET /api/v0/resolve`**                    | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `recursive=`                             | :green_apple: | :chestnut:    |
-| **`GET /api/v0/dns`**                        | :green_apple: | :chestnut:    |
-|     `arg=`                                   | :green_apple: | :chestnut:    |
-|     `recursive=`                             | :green_apple: | :chestnut:    |
+| **`POST /api/v0/name/publish`**              | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `resolve=`                               | :green_apple: | :tomato:      |
+|     `lifetime=`                              | :green_apple: | :tomato:      |
+|     `ttl=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/name/resolve`**               | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+|     `nocache=`                               | :green_apple: | :tomato:      |
+| **`GET /api/v0/resolve`**                    | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`GET /api/v0/dns`**                        | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
 
 #### Core
 
