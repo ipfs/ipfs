@@ -186,6 +186,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | Ruby | https://github.com/Fryie/ipfs-ruby | |
 | Swift | https://github.com/NeoTeo/ipfs-osx-service | |
 | PHP | https://github.com/cloutier/php-ipfs-api | |
+| | https://github.com/digitalkaoz/php-ipfs | |
 | C# | https://github.com/TrekDev/net-ipfs-api | |
 | | https://github.com/richardschneider/net-ipfs-api | |
 | C++ | https://github.com/vasild/cpp-ipfs-api | |
