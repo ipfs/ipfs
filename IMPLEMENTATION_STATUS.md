@@ -599,24 +599,47 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs swarm addrs`**                       | :green_apple: | :green_apple: |
+| **`ipfs swarm addrs listen`**                | :green_apple: | :tomato:      |
+| **`ipfs swarm addrs local`**                 | :green_apple: | :green_apple: |
+|     `id=`                                    | :green_apple: | :tomato:      |
+| **`ipfs swarm connect`**                     | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`ipfs swarm disconnect`**                  | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`ipfs swarm filters`**                     | :green_apple: | :tomato:      |
+| **`ipfs swarm filters add`**                 | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`ipfs swarm filters rm`**                  | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`ipfs swarm peers`**                       | :green_apple: | :green_apple: |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `latency=`                               | :green_apple: | :tomato:      |
+|     `streams=`                               | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/swarm/addrs`**                | :green_apple: | :green_apple: |
+| **`GET /api/v0/swarm/addrs/listen`**         | :green_apple: | :tomato:      |
 | **`GET /api/v0/swarm/addrs/local`**          | :green_apple: | :green_apple: |
 |     `id=`                                    | :green_apple: | :tomato:      |
 | **`GET /api/v0/swarm/connect`**              | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 | **`GET /api/v0/swarm/disconnect`**           | :green_apple: | :green_apple: |
-|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :green_apple: |
 | **`GET /api/v0/swarm/filters`**              | :green_apple: | :tomato:      |
 | **`GET /api/v0/swarm/filters/add`**          | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
 | **`GET /api/v0/swarm/filters/rm`**           | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
 | **`GET /api/v0/swarm/peers`**                | :green_apple: | :green_apple: |
-|     `verbose=,v=`                            | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `latency=`                               | :green_apple: | :tomato:      |
+|     `streams=`                               | :green_apple: | :tomato:      |
 
 #### Core
 
