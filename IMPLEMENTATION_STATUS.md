@@ -164,6 +164,10 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## DAG
 
+> **Blocked until the following are resolved:**
+- https://github.com/ipfs/js-ipfs-api/pull/534
+- https://github.com/ipfs/go-ipfs/issues/3771#issue-213068794
+
 #### CLI
 
 #### HTTP
