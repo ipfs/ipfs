@@ -10,7 +10,7 @@
 
 #### CLI
 
-| Endpoint                                     | Go Impl       | JS Impl       |
+| Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`ipfs ledger`**                            | :green_apple: | :tomato:      |
 |     `peer`                                   | :green_apple: | :tomato:      |
@@ -44,6 +44,21 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs block get`**                         | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+| **`ipfs block put`**                         | :green_apple: | :green_apple: |
+|     `data`                                   | :green_apple: | :green_apple: |
+|     `format`                                 | :green_apple: | :green_apple: |
+|     `mhtype`                                 | :green_apple: | :green_apple: |
+|     `mhlen`                                  | :green_apple: | :green_apple: |
+| **`ipfs block rm`**                          | :green_apple: | :lemon:       |
+|     `hash`                                   | :green_apple: | :lemon:       |
+|     `force`                                  | :green_apple: | :lemon:       |
+| **`ipfs block stat`**                        | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
@@ -52,6 +67,12 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :green_apple: |
 | **`POST /api/v0/block/put`**                 | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
+|     `format=`                                | :green_apple: | :green_apple: |
+|     `mhtype=`                                | :green_apple: | :green_apple: |
+|     `mhlen=`                                 | :green_apple: | :green_apple: |
+| **`GET /api/v0/block/rm`**                   | :green_apple: | :lemon:       |
+|     `arg=`                                   | :green_apple: | :lemon:       |
+|     `force=`                                 | :green_apple: | :lemon:       |
 | **`GET /api/v0/block/stat`**                 | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 
