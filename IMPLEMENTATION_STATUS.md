@@ -10,10 +10,24 @@
 
 #### CLI
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs ledger`**                            | :green_apple: | :tomato:      |
+|     `peer`                                   | :green_apple: | :tomato:      |
+| **`ipfs reprovide`**                         | :green_apple: | :tomato:      |
+| **`ipfs bitswap stat`**                      | :green_apple: | :green_apple: |
+| **`ipfs bitswap unwant`**                    | :green_apple: | :tomato:      |
+|     `key`                                    | :green_apple: | :tomato:      |
+| **`ipfs bitswap wantlist`**                  | :green_apple: | :lemon:       |
+|     `peer`                                   | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
+| **`GET /api/v0/bitswap/ledger`**             | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/bitswap/reprovide`**          | :green_apple: | :tomato:      |
 | **`GET /api/v0/bitswap/stat`**               | :green_apple: | :green_apple: |
 | **`GET /api/v0/bitswap/unwant`**             | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
@@ -262,6 +276,33 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
+
+--------------------------------------------------------------------------------
+
+## File Store (IPFS Pack)
+
+#### CLI
+
+#### HTTP
+
+#### Core
+
+See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+
+
+--------------------------------------------------------------------------------
+
+## Key Management
+
+#### CLI
+
+#### HTTP
+
+#### Core
+
+See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+
+
 --------------------------------------------------------------------------------
 
 ## Miscellaneous
@@ -362,6 +403,18 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 Refs:
 -  http://docs.ipfs.apiary.io/#reference/object
+
+#### Core
+
+See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+
+--------------------------------------------------------------------------------
+
+## p2p (libp2p exposed API)
+
+#### CLI
+
+#### HTTP
 
 #### Core
 
