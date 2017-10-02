@@ -115,7 +115,7 @@ The IPFS project seeks to evolve the infrastructure of the Internet and the Web,
 
 Please note that IPFS is a work in progress. It is an ambitious plan to make the internet more free, open, secure, and high performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
-Today, there is one main IPFS Protocol implementation (in [Go](https://github.com/ipfs/go-ipfs)) with [more on the way](#protocol-implementations) ([Javascript](https://github.com/ipfs/js-ipfs), and [Python](https://github.com/ipfs/py-ipfs)).
+Today, there is one main IPFS Protocol implementation (in [Go](https://github.com/ipfs/go-ipfs)) with [more on the way](#protocol-implementations) ([JavaScript](https://github.com/ipfs/js-ipfs), and [Python](https://github.com/ipfs/py-ipfs)).
 
 ### Alpha Distribution
 
@@ -165,7 +165,7 @@ For a community-curated lists of awesome projects using IPFS, check out [awesome
 | Language | Project | Completeness |
 |----------|---------|--------------|
 | Go | https://github.com/ipfs/go-ipfs | **reference** |
-| Javascript | https://github.com/ipfs/js-ipfs | incomplete |
+| JavaScript | https://github.com/ipfs/js-ipfs | incomplete |
 | Python | https://github.com/ipfs/py-ipfs | starting |
 
 If you would you like to start your own language implementation of IPFS, check out the [IPFS Implementation Guide](https://github.com/ipfs/specs/blob/master/overviews/implement-ipfs.md), and the [Specifications](https://github.com/ipfs/specs). The specs are still evolving, but the core formats are stable and can be built on. Make sure to post an issue if you would like to start an effort, as many people have expressed interest in contributing to new implementations.
