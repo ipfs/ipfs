@@ -19,6 +19,15 @@ In order for IPFS to reach its maturity state, going from Alpha, to Beta and to 
 
 Here you will find a comprehensive list of the various challenges and milestones in the IPFS Project to reach version 1.0.0. They are not ordered in any way at the moment, merely grouped.
 
+### Sustainability and Governance
+
+These are some of the milestones to hit to create a active, sustainable, inclusive and participatory governance model for IPFS.
+
+- [x] Organize IPFS All Hands.
+- [ ] Have IPFS lead by a Steering Working Group.
+- [ ] Define several Working Groups focused on different parts of the project (e.g Community Engagement, Documentation and Education, IPFS in Web Browsers).
+- [ ] Define a release plan and long term support plan.
+
 ### IPFS Use Cases
 
 These are some use case milestones to drive development.
@@ -859,6 +868,13 @@ IPFS Distributions is the distribution model for IPFS Project programs. This mea
   - [x] IPFS Distributions: gx, gx-go
   - [ ] IPFS Distributions: station
   - [ ] IPFS Distributions: webui
+
+### Security
+
+- [ ] Create a bug bounty program for IPFS
+- [ ] Have IPFS go and js implementations be fully Audited
+- [ ] Create a Security Working Group
+- [ ] Create a responsible disclosure program
 
 ### IPFS Blog and Newsletter
 
