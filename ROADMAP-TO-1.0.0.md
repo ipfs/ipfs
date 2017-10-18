@@ -1,79 +1,23 @@
-# IPFS Roadmap
+# Roadmap to IPFS 1.0.0 
 
+## Table of Contents
 
-IPFS-Related Endeavors
-====
+- [Description](#description)
+- [Milestones](#milestones)
 
-Our work around building and maintaining IPFS is broken up into numerous "endeavors", each of which has an assigned captain. This Roadmap indicates whether the endeavors are "Active", on the "Back Burner" or "Stale". You can use that to get a sense of where development efforts are currently focused. All of these endeavors are entirely open source. You can join in and contribute to any of the endeavors at any time.           
+## Description
 
-## Active Endeavors
+In order for IPFS to reach its maturity state, going from Alpha, to Beta and to v1.0.0, the project will need:
 
-"Active" endeavors are the endeavors for which we have allocated developer time this quarter.
+- For its specifications to be 100% complete. This includes the IPFS, libp2p, multiformats and IPLD specs.
+- Compliance tests for the specification.
+- The golang and JavaScript implementations to be 100% complete and spec compliant.
+- A third party implementation of IPFS, fully interopable with the go and JavaScript versions.
+- A release plan and cycle, including a strategy to support specific key releases for longer periods of time (i.e LTS releases vs stable)
 
-| Endeavor | Captain | Status |
-|---|---|---|
-js-ipfs | @diasdavid | Active |
-go-ipfs | @Kubuxu, @whyrusleeping | Active |
-multiformats | @diasdavid | Active |
-ipfs-cluster | @hsanjuan | Active |
-Infrastructure | @VictorBjelkholm | Active |
-CI/CD | @VictorBjelkholm | Active |
-gx | @whyrusleeping | Active |
-IPLD | @nicola | Active |
-orbit | @haadcode | Active |
-libp2p | @diasdavid | Active |
+## Milestones
 
-## Endeavors on the Back Burner
-
-Endeavors on the "Back Burner" are getting less attention this quarter.
-
-| Endeavor | Captain | Status |
-|---|---|---|
-| | |
-
-## Stale Endeavors
-
-Stale Endeavors are the ones that have fallen between the cracks. They need to be either revived, put on the back burner, or set free.
-
-**Key**:  💥 = fire, 🔥 = huge fire,  🎣 = opportunity we're missing
-
-| Endeavor | Captain | Target Status | Plan (link) |
-|---|---|---|---|
-|Specs 🔥| | | |
-|[Awesome API Documentation](https://github.com/ipfs/js-ipfs/issues/615#issuecomment-272160177) (js) 🔥| | | |
-|Documentation (general) 🔥| | | |
-|decentralized web primer| @flyingzumwalt | | |
-|WebUI 💥| | | |
-|Station 🎣| | | |
-|http-api spec| | | |
-|multiformats| | | |
-|test lab| | | |
-|packet-switching| @lgierth | | |
-|npm-on-ipfs 🎣| | | |
-|gateway 💥| @lgierth | | |
-|xtp| | | |
-|dist.ipfs.io 💥| | | to-be merged with CI/CD |
-|core-api| | | |
-|project-repos| | | |
-|blog 💥| | | |
-|ethereum on libp2p| | | |
-|paperhub?| | | |
-|newsletter 💥| | | |
-|multikey| | | to-be merged with multiformats |
-|ipfs-update 💥| | | to-be merged with CI/CD |
-|starlog| | | dead |
-|ipsend 🎣| | | |
-|ipget| | | |
-|maps on IPFS| | | |
-|examples (on website) 💥| | | to-be merged with documentation |
-|ipfs on mobile 🎣| | | |
-| archives repo | | | |
-
-# Milestones
-
-These are various challenges and milestones in the IPFS Project. They are not ordered in any way at the moment, merely grouped.
-
-## Usability Milestones
+Here you will find a comprehensive list of the various challenges and milestones in the IPFS Project to reach version 1.0.0. They are not ordered in any way at the moment, merely grouped.
 
 ### IPFS Use Cases
 
@@ -258,11 +202,9 @@ The polish level achieved defined how much effort has gone into polishing all th
 - [ ] Polish level: 1.0 - production for all
 
 
-## Protocols
+### Multiformats
 
-### Multi Protocols
-
-The multiprotocols are a set of self-describing protocols/formats for future-proofed or "upgradable systems" (systems that make no silly assumptions that are likely to break over time).
+The multiformats are a set of self-describing protocols/formats for future-proofed or "upgradable systems" (systems that make no silly assumptions that are likely to break over time).
 
 - [x] multiaddr: protocol design
   - [x] multiaddr: impl in Go
@@ -664,8 +606,6 @@ More at https://github.com/ipfs/specs and  https://github.com/ipfs/fs-repo-migra
   - [ ] IPFS architecture: cluster RAID/RAIN modes
   - [ ] IPFS architecture: cluster consensus
 
-## Implementations and Programs
-
 ### Go implementation of IPFS
 
 The go-ipfs effort is the Go implementation of IPFS. It is meant to run as a commandline tool, as a background service, as a programmatic embedded node, through an RPC API, and to be used as part of other tools. go-ipfs is the reference implementation of IPFS. It includes the HTTP-to-IPFS Gateway implementation. More at https://github.com/ipfs/go-ipfs
@@ -736,9 +676,9 @@ The js-ipfs effort is the javascript implementation of IPFS. It is meant to run 
   - [x] js-ipfs component: block api
   - [x] js-ipfs component: object api
   - [ ] js-ipfs component: files api
-  - [ ] js-ipfs component: daemon
-  - [ ] js-ipfs component: data importing
-  - [ ] js-ipfs component: http api
+  - [x] js-ipfs component: daemon
+  - [x] js-ipfs component: data importing
+  - [x] js-ipfs component: http api
 - [ ] js-ipfs ipfs node api
   - [x] js-ipfs core api impl
     - [x] js-ipfs core api: version
@@ -747,14 +687,13 @@ The js-ipfs effort is the javascript implementation of IPFS. It is meant to run 
     - [x] js-ipfs core api: block
     - [x] js-ipfs core api: object
     - [ ] js-ipfs core api: refs
-    - [ ] js-ipfs core api: repo
+    - [x] js-ipfs core api: repo
     - [ ] js-ipfs core api: pin
     - [ ] js-ipfs core api: log
   - [ ] js-ipfs ext api impl
     - [ ] js-ipfs ext api: name (ipns)
     - [ ] js-ipfs ext api: dns
     - [ ] js-ipfs ext api: tar
-    - [ ] go-ipfs ext api: tour
     - [ ] js-ipfs ext api: files
     - [ ] js-ipfs ext api: stat
     - [ ] js-ipfs ext api: mount
@@ -920,7 +859,6 @@ IPFS Distributions is the distribution model for IPFS Project programs. This mea
   - [x] IPFS Distributions: gx, gx-go
   - [ ] IPFS Distributions: station
   - [ ] IPFS Distributions: webui
-
 
 ### IPFS Blog and Newsletter
 
