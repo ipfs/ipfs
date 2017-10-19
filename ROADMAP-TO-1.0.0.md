@@ -41,7 +41,7 @@ These are some use case milestones to drive development.
 - [x] Support for websites and web applications
   - [x] Support for static web applications
   - [x] Support for API based web applications
-  - [ ] Support for fully dynamic websites entirely on IPFS (eg chat)
+  - [x] Support for fully dynamic websites entirely on IPFS (eg chat)
 - [x] Support for collaborative seeding/pinning
   - [x] basic support for ipfs ref pinning
   - [ ] Cloud ipfs frontend services (cube)
@@ -49,7 +49,7 @@ These are some use case milestones to drive development.
   - [ ] byzantine clusters (BA)
 - [x] Support for browsers
   - [x] js-ipfs-api client inside a tab
-  - [ ] js-ipfs full node inside a tab
+  - [x] js-ipfs full node inside a tab
   - [x] browser extension gateway redirects
   - [ ] browser extension full node
   - [ ] impl native inside browsers
@@ -109,16 +109,15 @@ These are some libraries that must exist to make developers' lives easy. It is c
   - [x] ipfs api bindings in Java
   - [x] ipfs api bindings in Python
   - [x] ipfs api bindings in PHP
-  - [ ] ipfs api bindings in Ruby (in progress)
-  - [ ] ipfs api bindings in Scala (in progress)
-  - [ ] ipfs api bindings in Rust (in progress)
-  - [ ] ipfs api bindings in Haskell
-  - [ ] ipfs api bindings in C/C++
+  - [x] ipfs api bindings in Ruby
+  - [x] ipfs api bindings in Scala
+  - [x] ipfs api bindings in Rust
+  - [x] ipfs api bindings in Haskell
+  - [x] ipfs api bindings in C/C++
   - [ ] ipfs api bindings in Erlang
 - [x] full ipfs node implementations
   - [x] go-ipfs - implementation in Go
-  - [ ] js-ipfs - implementation in JS node
-  - [ ] js-ipfs-browser - implementation in JS browser
+  - [x] js-ipfs - implementation in JS
 - [x] developer libs for cli tools
 - [ ] developer libs for desktop apps
 - [x] developer libs for webapps
@@ -240,9 +239,9 @@ The multiformats are a set of self-describing protocols/formats for future-proof
 - [x] multistream: protocol spec
   - [x] multistream: impl in Go
   - [x] multistream: impl in JS
-- [ ] multibase / baseN: protocol spec
-  - [ ] multibase / baseN: impl in Go
-  - [ ] multibase / baseN: impl in JS
+- [x] multibase / baseN: protocol spec
+  - [x] multibase / baseN: impl in Go
+  - [x] multibase / baseN: impl in JS
 
 
 ### libp2p Protocols
@@ -266,11 +265,11 @@ The libp2p protocols are the protocol stack for the modular p2p protocols librar
   - [x] Transport protocol: WebSockets in JS node
   - [x] Transport protocol: WebSockets in JS browser
   - [ ] Transport protocol: WebRTC in Go
-  - [ ] Transport protocol: WebRTC in JS node
+  - [x] Transport protocol: WebRTC in JS node
   - [x] Transport protocol: WebRTC in JS browser
   - [ ] Transport protocol: SCTP in Go
   - [ ] Transport protocol: SCTP in JS node
-  - [ ] Transport protocol: tor in Go
+  - [x] Transport protocol: tor in Go
   - [ ] Transport protocol: tor in JS node
   - [ ] Transport protocol: i2p in Go
   - [ ] Transport protocol: i2p in JS node
