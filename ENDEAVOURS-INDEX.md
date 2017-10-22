@@ -10,15 +10,15 @@ Our work around building and maintaining IPFS is broken up into numerous "endeav
 | Endeavor | Captain | Status |
 |---|---|---|
 js-ipfs | @diasdavid | Active |
-go-ipfs | @Kubuxu, @whyrusleeping | Active |
+go-ipfs | @whyrusleeping | Active |
 multiformats | @diasdavid | Active |
+IPLD | @nicola | Active |
+libp2p | @diasdavid | Active |
 ipfs-cluster | @hsanjuan | Active |
 Infrastructure | @VictorBjelkholm | Active |
 CI/CD | @VictorBjelkholm | Active |
 gx | @whyrusleeping | Active |
-IPLD | @nicola | Active |
 orbit | @haadcode | Active |
-libp2p | @diasdavid | Active |
 
 ## Endeavors on the Back Burner
 
