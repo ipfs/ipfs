@@ -110,14 +110,14 @@ These are some libraries that must exist to make developers' lives easy. It is c
   - [x] ipfs api bindings in Python
   - [x] ipfs api bindings in PHP
   - [x] ipfs api bindings in Ruby
-  - [x] ipfs api bindings in Scala
-  - [x] ipfs api bindings in Rust
-  - [x] ipfs api bindings in Haskell
+  - [ ] ipfs api bindings in Scala
+  - [ ] ipfs api bindings in Rust
+  - [ ] ipfs api bindings in Haskell
   - [x] ipfs api bindings in C/C++
   - [ ] ipfs api bindings in Erlang
 - [x] full ipfs node implementations
   - [x] go-ipfs - implementation in Go
-  - [x] js-ipfs - implementation in JS
+  - [ ] js-ipfs - implementation in JS
 - [x] developer libs for cli tools
 - [ ] developer libs for desktop apps
 - [x] developer libs for webapps
@@ -269,7 +269,7 @@ The libp2p protocols are the protocol stack for the modular p2p protocols librar
   - [x] Transport protocol: WebRTC in JS browser
   - [ ] Transport protocol: SCTP in Go
   - [ ] Transport protocol: SCTP in JS node
-  - [x] Transport protocol: tor in Go
+  - [ ] Transport protocol: tor in Go
   - [ ] Transport protocol: tor in JS node
   - [ ] Transport protocol: i2p in Go
   - [ ] Transport protocol: i2p in JS node

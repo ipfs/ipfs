@@ -7,18 +7,17 @@ Our work around building and maintaining IPFS is broken up into numerous "endeav
 
 "Active" endeavors are the endeavors for which we have allocated developer time this quarter.
 
-| Endeavor | Captain | Status |
-|---|---|---|
-js-ipfs | @diasdavid | Active |
-go-ipfs | @whyrusleeping | Active |
-multiformats | @diasdavid | Active |
-IPLD | @nicola | Active |
-libp2p | @diasdavid | Active |
-ipfs-cluster | @hsanjuan | Active |
-Infrastructure | @VictorBjelkholm | Active |
-CI/CD | @VictorBjelkholm | Active |
-gx | @whyrusleeping | Active |
-orbit | @haadcode | Active |
+| Endeavor       | Captain        | Status |
+|----------------|----------------|--------|
+| js-ipfs        | @diasdavid | Active |
+| go-ipfs        | @whyrusleeping | Active |
+| multiformats   | @diasdavid | Active |
+| libp2p         | @diasdavid | Active |
+| IPLD           | @nicola | Active |
+| ipfs-cluster   | @hsanjuan | Active |
+| Infrastructure | @VictorBjelkholm | Active |
+| CI/CD          | @VictorBjelkholm | Active |
+| gx             | @whyrusleeping | Active |
 
 ## Endeavors on the Back Burner
 
