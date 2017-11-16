@@ -136,7 +136,6 @@ If you find a vulnerability that may affect live deployments -- for example, by 
 
 If the issue is a protocol weakness that cannot be immediately exploited or something not yet deployed, just discuss it openly.
 
-
 ## Project and Community
 
 [![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/contributing.md)
@@ -152,7 +151,6 @@ You can also find our community on:
 - IRC: [#ipfs on chat.freenode.net](http://chat.ipfs.io) for live help and some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
 - Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users) (low traffic)
 - Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
-
 
 ## Project Links
 
@@ -184,7 +182,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | Swift       | https://github.com/ipfs/swift-ipfs-api            | |
 | CommonLisp  | https://github.com/WeMeetAgain/cl-ipfs-api        | |
 | Rust        | https://github.com/gkbrk/rust-ipfs-api            | |
-|             | https://github.com/rmnoff/rust-ipfs-api           | |
+|             | https://github.com/rmnoff/rust-ipfs-api           | |
 |             | https://github.com/rschulman/rust-ipfs-api        | |
 | Ruby        | https://github.com/Fryie/ipfs-ruby                | |
 | Swift       | https://github.com/NeoTeo/ipfs-osx-service        | |
@@ -234,9 +232,10 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 - [archive-format](https://github.com/ipfs/archive-format) - A DAG Archive format.
 - [research-bitswap](https://github.com/ipfs/research-bitswap) - Repo to discuss Bitswap research
+- [bitswap-ml](https://github.com/ipfs/bitswap-ml) - Bitswap and Machine Learning.
 - [research-crdt](https://github.com/ipfs/research-crdt) - Repo to discuss crdt research
 - [research-pubsub](https://github.com/libp2p/research-pubsub) - Repo to discuss pubsub research
-- [bitswap-ml](https://github.com/ipfs/bitswap-ml) - Bitswap and Machine Learning.
+- [research-p2p-video](https://github.com/libp2p/research-p2p-video) - Repo to discuss pubsub research
 - [blockchain-data](https://github.com/ipfs/blockchain-data) - Using IPFS for storing data for Blockchain apps.
 - [POST](https://github.com/ipfs/POST) - A datastructure for human communication.
 
