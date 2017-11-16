@@ -167,6 +167,7 @@ For a community-curated lists of awesome projects using IPFS, check out [awesome
 | Go | https://github.com/ipfs/go-ipfs | **reference** |
 | JavaScript | https://github.com/ipfs/js-ipfs | incomplete |
 | Python | https://github.com/ipfs/py-ipfs | starting |
+| C | https://github.com/Agorise/c-ipfs | starting |
 
 If you would you like to start your own language implementation of IPFS, check out the [IPFS Implementation Guide](https://github.com/ipfs/specs/blob/master/overviews/implement-ipfs.md), and the [Specifications](https://github.com/ipfs/specs). The specs are still evolving, but the core formats are stable and can be built on. Make sure to post an issue if you would like to start an effort, as many people have expressed interest in contributing to new implementations.
 
