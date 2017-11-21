@@ -76,9 +76,9 @@ Responsibilities include:
 - Create and monitor continuous testing for the multiple supported platforms (Architecture, OS'es, Browsrs).
 - Explore new runtimes and create Roadmaps towards supporting those.
 
-### Dev Team Enablement
+### QA, Testing and Dev Team Enablement
 
-The Dev Team Enablement Working Group focuses on developing tools, CI and automating maintenance tasks to improve the Developer experience of the many IPFS contributors.
+The QA, Testing and Dev Team Enablement Working Group focuses on developing tools, CI and automating maintenance tasks to improve the Developer experience of the many IPFS contributors.
 
 Responsibilities include:
 
