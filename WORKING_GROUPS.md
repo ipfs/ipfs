@@ -9,7 +9,7 @@
 
 ## Description
 
-The IPFS Project Working Groups are teams of people that are appointed to research, develop and deploy new work under the scope that the working group is focused. This structure is designed to provide clarity and direction to the project, enabling individual contributors to focus their time and energy on the areas they are most interested.
+The IPFS Project Working Groups are teams of people that are appointed to research, develop and deploy work under the scope that the working group is focused. This structure is designed to provide clarity and direction to the project, enabling individual contributors to focus their time and energy on the areas they are most interested.
 
 Each Working Group has its own cadence, lifecycle and objectives.
 
@@ -53,6 +53,7 @@ Responsibilities include:
 - Design Importers and Exporters for different data sets
 - Maintain Unixfs
 - Improve the APIs that let users interact with Files on IPFS
+- Inform and guide users who want to define their own IPLD-based data formats
 
 #### Runtime Support and Build
 
@@ -119,6 +120,8 @@ Responsibilities include:
 - Write and make sure that docs are up to date.
 - Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web.
 - Develop the front facing Webpages of each project (ipfs.io, libp2p.io, multiformats.io and ipld.io)
+- Ensure that public forums (discuss.ipfs.io, irc, github, etc) have adequate moderation and responsive support.
+- Ensure that the code of conduct is followed and provide appropriate support or response when violations occur.
 
 #### Internationalisation and Localization (i18n and l10n)
 
@@ -146,6 +149,7 @@ Responsibilities include:
 - Collaborate with with Browser vendors.
 - Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
 - Increase the adoption of the Distributed Web by making it easy for users to access it.
+- Define specifications for address schemes and advocate for those schemes to be adopted.
 
 #### Large Data Sets
 
