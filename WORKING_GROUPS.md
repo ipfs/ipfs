@@ -44,20 +44,6 @@ Responsibilities include:
 - That implementations can be compliant to the specs through formal testing (PDD and proofs).
 - Facilitate discussion around each spec making sure that proposals are followed up.
 
-#### Integration with Web Browsers
-
-The Integration with Web Browsers Working Group designs and implement Browser integrations, Web Extensions, Service Workers and any other strategy that contributes to IPFS being integrated with the Web today.
-
-Responsibilities include:
-
-- Browser integrations (Firefox, Chrome, Brave and others).
-- IPFS Web Extension.
-- IPFS Service Worker.
-- IPFS Web Worker.
-- Collaborate with with Browser vendors.
-- Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
-- Increase the adoption of the Distributed Web by making it easy for users to access it.
-
 #### Files (Unixfs), DEX and Data Structures on top of IPLD
 
 The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets.
@@ -146,6 +132,20 @@ Responsibilities include:
 - Create subteams to tackle the translation of each language.
 
 ### Ongoing Efforts to Support Specific Uses
+
+#### Integration with Web Browsers
+
+The Integration with Web Browsers Working Group designs and implement Browser integrations, Web Extensions, Service Workers and any other strategy that contributes to IPFS being integrated with the Web today.
+
+Responsibilities include:
+
+- Browser integrations (Firefox, Chrome, Brave and others).
+- IPFS Web Extension.
+- IPFS Service Worker.
+- IPFS Web Worker.
+- Collaborate with with Browser vendors.
+- Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
+- Increase the adoption of the Distributed Web by making it easy for users to access it.
 
 #### Large Data Sets
 
