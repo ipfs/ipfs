@@ -5,7 +5,11 @@
 - [Description](#description)
 - [Working Group Lifecycle](#working-group-lifecycle)
 - [Current Working Groups](#current-working-groups)
-- [Other](#other)
+	- [Development and Maintenance Working Groups](#development-and-maintenance-working-groups)
+	- [Community, Education and Usage  Working Groups](#community-education-and-usage-working-groups)
+	- [Ongoing Efforts to Support Specific Uses](#ongoing-efforts-to-support-specific-uses)
+- [Other not yet classified as a working group](#other-not-yet-classified-as-a-working-group)
+
 
 ## Description
 
@@ -19,7 +23,15 @@ TODO: Define how a working group gets created, evaled and how to decide if its p
 
 ## Current Working Groups
 
-### Development and Maintenance
+### Development and Maintenance Working Groups
+
+- [Release](#release)
+- [Specifications](#specifications)
+- [Files (Unixfs), DEX and Data Structures on top of IPLD](#files-unixfs-dex-and-data-structures-on-top-of-ipld)
+- [Runtime Support and Build](#runtime-support-and-build)
+- [QA, Testing and Dev Team Enablement](#qa-testing-and-dev-team-enablement)
+- [Security](#security)
+- [Performance and Benchmarking](#performance-and-benchmarking)
 
 #### Release
 
@@ -97,7 +109,11 @@ Responsibilities include:
 - Create solid Benchmarks for IPFS and its subsystems
 - Help protocol implementors make the best decisions when it comes to design
 
-### Community, Education and Usage
+### Community, Education and Usage  Working Groups
+
+- [Community, Events & Evangelism](#community-events-evangelism)
+- [Documentation, Education and Websites](#documentation-education-and-websites)
+- [Internationalisation and Localization (i18n and l10n)](#internationalisation-and-localization-i18n-and-l10n)
 
 #### Community, Events & Evangelism
 
@@ -135,6 +151,10 @@ Responsibilities include:
 - Create subteams to tackle the translation of each language.
 
 ### Ongoing Efforts to Support Specific Uses
+
+- [Integration with Web Browsers](#integration-with-web-browsers)
+- [Large Data Sets](#large-data-sets)
+- [IPFS Cluster](#ipfs-cluster)
 
 #### Integration with Web Browsers
 
