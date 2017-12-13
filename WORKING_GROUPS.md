@@ -5,11 +5,10 @@
 - [Description](#description)
 - [Working Group Lifecycle](#working-group-lifecycle)
 - [Current Working Groups](#current-working-groups)
-	- [Development and Maintenance Working Groups](#development-and-maintenance-working-groups)
-	- [Community, Education and Usage  Working Groups](#community-education-and-usage-working-groups)
-	- [Ongoing Efforts to Support Specific Uses](#ongoing-efforts-to-support-specific-uses)
+  - [Development and Maintenance Working Groups](#development-and-maintenance-working-groups)
+  - [Community, Education and Usage  Working Groups](#community-education-and-usage-working-groups)
+  - [Ongoing Efforts to Support Specific Uses](#ongoing-efforts-to-support-specific-uses)
 - [Other not yet classified as a working group](#other-not-yet-classified-as-a-working-group)
-
 
 ## Description
 
@@ -19,12 +18,13 @@ Each Working Group has its own cadence, lifecycle and objectives.
 
 ## Working Group Lifecycle
 
-TODO: Define how a working group gets created, evaled and how to decide if its purpuse has been fulfilled and should be dismantled
+**TODO: Define how a working group gets created, evaled and how to decide if its purpuse has been fulfilled and should be dismantled**
 
 ## Current Working Groups
 
 ### Development and Maintenance Working Groups
 
+**sub-index:**
 - [Release](#release)
 - [Specifications](#specifications)
 - [Files (Unixfs), DEX and Data Structures on top of IPLD](#files-unixfs-dex-and-data-structures-on-top-of-ipld)
@@ -111,6 +111,7 @@ Responsibilities include:
 
 ### Community, Education and Usage  Working Groups
 
+**sub-index:**
 - [Community, Events & Evangelism](#community-events-evangelism)
 - [Documentation, Education and Websites](#documentation-education-and-websites)
 - [Internationalisation and Localization (i18n and l10n)](#internationalisation-and-localization-i18n-and-l10n)
@@ -152,6 +153,7 @@ Responsibilities include:
 
 ### Ongoing Efforts to Support Specific Uses
 
+**sub-index:**
 - [Integration with Web Browsers](#integration-with-web-browsers)
 - [Large Data Sets](#large-data-sets)
 - [IPFS Cluster](#ipfs-cluster)
@@ -170,6 +172,8 @@ Responsibilities include:
 - Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
 - Increase the adoption of the Distributed Web by making it easy for users to access it.
 - Define specifications for address schemes and advocate for those schemes to be adopted.
+
+Tracking: https://github.com/ipfs/in-web-browsers
 
 #### Large Data Sets
 
