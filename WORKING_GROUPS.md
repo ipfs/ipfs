@@ -14,11 +14,13 @@
 
 The IPFS Project Working Groups are teams of people that are appointed to research, develop and deploy work under the scope that the working group is focused. This structure is designed to provide clarity and direction to the project, enabling individual contributors to focus their time and energy on the areas they are most interested.
 
-Each Working Group has its own cadence, lifecycle and objectives.
+As a consequence from this structure, we achieve another important goal of creating welcoming entry points for the community to subscribe to bodies of work and research. These entry points are curated by the working groups themselves and should serve the purpose of railing in new users and enable contribution as simply as possible.
+
+Each Working Group reserves the right to set its own pace, lifecycle and objectives quarterly.
 
 ## Working Group Lifecycle
 
-**TODO: Define how a working group gets created, evaled and how to decide if its purpuse has been fulfilled and should be dismantled**
+> **TODO: Define how a working group gets created, evaled and how to decide if its purpuse has been fulfilled and should be dismantled**
 
 ## Current Working Groups
 
@@ -35,9 +37,11 @@ Each Working Group has its own cadence, lifecycle and objectives.
 
 #### Release
 
+**Coordination**: <n/a>
+
 The Release Working Group manages the releases for go-ipfs, js-ipfs and its internal dependencies.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Structure the released process.
 - Define the release Roadmap.
@@ -47,9 +51,11 @@ Responsibilities include:
 
 #### Specifications
 
+**Coordination**: <n/a>
+
 The Specifications Working Group coordinates and participates on the specification writting process.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Ensure that specifications are up to date.
 - Enable developers and researches to contribute to the specification writting process with minimum overhead
@@ -58,9 +64,11 @@ Responsibilities include:
 
 #### Files (Unixfs), DEX and Data Structures on top of IPLD
 
+**Coordination**: <n/a>
+
 The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Design Importers and Exporters for different data sets
 - Maintain Unixfs
@@ -69,9 +77,11 @@ Responsibilities include:
 
 #### Runtime Support and Build
 
+**Coordination**: <n/a>
+
 The Runtime Support and Build Working Group ensures that the implementations of IPFS are supported by multiple runtimes and architectures, while providing with the necessary set up to empower developers to make the best decisions while contributing to the project.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Create a Build pipeline for IPFS.
 - Create and monitor continuous testing for the multiple supported platforms (Architecture, OS'es, Browsrs).
@@ -79,9 +89,11 @@ Responsibilities include:
 
 #### QA, Testing and Dev Team Enablement
 
+**Coordination**: <n/a>
+
 The QA, Testing and Dev Team Enablement Working Group focuses on developing tools, CI and automating maintenance tasks to improve the Developer experience of the many IPFS contributors.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Building and upgrading CI for IPFS
 - Automating tasks for things such as: release cycle, ensuring code quality, activity reports.
@@ -89,9 +101,11 @@ Responsibilities include:
 
 #### Security
 
+**Coordination**: <n/a>
+
 The Security Working Group ensures that Security issues are handled with maximum urgency and that risk is mitigated.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Regular audits by independent parties
 - Create a bugbounty program
@@ -102,9 +116,11 @@ Responsibilities include:
 
 #### Performance and Benchmarking
 
+**Coordination**: <n/a>
+
 The Performance and Benchmarking Working Group is dedicated to optimizing the performance of IPFS.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Create solid Benchmarks for IPFS and its subsystems
 - Help protocol implementors make the best decisions when it comes to design
@@ -118,9 +134,11 @@ Responsibilities include:
 
 #### Community, Events & Evangelism
 
+**Coordination**: <n/a>
+
 The Community, Events & Evangelism Working Group is responsible for building a environment that fosters collaboration, innovation and inclusiveness for the IPFS community.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Organize Meetups in multiple cities
 - Help community members organize meetups for their own communities
@@ -130,9 +148,11 @@ Responsibilities include:
 
 #### Documentation, Education and Websites
 
+**Coordination**: <n/a>
+
 The Documentation, Education and Websites Working Group creates the Documentation and Education materials that help more users and contributors get on board to the IPFS project.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Write and make sure that docs are up to date.
 - Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web.
@@ -142,9 +162,11 @@ Responsibilities include:
 
 #### Internationalisation and Localization (i18n and l10n)
 
+**Coordination**: <n/a>
+
 The Internationalisation and Localization Working Group create the platform for community members to collaborate in their own language.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Translation of the documentation and specification.
 - Monitor social media in the multiple languages supported.
@@ -160,9 +182,11 @@ Responsibilities include:
 
 #### Integration with Web Browsers
 
+**Coordination**: https://github.com/ipfs/in-web-browsers
+
 The Integration with Web Browsers Working Group designs and implement Browser integrations, Web Extensions, Service Workers and any other strategy that contributes to IPFS being integrated with the Web today.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Browser integrations (Firefox, Chrome, Brave and others).
 - IPFS Web Extension.
@@ -177,9 +201,11 @@ Tracking: https://github.com/ipfs/in-web-browsers
 
 #### Large Data Sets
 
+**Coordination**: <n/a>
+
 The Large Data Sets Working Group is dedicated to create the tooling and the testbed necessary to make sure that IPFS is capable of handling large datasets and that the workflows match or improve on what are the expectations from current industry standards.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Interact directly with organizations that use IPFS for large datasets
 - ipfs-pack
@@ -187,9 +213,11 @@ Responsibilities include:
 
 #### IPFS Cluster
 
+**Coordination**: https://github.com/ipfs/ipfs-cluster
+
 The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
-Responsibilities include:
+**Responsibilities include**:
 
 - Design and Implement IPFS Cluster.
 
@@ -201,7 +229,7 @@ The following bodies of work haven't been structure into a working group.
 
 - InterPlanetary TestLab
 - IPFS Infrastructure
-- Porcelain on top of IPFS
+- Porcelain on top of IPFS - DApps Building Blocks
 - libp2p internals
 - multiformats
 - IPLD as a project
