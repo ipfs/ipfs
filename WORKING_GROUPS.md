@@ -58,7 +58,7 @@ The Specifications Working Group coordinates and participates on the specificati
 **Responsibilities include**:
 
 - Ensure that specifications are up to date.
-- Enable developers and researches to contribute to the specification writting process with minimum overhead
+- Enable developers and researches to contribute to the specification writting process with minimum overhead.
 - That implementations can be compliant to the specs through formal testing (PDD and proofs).
 - Facilitate discussion around each spec making sure that proposals are followed up.
 
@@ -66,14 +66,15 @@ The Specifications Working Group coordinates and participates on the specificati
 
 **Coordination**: <n/a>
 
-The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets.
+The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets. CRDT research is also part of this working group with the goal of enabling new and interesting Data Structures that can be used in IPFS.
 
 **Responsibilities include**:
 
-- Design Importers and Exporters for different data sets
-- Maintain Unixfs
-- Improve the APIs that let users interact with Files on IPFS
-- Inform and guide users who want to define their own IPLD-based data formats
+- Design Importers and Exporters for different data sets.
+- Maintain Unixfs.
+- Improve the APIs that let users interact with Files on IPFS.
+- Inform and guide users who want to define their own IPLD-based data formats.
+- Research and implement CRDTs on top of IPFS, creating building blocks that can be used by other applications.
 
 #### Runtime Support and Build
 
@@ -95,9 +96,9 @@ The QA, Testing and Dev Team Enablement Working Group focuses on developing tool
 
 **Responsibilities include**:
 
-- Building and upgrading CI for IPFS
+- Building and upgrading CI for IPFS.
 - Automating tasks for things such as: release cycle, ensuring code quality, activity reports.
-- Upgrade dev tools (i.e AEgir)
+- Upgrade dev tools (i.e AEgir and gx).
 
 #### Security
 
@@ -107,12 +108,12 @@ The Security Working Group ensures that Security issues are handled with maximum
 
 **Responsibilities include**:
 
-- Regular audits by independent parties
-- Create a bugbounty program
-- Create a Responsible disclosure program
-- Create advisories and CVE for any reported vulnerabilities
-- Ensure patches are done
-- Communicate to the community on how to migrate and how to mitigate security risks
+- Regular audits by independent parties.
+- Create a bugbounty program.
+- Create a Responsible disclosure program.
+- Create advisories and CVE for any reported vulnerabilities.
+- Ensure patches are done.
+- Communicate to the community on how to migrate and how to mitigate security risks.
 
 #### Performance and Benchmarking
 
@@ -122,8 +123,8 @@ The Performance and Benchmarking Working Group is dedicated to optimizing the pe
 
 **Responsibilities include**:
 
-- Create solid Benchmarks for IPFS and its subsystems
-- Help protocol implementors make the best decisions when it comes to design
+- Create solid Benchmarks for IPFS and its subsystems.
+- Help protocol implementors make the best decisions when it comes to design.
 
 ### Community, Education and Usage  Working Groups
 
@@ -140,11 +141,11 @@ The Community, Events & Evangelism Working Group is responsible for building a e
 
 **Responsibilities include**:
 
-- Organize Meetups in multiple cities
-- Help community members organize meetups for their own communities
-- Respond to requests for IPFS presence in conferences
-- Managing the official Social Media channels
-- Publish regular updates to the community (blog posts and newsletters)
+- Organize Meetups in multiple cities.
+- Help community members organize meetups for their own communities.
+- Respond to requests for IPFS presence in conferences.
+- Managing the official Social Media channels.
+- Publish regular updates to the community (blog posts and newsletters).
 
 #### Documentation, Education and Websites
 
@@ -207,9 +208,9 @@ The Large Data Sets Working Group is dedicated to create the tooling and the tes
 
 **Responsibilities include**:
 
-- Interact directly with organizations that use IPFS for large datasets
-- ipfs-pack
-- Data Together initiative
+- Interact directly with organizations that use IPFS for large datasets.
+- ipfs-pack.
+- Data Together initiative.
 
 #### IPFS Cluster
 
@@ -221,9 +222,9 @@ The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
 - Design and Implement IPFS Cluster.
 
-## Other not yet classified as a working group
+## Other endeavours not yet classified as a working group
 
-Areas of Work that haven't been formalized as a Working Group
+Areas of Work that haven't been formalized as a Working Group.
 
 The following bodies of work haven't been structure into a working group.
 
