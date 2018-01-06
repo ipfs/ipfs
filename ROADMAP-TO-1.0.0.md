@@ -176,7 +176,7 @@ These are some libraries that must exist to make developers' lives easy. It is c
 
 The scalability of the IPFS protocol depends on careful design of algorithms and models, careful optimization of our implementations, and careful attention to the security properties of the protocols. Reaching high scalability for self-organizing peer-to-peer protocols is HARD, though definitely achievable. We measure scalability in orders of magnitude, as larger thresholds will require revisiting various parts of our codebase.
 
-Please bear in mind that we are currently still iplementing major features of the protocols and reaching implementation completion. We have not yet turned our focus towards scalability, thus there are LOTS of low hanging fruit to optimize and likely many scalability bugs to be worked out. The most important part is to make sure all protocols are meant to scale to billions of nodes, and that they make no centralizing assumptions. All protocols we have chosen make no small scale assumptions and are meant to scale well (typically `log(n)`).
+Please bear in mind that we are currently still implementing major features of the protocols and reaching implementation completion. We have not yet turned our focus towards scalability, thus there are LOTS of low hanging fruit to optimize and likely many scalability bugs to be worked out. The most important part is to make sure all protocols are meant to scale to billions of nodes, and that they make no centralizing assumptions. All protocols we have chosen make no small scale assumptions and are meant to scale well (typically `log(n)`).
 
 Our scalability observations are divided into simulations, real network tests, and production networks.
 
