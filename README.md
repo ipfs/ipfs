@@ -204,7 +204,7 @@ This aims to be a directory of all the various repos in the [IPFS Github Organiz
 
 We have a status board that checks all IPFS repositories for CI, Readmes, test coverage, and so on, here: http://project-repos.ipfs.io/
 
-#### Project Oranization
+#### Project Organization
 
 - [ipfs](https://github.com/ipfs/ipfs) - Master repo, intro, and news.
 - [discourse](https://discuss.ipfs.io) - Community discussions and support forum.
