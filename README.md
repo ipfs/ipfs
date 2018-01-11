@@ -1,9 +1,11 @@
-# IPFS - The Permanent Web
+# IPFS is the Distributed Web
+
+> A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
 [![ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
-Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started? Please post questions and ideas at http://discuss.ipfs.io
+Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started? Please post questions and ideas at https://discuss.ipfs.io
 
 ## Table of Contents
 
@@ -49,8 +51,8 @@ IPFS is a filesystem:
 
 IPFS is a web:
 - can be used to view documents like the web
-- files accessible via HTTP at `http://ipfs.io/<path>`
-- browsers or extensions can learn to use the `ipfs:/` or `fs:/` URI schemes directly
+- files accessible via HTTP at `https://ipfs.io/<path>`
+- browsers or extensions can learn to use the `ipfs://` URL or `dweb:/ipfs/` URI schemes directly
 - hash-addressed content guarantees authenticity
 
 IPFS is modular:
@@ -121,9 +123,9 @@ Today, there is one main IPFS Protocol implementation (in [Go](https://github.co
 
 In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an "Alpha Distribution". Since then, go-ipfs has been making regular releases on the road towards Beta. Both [js-ipfs](https://github.com/ipfs/js-ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs) are in progress.
 
-- [Install IPFS Alpha Distribution](http://ipfs.io/docs/install)
-- [Setup IPFS and Getting Started](http://ipfs.io/docs/getting-started/)
-- [Going Online](http://ipfs.io/docs/getting-started/#going-online)
+- [Install IPFS Alpha Distribution](https://ipfs.io/docs/install)
+- [Setup IPFS and Getting Started](https://ipfs.io/docs/getting-started/)
+- [Going Online](https://ipfs.io/docs/getting-started/#going-online)
 - [More Examples](https://ipfs.io/docs/examples/)
 
 For an in-depth tutorial, see a [Hands on Introduction](https://www.youtube.com/watch?v=h73bd9b5pPA).
@@ -148,7 +150,7 @@ The IPFS Project is now very large, with hundreds of contributors in our communi
 
 You can also find our community on:
 
-- IRC: [#ipfs on chat.freenode.net](http://chat.ipfs.io) for live help and some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
+- IRC: [#ipfs on chat.freenode.net](https://chat.ipfs.io) for live help and some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
 - Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users) (low traffic)
 - Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
 
