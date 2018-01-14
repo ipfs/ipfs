@@ -66,7 +66,7 @@ The Specifications Working Group coordinates and participates on the specificati
 
 **Coordination**: <n/a>
 
-The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets. CRDT research is also part of this working group with the goal of enabling new and interesting Data Structures that can be used in IPFS.
+The Files, DEX and Data Structures on top of IPLD focuses on designed and improving the current Unixfs, MFS and Files API implementation, improving the versatility of Importers and Exporters (DEX) and exploring new ways of leveraging IPLD for data sets.
 
 **Responsibilities include**:
 
@@ -74,9 +74,38 @@ The Files, DEX and Data Structures on top of IPLD focuses on designed and improv
 - Maintain Unixfs.
 - Improve the APIs that let users interact with Files on IPFS.
 - Inform and guide users who want to define their own IPLD-based data formats.
+- IPLD Selectors and Transformations.
+
+#### Dynamic Data and Capabilities
+
+**Coordination**: <n/a>
+
+Research and development of building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline and near-real-time collaboration.
+
+**Responsibilities include**:
+
 - Research and implement CRDTs on top of IPFS, creating building blocks that can be used by other applications.
+- Research Cryptographic ACLs (Capabilities Systems) and create building blocks that implement. 
+- Apply this research and implementation to products like PeerPad, validating the solutions and defining new problems to be solved.
+
+#### QA, Testing and Dev Team Enablement
+
+**Coordination**: <n/a>
+
+The QA, Testing and Dev Team Enablement Working Group focuses on building developer tools, CI and automated maintenance tasks to improve the Developer Experience of the many IPFS (and related) projects.
+
+**Responsibilities include**:
+
+- Enable developers to develop faster by reducing friction from dev.
+- Upgrade and build dev tools (i.e AEgir and gx).
+- Create a sound testing infrastructure for all the IPFS projects.
+- Set the guidelines for writing, maintaining and managing codebases, test suites and contributions.
+- Define process and help achieve high quality Sustainable Open Source Modules.
+- Automating tasks for things such as: release cycle, ensuring code quality, activity reports.
 
 #### Runtime Support and Build
+
+> This Working Group hasn't been formed yet.
 
 **Coordination**: <n/a>
 
@@ -88,19 +117,9 @@ The Runtime Support and Build Working Group ensures that the implementations of 
 - Create and monitor continuous testing for the multiple supported platforms (Architecture, OS'es, Browsrs).
 - Explore new runtimes and create Roadmaps towards supporting those.
 
-#### QA, Testing and Dev Team Enablement
-
-**Coordination**: <n/a>
-
-The QA, Testing and Dev Team Enablement Working Group focuses on developing tools, CI and automating maintenance tasks to improve the Developer experience of the many IPFS contributors.
-
-**Responsibilities include**:
-
-- Building and upgrading CI for IPFS.
-- Automating tasks for things such as: release cycle, ensuring code quality, activity reports.
-- Upgrade dev tools (i.e AEgir and gx).
-
 #### Security
+
+> This Working Group hasn't been formed yet.
 
 **Coordination**: <n/a>
 
@@ -116,6 +135,8 @@ The Security Working Group ensures that Security issues are handled with maximum
 - Communicate to the community on how to migrate and how to mitigate security risks.
 
 #### Performance and Benchmarking
+
+> This Working Group hasn't been formed yet.
 
 **Coordination**: <n/a>
 
@@ -135,6 +156,8 @@ The Performance and Benchmarking Working Group is dedicated to optimizing the pe
 
 #### Community, Events & Evangelism
 
+> This Working Group hasn't been formed yet.
+
 **Coordination**: <n/a>
 
 The Community, Events & Evangelism Working Group is responsible for building a environment that fosters collaboration, innovation and inclusiveness for the IPFS community.
@@ -149,6 +172,8 @@ The Community, Events & Evangelism Working Group is responsible for building a e
 
 #### Documentation, Education and Websites
 
+> This Working Group hasn't been formed yet.
+
 **Coordination**: <n/a>
 
 The Documentation, Education and Websites Working Group creates the Documentation and Education materials that help more users and contributors get on board to the IPFS project.
@@ -162,6 +187,8 @@ The Documentation, Education and Websites Working Group creates the Documentatio
 - Ensure that the code of conduct is followed and provide appropriate support or response when violations occur.
 
 #### Internationalisation and Localization (i18n and l10n)
+
+> This Working Group hasn't been formed yet.
 
 **Coordination**: <n/a>
 
@@ -224,7 +251,7 @@ The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
 ## Other endeavours not yet classified as a working group
 
-Areas of Work that haven't been formalized as a Working Group.
+> Areas of Work that haven't been formalized as a Working Group.
 
 The following bodies of work haven't been structure into a working group.
 
