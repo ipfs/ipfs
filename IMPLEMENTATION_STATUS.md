@@ -699,6 +699,18 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs pubsub ls`**                         | | |
+| **`ipfs pubsub peers`**                      | | |
+|     `topic`                                  | | |
+| **`ipfs pubsub pub`**                        | | |
+|     `topic`                                  | | |
+|     `data`                                   | | |
+| **`ipfs pubsub sub`**                        | | |
+|     `topic`                                  | | |
+|     `discover`                               | | |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
