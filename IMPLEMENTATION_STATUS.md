@@ -466,11 +466,41 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Key Management
 
-> **Note:** Implementation in js-ipfs is not planned for now.
-
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl        |
+| -------------------------------------------- | :-----------: | :-----------:  |
+| **`ipfs key gen`**                           | :green_apple: | :chestnut:     |
+|     `name`                                   | :green_apple: | :chestnut:     |
+|     `type=`                                  | :green_apple: | :chestnut:     |
+|     `size=`                                  | :green_apple: | :chestnut:     |
+| **`ipfs key list`**                          | :green_apple: | :chestnut:     |
+|     `l=`                                     | :green_apple: | :chestnut:     |
+| **`ipfs key rename`**                        | :green_apple: | :chestnut:     |
+|     `name`                                   | :green_apple: | :chestnut:     |
+|     `newName`                                | :green_apple: | :chestnut:     |
+|     `force=`                                 | :green_apple: | :chestnut:     |
+| **`ipfs key rm`**                            | :green_apple: | :chestnut:     |
+|     `name`                                   | :green_apple: | :chestnut:     |
+|     `l=`                                     | :green_apple: | :chestnut:     |
+
 #### HTTP
+
+| Endpoint                                     | Go Impl       | JS Impl        |
+| -------------------------------------------- | :-----------: | :-----------:  |
+| **`GET /api/v0/key/gen`**                    | :green_apple: | :chestnut:     |
+|     `arg=`                                   | :green_apple: | :chestnut:     |
+|     `type=`                                  | :green_apple: | :chestnut:     |
+|     `size=`                                  | :green_apple: | :chestnut:     |
+| **`GET /api/v0/key/list`**                   | :green_apple: | :chestnut:     |
+|     `l=`                                     | :green_apple: | :chestnut:     |
+| **`GET /api/v0/key/rename`**                 | :green_apple: | :chestnut:     |
+|     `arg=`                                   | :green_apple: | :chestnut:     |
+|     `arg=`                                   | :green_apple: | :chestnut:     |
+|     `force=`                                 | :green_apple: | :chestnut:     |
+| **`GET /api/v0/key/rm`**                     | :green_apple: | :chestnut:     |
+|     `arg=`                                   | :green_apple: | :chestnut:     |
+|     `l=`                                     | :green_apple: | :chestnut:     |
 
 #### Core
 
@@ -496,10 +526,10 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `pver`                                   | :green_apple: | :tomato:      |
 |     `pubkey`                                 | :green_apple: | :tomato:      |
 |     `addrs`                                  | :green_apple: | :tomato:      |
-| **`ipfs mount`**                             | :green_apple: | :chesnut:     |
-|     `ipfs-path=`                             | :green_apple: | :chesnut:     |
-|     `ipns-path=`                             | :green_apple: | :chesnut:     |
-| **`ipfs mount`**                             | :green_apple: | :chesnut:     |
+| **`ipfs mount`**                             | :green_apple: | :chestnut:     |
+|     `ipfs-path=`                             | :green_apple: | :chestnut:     |
+|     `ipns-path=`                             | :green_apple: | :chestnut:     |
+| **`ipfs mount`**                             | :green_apple: | :chestnut:     |
 
 #### HTTP
 
@@ -513,10 +543,10 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/commands`**                   | :green_apple: | :green_apple: |
 | **`POST /api/v0/id`**                        | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
-| **`GET /api/v0/mount`**                      | :green_apple: | :chesnut:     |
-|     `ipfs-path=`                             | :green_apple: | :chesnut:     |
-|     `ipns-path=`                             | :green_apple: | :chesnut:     |
-| **`GET /api/v0/mount`**                      | :green_apple: | :chesnut:     |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:     |
+|     `ipfs-path=`                             | :green_apple: | :chestnut:     |
+|     `ipns-path=`                             | :green_apple: | :chestnut:     |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:     |
 
 #### Core
 
