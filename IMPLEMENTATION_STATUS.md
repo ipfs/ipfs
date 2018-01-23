@@ -782,7 +782,31 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs pubsub ls`**                         | :green_apple: | :green_apple: |
+| **`ipfs pubsub peers`**                      | :green_apple: | :green_apple: |
+|     `topic`                                  | :green_apple: | :green_apple: |
+| **`ipfs pubsub pub`**                        | :green_apple: | :green_apple: |
+|     `topic`                                  | :green_apple: | :green_apple: |
+|     `data`                                   | :green_apple: | :green_apple: |
+| **`ipfs pubsub sub`**                        | :green_apple: | :green_apple: |
+|     `topic`                                  | :green_apple: | :green_apple: |
+|     `discover`                               | :green_apple: | :tomato:      |
+
 #### HTTP
+
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`GET /api/v0/pubsub/ls`**                  | :green_apple: | :green_apple: |
+| **`GET /api/v0/pubsub/peers`**               | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/pubsub/pub`**                 | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/pubsub/sub`**                 | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+|     `discover=`                              | :green_apple: | :green_apple: |
 
 #### Core
 
