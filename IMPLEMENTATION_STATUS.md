@@ -530,6 +530,25 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs name publish`**                      | :green_apple: | :tomato:      |
+|     `ipfs-path`                              | :green_apple: | :tomato:      |
+|     `resolve=`                               | :green_apple: | :tomato:      |
+|     `lifetime=`                              | :green_apple: | :tomato:      |
+|     `ttl=`                                   | :green_apple: | :tomato:      |
+|     `key=`                                   | :green_apple: | :tomato:      |
+| **`ipfs name resolve`**                      | :green_apple: | :tomato:      |
+|     `name`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+|     `nocache=`                               | :green_apple: | :tomato:      |
+| **`ipfs resolve`**                           | :green_apple: | :tomato:      |
+|     `name`                                   | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs dns`**                               | :green_apple: | :tomato:      |
+|     `domain`                                 | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
@@ -539,6 +558,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `resolve=`                               | :green_apple: | :tomato:      |
 |     `lifetime=`                              | :green_apple: | :tomato:      |
 |     `ttl=`                                   | :green_apple: | :tomato:      |
+|     `key=`                                   | :green_apple: | :tomato:      |
 | **`GET /api/v0/name/resolve`**               | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
