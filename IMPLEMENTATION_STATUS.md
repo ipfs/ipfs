@@ -433,11 +433,41 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Key Management
 
-> **Note:** Implementation in js-ipfs is not planned for now.
-
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs key gen`**                           | :green_apple: | :chesnut:     |
+|     `name`                                   | :green_apple: | :chesnut:     |
+|     `type=`                                  | :green_apple: | :chesnut:     |
+|     `size=`                                  | :green_apple: | :chesnut:     |
+| **`ipfs key list`**                          | :green_apple: | :chesnut:     |
+|     `l=`                                     | :green_apple: | :chesnut:     |
+| **`ipfs key rename`**                        | :green_apple: | :chesnut:     |
+|     `name`                                   | :green_apple: | :chesnut:     |
+|     `newName`                                | :green_apple: | :chesnut:     |
+|     `force=`                                 | :green_apple: | :chesnut:     |
+| **`ipfs key rm`**                            | :green_apple: | :chesnut:     |
+|     `name`                                   | :green_apple: | :chesnut:     |
+|     `l=`                                     | :green_apple: | :chesnut:     |
+
 #### HTTP
+
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`GET /api/v0/key/gen`**                    | :green_apple: | :chesnut:     |
+|     `arg=`                                   | :green_apple: | :chesnut:     |
+|     `type=`                                  | :green_apple: | :chesnut:     |
+|     `size=`                                  | :green_apple: | :chesnut:     |
+| **`GET /api/v0/key/list`**                   | :green_apple: | :chesnut:     |
+|     `l=`                                     | :green_apple: | :chesnut:     |
+| **`GET /api/v0/key/rename`**                 | :green_apple: | :chesnut:     |
+|     `arg=`                                   | :green_apple: | :chesnut:     |
+|     `arg=`                                   | :green_apple: | :chesnut:     |
+|     `force=`                                 | :green_apple: | :chesnut:     |
+| **`GET /api/v0/key/rm`**                     | :green_apple: | :chesnut:     |
+|     `arg=`                                   | :green_apple: | :chesnut:     |
+|     `l=`                                     | :green_apple: | :chesnut:     |
 
 #### Core
 
