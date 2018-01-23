@@ -228,22 +228,55 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### CLI
 
+| Command                                      | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`ipfs dht findpeer`**                      | :green_apple: | :tomato:      |
+|     `peer ID`                                | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`ipfs dht findprovs`**                     | :green_apple: | :tomato:      |
+|     `key`                                    | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `num-providers=`                         | :green_apple: | :tomato:      |
+| **`ipfs dht get`**                           | :green_apple: | :tomato:      |
+|     `key`                                    | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`ipfs dht provide`**                       | :green_apple: | :tomato:      |
+|     `key`                                    | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs dht put`**                           | :green_apple: | :tomato:      |
+|     `key`                                    | :green_apple: | :tomato:      |
+|     `value`                                  | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`ipfs dht query`**                         | :green_apple: | :tomato:      |
+|     `peer ID`                                | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
 | **`GET /api/v0/dht/findpeer`**               | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
-| **`POST /api/v0/dht/findprovs`**             | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`GET /api/v0/dht/findprovs`**              | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `num-providers=`                         | :green_apple: | :tomato:      |
 | **`GET /api/v0/dht/get`**                    | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+| **`GET /api/v0/dht/provide`**                | :green_apple: | :tomato:      |
+|     `arg=`                                   | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `recursive=`                             | :green_apple: | :tomato:      |
 | **`GET /api/v0/dht/put`**                    | :green_apple: | :tomato:      |
 |     `arg1=`                                  | :green_apple: | :tomato:      |
 |     `arg2=`                                  | :green_apple: | :tomato:      |
+|     `verbose=`                               | :green_apple: | :tomato:      |
 | **`GET /api/v0/dht/query`**                  | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
-
+|     `verbose=`                               | :green_apple: | :tomato:      |
 
 #### Core
 
