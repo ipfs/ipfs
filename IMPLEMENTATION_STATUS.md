@@ -701,6 +701,18 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 #### HTTP
 
+| Endpoint                                     | Go Impl       | JS Impl       |
+| -------------------------------------------- | :-----------: | :-----------: |
+| **`GET /api/v0/pubsub/ls`**                  | | |
+| **`GET /api/v0/pubsub/peers`**               | | |
+|     `arg=`                                   | | |
+| **`GET /api/v0/pubsub/pub`**                 | | |
+|     `arg=`                                   | | |
+|     `arg=`                                   | | |
+| **`GET /api/v0/pubsub/sub`**                 | | |
+|     `arg=`                                   | | |
+|     `discover=`                              | | |
+
 #### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
