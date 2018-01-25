@@ -237,7 +237,6 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 - [bitswap-ml](https://github.com/ipfs/bitswap-ml) - Bitswap and Machine Learning.
 - [research-crdt](https://github.com/ipfs/research-crdt) - Repo to discuss crdt research
 - [research-pubsub](https://github.com/libp2p/research-pubsub) - Repo to discuss pubsub research
-- [research-p2p-video](https://github.com/libp2p/research-p2p-video) - Repo to discuss pubsub research
 - [blockchain-data](https://github.com/ipfs/blockchain-data) - Using IPFS for storing data for Blockchain apps.
 - [POST](https://github.com/ipfs/POST) - A datastructure for human communication.
 
@@ -315,7 +314,7 @@ Installing
 - [install-go-ipfs](https://github.com/ipfs/install-go-ipfs) - Install go-ipfs shell script.
 - [install-js-ipfs](https://github.com/ipfs/js-ipfs#install) - Install js-ipfs through npm or a script tag.
 - [ipfs-update](https://github.com/ipfs/ipfs-update) - An updater tool for IPFS.
-- [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations) - These are migrations for [IPFS fs-repo](https://github.com/ipfs/specs/blob/repo/fs-repo) versions.
+- [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations) - These are migrations for [IPFS fs-repo](https://github.com/ipfs/specs/tree/399c907b214a24dc82ca010af6884227cb2829cf/repo/fs-repo) versions.
 - [npm-go-ipfs](https://github.com/ipfs/npm-go-ipfs) - Install go-ipfs from npm.
 
 Other
@@ -351,7 +350,6 @@ Many more exist, but we will endeavor to find them and add them here.
 - [js-ipfs-bitswap](https://github.com/ipfs/js-ipfs-bitswap) - JavaScript implementation of the Bitswap 'data exchange' protocol used by IPFS
 - [js-ipfs-blocks](https://github.com/ipfs/js-ipfs-block-service) - JavaScript Implementation of Block and BlockService
 - [js-ipfs-data-importing](https://github.com/ipfs/js-ipfs-unixfs-engine) - JavaScript implementation of the layout and chunking mechanisms used by IPFS
-- [js-ipfs-path](https://github.com/ipfs/js-ipfs-path) - Javascript helper functions for IPFS path handling.
 - [js-ipfs-repo](https://github.com/ipfs/js-ipfs-repo) - Implementation of [the IPFS repo spec](https://github.com/ipfs/specs/tree/master/repo) in Javascript.
 - [js-ipfs-unixfs](https://github.com/ipfs/js-ipfs-unixfs) - JavaScript implementation of IPFS' unixfs (a Unix FileSystem representation on top of a MerkleDAG).
 - [js-libp2p](https://github.com/libp2p/js-libp2p) - libp2p implementation in JavaScript.
