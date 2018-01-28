@@ -12,7 +12,7 @@ In order for IPFS to reach its maturity state, going from Alpha, to Beta and to 
 - For its specifications to be 100% complete. This includes the IPFS, libp2p, multiformats and IPLD specs.
 - Compliance tests for the specification.
 - The golang and JavaScript implementations to be 100% complete and spec compliant.
-- A third party implementation of IPFS, fully interopable with the go and JavaScript versions.
+- A third party implementation of IPFS, fully interoperable with the go and JavaScript versions.
 - A release plan and cycle, including a strategy to support specific key releases for longer periods of time (i.e LTS releases vs stable)
 
 ## Milestones
