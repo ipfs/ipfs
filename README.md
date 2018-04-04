@@ -267,7 +267,6 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 #### Apps on IPFS
 
 - [astralboot](https://github.com/ipfs/astralboot) - Low level boot server that deploys directly out of IPFS (TFTP, PXE Boot).
-- [ipfs-web-app](https://github.com/ipfs/ipfs-web-app) - IPFS web app interfaces.
 - [ipget](https://github.com/ipfs/ipget) - wget for IPFS: retrieve files over IPFS and save them locally.
 - [starlog](https://github.com/ipfs/starlog) - Blog posts in IPFS.
 - [container-demos](https://github.com/ipfs/container-demos) - Demos on how to boot docker images and VMs from IPFS.
