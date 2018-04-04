@@ -268,7 +268,6 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 - [astralboot](https://github.com/ipfs/astralboot) - Low level boot server that deploys directly out of IPFS (TFTP, PXE Boot).
 - [ipget](https://github.com/ipfs/ipget) - wget for IPFS: retrieve files over IPFS and save them locally.
-- [starlog](https://github.com/ipfs/starlog) - Blog posts in IPFS.
 - [container-demos](https://github.com/ipfs/container-demos) - Demos on how to boot docker images and VMs from IPFS.
 - [ipfs-geoip](https://github.com/ipfs/ipfs-geoip) - Geoip over ipfs.
 - [npm on ipfs](https://github.com/diasdavid/npm-on-ipfs) - npm on IPFS.
