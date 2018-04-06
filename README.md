@@ -12,8 +12,9 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
 - [Overview](#overview)
   - [Quick Summary](#quick-summary)
 - [How IPFS Works](#how-ipfs-works)
-  - [IPFS Papers](#ipfs-papers)
-  - [IPFS Talks](#ipfs-talks)
+  - [Papers](#papers)
+  - [Talks](#talks)
+  - [Specs](#specs)
 - [More About IPFS](#more-about-ipfs)
   - [Current State of IPFS](#current-state-of-ipfs)
   - [Alpha Distribution](#alpha-distribution)
@@ -89,15 +90,22 @@ IPFS has a name service:
 
 ## How IPFS Works
 
-To learn more about how IPFS works take a look at the [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
+To learn more about how IPFS works take a look at the [Papers](#papers) or [Talks](#talks). You can also explore the [Specs](#specs) in writing.
 
-### IPFS Papers
+### Papers
 
 - [IPFS - Content Addressed, Versioned, P2P File System (draft 3)](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - [Specifications](https://github.com/ipfs/specs) (work in progress)
 - see also: https://github.com/ipfs/papers
 
-### IPFS Talks
+### Specs
+
+- [IPFS Specs](https://github.com/ipfs/specs)
+- [libp2p Specs](https://github.com/libp2p/specs)
+- [IPLD Specs](https://github.com/ipld/specs)
+- [Multiformats](https://github.com/multiformats)
+
+### Talks
 
 This is a short selection of introductory talks. In time we will collect more here.
 
@@ -107,7 +115,6 @@ This is a short selection of introductory talks. In time we will collect more he
 - **2015-10-22 - [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI) at Stanford Seminar (best overview of project)**
 - 2016-09-14 - [Distributed Apps with IPFS](https://www.youtube.com/watch?v=jONZtXMu03w)
 - 2016-10-22 - [The Decentralized Web, IPFS and Filecoin](https://www.youtube.com/watch?v=cU-n_m-snxQ)
-
 
 ## More About IPFS
 
@@ -121,9 +128,9 @@ Please note that IPFS is a work in progress. It is an ambitious plan to make the
 
 Today, there is one main IPFS Protocol implementation (in [Go](https://github.com/ipfs/go-ipfs)) with [more on the way](#protocol-implementations) ([JavaScript](https://github.com/ipfs/js-ipfs), and [Python](https://github.com/ipfs/py-ipfs)).
 
-### Alpha Distribution
+### go-ipfs, the golang implementation
 
-In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an "Alpha Distribution". Since then, go-ipfs has been making regular releases on the road towards Beta. Both [js-ipfs](https://github.com/ipfs/js-ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs) are in progress.
+In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an "Alpha Distribution". Since then, go-ipfs has been making regular releases on the road towards IPFS Beta.
 
 - [Install IPFS Alpha Distribution](https://ipfs.io/docs/install)
 - [Setup IPFS and Getting Started](https://ipfs.io/docs/getting-started/)
@@ -131,6 +138,21 @@ In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementati
 - [More Examples](https://ipfs.io/docs/examples/)
 
 For an in-depth tutorial, see a [Hands on Introduction](https://www.youtube.com/watch?v=h73bd9b5pPA).
+
+### js-ipfs, the JavaScript implementation
+
+In June of 2016, the [js-ipfs](http://github.com/ipfs/js-ipfs) implementation was announced as a interoperable implementation at the Decentralized Web Summit. Since then, multiple releases happened on the road towards IPFS Beta.
+
+- [Install js-ipfs](https://github.com/ipfs/js-ipfs#install)
+- [Tutorials and examples](https://github.com/ipfs/js-ipfs/tree/master/examples)
+
+### py-ipfs, the Python implementation
+
+The [Python Implementation](https://github.com/ipfs/py-ipfs) is in its early days.
+
+### c-ipfs, the C Implementation
+
+The [C Implementation](https://github.com/ipfs/c-ipfs) is a work in progress.
 
 ### Security Issues and Disclosures
 
