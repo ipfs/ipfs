@@ -34,9 +34,11 @@ IPFS is a distributed file system that seeks to connect all computing devices wi
 
 IPFS is becoming a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. It sounds crazy. It _is_ crazy.
 
-[![Alpha Demo](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
+You can watch the following talks to get up to speed on what IPFS is and what it does:
 
-Want to see more? Check out Juan Benet's talk at Sourcegraph - [IPFS: The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g).
+| Alpha release demo | IPFS talk at Sourcegraph |
+|:---:|:---:|
+| [![](img/alpha-demo.jpg)](https://youtu.be/8CMxDNuuAiQ) | [![](img/talk-sourcegraph.jpg)](https://www.youtube.com/watch?v=Fa4pckodM9g) |
 
 ### Quick Summary
 
