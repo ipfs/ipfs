@@ -36,9 +36,9 @@ IPFS is becoming a new major subsystem of the internet. If built right, it could
 
 You can watch the following talks to get up to speed on what IPFS is and what it does:
 
-| Alpha release demo | IPFS talk at Sourcegraph |
-|:---:|:---:|
-| [![](img/alpha-demo.jpg)](https://youtu.be/8CMxDNuuAiQ) | [![](img/talk-sourcegraph.jpg)](https://www.youtube.com/watch?v=Fa4pckodM9g) |
+| Alpha release demo | IPFS talk at Sourcegraph | Stanford Seminar |
+|:---:|:---:|:---:|
+| [![](img/alpha-demo.jpg)](https://youtu.be/8CMxDNuuAiQ) | [![](img/talk-sourcegraph.jpg)](https://www.youtube.com/watch?v=Fa4pckodM9g) | [![](img/stanford-seminar.jpg)](https://youtu.be/HUVmypx9HGI)
 
 ### Quick Summary
 
