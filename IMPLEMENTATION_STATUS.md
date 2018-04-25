@@ -293,16 +293,16 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`ipfs add`**                               | :green_apple: | :lemon:       |
 |     `file`                                   | :green_apple: | :green_apple: |
 |     `recursive`                              | :green_apple: | :green_apple: |
-|     `quiet`                                  | :green_apple: | :tomato:      |
-|     `quieter`                                | :green_apple: | :tomato:      |
-|     `silent`                                 | :green_apple: | :tomato:      |
-|     `progress`                               | :green_apple: | :tomato:      |
+|     `quiet`                                  | :green_apple: | :green_apple: |
+|     `quieter`                                | :green_apple: | :green_apple: |
+|     `silent`                                 | :green_apple: | :green_apple: |
+|     `progress`                               | :green_apple: | :green_apple: |
 |     `trickle`                                | :green_apple: | :green_apple: |
-|     `only-hash`                              | :green_apple: | :tomato:      |
+|     `only-hash`                              | :green_apple: | :green_apple: |
 |     `wrap-with-directory`                    | :green_apple: | :green_apple: |
 |     `hidden`                                 | :green_apple: | :tomato:      |
 |     `chunker`                                | :green_apple: | :tomato:      |
-|     `pin`                                    | :green_apple: | :tomato:      |
+|     `pin`                                    | :green_apple: | :lemon:       |
 |     `raw-leaves`                             | :green_apple: | :tomato:      |
 |     `nocopy`                                 | :green_apple: | :tomato:      |
 |     `fscache`                                | :green_apple: | :tomato:      |
@@ -370,13 +370,13 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `quiet=`                                 | :green_apple: | :tomato:      |
 |     `quieter=`                               | :green_apple: | :tomato:      |
 |     `silent=`                                | :green_apple: | :tomato:      |
-|     `progress=`                              | :green_apple: | :tomato:      |
+|     `progress=`                              | :green_apple: | :green_apple: |
 |     `trickle=`                               | :green_apple: | :green_apple: |
-|     `only-hash=`                             | :green_apple: | :tomato:      |
+|     `only-hash=`                             | :green_apple: | :green_apple: |
 |     `wrap-with-directory`                    | :green_apple: | :green_apple: |
 |     `hidden`                                 | :green_apple: | :tomato:      |
 |     `chunker`                                | :green_apple: | :tomato:      |
-|     `pin`                                    | :green_apple: | :tomato:      |
+|     `pin`                                    | :green_apple: | :lemon:       |
 |     `raw-leaves`                             | :green_apple: | :tomato:      |
 |     `nocopy`                                 | :green_apple: | :tomato:      |
 |     `fscache`                                | :green_apple: | :tomato:      |
@@ -526,10 +526,10 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `pver`                                   | :green_apple: | :tomato:      |
 |     `pubkey`                                 | :green_apple: | :tomato:      |
 |     `addrs`                                  | :green_apple: | :tomato:      |
-| **`ipfs mount`**                             | :green_apple: | :chestnut:     |
-|     `ipfs-path=`                             | :green_apple: | :chestnut:     |
-|     `ipns-path=`                             | :green_apple: | :chestnut:     |
-| **`ipfs mount`**                             | :green_apple: | :chestnut:     |
+| **`ipfs mount`**                             | :green_apple: | :chestnut:    |
+|     `ipfs-path=`                             | :green_apple: | :chestnut:    |
+|     `ipns-path=`                             | :green_apple: | :chestnut:    |
+| **`ipfs mount`**                             | :green_apple: | :chestnut:    |
 
 #### HTTP
 
@@ -543,10 +543,10 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/commands`**                   | :green_apple: | :green_apple: |
 | **`POST /api/v0/id`**                        | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
-| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:     |
-|     `ipfs-path=`                             | :green_apple: | :chestnut:     |
-|     `ipns-path=`                             | :green_apple: | :chestnut:     |
-| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:     |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:    |
+|     `ipfs-path=`                             | :green_apple: | :chestnut:    |
+|     `ipns-path=`                             | :green_apple: | :chestnut:    |
+| **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:    |
 
 #### Core
 
@@ -710,45 +710,38 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs pin add`**                           | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
-| **`ipfs pin ls`**                            | :green_apple: | :tomato:      |
-|     `type=`                                  | :green_apple: | :tomato:      |
-|     `count=`                                 | :green_apple: | :tomato:      |
-|     `quiet=`                                 | :green_apple: | :tomato:      |
-| **`ipfs pin rm`**                            | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
+| **`ipfs pin add`**                           | :green_apple: | :lemon:       |
+|     `hash`                                   | :green_apple: | :lemon:       |
+|     `recursive`                              | :green_apple: | :lemon:       |
+|     `progress`                               | :green_apple: | :tomato:      |
+| **`ipfs pin ls`**                            | :green_apple: | :lemon:       |
+|     `type`                                   | :green_apple: | :lemon:       |
+|     `quiet`                                  | :green_apple: | :lemon:       |
+| **`ipfs pin rm`**                            | :green_apple: | :lemon:       |
+|     `hash`                                   | :green_apple: | :lemon:       |
+|     `recursive`                              | :green_apple: | :lemon:       |
 | **`ipfs pin update`**                        | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `unpin=`                                 | :green_apple: | :tomato:      |
+|     `hash`                                   | :green_apple: | :tomato:      |
+|     `unpin`                                  | :green_apple: | :tomato:      |
 | **`ipfs pin verify`**                        | :green_apple: | :tomato:      |
-|     `verbose=`                               | :green_apple: | :tomato:      |
+|     `verbose`                                | :green_apple: | :tomato:      |
 | **`ipfs refs`**                              | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `format=`                                | :green_apple: | :tomato:      |
-|     `edges=`                                 | :green_apple: | :tomato:      |
-|     `unique=`                                | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
+|     `hash`                                   | :green_apple: | :tomato:      |
+|     `format`                                 | :green_apple: | :tomato:      |
+|     `edges`                                  | :green_apple: | :tomato:      |
+|     `unique`                                 | :green_apple: | :tomato:      |
+|     `recursive`                              | :green_apple: | :tomato:      |
 | **`ipfs refs local`**                        | :green_apple: | :tomato:      |
-| **`ipfs refs`**                              | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `format=`                                | :green_apple: | :tomato:      |
-|     `edges=`                                 | :green_apple: | :tomato:      |
-|     `unique=`                                | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
 
 #### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/pin/add`**                    | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
-| **`POST /api/v0/pin/ls`**                    | :green_apple: | :tomato:      |
+| **`GET /api/v0/pin/add`**                    | :green_apple: | :lemon:       |
+|     `arg=`                                   | :green_apple: | :lemon:       |
+|     `recursive=`                             | :green_apple: | :lemon:       |
+| **`POST /api/v0/pin/ls`**                    | :green_apple: | :lemon:       |
 |     `type=`                                  | :green_apple: | :tomato:      |
-|     `count=`                                 | :green_apple: | :tomato:      |
 |     `quiet=`                                 | :green_apple: | :tomato:      |
 | **`GET /api/v0/pin/rm`**                     | :green_apple: | :tomato:      |
 |     `arg=`                                   | :green_apple: | :tomato:      |
@@ -765,12 +758,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `unique=`                                | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
 | **`GET /api/v0//refs/local`**                | :green_apple: | :tomato:      |
-| **`GET /api/v0/refs`**                       | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-|     `format=`                                | :green_apple: | :tomato:      |
-|     `edges=`                                 | :green_apple: | :tomato:      |
-|     `unique=`                                | :green_apple: | :tomato:      |
-|     `recursive=`                             | :green_apple: | :tomato:      |
 
 #### Core
 
