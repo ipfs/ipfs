@@ -12,14 +12,14 @@
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs ledger`**                            | :green_apple: | :tomato:      |
-|     `peer`                                   | :green_apple: | :tomato:      |
+| **`ipfs ledger`**                            | :green_apple: | :lemon:       |
+|     `peer`                                   | :green_apple: | :lemon:       |
 | **`ipfs reprovide`**                         | :green_apple: | :tomato:      |
 | **`ipfs bitswap stat`**                      | :green_apple: | :green_apple: |
-| **`ipfs bitswap unwant`**                    | :green_apple: | :tomato:      |
-|     `key`                                    | :green_apple: | :tomato:      |
-| **`ipfs bitswap wantlist`**                  | :green_apple: | :lemon:       |
-|     `peer`                                   | :green_apple: | :tomato:      |
+| **`ipfs bitswap unwant`**                    | :green_apple: | :green_apple: |
+|     `key`                                    | :green_apple: | :green_apple: |
+| **`ipfs bitswap wantlist`**                  | :green_apple: | :green_apple: |
+|     `peer`                                   | :green_apple: | :green_apple: |
 
 #### HTTP
 
