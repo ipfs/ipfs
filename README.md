@@ -215,7 +215,7 @@ We have a status board that checks all IPFS repositories for CI, Readmes, test c
 
 #### Get Help!
 
-The best place to seek help is on [the IPFS community forum](https://discuss.ipfs.io) or on IRC (freenode) in the #ipfs channel.
+The best place to seek help is on [the IPFS community forum](https://discuss.ipfs.io) or on IRC (freenode) in the `#ipfs` channel.
 
 There are two deprecated repositories containing [FAQ](https://github.com/ipfs/faq) and [support](https://github.com/ipfs/support). Use those as reference, but post any new questions or requests for help on https://discuss.ipfs.io.
 
@@ -230,6 +230,7 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 - [apps](https://github.com/ipfs/apps) - Coordinating writing apps on top of ipfs.
 - [archives](https://github.com/ipfs/archives) - Coordinating archival efforts with IPFS.
+- [in-web-browsers](https://github.com/ipfs/in-web-browsers) - Coordinating efforts to bring IPFS to Web Browsers.
 
 #### Specification Discussions
 
@@ -261,8 +262,10 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 #### IPFS GUIs
 
-- [station](https://github.com/ipfs/station) - An IPFS Desktop app.
-- [webui](https://github.com/ipfs/webui) - The IPFS WebUI app.
+- [ipfs-companion](https://github.com/ipfs-shipyard/ipfs-companion) - The web browser extension
+- [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A menubar/tray desktop app
+- [ipfs-webui](https://github.com/ipfs/webui) - The IPFS WebUI app
+- [pm-ipfs-gui](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Coordinating development and maintenance of GUI apps
 
 #### Apps on IPFS
 
