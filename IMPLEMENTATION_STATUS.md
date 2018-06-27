@@ -25,14 +25,14 @@
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/bitswap/ledger`**             | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
+| **`GET /api/v0/bitswap/ledger`**             | :green_apple: | :lemon:       |
+|     `arg=`                                   | :green_apple: | :lemon:       |
 | **`GET /api/v0/bitswap/reprovide`**          | :green_apple: | :tomato:      |
 | **`GET /api/v0/bitswap/stat`**               | :green_apple: | :green_apple: |
-| **`GET /api/v0/bitswap/unwant`**             | :green_apple: | :tomato:      |
-|     `arg=`                                   | :green_apple: | :tomato:      |
-| **`GET /api/v0/bitswap/wantlist`**           | :green_apple: | :lemon:       |
-|     `peer=`                                  | :green_apple: | :tomato:      |
+| **`GET /api/v0/bitswap/unwant`**             | :green_apple: | :green_apple: |
+|     `arg=`                                   | :green_apple: | :green_apple: |
+| **`GET /api/v0/bitswap/wantlist`**           | :green_apple: | :green_apple: |
+|     `peer=`                                  | :green_apple: | :green_apple: |
 
 #### Core
 
