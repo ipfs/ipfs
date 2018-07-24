@@ -260,6 +260,10 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 - [swift-ipfs-api](https://github.com/ipfs/swift-ipfs-api) - Implementation in Swift.
 - [net-ipfs-api](https://github.com/richardschneider/net-ipfs-api) - Implementation in C#.
 
+#### IPFS DSLs
+
+- [fsharp-ipfs-dsl](https://github.com/cloveekprojeqt/fsharp-ipfs-dsl) - Embedded declarative F# DSL over [net-ipfs-api](https://github.com/richardschneider/net-ipfs-api)
+
 #### IPFS GUIs
 
 - [ipfs-companion](https://github.com/ipfs-shipyard/ipfs-companion) - The web browser extension
