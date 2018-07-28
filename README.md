@@ -180,6 +180,8 @@ If you would you like to start your own language implementation of IPFS, check o
 | JavaScript  | https://github.com/ipfs/js-ipfs-api               | |
 | Python      | https://github.com/ipfs/py-ipfs-api               | |
 | Scala       | https://github.com/ipfs/scala-ipfs-api            | |
+| Clojure     | https://github.com/keorn/clj-ipfs-api             | |
+| Clojurescript | https://github.com/district0x/cljs-ipfs-api     | |
 | Haskell     | https://github.com/davidar/hs-ipfs-api            | |
 | Swift       | https://github.com/ipfs/swift-ipfs-api            | |
 | CommonLisp  | https://github.com/WeMeetAgain/cl-ipfs-api        | |
