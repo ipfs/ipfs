@@ -136,13 +136,12 @@ The QA, Testing and Dev Team Enablement Working Group focuses on building develo
 > This Working Group hasn't been formed yet.
 
 - **Coordination**: https://github.com/ipfs/community
-- **Captain**: ??? 
+- **Captain**: @mikeal
 
 The Community, Events & Evangelism Working Group is responsible for building a environment that fosters collaboration, innovation and inclusiveness for the IPFS community.
 
 **Responsibilities include**:
 
-- Organize Meetups in multiple cities.
 - Help community members organize meetups for their own communities.
 - Respond to requests for IPFS presence in conferences.
 - Managing the official Social Media channels.
