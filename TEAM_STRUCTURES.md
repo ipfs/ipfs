@@ -149,7 +149,7 @@ The Community, Events & Evangelism Working Group is responsible for building a e
 
 ### Documentation, Education and Websites
 
-> This Working Group hasn't been formed yet.
+> This Working Group hasn't been formed yet. However, the interim Captain is [Rob Brackett](https://github.com/Mr0grog)
 
 - **Coordination**: https://github.com/ipfs/docs
 - **Captain**: ???
