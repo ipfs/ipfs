@@ -169,7 +169,7 @@ The Documentation, Education, and Websites Working Group creates the documentati
 - **Coordination**: https://github.com/ipfs/in-web-browsers
 - **Captain**: [Marcin Rataj](https://github.com/lidel)
 
-The Integration with Web Browsers Working Group designs and implements browser integrations, web extensions, service workers and any other strategy that contributes to IPFS being integrated with the internet today.
+The Integration with Web Browsers Working Group designs and implements browser integrations, web extensions, service workers and any other strategy that contributes to IPFS being integrated with the web today.
 
 **Responsibilities include**:
 
