@@ -5,7 +5,7 @@
 - [Description](#description)
   - [One line definition](#one-line-definition)
   - [Expanded description](#expanded-description)
-- [Existing Working Groups](#existing-working-groups)
+- [Existing **Working** Groups](#existing-working-groups)
   - **Development and Maintenance:**
     - [JavaScript Core Dev](#javascript-core-dev)
     - [Golang Core Dev](#golang-core-dev)
@@ -19,7 +19,7 @@
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
     - [IPFS Cluster](#ipfs-cluster)
-- [Existing Research Groups](#existing-Research-groups)
+- [Existing **Research** Groups](#existing-research-groups)
 
 ## Description
 
