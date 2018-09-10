@@ -12,9 +12,11 @@
     - [IPFS GUI](#ipfs-gui)
     - [IPFS Infrastructure](#ipfs-infrastructure)
     - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
-  - **Community, Education and Usage:**
-    - [Community, Events & Evangelism](#community-events-evangelism)
-    - [Documentation, Education and Websites](#documentation-education-and-websites)
+  - **[Community](#community):**
+    - Evangelism (Events, Social Media)
+    - Editorial (Blogs, Documentation)
+    - Education (ProtoSchool, Demos)
+    - Automation (Probots, etc)
   - **Ongoing Efforts to Support Specific Uses:**
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
@@ -60,9 +62,11 @@ A byproduct of both of these team structures achieves another important goal: ma
   - [IPFS GUI](#ipfs-gui)
   - [IPFS Infrastructure](#ipfs-infrastructure)
   - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
-- **Community, Education and Usage:**
-  - [Community, Events & Evangelism](#community-events-evangelism)
-  - [Documentation, Education and Websites](#documentation-education-and-websites)
+- **[Community](#community):**
+  - Evangelism (Events, Social Media)
+  - Editorial (Blogs, Documentation)
+  - Education (ProtoSchool, Demos)
+  - Automation (Probots, etc)
 - **Ongoing Efforts to Support Specific Uses:**
   - [Integration with Web Browsers](#integration-with-web-browsers)
   - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
@@ -131,14 +135,15 @@ The QA, Testing and Dev Team Enablement Working Group focuses on building develo
 - Define process and help achieve high quality sustainable open source modules.
 - Automating tasks for things such as: release cycle, ensuring code quality, activity reports.
 
-### Community, Events & Evangelism
+### Community
 
 > This Working Group hasn't been formed yet.
 
 - **Coordination**: https://github.com/ipfs/community
 - **Captain**: [Mikeal Rogers](https://github.com/mikeal)
 
-The Community, Events & Evangelism Working Group is responsible for building an environment that fosters collaboration, innovation, and inclusiveness for the IPFS community.
+Community outreach working group. Coordinates the communities around events, blog posts
+documentation, automation and education.
 
 **Responsibilities include**:
 
@@ -146,23 +151,10 @@ The Community, Events & Evangelism Working Group is responsible for building an 
 - Respond to requests for IPFS presence in conferences.
 - Managing the official social media channels.
 - Publish regular updates to the community (blog posts and newsletters).
-
-### Documentation, Education, and Websites
-
-> This Working Group hasn't been formed yet. However, the interim Captain is [Rob Brackett](https://github.com/Mr0grog)
-
-- **Coordination**: https://github.com/ipfs/docs
-- **Captain**: ???
-
-The Documentation, Education, and Websites Working Group creates the documentation and education materials that help more users and contributors get on board to the IPFS project.
-
-**Responsibilities include**:
-
-- Write and make sure that docs are up to date.
-- Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web.
-- Develop the user-facing webpages for each project (ipfs.io, libp2p.io, multiformats.io and ipld.io)
+- Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web in ProtoSchool.
 - Ensure that public forums (discuss.ipfs.io, irc, github, etc) have adequate moderation and responsive support.
 - Ensure that the code of conduct is followed and provide appropriate support or response when violations occur.
+- Author and improve documention.
 
 ### Integration with Web Browsers
 
