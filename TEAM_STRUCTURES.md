@@ -13,10 +13,6 @@
     - [IPFS Infrastructure](#ipfs-infrastructure)
     - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
   - **[Community](#community):**
-    - Evangelism (Events, Social Media)
-    - Editorial (Blogs, Documentation)
-    - Education (ProtoSchool, Demos)
-    - Automation (Probots, etc)
   - **Ongoing Efforts to Support Specific Uses:**
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
@@ -63,10 +59,6 @@ A byproduct of both of these team structures achieves another important goal: ma
   - [IPFS Infrastructure](#ipfs-infrastructure)
   - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
 - **[Community](#community):**
-  - Evangelism (Events, Social Media)
-  - Editorial (Blogs, Documentation)
-  - Education (ProtoSchool, Demos)
-  - Automation (Probots, etc)
 - **Ongoing Efforts to Support Specific Uses:**
   - [Integration with Web Browsers](#integration-with-web-browsers)
   - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
@@ -137,7 +129,10 @@ The QA, Testing and Dev Team Enablement Working Group focuses on building develo
 
 ### Community
 
-> This Working Group hasn't been formed yet.
+- Evangelism (Events, Social Media)
+- Editorial (Blogs, Documentation)
+- Education (ProtoSchool, Demos)
+- Automation (Probots, etc)
 
 - **Coordination**: https://github.com/ipfs/community
 - **Captain**: [Mikeal Rogers](https://github.com/mikeal)
