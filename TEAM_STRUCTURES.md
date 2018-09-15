@@ -12,7 +12,7 @@
     - [IPFS GUI](#ipfs-gui)
     - [IPFS Infrastructure](#ipfs-infrastructure)
     - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
-  - **[Community](#community):**
+  - [**Community**](#community)
   - **Ongoing Efforts to Support Specific Uses:**
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
