@@ -10,13 +10,13 @@
     - [JavaScript Core Dev](#javascript-core-dev)
     - [Golang Core Dev](#golang-core-dev)
     - [IPFS GUI](#ipfs-gui)
+    - [IPFS Cluster](#ipfs-cluster)
     - [IPFS Infrastructure](#ipfs-infrastructure)
     - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
   - [**Community**](#community)
   - **Ongoing Efforts to Support Specific Uses:**
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
-    - [IPFS Cluster](#ipfs-cluster)
 - [Existing **Research** Groups](#existing-research-groups)
 
 ## Description
@@ -96,6 +96,18 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
 - IPFS must be usable and comprehensible for everyone.
 - Publish and promote this work. Make doing the right thing the easiest thing.
 - Demonstrate the nature of the system with effortless, coherent, and compelling interfaces.
+
+### IPFS Cluster
+
+- **Coordination**: https://github.com/ipfs/ipfs-cluster
+- **Captain**: [Hector Sanjuan](https://github.com/hsanjuan)
+
+The IPFS Cluster Working Group is the team implementing IPFS Cluster.
+
+**Responsibilities include**:
+
+- Design and implement IPFS Cluster.
+- Provide knowledge and APIs that organizations with large data sets can use.
 
 ### IPFS Infrastructure
 
@@ -181,18 +193,6 @@ Research and development of building blocks that enable collaborative applicatio
 - Research and implement CRDTs on top of IPFS, creating building blocks that can be used by other applications.
 - Research Cryptographic ACLs (Capabilities Systems) and create building blocks to implement them.
 - Apply this research and implementation to products like PeerPad, validating the solutions and defining new problems to be solved.
-
-### IPFS Cluster
-
-- **Coordination**: https://github.com/ipfs/ipfs-cluster
-- **Captain**: [Hector Sanjuan](https://github.com/hsanjuan)
-
-The IPFS Cluster Working Group is the team implementing IPFS Cluster.
-
-**Responsibilities include**:
-
-- Design and implement IPFS Cluster.
-- Provide knowledge and APIs that organizations with large data sets can use.
 
 ## Existing Research Groups
 
