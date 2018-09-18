@@ -17,6 +17,7 @@
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
     - [IPFS Cluster](#ipfs-cluster)
+    - [Decentralized Data Stewardship](#decentralized-data-stewardship)
 - [Existing **Research** Groups](#existing-research-groups)
 
 ## Description
@@ -193,6 +194,20 @@ The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
 - Design and implement IPFS Cluster.
 - Provide knowledge and APIs that organizations with large data sets can use.
+
+### Decentralized Data Stewardship
+
+- **Coordination**: Soon(tm)
+- **Captain**: [Michelle Hertzfeld](https://github.com/meiqimichelle)
+
+User research, collaborations, and products that support holding data together on decentralized networks.
+
+**Responsibilities include**:
+
+- Participate in groups such as [Data Together](https://datatogether.org/)
+- Conduct [user research around managing large volumes of data](https://github.com/ipfs/user-research/tree/master/large-volumes) on IPFS
+- Support collaborations between IPFS and community members who need to manage large volumes of data
+- Research and prototype policy layers for just and inclusive data stewardship on decentralized networks
 
 ## Existing Research Groups
 
