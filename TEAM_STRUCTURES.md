@@ -197,7 +197,7 @@ The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
 ### Decentralized Data Stewardship
 
-- **Coordination**: Soon(tm)
+- **Coordination**: https://github.com/ipfs/decentralized-data-stewardship
 - **Captain**: [Michelle Hertzfeld](https://github.com/meiqimichelle)
 
 User research, collaborations, and products that support holding data together on decentralized networks.
