@@ -14,7 +14,7 @@
     - [IPFS Infrastructure](#ipfs-infrastructure)
     - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
   - [**Community**](#community)
-  - **Ongoing Efforts to Support Specific Uses:**
+  - **Efforts to Support Specific Uses:**
     - [Integration with Web Browsers](#integration-with-web-browsers)
     - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
     - [Decentralized Data Stewardship](#decentralized-data-stewardship)
@@ -60,7 +60,7 @@ A byproduct of both of these team structures achieves another important goal: ma
   - [IPFS Infrastructure](#ipfs-infrastructure)
   - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
 - **[Community](#community):**
-- **Ongoing Efforts to Support Specific Uses:**
+- **Efforts to Support Specific Uses:**
   - [Integration with Web Browsers](#integration-with-web-browsers)
   - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
   - [IPFS Cluster](#ipfs-cluster)
