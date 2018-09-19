@@ -141,16 +141,16 @@ The QA, Testing and Dev Team Enablement Working Group focuses on building develo
 
 ### Community
 
-- Evangelism (Events, Social Media)
-- Editorial (Blogs, Documentation)
-- Education (ProtoSchool, Demos)
-- Automation (Probots, etc)
-
 - **Coordination**: https://github.com/ipfs/community
 - **Captain**: [Mikeal Rogers](https://github.com/mikeal)
 
 Community outreach working group. Coordinates the communities around events, blog posts
 documentation, automation and education.
+
+- Evangelism (Events, Social Media)
+- Editorial (Blogs, Documentation)
+- Education (ProtoSchool, Demos)
+- Automation (Probots, etc)
 
 **Responsibilities include**:
 
