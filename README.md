@@ -272,6 +272,7 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 - [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A menubar/tray desktop app
 - [ipfs-webui](https://github.com/ipfs/webui) - The IPFS WebUI app
 - [pm-ipfs-gui](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Coordinating development and maintenance of GUI apps
+- [i18n](https://github.com/ipfs/i18n) - The IPFS Translation Project: crowdsourcing translations of IPFS GUIs and websites
 
 #### Apps on IPFS
 
@@ -305,7 +306,6 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 - [ipfs-readme-standard](https://github.com/RichardLitt/standard-readme) - Standardize all IPFS Readme.md's and other markdown files.
 - [ipld-examples](https://github.com/ipfs/ipld-examples) - Datastructure examples to use with IPLD, the new data format for IPFS.
 - [logo](https://github.com/ipfs/logo) - The logo for IPFS.
-- [translation project](https://www.transifex.com/ipfs/ipfs/) - Crowdsourced translation of IPFS WebUI and the ipfs.io website.
 
 #### IPFS Meetups
 
