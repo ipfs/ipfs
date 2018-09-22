@@ -1,4 +1,4 @@
-# IPFS Proect Requirements to 1.0.0
+# IPFS Project Requirements to 1.0.0
 
 ## Table of Contents
 
