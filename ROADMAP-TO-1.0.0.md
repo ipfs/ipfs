@@ -1,4 +1,4 @@
-# Roadmap to IPFS 1.0.0 
+# Requirements to 1.0.0
 
 ## Table of Contents
 
