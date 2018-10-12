@@ -53,17 +53,32 @@ A byproduct of both of these team structures achieves another important goal: ma
 
 ## Existing Working Groups
 
+- **[Project](#project)**
 - **Development and Maintenance:**
   - [JavaScript Core Dev](#javascript-core-dev)
   - [Golang Core Dev](#golang-core-dev)
   - [IPFS GUI](#ipfs-gui)
   - [IPFS Infrastructure](#ipfs-infrastructure)
   - [Dev Team Enablement (QA, Testing, Support)](#qa-testing-and-dev-team-enablement)
-- **[Community](#community):**
+- **[Community](#community)**
 - **Efforts to Support Specific Uses:**
   - [Integration with Web Browsers](#integration-with-web-browsers)
   - [Dynamic Data and Capabilities](#dynamic-data-and-capabilities)
   - [IPFS Cluster](#ipfs-cluster)
+
+### Project
+
+- **Coordination**: https://github.com/ipfs/project
+- **Captain**: [David Dias](https://github.com/diasdavid)
+
+The IPFS Project Working Group Community serves as the point of coordination for the IPFS Organization.
+
+**Responsibilities include**:
+- Maintain the IPFS Project Roadmap.
+- Provide coaching to Working Groups to develop their own planning.
+- Facilitate the conversation accross the organization.
+- Research, develop and build new ways to help async teams coordinate at scale.
+- Recognize needs of the project and develop solutions to meet them. 
 
 ### JavaScript IPFS implementation
 
@@ -106,7 +121,6 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
 The IPFS Cluster Working Group is the team implementing IPFS Cluster.
 
 **Responsibilities include**:
-
 - Design and implement IPFS Cluster.
 - Provide knowledge and APIs that organizations with large data sets can use.
 
@@ -132,7 +146,6 @@ Tools and systems for the IPFS community.
 The QA, Testing and Dev Team Enablement Working Group focuses on building developer tools, CI, and automated maintenance tasks to improve the developer experience of the many IPFS (and related) projects.
 
 **Responsibilities include**:
-
 - Enable developers to develop faster by reducing friction from dev.
 - Upgrade and build dev tools (i.e AEgir and gx).
 - Create a sound testing infrastructure for all the IPFS projects.
@@ -154,7 +167,6 @@ documentation, automation and education.
 - Automation (Probots, etc)
 
 **Responsibilities include**:
-
 - Help community members organize meetups for their own communities.
 - Respond to requests for IPFS presence in conferences.
 - Managing the official social media channels.
@@ -172,7 +184,6 @@ documentation, automation and education.
 The Integration with Web Browsers Working Group designs and implements browser integrations, web extensions, service workers and any other strategy that contributes to IPFS being integrated with the web today.
 
 **Responsibilities include**:
-
 - Browser integrations (Firefox, Chrome, Brave and others).
 - IPFS Web Extension.
 - IPFS Service Worker.
