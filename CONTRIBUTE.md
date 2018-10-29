@@ -1,6 +1,6 @@
 # Contributing to IPFS
 
-There are many ways to contribute to IPFS development. We welcome contributions big and small! We also have more extensive [community contributing notes](https://github.com/ipfs/community/blob/master/contributing.md).
+There are many ways to contribute to IPFS development. We welcome contributions big and small! We also have more extensive [community contributing notes](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md).
 
 ### Help with the design
 
