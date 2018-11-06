@@ -140,13 +140,13 @@ If the issue is a protocol weakness that cannot be immediately exploited or some
 
 ## Project and Community
 
-[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/contributing.md)
+[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTE.md)
 
 The IPFS Project is now very large, with hundreds of contributors in our community. You are invited to join it! Here are some links to our communication channels:
 
 - [IPFS Community Forums for Discussion and Support](https://discuss.ipfs.io)
 - [Sprints and Project Management](https://github.com/ipfs/pm)
-- [Contributing Guidelines](https://github.com/ipfs/community/blob/master/contributing.md)
+- [Contributing Guidelines](https://github.com/ipfs/community/blob/master/CONTRIBUTE.md)
 
 You can also find our community on:
 
