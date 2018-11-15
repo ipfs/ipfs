@@ -141,7 +141,7 @@ If the issue is a protocol weakness that cannot be immediately exploited or some
 
 ## Project and Community
 
-[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTE.md)
+[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community)
 
 The IPFS Project is now very large, with hundreds of contributors in our community. You are invited to join it! Here are some links to our communication channels:
 
@@ -233,10 +233,10 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 - [archives](https://github.com/ipfs/archives) - Coordinating archival efforts with IPFS.
 - [archive-format](https://github.com/ipfs/archive-format) - A DAG Archive format.
-- [research-bitswap](https://github.com/ipfs/research-bitswap) - Repo to discuss Bitswap research
+- [research-bitswap](https://github.com/ipfs/research-bitswap) - Repo to discuss Bitswap research.
 - [bitswap-ml](https://github.com/ipfs/bitswap-ml) - Bitswap and Machine Learning.
-- [research-crdt](https://github.com/ipfs/research-crdt) - Repo to discuss crdt research
-- [research-pubsub](https://github.com/libp2p/research-pubsub) - Repo to discuss pubsub research
+- [research-crdt](https://github.com/ipfs/research-crdt) - Repo to discuss crdt research.
+- [research-pubsub](https://github.com/libp2p/research-pubsub) - Repo to discuss pubsub research.
 - [blockchain-data](https://github.com/ipfs/blockchain-data) - Using IPFS for storing data for Blockchain apps.
 - [POST](https://github.com/ipfs/POST) - A datastructure for human communication.
 
@@ -252,11 +252,11 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 #### IPFS GUIs
 
-- [ipfs-companion](https://github.com/ipfs-shipyard/ipfs-companion) - The web browser extension
-- [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A menubar/tray desktop app
-- [ipfs-webui](https://github.com/ipfs/webui) - The IPFS WebUI app
-- [i18n](https://github.com/ipfs/i18n) - The IPFS Translation Project: crowdsourcing translations of IPFS GUIs and websites
-- [pm-ipfs-gui](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Coordinating development and maintenance of GUI apps
+- [ipfs-companion](https://github.com/ipfs-shipyard/ipfs-companion) - The web browser extension.
+- [ipfs-desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A menubar/tray desktop app.
+- [ipfs-webui](https://github.com/ipfs/webui) - The IPFS WebUI app.
+- [i18n](https://github.com/ipfs/i18n) - The IPFS Translation Project: crowdsourcing translations of IPFS GUIs and websites.
+- [pm-ipfs-gui](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Coordinating development and maintenance of GUI apps.
 
 #### Apps on IPFS
 
@@ -264,14 +264,16 @@ You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/cate
 
 #### Community Infrastructure
 
-- [blog](https://github.com/ipfs/blog) - The IPFS Blog
+- [blog](https://github.com/ipfs/blog) - The IPFS Blog.
 - [community forum](https://discuss.ipfs.io)
 - [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
-- [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups
+- [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups.
 - [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
-- [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations
-- [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics
+- [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations.
+- [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics.
 - [website](https://github.com/ipfs/website) - The source to the IPFS community website at http://ipfs.io.
+- [IPFS group on Linkedin](https://www.linkedin.com/groups/13635533/) - Open group to share and learn about IPFS on Linkedin. 
+
 
 #### Ref Lists
 
