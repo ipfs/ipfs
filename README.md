@@ -176,33 +176,33 @@ If you would you like to start your own language implementation of IPFS, check o
 
 <a href="ipfs.io"><img width="360px" src="https://ipfs.io/ipfs/QmQJ68PFMDdAsgCZvA1UVzzn18asVcf7HVvCDgpjiSCAse" alt="IPFS http client lib logo" /></a>
 
-| Language      | Client Library                                    | Completeness |
-|---------------|---------------------------------------------------|--------------|
-| Go            | https://github.com/ipfs/go-ipfs-api               | ?? |
-| Java          | https://github.com/ipfs/java-ipfs-api             | ?? |
-| JavaScript    | https://github.com/ipfs/js-ipfs-api               | 100% |
-| Python        | https://github.com/ipfs/py-ipfs-api               | ?? |
-| Scala         | https://github.com/ipfs/scala-ipfs-api            | ?? |
-| Clojure       | https://github.com/keorn/clj-ipfs-api             | ?? |
-| Clojurescript | https://github.com/district0x/cljs-ipfs-api       | ?? |
-| Haskell       | https://github.com/davidar/hs-ipfs-api            | ?? |
-| Swift         | https://github.com/ipfs/swift-ipfs-api            | ?? |
-| CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api        | ?? |
-| Rust          | https://github.com/ferristseng/rust-ipfs-api      | ?? |
-|               | https://github.com/gkbrk/rust-ipfs-api            | ?? |
-|               | https://github.com/rmnoff/rust-ipfs-api           | ?? |
-|               | https://github.com/rschulman/rust-ipfs-api        | ?? |
-| Ruby          | https://github.com/Fryie/ipfs-ruby                | ?? |
-| Mac Automator | https://github.com/NeoTeo/ipfs-osx-service        | ?? |
-| PHP           | https://github.com/cloutier/php-ipfs-api          | ?? |
-|               | https://github.com/digitalkaoz/php-ipfs-api       | ?? |
-| C#            | https://github.com/TrekDev/net-ipfs-api           | ?? |
-|               | https://github.com/richardschneider/net-ipfs-api  | ?? |
-| C++           | https://github.com/vasild/cpp-ipfs-api            | ?? |
-| Erlang        | https://github.com/hendry19901990/erlang-ipfs-api | ?? |
-| Objective C   | !                                                 | 0% |
-| Julia         | contact: [@rened](https://github.com/rened)       | 0% |
-| Lua           | contact: [@seclorum](https://github.com/seclorum) | 0% |
+| Language      | Client Library                                            | Completeness |
+|---------------|-----------------------------------------------------------|--------------|
+| Go            | https://github.com/ipfs/go-ipfs-api                       | ?? |
+| Java          | https://github.com/ipfs/java-ipfs-api                     | ?? |
+| JavaScript    | https://github.com/ipfs/js-ipfs-api                       | 100% |
+| Python        | https://github.com/ipfs/py-ipfs-api                       | ?? |
+| Scala         | https://github.com/ipfs/scala-ipfs-api                    | ?? |
+| Clojure       | https://github.com/keorn/clj-ipfs-api                     | ?? |
+| Clojurescript | https://github.com/district0x/cljs-ipfs-api               | ?? |
+| Haskell       | https://github.com/davidar/hs-ipfs-api                    | ?? |
+| Swift         | https://github.com/ipfs/swift-ipfs-api                    | ?? |
+| CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                | ?? |
+| Rust          | https://github.com/ferristseng/rust-ipfs-api              | ?? |
+|               | https://github.com/gkbrk/rust-ipfs-api                    | ?? |
+|               | https://github.com/rmnoff/rust-ipfs-api                   | ?? |
+|               | https://github.com/rschulman/rust-ipfs-api                | ?? |
+| Ruby          | https://github.com/Fryie/ipfs-ruby                        | ?? |
+| Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                | ?? |
+| PHP           | https://github.com/cloutier/php-ipfs-api                  | ?? |
+|               | https://github.com/digitalkaoz/php-ipfs-api               | ?? |
+| C#            | https://github.com/TrekDev/net-ipfs-api                   | ?? |
+|               | https://github.com/richardschneider/net-ipfs-api          | ?? |
+| C++           | https://github.com/vasild/cpp-ipfs-api                    | ?? |
+| Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | ?? |
+| Objective C   | None yet                                                  | 0% |
+| Julia         | contact: [@rened](https://github.com/rened)               | 0% |
+| Lua           | contact: [@seclorum](https://github.com/seclorum)         | 0% |
 
 Please help by contributing to one of the above client libraries. If you would like to create another, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://github.com/ipfs/ipfs/issues/83) so we can help!
 
