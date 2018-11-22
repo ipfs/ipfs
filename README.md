@@ -191,8 +191,8 @@ this repository if you are a client maintainer and are not in the list below and
 | Haskell       | https://github.com/davidar/hs-ipfs-api                    |  |
 | Swift         | https://github.com/ipfs/swift-ipfs-api                    |  |
 | CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                |  |
-| Rust          | https://github.com/ferristseng/rust-ipfs-api              | @gkbrk |
-|               | https://github.com/gkbrk/rust-ipfs-api                    |  |
+| Rust          | https://github.com/ferristseng/rust-ipfs-api              |  |
+|               | https://github.com/gkbrk/rust-ipfs-api                    | @gkbrk |
 |               | https://github.com/rmnoff/rust-ipfs-api                   |  |
 |               | https://github.com/rschulman/rust-ipfs-api                |  |
 | Ruby          | https://github.com/Fryie/ipfs-ruby                        |  |
