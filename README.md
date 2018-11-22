@@ -196,13 +196,13 @@ If you would you like to start your own language implementation of IPFS, check o
 | Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                | ?? |
 | PHP           | https://github.com/cloutier/php-ipfs-api                  | ?? |
 |               | https://github.com/digitalkaoz/php-ipfs-api               | ?? |
-| C#            | https://github.com/TrekDev/net-ipfs-api                   | ?? |
+| C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client | ?? |
 |               | https://github.com/richardschneider/net-ipfs-api          | ?? |
 | C++           | https://github.com/vasild/cpp-ipfs-api                    | ?? |
 | Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | ?? |
-| Objective C   | None yet                                                  | 0% |
-| Julia         | contact: [@rened](https://github.com/rened)               | 0% |
-| Lua           | contact: [@seclorum](https://github.com/seclorum)         | 0% |
+| Objective C   | None yet                                                  | ?? |
+| Julia         | contact: [@rened](https://github.com/rened)               | ?? |
+| Lua           | contact: [@seclorum](https://github.com/seclorum)         | ?? |
 
 Please help by contributing to one of the above client libraries. If you would like to create another, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://github.com/ipfs/ipfs/issues/83) so we can help!
 
