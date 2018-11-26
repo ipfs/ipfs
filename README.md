@@ -184,21 +184,21 @@ this repository if you are a client maintainer and are not in the list below and
 | Go            | https://github.com/ipfs/go-ipfs-api                       |  |
 | Java          | https://github.com/ipfs/java-ipfs-api                     |  |
 | JavaScript    | https://github.com/ipfs/js-ipfs-api                       |  |
-| Python        | https://github.com/ipfs/py-ipfs-api                       |  |
+| Python        | https://github.com/ipfs/py-ipfs-api                       | @whereswaldon @alexander255 |
 | Scala         | https://github.com/ipfs/scala-ipfs-api                    |  |
 | Clojure       | https://github.com/keorn/clj-ipfs-api                     |  |
 | Clojurescript | https://github.com/district0x/cljs-ipfs-api               |  |
 | Haskell       | https://github.com/davidar/hs-ipfs-api                    |  |
 | Swift         | https://github.com/ipfs/swift-ipfs-api                    |  |
 | CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                |  |
-| Rust          | https://github.com/ferristseng/rust-ipfs-api              |  |
+| Rust          | https://github.com/ferristseng/rust-ipfs-api              | @ferristseng |
 |               | https://github.com/gkbrk/rust-ipfs-api                    | @gkbrk |
 |               | https://github.com/rmnoff/rust-ipfs-api                   |  |
 |               | https://github.com/rschulman/rust-ipfs-api                |  |
 | Ruby          | https://github.com/Fryie/ipfs-ruby                        |  |
 | Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                |  |
 | PHP           | https://github.com/cloutier/php-ipfs-api                  |  |
-|               | https://github.com/digitalkaoz/php-ipfs-api               |  |
+|               | https://github.com/digitalkaoz/php-ipfs-api               | @ferristseng |
 | C#            | https://github.com/TrekDev/net-ipfs-api                   |  |
 |               | https://github.com/richardschneider/net-ipfs-api          |  |
 | C++           | https://github.com/vasild/cpp-ipfs-api                    |  |
