@@ -272,8 +272,6 @@ You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/cate
 - [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations.
 - [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics.
 - [website](https://github.com/ipfs/website) - The source to the IPFS community website at http://ipfs.io.
-- [IPFS group on Linkedin](https://www.linkedin.com/groups/13635533/) - Open group to share and learn about IPFS on Linkedin. 
-
 
 #### Ref Lists
 
