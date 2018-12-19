@@ -21,7 +21,7 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
 - [Project and Community](#project-and-community)
 - [Project Links](#project-links)
   - [Protocol Implementations](#protocol-implementations)
-  - [API Client Libraries](#api-client-libraries)
+  - [HTTP Client Libraries](#http-client-libraries)
   - [Project Directory](#project-directory)
   - [Other Community Resources](#other-community-resources)
 - [License](#license)
