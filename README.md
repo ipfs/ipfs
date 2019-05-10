@@ -269,7 +269,7 @@ You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/cate
 - [blog](https://github.com/ipfs/blog) - The IPFS Blog.
 - [community forum](https://discuss.ipfs.io)
 - [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
-- [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups.
+- [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups. [Subscribe here.](https://tinyletter.com/ipfsnewsletter)
 - [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
 - [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations.
 - [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics.
