@@ -1,4 +1,4 @@
-# IPFS é a Web distribuída
+# IPFS é a web distribuída
 
 > Um protocolo hipermídia ponto a ponto para tornar a web mais rápida, segura e aberta.
 
