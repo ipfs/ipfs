@@ -34,7 +34,7 @@ O IPFS é um sistema de arquivos distribuídos que procura conectar todos os dis
 
 O IPFS está se tornando um novo grande subsistema da Internet. Se construído corretamente, pode complementar ou substituir o HTTP. Pode complementar ou substituir. Parece loucura. _É_ uma loucura.
 
-[![Alpha Demo](img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
+[![Alpha Demo](../../img/ipfs-alpha-video.png)](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 
 Quer ver mais? Confira a palestra de Juan Benet no Sourcegraph - [IPFS: The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g).
 
