@@ -12,7 +12,7 @@ Bem vindo ao IPFS! Por que não assiste um [vídeo de demonstração](https://ww
 - [Visão Geral](#overview)
   - [Resumo](#quick-summary)
 - [Como IPFS funciona](#how-ipfs-works)
-  - [IPFS Artigos](#ipfs-papers)
+  - [IPFS Papers](#ipfs-papers)
   - [IPFS Conversas](#ipfs-talks)
 - [Mais Sobre IPFS](#more-about-ipfs)
   - [Estado atual do IPFS](#current-state-of-ipfs)
@@ -87,9 +87,9 @@ O IPFS tem um serviço de nome:
 
 ## Como o IPFS Funciona?
 
-Para saber mais sobre como funciona o IPFS, dê uma olhada nos [Artigos](#ipfs-papers) ou [Conversas](#ipfs-talks). Você também pode explorar as [Especificações](https://github.com/ipfs/specs) por escrito.
+Para saber mais sobre como funciona o IPFS, dê uma olhada nos [Papers](#ipfs-papers) ou [Conversas](#ipfs-talks). Você também pode explorar as [Especificações](https://github.com/ipfs/specs) por escrito.
 
-### Artigos IPFS
+### Papers IPFS
 
 - [IPFS - Content Addressed, Versioned, P2P File System (draft 3)](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - [Especificações](https://github.com/ipfs/specs) (em progresso)
@@ -241,7 +241,7 @@ Há dois repositórios depreciados contendo [FAQ](https://github.com/ipfs/faq) e
 
 #### Documentos
 
-- [papers](papers) - Artigos acadêmicos sobre IPFS.
+- [papers](papers) - Papers acadêmicos sobre IPFS.
 - [specs](https://github.com/ipfs/specs) - Especificações no protocolo IPFS.
 - [notes](https://github.com/ipfs/notes) - Várias notas e discussões relevantes (que não se encaixam em outro lugar).
 - [reading-list](https://github.com/ipfs/reading-list) - Artigos para entender o IPFS.
