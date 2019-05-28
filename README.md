@@ -7,6 +7,8 @@
 
 Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started? Please post questions and ideas at https://discuss.ipfs.io
 
+*Read this in other languages: [Portuguese](translations/pt_BR/README.md).*
+
 ## Table of Contents
 
 - [Overview](#overview)
