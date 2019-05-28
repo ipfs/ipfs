@@ -219,10 +219,6 @@ Por favor ajude contribuindo para uma das bibliotecas acima. Caso você queira i
 
 ### Diretório de Projetos
 
-This aims to be a directory of all the various repos in the [IPFS Github Organization](https://github.com/ipfs), and other closely related things.
-
-We have a status board that checks all IPFS repositories for CI, Readmes, test coverage, and so on, here:
-
 Este tem como objetivo ser um diretório de todos os repositórios da [Organização do IPFS Github](https://github.com/ipfs) e outras coisas relacionadas.
 
 Temos um quadro de status que verifica todos os repositórios do IPFS com informações sobre CI, Readmes, cobertura de testes e assim por diante, neste link: http://project-repos.ipfs.io/
