@@ -204,8 +204,6 @@ Se você deseja iniciar sua própria implementação de linguagem do IPFS, confi
 | Julia         | contato: [@rened](https://github.com/rened)               | ?? |
 | Lua           | contato: [@seclorum](https://github.com/seclorum)         | ?? |
 
-Please help by contributing to one of the above client libraries. If you would like to create another, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://github.com/ipfs/ipfs/issues/83) so we can help!
-
 Por favor ajude contribuindo para uma das bibliotecas acima. Caso você queira implementar em outra linguagem, consulte o [Guia de Implementação do Cliente HTTP IPFS](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md) e [avise-nos](https://github.com/ipfs/ipfs/issues/83) para que possamos ajudar!
 
 ### Diretório de Projetos
