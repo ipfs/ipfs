@@ -71,7 +71,7 @@ O IPFS usa criptografia:
 O IPFS é P2P:
 - transferências de arquivos peer-to-peer em todo o mundo
 - arquitetura completamente descentralizada
-- ** não ** possui ponto central de falha
+- **não** possui um ponto central de falha
 
 O IPFS é um cdn:
 - adicionar um arquivo ao sistema de arquivos localmente está disponível para o mundo
