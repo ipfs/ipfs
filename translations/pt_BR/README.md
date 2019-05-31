@@ -66,7 +66,7 @@ O IPFS usa criptografia com:
 - endereçamento de conteúdo hash criptográfico
 - desduplicação em nível de bloco
 - integridade de arquivos + versionamento
-- a execução em nível de sistema de arquivos + suporte a assinatura
+- execução em nível de sistema de arquivos + suporte a assinatura
 
 O IPFS é P2P:
 - transferências de arquivos peer-to-peer em todo o mundo
