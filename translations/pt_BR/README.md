@@ -30,7 +30,7 @@ Bem vindo ao IPFS! Por que não assiste um [vídeo de demonstração](https://ww
 
 IPFS ([the InterPlanetary File System](https://github.com/ipfs/faq/issues/76)) é um novo protocolo de distribuição hipermídia, endereçado por conteúdo e identidades. O IPFS permite a criação de aplicativos completamente distribuídos. O objetivo é tornar a web mais rápida, segura e aberta.
 
-O IPFS é um sistema de arquivos distribuídos que procura conectar todos os dispositivos computacionais com o mesmo sistema de arquivos. De certa forma, isso é semelhante aos objetivos originais da Web, mas o IPFS é mais similar a um único bittorrent swarm trocando objetos git. Você pode ler mais sobre suas origens no documento [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true).
+O IPFS é um sistema de arquivos distribuídos que procura conectar todos os dispositivos computacionais com o mesmo sistema de arquivos. De certa forma, isso é semelhante aos objetivos originais da Web, mas o IPFS funciona como um único bittorrent swarm trocando objetos git. Você pode ler mais sobre suas origens no documento [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true).
 
 O IPFS está se tornando um novo grande subsistema da Internet. Se construído corretamente, pode complementar ou substituir o HTTP. Pode complementar ou substituir. Parece loucura. _É_ uma loucura.
 
@@ -62,16 +62,16 @@ O IPFS é modular e possui:
 - um serviço de nomenclatura baseado em caminho
 - usa a troca de blocos inspirada no bittorrent
 
-O IPFS usa criptografia:
+O IPFS usa criptografia com:
 - endereçamento de conteúdo hash criptográfico
 - desduplicação em nível de bloco
 - integridade de arquivos + versionamento
-- criptografia em nível de sistema de arquivos + suporte a assinatura
+- execução em nível de sistema de arquivos + suporte a assinatura
 
 O IPFS é P2P:
 - transferências de arquivos peer-to-peer em todo o mundo
 - arquitetura completamente descentralizada
-- ** não ** possui ponto central de falha
+- **não** possui um ponto central de falha
 
 O IPFS é um cdn:
 - adicionar um arquivo ao sistema de arquivos localmente está disponível para o mundo
