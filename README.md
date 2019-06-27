@@ -264,7 +264,7 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 
 #### Apps on IPFS
 
-You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/categories/apps/)
+You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/apps/)
 
 #### Community Infrastructure
 
@@ -316,7 +316,7 @@ Other
 - [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl) - Control IPFS daemons from JavaScript.
 - [ipfs-hubot](https://github.com/ipfs/ipfs-hubot) - Hubot for IPFS uses.
 - [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store) - A place to buy blobs.
-- [Find an ever growing list on Awesome IPFS](https://awesome.ipfs.io/categories/tools/)
+- [Find an ever growing list on Awesome IPFS](https://awesome.ipfs.io/tools/)
 
 ## License
 
