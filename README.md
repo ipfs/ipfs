@@ -89,17 +89,19 @@ IPFS has a name service:
 
 ## How IPFS Works
 
-To learn more about how IPFS works take a look at the [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
+### tl;dr 
+
+- [How IPFS Works](https://docs.ipfs.io/introduction/how-ipfs-works/)
 
 ### IPFS Papers
 
 - [IPFS - Content Addressed, Versioned, P2P File System (draft 3)](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
 - [Specifications](https://github.com/ipfs/specs) (work in progress)
-- see also: https://github.com/ipfs/papers
+- See also: https://github.com/ipfs/papers
 
 ### IPFS Talks
 
-This is a short selection of introductory talks. In time we will collect more here.
+This is a short selection of introductory talks.
 
 - 2014-07-21 - [IPFS: The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g) at [Sourcegraph](https://sourcegraph.com/) (first public talk)
 - 2015-02-20 - [IPFS Alpha Demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
