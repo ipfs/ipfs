@@ -14,6 +14,7 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
 - [Overview](#overview)
   - [Quick Summary](#quick-summary)
 - [How IPFS Works](#how-ipfs-works)
+  - [IPFS Documentaiton](#ipfs-documentation)
   - [IPFS Papers](#ipfs-papers)
   - [IPFS Talks](#ipfs-talks)
 - [More About IPFS](#more-about-ipfs)
@@ -88,10 +89,11 @@ IPFS has a name service:
 - can map DNS, .onion, .bit, etc to IPNS
 
 ## How IPFS Works
+To learn more about how IPFS works take a look at the [Documentation](#ipfs-documentation), [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
 
-### tl;dr 
+### IPFS Documentation
 
-- [How IPFS Works](https://docs.ipfs.io/introduction/how-ipfs-works/)
+A great place to start is by reading the introduction to "[How IPFS Works](https://docs.ipfs.io/introduction/how-ipfs-works/)" in our [documentation site](https://docs.ipfs.io/introduction).
 
 ### IPFS Papers
 
@@ -106,7 +108,7 @@ This is a short selection of introductory talks.
 - 2014-07-21 - [IPFS: The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g) at [Sourcegraph](https://sourcegraph.com/) (first public talk)
 - 2015-02-20 - [IPFS Alpha Demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 - 2015-06-03 - [IPFS Hands on Introduction](https://www.youtube.com/watch?v=h73bd9b5pPA) at Ethereum SV Meetup
-- **2015-10-22 - [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI) at Stanford Seminar (best overview of project)**
+- **2015-10-22 - [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI) at Stanford Seminar (great overview of project)**
 - 2016-09-14 - [Distributed Apps with IPFS](https://www.youtube.com/watch?v=jONZtXMu03w)
 - 2016-10-22 - [The Decentralized Web, IPFS and Filecoin](https://www.youtube.com/watch?v=cU-n_m-snxQ)
 
