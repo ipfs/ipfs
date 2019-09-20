@@ -2,8 +2,8 @@
 
 > A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
-[![IRC](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg?style=flat-square)](https://webchat.freenode.net/?channels=ipfs)
 [![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Apermaweb.io-blue.svg?style=flat-square)](https://riot.permaweb.io/#/room/#ipfs:permaweb.io)
+[![IRC](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg?style=flat-square)](https://webchat.freenode.net/?channels=ipfs)
 [![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
