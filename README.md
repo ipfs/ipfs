@@ -2,7 +2,9 @@
 
 > A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
-[![ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs)
+[![IRC](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg?style=flat-square)](https://webchat.freenode.net/?channels=ipfs)
+[![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Apermaweb.io-blue.svg?style=flat-square)](https://riot.permaweb.io/#/room/#ipfs:permaweb.io)
+[![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
 Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started? Please post questions and ideas at https://discuss.ipfs.io
