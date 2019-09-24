@@ -2,7 +2,7 @@
 
 > A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
-[![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Amatrix.org-blue.svg?style=flat-square)](https://riot.permaweb.io/#/room/#ipfs:matrix.org)
+[![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Amatrix.org-blue.svg?style=flat-square)](https://matrix.to/#/#ipfs:matrix.org)
 [![IRC](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg?style=flat-square)](https://webchat.freenode.net/?channels=ipfs)
 [![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
