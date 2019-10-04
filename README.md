@@ -198,6 +198,7 @@ If you would you like to start your own language implementation of IPFS, check o
 |               | https://github.com/rschulman/rust-ipfs-api                | ?? |
 | Ruby          | https://github.com/Fryie/ipfs-ruby                        | ?? |
 | Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                | ?? |
+| Pharo         | https://github.com/khinsen/ipfs-pharo                     | ?? |
 | PHP           | https://github.com/cloutier/php-ipfs-api                  | ?? |
 |               | https://github.com/digitalkaoz/php-ipfs-api               | ?? |
 | C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client | ?? |
