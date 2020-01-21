@@ -128,10 +128,10 @@ Today, there is one main IPFS Protocol implementation (in [Go](https://github.co
 
 In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an "Alpha Distribution". Since then, go-ipfs has been making regular releases on the road towards Beta. Both [js-ipfs](https://github.com/ipfs/js-ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs) are in progress.
 
-- [Install IPFS Alpha Distribution](https://ipfs.io/docs/install)
-- [Setup IPFS and Getting Started](https://ipfs.io/docs/getting-started/)
-- [Going Online](https://ipfs.io/docs/getting-started/#going-online)
-- [More Examples](https://ipfs.io/docs/examples/)
+- [Install IPFS Alpha Distribution](https://docs.ipfs.io/introduction/usage/#install-ipfs)
+- [Setup IPFS and Getting Started](https://docs.ipfs.io/introduction/usage/)
+- [Going Online](https://docs.ipfs.io/introduction/usage/#taking-your-node-online)
+- [More Examples](https://docs.ipfs.io/guides/examples/)
 
 For an in-depth tutorial, see a [Hands on Introduction](https://www.youtube.com/watch?v=h73bd9b5pPA).
 
