@@ -2,12 +2,17 @@
 
 > A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
+[![Forum](https://img.shields.io/badge/Discourse-%23Discussion forums-blue.svg)](https://discuss.ipfs.io)
 [![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Amatrix.org-blue.svg?style=flat-square)](https://matrix.to/#/#ipfs:matrix.org)
 [![IRC](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg?style=flat-square)](https://webchat.freenode.net/?channels=ipfs)
 [![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
-Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started? Please post questions and ideas at https://discuss.ipfs.io
+Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started?
+
+**Please post questions and ideas at https://discuss.ipfs.io .**
+
+**A new documentation site effort is ongoing and you can access it at https://docs-beta.ipfs.io .**
 
 *Read this in other languages: [Portuguese](translations/pt_BR/README.md).*
 
@@ -24,6 +29,7 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
   - [Security Issues and Disclosures](#security-issues-and-disclosures)
 - [Project and Community](#project-and-community)
 - [Project Links](#project-links)
+  - [Documentation](#documentation)
   - [Protocol Implementations](#protocol-implementations)
   - [HTTP Client Libraries](#http-client-libraries)
   - [Project Directory](#project-directory)
@@ -32,7 +38,7 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
 
 ## Overview
 
-IPFS ([the InterPlanetary File System](https://github.com/ipfs/faq/issues/76)) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
+IPFS ([the InterPlanetary File System](https://docs-beta.ipfs.io/concepts/what-is-ipfs/)) is a new hypermedia distribution protocol, addressed by content and identities. IPFS enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.
 
 IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. You can read more about its origins in the paper [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true).
 
@@ -91,7 +97,11 @@ IPFS has a name service:
 
 ## How IPFS Works
 
-To learn more about how IPFS works take a look at the [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
+To learn more about how IPFS works take a look at the [IPFS Documentation](#ipfs-documenation), [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
+
+### IPFS Documentation
+
+- [How IPFS Works](https://docs-beta.ipfs.io/concepts/how-ipfs-works)
 
 ### IPFS Papers
 
@@ -164,6 +174,11 @@ You can also find our community on:
 The IPFS Project is big -- there are many subprojects and related efforts. We will document the core ones here, though you should look around. The space is exploding and lots of new projects are springing up all the time.
 
 For a community-curated lists of awesome projects using IPFS, check out [awesome-ipfs](https://github.com/ipfs/awesome-ipfs)!
+
+### Documentation
+
+* [Documentation site](https://docs.ipfs.io)
+* [Beta documentation site](https://docs-beta.ipfs.io)
 
 ### Protocol Implementations
 
