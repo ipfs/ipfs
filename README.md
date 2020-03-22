@@ -10,7 +10,7 @@
 
 Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ) to get started?
 
-**Please post questions and ideas at https://discuss.ipfs.io .**
+**Please post questions and ideas at [https://discuss.ipfs.io](https://discuss.ipfs.io) .**
 
 **A new documentation site effort is ongoing and you can access it at https://docs-beta.ipfs.io .**
 
