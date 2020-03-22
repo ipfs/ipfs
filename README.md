@@ -177,7 +177,7 @@ For a community-curated lists of awesome projects using IPFS, check out [awesome
 
 ### Documentation
 
-* [Documentation site](https://docs.ipfs.io)
+* [Documentation site](https://docs-beta.ipfs.io)
 
 ### Protocol Implementations
 
