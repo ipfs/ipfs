@@ -12,7 +12,7 @@ Welcome to IPFS! Why not [watch a video demo](https://www.youtube.com/watch?v=8C
 
 **Please post questions and ideas at [https://discuss.ipfs.io](https://discuss.ipfs.io) .**
 
-**A new documentation site effort is ongoing and you can access it at https://docs-beta.ipfs.io .**
+**A new documentation site effort is ongoing and you can access it at [https://docs-beta.ipfs.io](https://docs-beta.ipfs.io ) .**
 
 *Read this in other languages: [Portuguese](translations/pt_BR/README.md).*
 
