@@ -97,7 +97,7 @@ IPFS has a name service:
 
 ## How IPFS Works
 
-To learn more about how IPFS works take a look at the [IPFS Documentation](#ipfs-documenation), [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
+To learn more about how IPFS works, take a look at the [IPFS Documentation](#ipfs-documenation), [Papers](#ipfs-papers) or [Talks](#ipfs-talks). You can also explore the [Specs](https://github.com/ipfs/specs) in writing.
 
 ### IPFS Documentation
 
