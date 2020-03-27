@@ -206,6 +206,7 @@ If you would you like to start your own language implementation of IPFS, check o
 | Haskell       | https://github.com/davidar/hs-ipfs-api                    | ?? |
 | Swift         | https://github.com/ipfs/swift-ipfs-api                    | ?? |
 | CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                | ?? |
+|               | https://github.com/JadedCtrl/cl-ipfs-api2                 | ?? |
 | Rust          | https://github.com/ferristseng/rust-ipfs-api              | ?? |
 |               | https://github.com/gkbrk/rust-ipfs-api                    | ?? |
 |               | https://github.com/rmnoff/rust-ipfs-api                   | ?? |
