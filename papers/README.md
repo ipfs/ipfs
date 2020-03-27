@@ -1,6 +1,7 @@
-# papers
+# This file has moved!
 
-These papers have moved to: https://github.com/ipfs/papers
+For papers on IPFS, please see the following:
+- For academic papers on IPFS, visit the [ipfs/papers](https://github.com/ipfs/papers) repo.
+- For papers that you can read to understand IPFS and its underlying technologies, check out the Reading List in the [IPFS docs site](https://docs-beta.ipfs.io).
 
-Older versions of the papers are still hosted here to avoid breaking links,
-but please update links and refer to the https://github.com/ipfs/papers repo for the most up-to-date versions.
+Some older versions of papers are still hosted here to avoid breaking links — but please update links and refer to the items above for new and updated content.
