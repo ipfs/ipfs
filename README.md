@@ -8,25 +8,27 @@
 [![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
-## TL:DR
+## TL;DR
 
+- Visit the [IPFS website](https://www.ipfs.io)
 - Watch Juan Benet's [Why IPFS?](https://www.youtube.com/watch?v=zE_WSLbqqvo) keynote from IPFS Camp 2019
 - Watch Juan's Stanford Seminar talk on [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - Watch a video demo [of the IPFS alpha](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 - Dive in to the [IPFS Docs](https://docs-beta.ipfs.io )
 - Talk about your questions and ideas in the [IPFS Forums](https://discuss.ipfs.io)
+- Subscribe to the [weekly IPFS newsletter](http://eepurl.com/gL2Pi5) and [read the blog](https://blog.ipfs.io/).
 
-*Read this in other languages: [Portuguese](translations/pt_BR/README.md).*
+*Or read this in other languages: [Portuguese](translations/pt_BR/README.md).*
 
 ## Full contents
 
 - [Quick summary](#quick-summary)
 - [Learn how IPFS works](#learn-how-ipfs-works)
 - [Current state of IPFS](#current-state-of-ipfs)
-  - [Alpha Distribution](#alpha-distribution)
-  - [Security Issues and Disclosures](#security-issues-and-disclosures)
-- [Project and Community](#project-and-community)
-- [Project Links](#project-links)
+  - [Alpha distribution](#alpha-distribution)
+  - [A word on security](#a-word-on-security)
+- [Project and community](#project-and-community)
+- [Project links](#project-links)
   - [Documentation](#documentation)
   - [Protocol Implementations](#protocol-implementations)
   - [HTTP Client Libraries](#http-client-libraries)
@@ -123,7 +125,7 @@ In February of 2015, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementati
 
 For an in-depth tutorial, see a [Hands on Introduction](https://www.youtube.com/watch?v=h73bd9b5pPA).
 
-### Security issues and disclosures
+### A word on security
 
 The IPFS protocol and its implementations are still in heavy development. This means that there may be problems in our protocols, or there may be mistakes in our implementations. And — though IPFS is not production-ready yet — many people are already running nodes on their machines, so we take security vulnerabilities very seriously. If you discover a security issue, please bring it to our attention right away!
 
@@ -135,9 +137,11 @@ If the issue is a protocol weakness that cannot be immediately exploited, or som
 
 [![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md)
 
-The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs-beta.ipfs.io/community/) for all the details on how to get involved, including the official [IPFS forums]((https://discuss.ipfs.io)), our [IRC channels](https://docs-beta.ipfs.io/community/irc), [social media](https://docs-beta.ipfs.io/community/social-media), meetups and [ProtoSchool workshops](https://proto.school/#/events), and more.
+The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs-beta.ipfs.io/community/) for all the details on how to get involved, including the official [IPFS forums]((https://discuss.ipfs.io)), our [IRC channels](https://docs-beta.ipfs.io/community/irc), [social media](https://docs-beta.ipfs.io/community/social-media), [meetups and ProtoSchool workshops](https://github.com/ipfs/community#events), and more.
 
 If you're interested in how the project is organized at a higher level, visit the [IPFS Team & Project Management](https://github.com/ipfs/team-mgmt) repo.
+
+There's also a weekly IPFS newsletter ([subscribe here](http://eepurl.com/gL2Pi5)) and [regularly-updated blog](https://blog.ipfs.io/).
 
 ## Project links
 
@@ -194,11 +198,6 @@ The following HTTP client libraries are either complete (marked with	:white_chec
 
 This aims to be a directory of all the various repos in the [IPFS Github Organization](https://github.com/ipfs), and other closely related things.
 
-#### Project Organization
-
-- [ipfs](https://github.com/ipfs/ipfs) - Master repo, intro, and news.
-- [discourse](https://discuss.ipfs.io) - Community discussions and support forum.
-- [tm](https://github.com/ipfs/tm) - IPFS Team Planning and Management of the Project
 
 #### Get Help!
 
@@ -224,7 +223,7 @@ There are two deprecated repositories containing [FAQ](https://github.com/ipfs/f
 - [blockchain-data](https://github.com/ipfs/blockchain-data) - Using IPFS for storing data for Blockchain apps.
 - [POST](https://github.com/ipfs/POST) - A datastructure for human communication.
 
-#### Protocol Implementations
+#### Protocol implementations
 
 - [go-ipfs](https://github.com/ipfs/go-ipfs) - Implementation in Go.
 - [js-ipfs](https://github.com/ipfs/js-ipfs) - Implementation in Javascript.
@@ -248,10 +247,7 @@ You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/apps
 
 #### Community Infrastructure
 
-- [blog](https://github.com/ipfs/blog) - The IPFS Blog.
-- [community forum](https://discuss.ipfs.io)
 - [distributions](https://github.com/ipfs/distributions) - Scripts to build the /install html page.
-- [newsletter](https://github.com/ipfs/newsletter) - Prepare and store IPFS Newsletter roundups. [Subscribe here.](http://eepurl.com/gL2Pi5)
 - [infrastructure](https://github.com/ipfs/infrastructure) - Tools and systems for the community.
 - [ops-requests](https://github.com/ipfs/ops-requests) - Requests about infrastructure operations.
 - [project-repos](https://github.com/ipfs/project-repos) CI status and other health metrics.
@@ -265,19 +261,12 @@ You can find an ever growing list at [Awesome IPFS](https://awesome.ipfs.io/apps
 
 ### Other Community Resources
 
-- [examples](https://github.com/ipfs/examples) - Examples on how to use go-ipfs.
 - [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) - Useful resources for using IPFS and building things on top of it.
-- [logo](https://github.com/ipfs/logo) - The logo for IPFS.
 
-#### IPFS Meetups
-
-There are plethora of IPFS Meetups all over the world now. Find yours at the [Community Repo](https://github.com/ipfs/community#events)
-
-We encourage and support IPFS Meetups, please let us know if you would like to start one. Feel free to organize yourself through [the Community discussions](https://github.com/ipfs/community/issues) and [to advertise events in the main repository](https://github.com/ipfs/ipfs/issues).
 
 #### Tools
 
-Installing
+Installation tools:
 
 - [install-go-ipfs](https://github.com/ipfs/go-ipfs#install) - Install go-ipfs shell script.
 - [install-js-ipfs](https://github.com/ipfs/js-ipfs#install) - Install js-ipfs through npm or a script tag.
@@ -285,7 +274,7 @@ Installing
 - [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations) - These are migrations for [IPFS fs-repo](https://github.com/ipfs/specs/tree/399c907b214a24dc82ca010af6884227cb2829cf/repo/fs-repo) versions.
 - [npm-go-ipfs](https://github.com/ipfs/npm-go-ipfs) - Install go-ipfs from npm.
 
-Other
+Other tools:
 
 - [connections-globe](https://github.com/ipfs/connections-globe) - An interactive globe to view all your IPFS peers.
 - [dataviz](https://github.com/ipfs/dataviz) - IPFS data visualizations.
@@ -300,4 +289,4 @@ Other
 
 ## License
 
-MIT
+[MIT](LICENSE).
