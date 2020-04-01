@@ -10,12 +10,12 @@
 
 ## TL;DR
 
+- **Get help and talk about ideas in the [IPFS Forums](https://discuss.ipfs.io)**
 - Visit the [IPFS website](https://www.ipfs.io)
 - Watch Juan Benet's [Why IPFS?](https://www.youtube.com/watch?v=zE_WSLbqqvo) keynote from IPFS Camp 2019
 - Watch Juan's Stanford Seminar talk on [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - Watch a video demo [of the IPFS alpha](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 - Dive in to the [IPFS Docs](https://docs-beta.ipfs.io )
-- Talk about your questions and ideas in the [IPFS Forums](https://discuss.ipfs.io)
 - Subscribe to the [weekly IPFS newsletter](http://eepurl.com/gL2Pi5) and [read the blog](https://blog.ipfs.io/).
 
 *Or read this in other languages: [Portuguese](translations/pt_BR/README.md).*
@@ -34,10 +34,9 @@
   - [HTTP client libraries](#http-client-libraries)
   - [GUIs and helper apps](#guis-and-helper-apps)
   - [Apps and data sets on IPFS](#apps-and-data-sets-on-IPFS)
-  - [Specs, papers, and discussion](#specs-papers-and-discussion)
+  - [Specs and papers](#specs-and-papers)
   - [Installation and update tools](#installation-and-update-tools)
-  - [Other tools](#other-tools)
-  - [Community infrastructure](#community-infrastructure)
+  - [Additional resources](#additional-resources)
 - [License](#license)
 
 ## Quick summary
@@ -217,36 +216,27 @@ The following HTTP client libraries are either complete (:white_check_mark:) or 
 
 - [Awesome IPFS](https://awesome.ipfs.io) - an ever-growing list of apps, data sets, and other inspirational resources built on IPFS.
 
-### Specs, papers, and discussion
+### Specs and papers
 
 - [specs](https://github.com/ipfs/specs) - Specifications on the IPFS protocol.
 - [papers](papers) - Academic papers on IPFS.
 - [IPFS Docs: Further Reading](https://docs-beta.ipfs.io/concepts/further-reading/academic-papers) - Papers to read to understand IPFS and its underlying technologies.
-- [notes](https://github.com/ipfs/notes) - The IPFS collaborative notebook for research, used for discussing known open IPFS problems, nascent issues, proposals, or features.
 
 ### Installation and update tools
 
 - [install-go-ipfs](https://github.com/ipfs/go-ipfs#install) - Install go-ipfs shell script.
-- [npm-go-ipfs](https://github.com/ipfs/npm-go-ipfs) - Install go-ipfs from NPM.
 - [install-js-ipfs](https://github.com/ipfs/js-ipfs#getting-started) - Install js-ipfs through NPM or a script tag.
 - [ipfs-update](https://github.com/ipfs/ipfs-update) - An updater tool for IPFS.
 - [fs-repo-migrations](https://github.com/ipfs/fs-repo-migrations) - These are migrations for [IPFS fs-repo](https://github.com/ipfs/specs/tree/399c907b214a24dc82ca010af6884227cb2829cf/repo/fs-repo) versions.
+- [npm-go-ipfs](https://github.com/ipfs/npm-go-ipfs) - Install go-ipfs from NPM.
 
-### Other tools
-
-- [dataviz](https://github.com/ipfs/dataviz) - IPFS data visualizations.
-- [dir-index-html](https://github.com/ipfs/dir-index-html) - Directory listing HTML.
-- [dnslink-deploy](https://github.com/ipfs/dnslink-deploy) - Automatically set DNS records on Digital Ocean.
-- [fs-stress-test](https://github.com/ipfs/fs-stress-test) - Stress-testing IPFS filesystem capabilities.
-- [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl) - Control IPFS daemons from JavaScript.
-- [ipfs-hubot](https://github.com/ipfs/ipfs-hubot) - Hubot for IPFS uses.
-- [ipfs-blob-store](https://github.com/ipfs/ipfs-blob-store) - A place to buy blobs.
-
-### Community infrastructure
+### Additional resources
 
 - [distributions](https://github.com/ipfs/distributions) - Source code for the IPFS distributions website, https://dist.ipfs.io.
 - [infra](https://github.com/ipfs/infra) - Tools for maintaining infrastructure for the IPFS community.
-- [testground](https://github.com/ipfs/testground) - Tools for testing distributed software at scale
+- [testground](https://github.com/ipfs/testground) - Tools for testing distributed software at scale.
+- [ipfs-cluster](https://github.com/ipfs/ipfs-cluster) - Provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pinset distributed among multiple peers.
+- [ipfs-shipyard](https://github.com/ipfs-shipyard) - A wide range of incubated projects by and for the IPFS community.
 - [website](https://github.com/ipfs/website) - Source code for the IPFS website, http://ipfs.io.
 
 ## License
