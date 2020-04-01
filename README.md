@@ -18,8 +18,6 @@
 - Dive in to the [IPFS Docs](https://docs-beta.ipfs.io )
 - Subscribe to the [weekly IPFS newsletter](http://eepurl.com/gL2Pi5) and [read the blog](https://blog.ipfs.io/).
 
-*Or read this in other languages: [Portuguese](translations/pt_BR/README.md).*
-
 ## Full contents
 
 - [Quick summary](#quick-summary)
