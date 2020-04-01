@@ -152,7 +152,7 @@ If you're looking for help learning about or building with IPFS, start with thes
 - [IPFS Documentation](https://docs-beta.ipfs.io)
 - [IPFS Forums](https://discuss.ipfs.io)
 
-If you've found a bug or want to make a feature request regarding a specific component of IPFS, please open an issue in the appropriate repo so that it can be triaged and responded to as quickly as possible.
+**If you've found a bug or want to make a feature request regarding a specific component of IPFS, please open an issue in the appropriate repo so that it can be triaged and responded to as quickly as possible.**
 
 ## Links and resources
 
