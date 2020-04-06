@@ -1,7 +1,7 @@
 ---
-name: Forbid issues
-about: Tell users about not opening issues here
-title: Do not open issues here
+name: Do NOT open issues in this repository
+about: Go to https://discuss.ipfs.io
+title: Do not open issues in this repository
 labels: invalid
 assignees: ''
 
