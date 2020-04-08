@@ -195,7 +195,7 @@ The following HTTP client libraries are either complete (:white_check_mark:) or 
 | PHP           | https://github.com/cloutier/php-ipfs-api                  |
 |               | https://github.com/digitalkaoz/php-ipfs-api               |
 | C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client |
-|               | https://github.com/richardschneider/net-ipfs-client       |
+|               | https://github.com/richardschneider/net-ipfs-http-client  |
 | C++           | https://github.com/vasild/cpp-ipfs-api                    |
 | Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client |
 | Objective-C   | None yet                                                  |
