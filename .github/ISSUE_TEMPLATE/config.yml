@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+ - name: Getting Help on IPFS
+   url: https://ipfs.io/help
+   about: All information about how and where to get help on IPFS.
+ - name: IPFS Official Forum
+   url: https://discuss.ipfs.io
+   about: Please post general questions, support requests, and discussions here.
