@@ -1,0 +1,68 @@
+# Configuration for welcome - https://github.com/behaviorbot/welcome
+
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+  Thank you for submitting your first issue to this repository! A maintainer
+  will be here shortly to triage and review.
+
+  In the meantime, please double-check that you have provided all the
+  necessary information to make this process easy! Any information that can
+  help save additional round trips is useful! We currently aim to give
+  initial feedback within **two business days**. If this does not happen, feel
+  free to leave a comment.
+
+  Please keep an eye on how this issue will be labeled, as labels give an
+  overview of priorities, assignments and additional actions requested by the
+  maintainers:
+
+    - "Priority" labels will show how urgent this is for the team.
+    - "Status" labels will show if this is ready to be worked on, blocked, or in progress.
+    - "Need" labels will indicate if additional input or analysis is required.
+
+  Finally, remember to use https://discuss.ipfs.io if you just need general
+  support.
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  Thank you for submitting this PR!
+
+  A maintainer will be here shortly to review it.
+
+  We are super grateful, but we are also overloaded! Help us by making sure
+  that:
+
+    * The context for this PR is clear, with relevant discussion, decisions
+      and stakeholders linked/mentioned.
+
+    * Your contribution itself is clear (code comments, self-review for the
+      rest) and in its best form. Follow the [code contribution
+      guidelines](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md#code-contribution-guidelines)
+      if they apply.
+
+  Getting other community members to do a review would be great help too on
+  complex PRs (you can ask in the chats/forums). If you are unsure about
+  something, just leave us a comment.
+
+  Next steps:
+
+    * A maintainer will triage and assign priority to this PR, commenting on
+      any missing things and potentially assigning a reviewer for high
+      priority items.
+
+    * The PR gets reviews, discussed and approvals as needed.
+
+    * The PR is merged by maintainers when it has been approved and comments addressed.
+
+  We currently aim to provide initial feedback/triaging within **two business
+  days**. Please keep an eye on any labelling actions, as these will indicate
+  priorities and status of your contribution.
+
+  We are very grateful for your contribution!
+
+
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+# Comment to be posted to on pull requests merged by a first time user
+# Currently disabled
+#firstPRMergeComment: ""
