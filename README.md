@@ -171,36 +171,34 @@ If you would you like to start your own language implementation of IPFS, check o
 
 ### HTTP client libraries
 
-The following HTTP client libraries are either complete (:white_check_mark:) or under development. All welcome contributions! If you would like to create a new library, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://discuss.ipfs.io/) so we can help.
+The following HTTP client libraries are either complete or under development. All welcome contributions! If you would like to create a new library, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://discuss.ipfs.io/) so we can help.
 
-| Language      | Client library                                            |
-|---------------|-----------------------------------------------------------|
-| Go            | https://github.com/ipfs/go-ipfs-api                       |
-| Java          | https://github.com/ipfs/java-ipfs-api                     |
-| JavaScript 	:white_check_mark:   | https://github.com/ipfs/js-ipfs-api                       |
-| Python        | https://github.com/ipfs/py-ipfs-api                       |
-| Scala         | https://github.com/ipfs/scala-ipfs-api                    |
-| Clojure       | https://github.com/keorn/clj-ipfs-api                     |
-| Clojurescript 	:white_check_mark: | https://github.com/district0x/cljs-ipfs-http-client       |
-| Haskell       | https://github.com/davidar/hs-ipfs-api                    |
-| Swift         | https://github.com/ipfs/swift-ipfs-api                    |
-| CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                |
-| Rust          | https://github.com/ferristseng/rust-ipfs-api              |
-|               | https://github.com/gkbrk/rust-ipfs-api                    |
-|               | https://github.com/rmnoff/rust-ipfs-api                   |
-|               | https://github.com/rschulman/rust-ipfs-api                |
-| Ruby          | https://github.com/Fryie/ipfs-ruby                        |
-| Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                |
-| Pharo         | https://github.com/khinsen/ipfs-pharo                     |
-| PHP           | https://github.com/cloutier/php-ipfs-api                  |
-|               | https://github.com/digitalkaoz/php-ipfs-api               |
-| C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client |
-|               | https://github.com/richardschneider/net-ipfs-http-client  |
-| C++           | https://github.com/vasild/cpp-ipfs-api                    |
-| Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client |
-| Objective-C   | None yet                                                  |
-| Julia         | contact [@rened](https://github.com/rened)               |
-| Lua           | contact [@seclorum](https://github.com/seclorum)         |
+| Language      | Client library                                            | Status              |
+|---------------|-----------------------------------------------------------|---------------------|
+| Go            | https://github.com/ipfs/go-ipfs-api                       | Active              |
+| Java          | https://github.com/ipfs-shipyard/java-ipfs-http-client    | Active              |
+| JavaScript    | https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client0 | Active |
+| Python        | https://github.com/ipfs-shipyard/py-ipfs-http-client      | Active |
+| Scala         | https://github.com/ipfs-shipyard/scala-ipfs-api           | Inactive |
+| Clojure       | https://github.com/keorn/clj-ipfs-http-client             | Active |
+| Clojurescript | https://github.com/district0x/cljs-ipfs-http-client | Active |
+| Haskell       | https://github.com/davidar/hs-ipfs-api                    | Inactive |
+| Swift         | https://github.com/ipfs-shipyard/swift-ipfs-http-client   | Active |
+| CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                | Inactive |
+| Rust          | https://github.com/ferristseng/rust-ipfs-api              | Active |
+|               | https://github.com/gkbrk/rust-ipfs-api                    | Inactive |
+|               | https://github.com/rmnoff/rust-ipfs-api                   | Inactive |
+|               | https://github.com/rschulman/rust-ipfs-api                | Inactive |
+| Ruby          | https://github.com/Fryie/ipfs-ruby                        | Inactive |
+|               | https://github.com/tbenett/ruby-ipfs-http-client          | Active   |
+| Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                | Inactive |
+| Pharo         | https://github.com/khinsen/ipfs-pharo                     | Active   |
+| PHP           | https://github.com/cloutier/php-ipfs-api                  | Inactive |
+|               | https://github.com/digitalkaoz/php-ipfs-api               | Inactive |
+| C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client | Inactive |
+|               | https://github.com/richardschneider/net-ipfs-http-client  | Active   |
+| C++           | https://github.com/vasild/cpp-ipfs-api                    | Active   |
+| Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | Inactive |
 
 ### GUIs and helper apps
 
