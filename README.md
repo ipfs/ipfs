@@ -11,7 +11,7 @@
 ## TL;DR
 
 - **Get help and talk about ideas in the [IPFS Forums](https://discuss.ipfs.io)**
-- Visit the [IPFS website](https://www.ipfs.io)
+- Visit the [IPFS website](https://ipfs.io)
 - Watch Juan Benet's [Why IPFS?](https://www.youtube.com/watch?v=zE_WSLbqqvo) keynote from IPFS Camp 2019
 - Watch Juan's Stanford Seminar talk on [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - Watch a video demo [of the IPFS alpha](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
