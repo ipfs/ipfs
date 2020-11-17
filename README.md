@@ -178,7 +178,7 @@ The following HTTP client libraries are either complete or under development. Al
 |---------------|-----------------------------------------------------------|---------------------|
 | Go            | https://github.com/ipfs/go-ipfs-api                       | Active              |
 | Java          | https://github.com/ipfs-shipyard/java-ipfs-http-client    | Active              |
-| JavaScript    | https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client0 | Active |
+| JavaScript    | https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client | Active |
 | Python        | https://github.com/ipfs-shipyard/py-ipfs-http-client      | Active |
 | Scala         | https://github.com/ipfs-shipyard/scala-ipfs-api           | Inactive |
 | Clojure       | https://github.com/keorn/clj-ipfs-http-client             | Active |
