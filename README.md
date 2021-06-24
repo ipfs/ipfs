@@ -137,7 +137,7 @@ If the issue is a protocol weakness that cannot be immediately exploited, or som
 
 [![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md)
 
-The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs.ipfs.io/community/) for all the details on how to get involved, including the official [IPFS forums](https://discuss.ipfs.io), our [IRC channels](https://docs.ipfs.io/community/irc), [social media](https://docs.ipfs.io/community/social-media), [meetups and ProtoSchool workshops](https://github.com/ipfs/community#events), and more.
+The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs.ipfs.io/community/) for all the details on how to get involved, including the official [IPFS forums](https://discuss.ipfs.io), our [chat channels](https://docs.ipfs.io/community/chat), [social media](https://docs.ipfs.io/community/social-media), [meetups and ProtoSchool workshops](https://github.com/ipfs/community#events), and more.
 
 If you're interested in how the project is organized at a higher level, visit the [IPFS Team & Project Management](https://github.com/ipfs/team-mgmt) repo.
 
