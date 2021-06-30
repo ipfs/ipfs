@@ -234,7 +234,7 @@ The following HTTP client libraries are either complete or under development. Al
 - [testground](https://github.com/ipfs/testground) - Tools for testing distributed software at scale.
 - [ipfs-cluster](https://github.com/ipfs/ipfs-cluster) - Provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pinset distributed among multiple peers.
 - [ipfs-shipyard](https://github.com/ipfs-shipyard) - A wide range of incubated projects by and for the IPFS community.
-- [website](https://github.com/ipfs/website) - Source code for the IPFS website, http://ipfs.io.
+- [website](https://github.com/ipfs/ipfs-website) - Source code for the IPFS website, http://ipfs.io.
 
 ## License
 
