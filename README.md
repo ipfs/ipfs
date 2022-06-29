@@ -198,6 +198,7 @@ The following HTTP client libraries are either complete or under development. Al
 |               | https://github.com/richardschneider/net-ipfs-http-client  | Active   |
 | C++           | https://github.com/vasild/cpp-ipfs-api                    | Active   |
 | Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | Inactive |
+| Scheme        | https://github.com/siiky/ipfs.scm                         | Active   |
 
 ### GUIs and helper apps
 
