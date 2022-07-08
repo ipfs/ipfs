@@ -3,7 +3,8 @@
 ### A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
 [![Forum](https://img.shields.io/badge/Discourse-%23Discussion%20forums-blue.svg)](https://discuss.ipfs.io)
-[![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/KKucsCpZmY)
+[![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/ipfs)
+[![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Amatrix.org-blue.svg?style=flat)](https://matrix.to/#/#ipfs-space:ipfs.io)
 [![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
 
 ## TL;DR
