@@ -2,10 +2,6 @@
 
 ### A peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
 
-[![Forum](https://img.shields.io/badge/Discourse-%23Discussion%20forums-blue.svg)](https://discuss.ipfs.io)
-[![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/KKucsCpZmY)
-[![Changelog #204](https://img.shields.io/badge/changelog-%23204-lightgrey.svg)](https://changelog.com/204)
-
 ## TL;DR
 
 - **Get help and talk about ideas in the [IPFS Forums](https://discuss.ipfs.io)**
@@ -14,7 +10,7 @@
 - Watch Juan's Stanford Seminar talk on [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - Watch a video demo [of the IPFS alpha](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 - Dive in to the [IPFS Docs](https://docs.ipfs.io)
-- Subscribe to the [weekly IPFS newsletter](http://eepurl.com/gL2Pi5) and [read the blog](https://blog.ipfs.io/).
+- Find out about chat channels, the IPFS newsletter, the IPFS blog, and more in the [IPFS community space](https://docs.ipfs.io/community/).
 
 ## Full contents
 
@@ -27,9 +23,7 @@
 - [Help and documentation](#help-and-documentation)
 - [Links and resources](#links-and-resources)
   - [Protocol implementations](#protocol-implementations)
-  - [HTTP client libraries](#http-client-libraries)
   - [GUIs and helper apps](#guis-and-helper-apps)
-  - [Apps and data sets on IPFS](#apps-and-data-sets-on-IPFS)
   - [Specs and papers](#specs-and-papers)
   - [Installation and update tools](#installation-and-update-tools)
   - [Additional resources](#additional-resources)
@@ -111,17 +105,11 @@ To learn more about how IPFS works, explore the following resources:
 
 **IPFS is a work in progress!** It is an ambitious plan to make the internet more free, open, secure, and high-performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
-Today, there is one main, reference IPFS protocol implementation (in [Go](https://github.com/ipfs/go-ipfs)) with [more on the way](#protocol-implementations) (including [JavaScript](https://github.com/ipfs/js-ipfs) and [Python](https://github.com/ipfs/py-ipfs)).
+Today, there are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.io/basics/ipfs-implementations/).
 
 ### Try it out
 
-The [go-ipfs](https://github.com/ipfs/go-ipfs) implementation was released as an alpha distribution in February 2015 and since then has been making regular releases on the road to beta. Notably, [js-ipfs](https://github.com/ipfs/js-ipfs) is also well along the way in progress. Want to get started with the IPFS alpha? Try these resources:
-
-- [Install IPFS](https://docs.ipfs.io/install/)
-- [Command-line quick start guide](https://docs.ipfs.io/how-to/command-line-quick-start/)
-- [Taking your node online](https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online)
-- [More how-tos and tutorials](https://docs.ipfs.io/how-to/)
-- [Hands-on introductory video](https://www.youtube.com/watch?v=h73bd9b5pPA)
+See https://docs.ipfs.io/basics/
 
 ### A word on security
 
@@ -156,48 +144,7 @@ The IPFS project is big (and expanding every day!), so we've excerpted some freq
 
 ### Protocol implementations
 
-These are the current implementations of IPFS:
-
-| Language | Project | Completeness |
-|----------|---------|--------------|
-| Go | https://github.com/ipfs/go-ipfs | **reference** |
-| JavaScript | https://github.com/ipfs/js-ipfs | **alpha** |
-| Rust | https://github.com/rs-ipfs/rust-ipfs | **alpha** |
-| Python | https://github.com/ipfs-shipyard/py-ipfs | starting (inactive) |
-| C | https://github.com/Agorise/c-ipfs | starting (inactive) |
-
-If you would you like to start your own language implementation of IPFS, check out the [Specifications](https://github.com/ipfs/specs). The specs are still evolving, but the core formats are stable and can be built on. Make sure to post an issue if you would like to start an effort, as many people have expressed interest in contributing to new implementations.
-
-### HTTP client libraries
-
-The following HTTP client libraries are either complete or under development. All welcome contributions! If you would like to create a new library, please see the [IPFS HTTP Client Implementation Guide](https://github.com/ipfs/go-ipfs/blob/master/docs/implement-api-bindings.md), and [tell us](https://discuss.ipfs.io/) so we can help.
-
-| Language      | Client library                                            | Status              |
-|---------------|-----------------------------------------------------------|---------------------|
-| Go            | https://github.com/ipfs/go-ipfs-api                       | Active              |
-| Java          | https://github.com/ipfs-shipyard/java-ipfs-http-client    | Active              |
-| JavaScript    | https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client | Active |
-| Python        | https://github.com/ipfs-shipyard/py-ipfs-http-client      | Active |
-| Scala         | https://github.com/ipfs-shipyard/scala-ipfs-api           | Inactive |
-| Clojure       | https://github.com/keorn/clj-ipfs-http-client             | Active |
-| Clojurescript | https://github.com/district0x/cljs-ipfs-http-client | Active |
-| Haskell       | https://github.com/davidar/hs-ipfs-api                    | Inactive |
-| Swift         | https://github.com/ipfs-shipyard/swift-ipfs-http-client   | Active |
-| CommonLisp    | https://github.com/WeMeetAgain/cl-ipfs-api                | Inactive |
-| Rust          | https://github.com/ferristseng/rust-ipfs-api              | Active |
-|               | https://github.com/gkbrk/rust-ipfs-api                    | Inactive |
-|               | https://github.com/rmnoff/rust-ipfs-api                   | Inactive |
-|               | https://github.com/rschulman/rust-ipfs-api                | Inactive |
-| Ruby          | https://github.com/Fryie/ipfs-ruby                        | Inactive |
-|               | https://github.com/tbenett/ruby-ipfs-http-client          | Active   |
-| Mac Automator | https://github.com/NeoTeo/ipfs-osx-service                | Inactive |
-| Pharo         | https://github.com/khinsen/ipfs-pharo                     | Active   |
-| PHP           | https://github.com/cloutier/php-ipfs-api                  | Inactive |
-|               | https://github.com/digitalkaoz/php-ipfs-api               | Inactive |
-| C#            | https://github.com/jeremy-ellis-tech/net-ipfs-http-client | Inactive |
-|               | https://github.com/richardschneider/net-ipfs-http-client  | Active   |
-| C++           | https://github.com/vasild/cpp-ipfs-api                    | Active   |
-| Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | Inactive |
+These are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.io/basics/ipfs-implementations/)
 
 ### GUIs and helper apps
 
