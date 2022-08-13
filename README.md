@@ -4,13 +4,13 @@
 
 ## TL;DR
 
-- **Get help and talk about ideas in the [IPFS Forums](https://discuss.ipfs.io)**
-- Visit the [IPFS website](https://ipfs.io)
+- **Get help and talk about ideas in the [IPFS Forums](https://discuss.ipfs.tech)**
+- Visit the [IPFS website](https://ipfs.tech)
 - Watch Juan Benet's [Why IPFS?](https://www.youtube.com/watch?v=zE_WSLbqqvo) keynote from IPFS Camp 2019
 - Watch Juan's Stanford Seminar talk on [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - Watch a video demo [of the IPFS alpha](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
-- Dive in to the [IPFS Docs](https://docs.ipfs.io)
-- Find out about chat channels, the IPFS newsletter, the IPFS blog, and more in the [IPFS community space](https://docs.ipfs.io/community/).
+- Dive in to the [IPFS Docs](https://docs.ipfs.tech)
+- Find out about chat channels, the IPFS newsletter, the IPFS blog, and more in the [IPFS community space](https://docs.ipfs.tech/community/).
 
 ## Full contents
 
@@ -33,7 +33,7 @@
 
 The IPFS project seeks to evolve the infrastructure of the Internet and the Web, with many things we've learned from successful systems, like [Git](https://git-scm.com/), [BitTorrent](http://bittorrent.org/), [Kademlia](https://en.wikipedia.org/wiki/Kademlia), [Bitcoin](https://bitcoin.org/), and many, many more. This is the sort of thing that would have come out of ARPA/DARPA, IETF, or Bell Labs in another age. IPFS is a free, open-source project with thousands of contributors.
 
-IPFS ([the InterPlanetary File System](https://docs.ipfs.io/concepts/what-is-ipfs/)) is a hypermedia distribution **protocol** addressed by content and identities. It enables the creation of completely distributed applications, and in doing so aims to make the web faster, safer, and more open. 
+IPFS ([the InterPlanetary File System](https://docs.ipfs.tech/concepts/what-is-ipfs/)) is a hypermedia distribution **protocol** addressed by content and identities. It enables the creation of completely distributed applications, and in doing so aims to make the web faster, safer, and more open. 
 
 IPFS is a **distributed file system** that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single BitTorrent swarm exchanging Git objects. You can read more about its origins in the paper [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true).
 
@@ -51,7 +51,7 @@ IPFS is a **file system**:
 IPFS is a **web**:
 - Can be used to view documents like the conventional web
 - Files are accessible via HTTP at `https://ipfs.io/<path>`
-- Browsers and extensions can learn to use the `ipfs://` URL or `dweb:/ipfs/` URI schemes directly
+- Browsers and extensions can learn to use the `ipfs://` URL or `ipns://` URI schemes directly
 - Hash-addressed content guarantees authenticity
 
 IPFS is **modular**:
@@ -87,13 +87,13 @@ IPFS has **a name service**:
 ## Learn how IPFS works
 
 To learn more about how IPFS works, explore the following resources:
-- [IPFS Docs: How IPFS Works](https://docs.ipfs.io/concepts/how-ipfs-works)
+- [IPFS Docs: How IPFS Works](https://docs.ipfs.tech/concepts/how-ipfs-works)
 - [IPFS Specifications](https://github.com/ipfs/specs)
 - IPFS-related papers:
   - [IPFS - Content Addressed, Versioned, P2P File System (draft 3)](https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-file-system.pdf?raw=true)
   - For academic papers on IPFS, visit the [ipfs/papers](https://github.com/ipfs/papers) repo.
-  - For papers that you can read to understand IPFS and its underlying technologies, check out the ["Further Reading"](https://docs.ipfs.io/concepts/further-reading/academic-papers) section of the [IPFS Docs](https://docs.ipfs.io).
-- [IPFS Videos & Media](https://ipfs.io/media/) for a regularly-updated list of videos and media/news coverage, including these highlights:
+  - For papers that you can read to understand IPFS and its underlying technologies, check out the ["Further Reading"](https://docs.ipfs.tech/concepts/further-reading/academic-papers) section of the [IPFS Docs](https://docs.ipfs.tech).
+- [IPFS Videos & Media](https://ipfs.tech/media/) for a regularly-updated list of videos and media/news coverage, including these highlights:
   - [IPFS: The Distributed, Permanent Web](https://www.youtube.com/watch?v=HUVmypx9HGI) at Stanford Seminar (best overview of project)
   - [IPFS: The Permanent Web](https://www.youtube.com/watch?v=Fa4pckodM9g) at [Sourcegraph](https://sourcegraph.com/) (first public talk)
   - [IPFS Alpha Demo](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
@@ -105,11 +105,11 @@ To learn more about how IPFS works, explore the following resources:
 
 **IPFS is a work in progress!** It is an ambitious plan to make the internet more free, open, secure, and high-performance. It builds on the good ideas of numerous battle-tested distributed systems.
 
-Today, there are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.io/basics/ipfs-implementations/).
+Today, there are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.tech/basics/ipfs-implementations/).
 
 ### Try it out
 
-See https://docs.ipfs.io/basics/
+See https://docs.ipfs.tech/basics/
 
 ### A word on security
 
@@ -123,7 +123,7 @@ If the issue is a protocol weakness that cannot be immediately exploited, or som
 
 [![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md)
 
-The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs.ipfs.io/community/) for all the details on how to get involved, including the official [IPFS forums](https://discuss.ipfs.io), our [chat channels](https://docs.ipfs.io/community/chat), [social media](https://docs.ipfs.io/community/social-media), [meetups and ProtoSchool workshops](https://github.com/ipfs/community#events), and more.
+The IPFS project is big — with thousands of contributors in our community — and you're invited to join! Check out the [Community section of the IPFS Docs](https://docs.ipfs.tech/community/) for all the details on how to get involved, including the official [IPFS forums](https://discuss.ipfs.tech), our [chat channels](https://docs.ipfs.tech/community/chat), [social media](https://docs.ipfs.tech/community/social-media), [meetups and ProtoSchool workshops](https://github.com/ipfs/community#events), and more.
 
 If you're interested in how the project is organized at a higher level, visit the [IPFS Team & Project Management](https://github.com/ipfs/team-mgmt) repo.
 
@@ -133,8 +133,8 @@ There's also a weekly IPFS newsletter ([subscribe here](http://eepurl.com/gL2Pi5
 
 If you're looking for help learning about or building with IPFS, start with these resources:
 
-- [IPFS Documentation](https://docs.ipfs.io)
-- [IPFS Forums](https://discuss.ipfs.io)
+- [IPFS Documentation](https://docs.ipfs.tech)
+- [IPFS Forums](https://discuss.ipfs.tech)
 
 **If you've found a bug or want to make a feature request regarding a specific component of IPFS, please open an issue in the appropriate repo so that it can be triaged and responded to as quickly as possible.**
 
@@ -144,7 +144,7 @@ The IPFS project is big (and expanding every day!), so we've excerpted some freq
 
 ### Protocol implementations
 
-These are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.io/basics/ipfs-implementations/)
+These are [multiple implementations from various organizations supporting multiple languages](https://docs.ipfs.tech/basics/ipfs-implementations/)
 
 ### GUIs and helper apps
 
@@ -156,13 +156,13 @@ These are [multiple implementations from various organizations supporting multip
 
 ### Apps and data sets on IPFS
 
-- [Awesome IPFS](https://awesome.ipfs.io) - an ever-growing list of apps, data sets, and other inspirational resources built on IPFS.
+- [Awesome IPFS](https://awesome.ipfs.tech) - an ever-growing list of apps, data sets, and other inspirational resources built on IPFS.
 
 ### Specs and papers
 
 - [specs](https://github.com/ipfs/specs) - Specifications on the IPFS protocol.
 - [papers](papers) - Academic papers on IPFS.
-- [IPFS Docs: Further Reading](https://docs.ipfs.io/concepts/further-reading/academic-papers) - Papers to read to understand IPFS and its underlying technologies.
+- [IPFS Docs: Further Reading](https://docs.ipfs.tech/concepts/further-reading/academic-papers) - Papers to read to understand IPFS and its underlying technologies.
 
 ### Installation and update tools
 
@@ -174,12 +174,12 @@ These are [multiple implementations from various organizations supporting multip
 
 ### Additional resources
 
-- [distributions](https://github.com/ipfs/distributions) - Source code for the IPFS distributions website, https://dist.ipfs.io.
+- [distributions](https://github.com/ipfs/distributions) - Source code for the IPFS distributions website, https://dist.ipfs.tech.
 - [infra](https://github.com/ipfs/infra) - Tools for maintaining infrastructure for the IPFS community.
 - [testground](https://github.com/ipfs/testground) - Tools for testing distributed software at scale.
 - [ipfs-cluster](https://github.com/ipfs/ipfs-cluster) - Provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pinset distributed among multiple peers.
 - [ipfs-shipyard](https://github.com/ipfs-shipyard) - A wide range of incubated projects by and for the IPFS community.
-- [website](https://github.com/ipfs/ipfs-website) - Source code for the IPFS website, http://ipfs.io.
+- [website](https://github.com/ipfs/ipfs-website) - Source code for the IPFS website, http://ipfs.tech.
 
 ## License
 
