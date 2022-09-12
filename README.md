@@ -201,6 +201,7 @@ The following HTTP client libraries are either complete or under development. Al
 | C++           | https://github.com/vasild/cpp-ipfs-api                    | Active   |
 | Erlang        | https://github.com/hendry19901990/erlang-ipfs-http-client | Inactive |
 | Scheme        | https://git.sr.ht/~siiky/ipfs.scm                         | Active   |
+| Lua           | https://git.sr.ht/~siiky/ipfs.lua                         | Active   |
 
 ### GUIs and helper apps
 
