@@ -181,6 +181,11 @@ These are [multiple implementations from various organizations supporting multip
 - [ipfs-shipyard](https://github.com/ipfs-shipyard) - A wide range of incubated projects by and for the IPFS community.
 - [website](https://github.com/ipfs/ipfs-website) - Source code for the IPFS website, http://ipfs.tech.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ipfs/ipfs&type=Date)](https://star-history.com/#ipfs/ipfs&Date)
+
+
 ## License
 
 [MIT](LICENSE).
