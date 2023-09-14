@@ -1,4 +1,4 @@
-# IPFS powers the Distributed Web
+# IPFS is an open system to manage data without a central server
 
 Check out our website at [ipfs.tech](https://ipfs.tech).
 
