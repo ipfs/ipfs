@@ -6,4 +6,4 @@ For papers on IPFS, please see the [**Academic Papers**](https://docs.ipfs.tech/
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)
