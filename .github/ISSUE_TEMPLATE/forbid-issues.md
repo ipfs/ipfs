@@ -9,7 +9,7 @@ assignees: ''
 
 Please, do not open issues in this repository.
 
-If you have a question about IPFS or want discuss something, you can do it at https://discuss.ipfs.io.
+If you have a question about IPFS or want to discuss something, you can do it at https://discuss.ipfs.io.
 
 If you need help about what is the best place to post your issue, please ask at https://discuss.ipfs.io.
 
