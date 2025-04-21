@@ -1,0 +1,14 @@
+name: Close Generated PRs
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    uses: ipdxco/unified-github-workflows/.github/workflows/reusable-generated-pr.yml@v1
